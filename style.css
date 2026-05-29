@@ -462,25 +462,30 @@ strong { font-weight: 600; }
 /* ── Schedule rows ──────────────────────────────── */
 
 .sched-row {
-  padding: 10px 0;
-  border-bottom: 1px solid var(--card-border);
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  padding: 8px 0;
 }
 
 .sched-row:first-child { padding-top: 0; }
-.sched-row:last-child { border-bottom: none; padding-bottom: 0; }
+.sched-row:last-child { padding-bottom: 0; }
 
 .sched-time {
   font-family: var(--font-mono);
   font-weight: 500;
   font-size: 12px;
   color: var(--text-2);
-  margin-bottom: 2px;
+  flex: 0 0 56px;
+  white-space: nowrap;
 }
 
 .sched-detail {
   font-family: var(--font);
   font-size: 15px;
-  line-height: 1.55;
+  line-height: 1.5;
+  flex: 1;
+  min-width: 0;
 }
 
 .sched-label {
@@ -508,12 +513,11 @@ strong { font-weight: 600; }
 }
 
 .sched-note {
-  font-family: var(--font-mono);
-  font-weight: 500;
-  font-size: 12px;
-  color: var(--text-3);
-  margin-top: 5px;
+  font-family: var(--font);
+  font-size: 13px;
   line-height: 1.5;
+  color: var(--text-2);
+  margin-top: 4px;
 }
 
 /* Sub-bullet / continuation line under a schedule row (no time) */
@@ -522,15 +526,40 @@ strong { font-weight: 600; }
   font-size: 14px;
   line-height: 1.5;
   color: var(--text-2);
-  padding: 6px 0 6px 14px;
+  padding: 4px 0 4px 70px;
   position: relative;
 }
 
 .sched-sub::before {
-  content: '–';
+  content: '';
   position: absolute;
-  left: 0;
-  color: var(--text-3);
+  left: 56px;
+  top: 11px;
+  width: 6px;
+  height: 1px;
+  background: var(--text-3);
+}
+
+/* Continuation paragraph (no dash, no time, no heading) */
+.sched-continuation {
+  font-family: var(--font);
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--text);
+  padding: 4px 0 4px 70px;
+}
+
+/* Warning callout (⚠️ lines) */
+.sched-warning {
+  font-family: var(--font);
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.5;
+  color: var(--text);
+  padding: 12px 14px;
+  background: var(--bg);
+  border-left: 3px solid var(--danger);
+  margin: 8px 0 12px;
 }
 
 /* ── Phone numbers ────────────────────────────────── */

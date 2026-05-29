@@ -2177,6 +2177,26 @@ window.DEMO_DATA = {
   ],
   "artist_care": [
     {
+      "person_id": "_shared",
+      "section": "Artist Orientation Checklist",
+      "content": "★ Welcome the artist backstage, offer to help with bags/gear. If they have gear, label it with tape (artist name) and store it in the backstage office (right of entrance, before the stairs) — log it in the handover.\n★ Offer food or drink.\n★ Put on their **orange artist wristband**.\n★ Confirm any guests are on the guest list and explain backstage access: **orange wristband only**, and guests must be accompanied by the artist.\n★ Introduce them to the team, explaining the Innkeeper role and where to make contact (WhatsApp).\n★ Let them know there's good reception onsite, plus wifi if needed (network: **campsacajewa** / password: **rangerron** — to be confirmed on site).\n★ Assist them in navigating their artist microsite — we can print it out if they prefer.\n★ Show their stage manager contact for soundcheck and set, and how to reach them.\n★ Give them a map of the site and the schedule — highlight their set time and location on the map.\n★ If they're staying in a cabin, highlight where it is on the map.\n★ Give them their packet — confirm they have their meal tokens and their 8 drink tickets. Highlight the dining tent and refer them to vendor times on their microsite. Confirm any allergies or dietary needs.\n★ If staying in a hotel, give them their key and orient them with the shuttle drop-off/pick-up location and departure times on the microsite. If we haven't already dropped snacks and water in their room, give them a bag to take.\n★ Note their portrait time and where to meet the photographer (backstage at The Inn or at the stage).\n★ If it's raining and their SC or set is affected, let them know the changes and how we'll notify them (WhatsApp and updated microsite).\n★ If they have a personal driver, show them where to contact their driver through the microsite.\n★ Let them know the EMT location and Safe Rave testing.\n★ Explain who the safe space monitors are, and that any concerns can go to the stage manager or Innkeeper."
+    },
+    {
+      "person_id": "_shared",
+      "section": "Handover — Start & End of Shift",
+      "content": "Post in Slack **#artist-care**.\n\n**Start of shift:** Read the latest handover in #artist-care — outstanding items to follow up, gear stored backstage & who it belongs to, artists already on site, any soundcheck/set time changes.\n\n**End of shift:** Post your handover to #artist-care — artists on site, pending actions, supplies needed, set time changes, gear moved, etc."
+    },
+    {
+      "person_id": "_shared",
+      "section": "Artist Check-in",
+      "content": "- One hour before soundcheck/set — see if artist is on site. If not, remind them which shuttle to catch to be at SC/set on time.\n- If an artist hasn't responded within 30 min of their set/SC, visit their cabin or send the shuttle driver to knock on their door during the shuttle run.\n- If an artist has gear, ask if they need help bringing it to the stage from The Inn. Arrange an AC runner or use the golf cart.\n- Confirm the artist is at the stage **20 minutes before set**.\n- Introduce the artist to their Stage Manager.\n- Check on water and refill if necessary.\n- If an artist is eating on site, remind them of vending hours. If they can't come to site, send a plate via shuttle/driver/AC and collect their meal token.\n- Point them to the nearest restroom."
+    },
+    {
+      "person_id": "_shared",
+      "section": "On Shift Duties",
+      "content": "★ Clean and refill tea, coffee, hot water and snacks — kept backstage, the office or kitchen.\n★ Clean and refill bathroom supplies — toilet paper, soap, hand towels — kept backstage, the office or kitchen.\n★ Regularly check the gate to the bus shuttle is secure.\n★ Connect artists with the shuttle driver for upcoming rides.\n★ If gear is dropped off, label with tape (artist name) and store in the office right of the backstage entrance, before the stairs. Log it in the handover.\n★ Consider artist comfort — offer a fan / jacket; communicate with Stage Managers where necessary.\n★ Monitor backstage — ask anyone without an **orange** or **green** wristband to leave, unless they're a guest accompanied by the artist.\n★ If the backstage toilet is occupied, send the artist upstairs to the restrooms — check toilet paper, soap, paper towels.\n★ Assist staff seeking their meal token packets where necessary.\n★ Sweep/vacuum the floor when necessary."
+    },
+    {
       "person_id": "ali",
       "name": "Ali (she/her)",
       "phone": "",
