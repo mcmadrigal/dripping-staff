@@ -177,10 +177,10 @@ function linkifyPhones(html) {
 }
 
 function linkifyAddresses(html) {
-  const pattern = /(\d{1,5}\s+[\w\s]+(?:Rd|Road|St|Street|Ave|Avenue|Blvd|Dr|Drive|Ln|Lane|Way|Ct|Court|Pl|Place|US-\d+)[,.\s]+[\w\s]+(?:NJ|NY|PA|CT|MA)\s+\d{5})/gi;
+  const pattern = /(\d{1,5}\s+(?:[\w\s]+\s+)?(?:Rd|Road|St|Street|Ave|Avenue|Blvd|Dr|Drive|Ln|Lane|Way|Ct|Court|Pl|Place|US-\d+)[,.\s]+[\w\s]+,?\s*(?:NJ|NY|PA|CT|MA)\s+\d{5})/gi;
   return html.replace(pattern, (m) => {
     const url = `https://maps.apple.com/?q=${encodeURIComponent(m)}`;
-    return `${m}<br><span style="display:flex;justify-content:flex-end;margin-top:6px;"><a href="${url}" target="_blank" rel="noopener" class="action-btn" style="padding:4px 10px;font-size:11px;min-height:0;">Maps ↗</a></span>`;
+    return `${m}<span style="display:flex;justify-content:flex-end;margin-top:8px;"><a href="${url}" target="_blank" rel="noopener" class="action-btn">Maps ↗</a></span>`;
   });
 }
 
