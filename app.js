@@ -122,27 +122,44 @@ function renderContent(text) {
   html = html.replace(/\[([^\]]+)\]\((https?:\/\/[^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener" class="action-btn" style="display:inline-flex;padding:4px 10px;font-size:11px;min-height:0;margin-left:4px">$1 ↗</a>');
   html = linkifyPhones(html);
   html = linkifyAddresses(html);
+
   const lines = html.split('\n');
   const blocks = [];
-  let listItems = [];
+  let pendingItems = [];
+  let pendingHeader = null;
+
+  const flush = () => {
+    if (pendingItems.length) {
+      const ul = `<ul>${pendingItems.join('')}</ul>`;
+      if (pendingHeader) {
+        blocks.push(`<div class="rider-group"><div class="rider-group-header">${pendingHeader}</div>${ul}</div>`);
+      } else {
+        blocks.push(ul);
+      }
+    } else if (pendingHeader) {
+      blocks.push(`<p>${pendingHeader}</p>`);
+    }
+    pendingHeader = null;
+    pendingItems = [];
+  };
+
   for (const line of lines) {
     const trimmed = line.trim();
-    if (!trimmed) {
-      if (listItems.length) { blocks.push(`<ul>${listItems.join('')}</ul>`); listItems = []; }
-      continue;
-    }
-    if (/^[-•–]/.test(trimmed)) {
-      listItems.push(`<li>${trimmed.replace(/^[-•–]\s*/, '')}</li>`);
+    if (!trimmed) { flush(); continue; }
+    if (/^[-•–●○]/.test(trimmed)) {
+      pendingItems.push(`<li>${trimmed.replace(/^[-•–●○]\s*/, '')}</li>`);
     } else if (trimmed.startsWith('<a href="tel:')) {
-      // Standalone phone line — wrap in ph-row so buttons are visible and right-aligned
-      if (listItems.length) { blocks.push(`<ul>${listItems.join('')}</ul>`); listItems = []; }
+      flush();
       blocks.push(`<div class="ph-row">${trimmed}</div>`);
     } else {
-      if (listItems.length) { blocks.push(`<ul>${listItems.join('')}</ul>`); listItems = []; }
-      blocks.push(`<p>${trimmed}</p>`);
+      // Non-bullet line. If we were collecting items, this is a new block — flush.
+      // If we have a header from a previous line with no items yet, push it as a standalone para.
+      if (pendingItems.length) flush();
+      if (pendingHeader) blocks.push(`<p>${pendingHeader}</p>`);
+      pendingHeader = trimmed;
     }
   }
-  if (listItems.length) blocks.push(`<ul>${listItems.join('')}</ul>`);
+  flush();
   return blocks.join('');
 }
 

@@ -18,6 +18,7 @@
     const app = document.getElementById('app');
     const teamId = getParam('team');
     const personId = getParam('id');
+    const fromHome = getParam('from') === 'home';
 
     if (!teamId || !personId) { location.href = 'index.html'; }
     else if (!getSheetId() && !window.DEMO_DATA) { location.href = 'index.html'; }
@@ -47,7 +48,9 @@
         document.getElementById('hdr').innerHTML = renderHeader(teamName);
 
         let h = '';
-        h += `<a href="team.html?id=${encodeURIComponent(teamId)}" class="back">← ${esc(teamName)}</a>`;
+        const backHref = fromHome ? 'index.html' : `team.html?id=${encodeURIComponent(teamId)}`;
+        const backLabel = fromHome ? 'All Staff' : teamName;
+        h += `<a href="${backHref}" class="back">← ${esc(backLabel)}</a>`;
 
         h += `<div class="title-area">
           <h1>${escName(name)}</h1>

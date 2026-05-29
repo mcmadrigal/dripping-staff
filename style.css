@@ -450,6 +450,51 @@ strong { font-weight: 600; }
   color: var(--text-3);
 }
 
+/* ── Rider groups (artist name → bullet list) ───── */
+
+.rider-group {
+  margin-bottom: 16px;
+}
+
+.rider-group:last-child {
+  margin-bottom: 0;
+}
+
+.rider-group-header {
+  font-family: var(--font);
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--text);
+  margin-bottom: 4px;
+}
+
+.rider-group ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.rider-group li {
+  font-family: var(--font);
+  font-size: 14px;
+  line-height: 1.45;
+  color: var(--text-2);
+  padding: 2px 0 2px 16px;
+  position: relative;
+  margin: 0;
+}
+
+.rider-group li::before {
+  content: '';
+  position: absolute;
+  left: 4px;
+  top: 10px;
+  width: 4px;
+  height: 4px;
+  background: var(--text-3);
+  border-radius: 50%;
+}
+
 /* ── Alert section ──────────────────────────────── */
 
 .s-alert {

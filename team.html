@@ -45,10 +45,27 @@
     }
 
     function renderTeamPage(data, teamName, meta, contacts) {
+      const people = new Map();
+      const sharedRows = [];
+      for (const row of data) {
+        const pid = row.person_id || '';
+        if (pid && pid !== '_shared') {
+          if (!people.has(pid)) {
+            people.set(pid, { id: pid, name: row.name || pid, role: row.role || '' });
+          } else {
+            const p = people.get(pid);
+            if (row.name && !p.name) p.name = row.name;
+            if (row.role && !p.role) p.role = row.role;
+          }
+        } else {
+          sharedRows.push(row);
+        }
+      }
+
       let h = '';
       h += `<div class="title-area"><h1>${esc(teamName)}</h1></div>`;
       h += renderContactsBar(contacts);
-      for (const row of data) {
+      for (const row of sharedRows) {
         h += renderSection(row.section || '', row.content || '');
       }
       return h;

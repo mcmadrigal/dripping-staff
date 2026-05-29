@@ -1695,11 +1695,6 @@ window.DEMO_DATA = {
     },
     {
       "person_id": "sophia",
-      "section": "Important Contacts",
-      "content": "Mary (Morning Manager): 6am–2pm Friday, Saturday, Sunday\nLauren (Day Manager): 2pm–10pm Thursday, Friday, Saturday\nRonan (Night Manager): 10pm–6am Thursday, Friday, Saturday\nThe Innkeeper (WhatsApp) 347 986-7562\nLeo (415) 420-8884\nDaniel (202) 368-4568"
-    },
-    {
-      "person_id": "sophia",
       "section": "Schedule",
       "content": "**Official Check In Hours:**\n-Thursday: 3pm–10pm\n-Friday: Noon–10pm\n-Saturday: Noon–5pm\n\nWhile we need the team to be managed, we leave it to your discretion when you need to be on-site and when you can step away. Key moments to be present with the team:\n-Thursday 11am: Early arrival Check In crew begins\n-Thursday 2pm: Full Check In crew assembles\n-Thursday 3pm: Peak Times\n-EOD: Confirm team has what they need and is closing up shop properly\n-Friday 11am: prep for day 2\n-Friday: Peak times\n-EOD\n-Saturday: Noon\n-Saturday: 5pm"
     },
