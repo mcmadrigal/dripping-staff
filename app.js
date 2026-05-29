@@ -393,7 +393,7 @@ function renderSection(title, content) {
   const isAlert = /^[⚠️🚨❗]/.test(title) || /important|alert|warning/i.test(title);
   const isSchedule = /schedule|shift|thursday|friday|saturday|sunday|performances?|portraits?/i.test(title);
   const isRainPlan = /^rain plan$/i.test(title && title.trim());
-  const isContactList = /contact/i.test(title) && /\(\d{3}\)|\d{3}[\-\s]\d{4}|\+\d{7}/.test(content);
+  const isContactList = /contact/i.test(title);
   const cls = isAlert ? 's s-alert' : 's';
   const rendered = isSchedule ? renderScheduleContent(content) : renderContent(content);
 
