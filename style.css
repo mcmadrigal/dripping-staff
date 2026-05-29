@@ -516,6 +516,23 @@ strong { font-weight: 600; }
   line-height: 1.5;
 }
 
+/* Sub-bullet / continuation line under a schedule row (no time) */
+.sched-sub {
+  font-family: var(--font);
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--text-2);
+  padding: 6px 0 6px 14px;
+  position: relative;
+}
+
+.sched-sub::before {
+  content: '–';
+  position: absolute;
+  left: 0;
+  color: var(--text-3);
+}
+
 /* ── Phone numbers ────────────────────────────────── */
 
 /* Tappable tel link — styled like the mono phone text */

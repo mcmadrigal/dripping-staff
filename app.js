@@ -220,6 +220,16 @@ function renderScheduleContent(text) {
       return `<div class="sched-row"><div class="sched-time">${esc(parsed.time)}</div><div class="sched-detail">${esc(parsed.detail)}${noteHtml}</div></div>`;
     }
 
+    // Bold-wrapped headings (e.g. **Saturday:**, **Friday:**)
+    if (/^\*\*[^*]+\*\*:?\s*$/.test(trimmed)) {
+      return `<div class="sched-label">${esc(trimmed.replace(/\*\*/g, '').replace(/:$/, ''))}</div>`;
+    }
+
+    // Dash-prefixed continuation/sub-bullet (no parseable time) → small indented body
+    if (trimmed.startsWith('-')) {
+      return `<div class="sched-sub">${linkifyPhones(esc(trimmed.replace(/^-\s*/, '')))}</div>`;
+    }
+
     return `<div class="sched-label">${esc(trimmed)}</div>`;
   }).join('');
 }
