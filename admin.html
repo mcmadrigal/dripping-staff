@@ -1,0 +1,2275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin — Dripping Staff Portal</title>
+<style>
+@font-face {
+  font-family: 'Basel Grotesk';
+  src: url('fonts/Basel-Grotesk-Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'DM Sans';
+  src: url('fonts/DMSans-Variable.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'DM Sans';
+  src: url('fonts/DMSans-Variable-Italic.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'DM Mono';
+  src: url('fonts/DMMono-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'DM Mono';
+  src: url('fonts/DMMono-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --bg: #ece7df;
+  --card: #f5f2ed;
+  --card-border: #ddd8d0;
+  --text: #2c2420;
+  --text-2: #8a7e74;
+  --text-3: #b0a89e;
+  --btn-bg: #2c2420;
+  --btn-text: #f5f2ed;
+  --accent: #2c2420;
+  --danger: #9e2b2b;
+  --success: #2b6b3a;
+  --font: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-heading: 'Basel Grotesk', -apple-system, sans-serif;
+  --font-mono: 'DM Mono', 'SF Mono', monospace;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #1a1714;
+    --card: #252019;
+    --card-border: #3a342b;
+    --text: #ece7df;
+    --text-2: #998f85;
+    --text-3: #6b6158;
+    --btn-bg: #ece7df;
+    --btn-text: #1a1714;
+    --danger: #e06060;
+    --success: #60c080;
+  }
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { font-size: 16px; -webkit-text-size-adjust: 100%; }
+
+body {
+  font-family: var(--font);
+  font-size: 15px;
+  line-height: 1.5;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  padding-bottom: 80px;
+}
+
+/* ── Lock screen ── */
+#lock-screen {
+  position: fixed;
+  inset: 0;
+  background: var(--bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+.lock-box {
+  background: var(--card);
+  border: 1px solid var(--card-border);
+  padding: 40px 32px;
+  max-width: 360px;
+  width: 100%;
+  margin: 0 20px;
+}
+.lock-box h1 {
+  font-family: var(--font-heading);
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+.lock-box p {
+  font-size: 14px;
+  color: var(--text-2);
+  margin-bottom: 24px;
+}
+.lock-box label {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--text-2);
+  margin-bottom: 6px;
+}
+.lock-box input[type="password"] {
+  width: 100%;
+  padding: 10px 12px;
+  background: var(--bg);
+  border: 1px solid var(--card-border);
+  color: var(--text);
+  font-family: var(--font-mono);
+  font-size: 14px;
+  outline: none;
+  margin-bottom: 12px;
+}
+.lock-box input[type="password"]:focus { border-color: var(--text-2); }
+.lock-error {
+  font-size: 13px;
+  color: var(--danger);
+  margin-bottom: 12px;
+  min-height: 18px;
+}
+
+/* ── Header ── */
+.header {
+  padding: 14px 20px;
+  background: var(--bg);
+  border-bottom: 1px solid var(--card-border);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.header-inner {
+  max-width: 960px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.header h1 {
+  font-family: var(--font-heading);
+  font-size: 18px;
+  font-weight: 700;
+}
+.header-badge {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 3px 8px;
+  background: var(--danger);
+  color: #fff;
+}
+.draft-status {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-3);
+  margin-left: auto;
+}
+.draft-status.saved { color: var(--success); }
+
+/* ── Tabs ── */
+.tabs {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 20px 20px 0;
+  display: flex;
+  gap: 4px;
+  border-bottom: 1px solid var(--card-border);
+}
+.tab-btn {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 8px 16px;
+  background: none;
+  border: 1px solid transparent;
+  border-bottom: none;
+  color: var(--text-2);
+  cursor: pointer;
+  position: relative;
+  bottom: -1px;
+}
+.tab-btn:hover { color: var(--text); }
+.tab-btn.active {
+  background: var(--card);
+  border-color: var(--card-border);
+  color: var(--text);
+}
+
+/* ── Content area ── */
+.content {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 28px 20px;
+}
+.tab-panel { display: none; }
+.tab-panel.active { display: block; }
+
+/* ── Form elements ── */
+.form-section {
+  margin-bottom: 32px;
+}
+.form-section-title {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--text-2);
+  margin-bottom: 16px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--card-border);
+}
+.field-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+@media (max-width: 640px) {
+  .field-grid { grid-template-columns: 1fr; }
+}
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.field.full { grid-column: 1 / -1; }
+.field label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--text-2);
+}
+.field input,
+.field textarea,
+.field select {
+  width: 100%;
+  padding: 9px 12px;
+  background: var(--card);
+  border: 1px solid var(--card-border);
+  color: var(--text);
+  font-family: var(--font);
+  font-size: 14px;
+  outline: none;
+  resize: vertical;
+}
+.field input:focus,
+.field textarea:focus,
+.field select:focus { border-color: var(--text-2); }
+.field textarea { min-height: 120px; font-family: var(--font-mono); font-size: 13px; }
+.field textarea.tall { min-height: 200px; }
+.field select { font-family: var(--font-mono); font-size: 12px; }
+
+/* ── Buttons ── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 9px 18px;
+  background: var(--btn-bg);
+  color: var(--btn-text);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  border: none;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.btn:hover { opacity: 0.85; }
+.btn.btn-secondary {
+  background: var(--card);
+  color: var(--text);
+  border: 1px solid var(--card-border);
+}
+.btn.btn-danger {
+  background: var(--danger);
+  color: #fff;
+}
+.btn.btn-sm {
+  padding: 5px 12px;
+  font-size: 11px;
+}
+.btn-row {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 12px;
+}
+
+/* ── Tables (contacts) ── */
+.table-editor {
+  border: 1px solid var(--card-border);
+  overflow: hidden;
+}
+.table-row {
+  display: grid;
+  border-bottom: 1px solid var(--card-border);
+  background: var(--card);
+}
+.table-row:last-child { border-bottom: none; }
+.table-row.table-head {
+  background: var(--bg);
+}
+.table-head span {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--text-3);
+  padding: 8px 10px;
+  border-right: 1px solid var(--card-border);
+}
+.table-head span:last-child { border-right: none; }
+.table-row input {
+  border: none;
+  border-right: 1px solid var(--card-border);
+  background: transparent;
+  color: var(--text);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  padding: 8px 10px;
+  outline: none;
+  width: 100%;
+  min-width: 0;
+}
+.table-row input:focus { background: var(--bg); }
+.table-row input:last-child { border-right: none; }
+.table-row .cell-del {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--text-3);
+  font-size: 16px;
+  padding: 0 10px;
+  background: none;
+  border: none;
+  flex-shrink: 0;
+}
+.table-row .cell-del:hover { color: var(--danger); }
+.contacts-grid { grid-template-columns: 1.2fr 1.2fr 1fr 0.8fr 0.7fr 36px; }
+.contacts-head { grid-template-columns: 1.2fr 1.2fr 1fr 0.8fr 0.7fr 36px; }
+
+/* ── Team cards ── */
+.teams-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 10px;
+  margin-bottom: 16px;
+}
+.team-card {
+  background: var(--card);
+  border: 1px solid var(--card-border);
+  padding: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transition: border-color 0.1s;
+}
+.team-card:hover { border-color: var(--text-2); }
+.team-card.active { border-color: var(--text); }
+.team-card-icon {
+  font-size: 22px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg);
+  flex-shrink: 0;
+}
+.team-card-info { flex: 1; min-width: 0; }
+.team-card-name {
+  font-family: var(--font-heading);
+  font-size: 15px;
+  font-weight: 700;
+}
+.team-card-meta {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--text-3);
+  margin-top: 2px;
+}
+.team-card-del {
+  background: none;
+  border: none;
+  color: var(--text-3);
+  font-size: 16px;
+  cursor: pointer;
+  padding: 4px;
+  flex-shrink: 0;
+}
+.team-card-del:hover { color: var(--danger); }
+
+/* ── Team editor ── */
+.team-editor {
+  background: var(--card);
+  border: 1px solid var(--card-border);
+  padding: 24px;
+}
+.team-editor-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--card-border);
+}
+.team-editor-header h2 {
+  font-family: var(--font-heading);
+  font-size: 20px;
+  font-weight: 700;
+}
+.back-btn {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--text-2);
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 0;
+}
+.back-btn:hover { color: var(--text); }
+
+/* ── Section editor ── */
+.section-list { margin-bottom: 16px; }
+.section-item {
+  background: var(--bg);
+  border: 1px solid var(--card-border);
+  padding: 14px;
+  margin-bottom: 8px;
+}
+.section-item-head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+.section-item-head input {
+  flex: 1;
+  padding: 6px 10px;
+  background: var(--card);
+  border: 1px solid var(--card-border);
+  color: var(--text);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  outline: none;
+}
+.section-item-head input:focus { border-color: var(--text-2); }
+.section-item-head .move-btns {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.move-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--text-3);
+  font-size: 10px;
+  padding: 2px 4px;
+  line-height: 1;
+}
+.move-btn:hover { color: var(--text); }
+.del-section-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--text-3);
+  font-size: 16px;
+  padding: 2px 6px;
+}
+.del-section-btn:hover { color: var(--danger); }
+.section-item textarea {
+  width: 100%;
+  padding: 10px;
+  background: var(--card);
+  border: 1px solid var(--card-border);
+  color: var(--text);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  line-height: 1.6;
+  resize: vertical;
+  outline: none;
+  min-height: 140px;
+}
+.section-item textarea:focus { border-color: var(--text-2); }
+
+/* ── People list ── */
+.people-list { margin-bottom: 16px; }
+.person-item {
+  border: 1px solid var(--card-border);
+  margin-bottom: 8px;
+  overflow: hidden;
+}
+.person-header {
+  background: var(--card);
+  padding: 12px 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+.person-header:hover { background: var(--bg); }
+.person-name {
+  font-family: var(--font-heading);
+  font-size: 15px;
+  font-weight: 700;
+  flex: 1;
+}
+.person-role {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-3);
+  letter-spacing: 0.5px;
+}
+.person-expand-icon {
+  color: var(--text-3);
+  font-size: 12px;
+  font-family: var(--font-mono);
+  flex-shrink: 0;
+}
+.person-body {
+  display: none;
+  padding: 16px;
+  background: var(--bg);
+  border-top: 1px solid var(--card-border);
+}
+.person-body.open { display: block; }
+.person-meta-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+@media (max-width: 640px) {
+  .person-meta-grid { grid-template-columns: 1fr; }
+}
+.person-meta-grid .field input {
+  background: var(--card);
+  border-color: var(--card-border);
+}
+
+/* ── Bottom bar ── */
+.bottom-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: var(--bg);
+  border-top: 1px solid var(--card-border);
+  padding: 12px 20px;
+  z-index: 200;
+}
+.bottom-bar-inner {
+  max-width: 960px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.bottom-bar-info {
+  flex: 1;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-3);
+}
+.btn.btn-publish {
+  background: var(--success);
+  color: #fff;
+}
+
+/* ── Team meta fields ── */
+.team-meta-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1.2fr 1fr;
+  gap: 16px;
+  margin-bottom: 20px;
+  padding: 16px;
+  background: var(--bg);
+  border: 1px solid var(--card-border);
+}
+@media (max-width: 640px) {
+  .team-meta-grid { grid-template-columns: 1fr; }
+}
+
+/* ── Utility ── */
+.section-divider {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--text-3);
+  padding: 16px 0 10px;
+  border-top: 1px solid var(--card-border);
+  margin-top: 24px;
+}
+.empty-state {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--text-3);
+  padding: 20px;
+  text-align: center;
+  border: 1px dashed var(--card-border);
+}
+.checkbox-field {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 0;
+}
+.checkbox-field input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+  accent-color: var(--btn-bg);
+}
+.checkbox-field label {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--text-2);
+  cursor: pointer;
+}
+
+/* ── Toggle switch ── */
+.toggle-field {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 0;
+}
+.toggle-switch {
+  position: relative;
+  width: 36px;
+  height: 20px;
+  flex-shrink: 0;
+}
+.toggle-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+  position: absolute;
+}
+.toggle-track {
+  position: absolute;
+  inset: 0;
+  background: var(--card-border);
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.toggle-track::after {
+  content: '';
+  position: absolute;
+  left: 3px;
+  top: 3px;
+  width: 14px;
+  height: 14px;
+  background: var(--card);
+  border-radius: 50%;
+  transition: transform 0.15s;
+}
+.toggle-switch input:checked + .toggle-track {
+  background: var(--btn-bg);
+}
+.toggle-switch input:checked + .toggle-track::after {
+  transform: translateX(16px);
+}
+.toggle-label {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--text-2);
+  cursor: pointer;
+  user-select: none;
+}
+
+/* ── Contacts card layout ── */
+.contacts-card-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.contact-card {
+  background: var(--card);
+  border: 1px solid var(--card-border);
+  padding: 14px 16px;
+}
+.contact-card-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px 16px;
+}
+@media (max-width: 640px) {
+  .contact-card-grid { grid-template-columns: 1fr; }
+}
+.contact-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 10px;
+  margin-top: 10px;
+  border-top: 1px solid var(--card-border);
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.contact-card .field label {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: var(--text-3);
+  margin-bottom: 5px;
+}
+.contact-card .field input,
+.contact-card .field textarea {
+  width: 100%;
+  padding: 8px 10px;
+  background: var(--bg);
+  border: 1px solid var(--card-border);
+  color: var(--text);
+  font-family: var(--font);
+  font-size: 13px;
+  outline: none;
+}
+.contact-card .field textarea {
+  min-height: 60px;
+  resize: vertical;
+  font-family: var(--font);
+  font-size: 13px;
+}
+.contact-card .field input:focus,
+.contact-card .field textarea:focus { border-color: var(--text-2); }
+
+/* ── Team meta grid improvements ── */
+.team-id-display {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--text-3);
+  padding: 8px 10px;
+  background: var(--bg);
+  border: 1px solid var(--card-border);
+  border-style: dashed;
+  user-select: all;
+}
+
+/* ── Emoji picker suggestions ── */
+.emoji-field { position: relative; }
+.emoji-suggestions {
+  display: flex;
+  gap: 4px;
+  flex-wrap: wrap;
+  margin-top: 6px;
+}
+.emoji-pill {
+  font-size: 18px;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg);
+  border: 1px solid var(--card-border);
+  cursor: pointer;
+  border-radius: 2px;
+  transition: border-color 0.1s;
+}
+.emoji-pill:hover { border-color: var(--text-2); }
+
+/* ── Person meta improvements ── */
+.person-meta-grid .field label {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: var(--text-3);
+  margin-bottom: 5px;
+}
+.person-paid-row {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  padding-top: 4px;
+}
+
+/* ── Section item improvements ── */
+.section-item-label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: var(--text-3);
+  margin-bottom: 4px;
+  display: block;
+}
+.section-item textarea {
+  min-height: 140px;
+}
+.section-item textarea.schedule-content {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  min-height: 160px;
+}
+.toast {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%) translateY(-20px);
+  opacity: 0;
+  padding: 14px 24px;
+  border-radius: 6px;
+  font-family: var(--font-mono);
+  font-size: 14px;
+  font-weight: 500;
+  z-index: 9999;
+  transition: opacity 0.3s, transform 0.3s;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+  max-width: 90vw;
+  text-align: center;
+}
+.toast-visible {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+.toast-success {
+  background: #1a7a35;
+  color: #fff;
+}
+.toast-error {
+  background: #cc0000;
+  color: #fff;
+}
+
+/* ── Schedule editor ── */
+.sched-editor-label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: var(--text-3);
+  margin: 12px 0 8px;
+}
+.sched-edit-row {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  margin-bottom: 6px;
+}
+.sched-edit-row select,
+.sched-edit-row input {
+  padding: 7px 8px;
+  background: var(--bg);
+  border: 1px solid var(--card-border);
+  color: var(--text);
+  font-family: var(--font);
+  font-size: 13px;
+  outline: none;
+}
+.sched-edit-row select:focus,
+.sched-edit-row input:focus { border-color: var(--text-2); }
+.sched-edit-time { width: 120px; flex-shrink: 0; font-family: var(--font-mono); font-size: 12px; }
+.sched-edit-detail { flex: 1; min-width: 0; }
+.sched-edit-loc { width: 150px; flex-shrink: 0; }
+.sched-edit-label-input { flex: 1; font-weight: 600; font-family: var(--font-mono); font-size: 12px; text-transform: uppercase; letter-spacing: 0.5px; }
+.sched-edit-del {
+  width: 26px; height: 26px;
+  border: none; background: none;
+  color: var(--text-3); font-size: 16px;
+  cursor: pointer; flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+}
+.sched-edit-del:hover { color: #cc0000; }
+.sched-edit-btns { display: flex; gap: 6px; margin-top: 10px; }
+@media (max-width: 640px) {
+  .sched-edit-row { flex-wrap: wrap; }
+  .sched-edit-time { width: 100%; }
+  .sched-edit-loc { width: 100%; }
+}
+</style>
+</head>
+<body>
+
+<!-- Lock screen -->
+<div id="lock-screen">
+  <div class="lock-box">
+    <h1>Admin Portal</h1>
+    <p>Dripping Staff — restricted access</p>
+    <label for="pw-input">Password</label>
+    <input type="password" id="pw-input" placeholder="Enter password" autocomplete="current-password">
+    <div class="lock-error" id="pw-error"></div>
+    <button class="btn" onclick="checkPassword()">Enter</button>
+  </div>
+</div>
+
+<!-- App (hidden until auth) -->
+<div id="app" style="display:none">
+
+  <!-- Header -->
+  <div class="header">
+    <div class="header-inner">
+      <h1>Dripping Staff</h1>
+      <span class="header-badge">Admin</span>
+      <a href="index.html" style="margin-left:auto;font-family:var(--font-mono);font-size:12px;color:var(--text-2);text-decoration:none;padding:6px 12px;border:1px solid var(--card-border);border-radius:4px;">View Staff Site ↗</a>
+      <span class="draft-status" id="draft-status">—</span>
+    </div>
+  </div>
+
+  <!-- Tabs -->
+  <div class="tabs">
+    <button class="tab-btn active" onclick="switchTab('config')" id="tab-config">Config & Contacts</button>
+    <button class="tab-btn" onclick="switchTab('teams')" id="tab-teams">Teams</button>
+    <button class="tab-btn" onclick="switchTab('editor')" id="tab-editor" style="display:none">Team Editor</button>
+  </div>
+
+  <!-- Content -->
+  <div class="content">
+
+    <!-- Tab: Config & Contacts -->
+    <div class="tab-panel active" id="panel-config">
+      <div class="form-section">
+        <div class="form-section-title">Festival Config</div>
+        <div class="field-grid" id="config-fields"></div>
+      </div>
+      <div class="form-section">
+        <div class="form-section-title">Emergency Contacts</div>
+        <div class="contacts-card-list" id="contacts-rows"></div>
+        <div class="btn-row">
+          <button class="btn btn-secondary btn-sm" onclick="addContact()">+ Add Contact</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tab: Teams -->
+    <div class="tab-panel" id="panel-teams">
+      <div class="form-section">
+        <div class="form-section-title">All Teams</div>
+        <div class="teams-grid" id="teams-grid"></div>
+        <div class="btn-row">
+          <button class="btn btn-secondary btn-sm" onclick="addTeam()">+ Add Team</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tab: Team Editor -->
+    <div class="tab-panel" id="panel-editor">
+      <div class="team-editor">
+        <div class="team-editor-header">
+          <button class="back-btn" onclick="closeEditor()">← Back to Teams</button>
+          <h2 id="editor-title">Team Editor</h2>
+        </div>
+        <div id="editor-body"></div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Bottom bar -->
+  <div class="bottom-bar">
+    <div class="bottom-bar-inner">
+      <span class="bottom-bar-info" id="bottom-info">Edit data above, then publish to push changes live</span>
+      <button class="btn btn-secondary btn-sm" onclick="resetDraft()">Reset</button>
+      <button class="btn btn-secondary btn-sm" onclick="saveDraft()">Save Draft</button>
+      <button class="btn btn-secondary btn-sm" onclick="downloadBackup()">↓ Backup</button>
+      <button class="btn btn-publish" onclick="publish()">Publish Live ↗</button>
+    </div>
+  </div>
+
+</div>
+
+<script src="demo-data.js"></script>
+<script>
+// ── Auth ──────────────────────────────────────────────────────────────────
+
+const PASS_KEY = 'drip_admin_pass';
+const DRAFT_KEY = 'drip_admin_draft';
+const CORRECT_PASS = 'dripping2026';
+
+function checkPassword() {
+  const input = document.getElementById('pw-input').value.trim();
+  const stored = localStorage.getItem(PASS_KEY);
+
+  if (stored && input === stored) {
+    unlock();
+  } else if (!stored && input === CORRECT_PASS) {
+    localStorage.setItem(PASS_KEY, input);
+    unlock();
+  } else if (stored && input !== stored) {
+    document.getElementById('pw-error').textContent = 'Incorrect password.';
+  } else {
+    document.getElementById('pw-error').textContent = 'Incorrect password.';
+  }
+}
+
+document.getElementById('pw-input').addEventListener('keydown', e => {
+  if (e.key === 'Enter') checkPassword();
+});
+
+function unlock() {
+  document.getElementById('lock-screen').style.display = 'none';
+  document.getElementById('app').style.display = '';
+  initApp();
+}
+
+// Auto-unlock if password was saved before
+window.addEventListener('load', () => {
+  // Don't auto-unlock — always require password entry on each visit
+});
+
+// ── State ─────────────────────────────────────────────────────────────────
+
+let state = null;
+let currentTeamId = null;
+let currentPersonId = null;
+let autoSaveTimer = null;
+
+function deepClone(obj) {
+  return JSON.parse(JSON.stringify(obj));
+}
+
+async function initApp() {
+  const draft = localStorage.getItem(DRAFT_KEY);
+  if (draft) {
+    try {
+      state = JSON.parse(draft);
+      setDraftStatus('Draft loaded from localStorage');
+      renderAll();
+      return;
+    } catch(e) {}
+  }
+
+  // Try loading live data from API first
+  try {
+    const resp = await fetch('/api/data');
+    if (resp.ok) {
+      const result = await resp.json();
+      if (result.exists && result.data) {
+        state = deepClone(result.data);
+        setDraftStatus('Loaded live data from server');
+        renderAll();
+        return;
+      }
+    }
+  } catch(e) {}
+
+  // Fall back to baked-in demo data
+  state = deepClone(window.DEMO_DATA);
+  setDraftStatus('Loaded from demo-data.js');
+  renderAll();
+}
+
+function scheduleAutoSave() {
+  clearTimeout(autoSaveTimer);
+  autoSaveTimer = setTimeout(saveDraft, 800);
+}
+
+function saveDraft() {
+  localStorage.setItem(DRAFT_KEY, JSON.stringify(state));
+  setDraftStatus('Saved ' + new Date().toLocaleTimeString());
+  const el = document.getElementById('draft-status');
+  el.classList.add('saved');
+  setTimeout(() => el.classList.remove('saved'), 2000);
+}
+
+function setDraftStatus(msg) {
+  document.getElementById('draft-status').textContent = msg;
+}
+
+async function resetDraft() {
+  if (!confirm('Discard local draft and reload from the server? This cannot be undone.')) return;
+  localStorage.removeItem(DRAFT_KEY);
+  currentTeamId = null;
+  closeEditor();
+  initApp();
+}
+
+// ── Tabs ──────────────────────────────────────────────────────────────────
+
+function switchTab(name) {
+  document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('panel-' + name).classList.add('active');
+  document.getElementById('tab-' + name).classList.add('active');
+}
+
+function closeEditor() {
+  currentTeamId = null;
+  document.getElementById('tab-editor').style.display = 'none';
+  switchTab('teams');
+}
+
+// ── Render all ────────────────────────────────────────────────────────────
+
+function renderAll() {
+  renderConfig();
+  renderContacts();
+  renderTeamsGrid();
+}
+
+// ── Config ────────────────────────────────────────────────────────────────
+
+const CONFIG_LABELS = {
+  festival_name: 'Festival Name',
+  dates: 'Dates',
+  venue_name: 'Venue Name',
+  venue_address: 'Venue Address',
+  hotel_name: 'Hotel Name',
+  hotel_address: 'Hotel Address'
+};
+
+function renderConfig() {
+  const container = document.getElementById('config-fields');
+  container.innerHTML = '';
+  const cfg = state['_config'] || [];
+  cfg.forEach((item, idx) => {
+    const div = document.createElement('div');
+    div.className = 'field';
+    div.innerHTML = `
+      <label>${CONFIG_LABELS[item.key] || item.key}</label>
+      <input type="text" value="${esc(item.value)}" data-cfg-idx="${idx}">
+    `;
+    div.querySelector('input').addEventListener('input', e => {
+      state['_config'][idx].value = e.target.value;
+      scheduleAutoSave();
+    });
+    container.appendChild(div);
+  });
+}
+
+// ── Contacts ──────────────────────────────────────────────────────────────
+
+function renderContacts() {
+  const container = document.getElementById('contacts-rows');
+  container.innerHTML = '';
+  const contacts = state['_contacts'] || [];
+
+  if (contacts.length === 0) {
+    container.innerHTML = '<div class="empty-state">No contacts yet. Add one below.</div>';
+    return;
+  }
+
+  contacts.forEach((c, idx) => {
+    const card = document.createElement('div');
+    card.className = 'contact-card';
+
+    // Build hours options for the input — just use a labeled text input with placeholder
+    const isWA = !!(c.is_whatsapp && c.is_whatsapp !== '' && c.is_whatsapp !== 'false' && c.is_whatsapp !== '0');
+
+    card.innerHTML = `
+      <div class="contact-card-grid">
+        <div class="field">
+          <label>Name</label>
+          <input type="text" value="${esc(c.name)}" placeholder="e.g. Jules (she/her)" data-field="name" data-ci="${idx}">
+        </div>
+        <div class="field">
+          <label>Role / Title</label>
+          <input type="text" value="${esc(c.role)}" placeholder="e.g. Festival Director" data-field="role" data-ci="${idx}">
+        </div>
+        <div class="field">
+          <label>Phone</label>
+          <input type="tel" value="${esc(c.phone)}" placeholder="e.g. +44 7700 900000" data-field="phone" data-ci="${idx}">
+        </div>
+        <div class="field">
+          <label>Availability Hours</label>
+          <input type="text" value="${esc(c.hours)}" placeholder="e.g. 6am – 2pm" data-field="hours" data-ci="${idx}">
+        </div>
+        <div class="field" style="grid-column:1/-1">
+          <label>Description (optional)</label>
+          <textarea data-field="description" data-ci="${idx}" placeholder="Brief description of this contact's role or when to reach them" style="min-height:56px">${esc(c.description || '')}</textarea>
+        </div>
+      </div>
+      <div class="contact-card-footer">
+        <label class="toggle-field" style="margin:0;cursor:pointer">
+          <span class="toggle-switch">
+            <input type="checkbox" data-field="is_whatsapp" data-ci="${idx}" ${isWA ? 'checked' : ''}>
+            <span class="toggle-track"></span>
+          </span>
+          <span class="toggle-label">WhatsApp</span>
+        </label>
+        <button class="btn btn-danger btn-sm" onclick="removeContact(${idx})">Remove</button>
+      </div>
+    `;
+
+    // Wire text inputs and textarea
+    card.querySelectorAll('input[type="text"], input[type="tel"], textarea').forEach(inp => {
+      inp.addEventListener('input', e => {
+        const i = parseInt(e.target.dataset.ci);
+        const f = e.target.dataset.field;
+        state['_contacts'][i][f] = e.target.value;
+        scheduleAutoSave();
+      });
+    });
+
+    // Wire WhatsApp toggle
+    const waToggle = card.querySelector('input[type="checkbox"][data-field="is_whatsapp"]');
+    waToggle.addEventListener('change', e => {
+      const i = parseInt(e.target.dataset.ci);
+      state['_contacts'][i]['is_whatsapp'] = e.target.checked ? 'whatsapp' : '';
+      scheduleAutoSave();
+    });
+
+    container.appendChild(card);
+  });
+}
+
+function addContact() {
+  state['_contacts'].push({ name: '', role: '', phone: '', hours: '', is_whatsapp: '', description: '' });
+  renderContacts();
+  scheduleAutoSave();
+}
+
+function removeContact(idx) {
+  if (!confirm('Remove this contact?')) return;
+  state['_contacts'].splice(idx, 1);
+  renderContacts();
+  scheduleAutoSave();
+}
+
+// ── Teams grid ────────────────────────────────────────────────────────────
+
+function renderTeamsGrid() {
+  const container = document.getElementById('teams-grid');
+  container.innerHTML = '';
+  const teams = state['_teams'] || [];
+  teams.forEach((t, idx) => {
+    const card = document.createElement('div');
+    card.className = 'team-card' + (currentTeamId === t.team_id ? ' active' : '');
+    card.innerHTML = `
+      <div class="team-card-icon">${t.icon || '📋'}</div>
+      <div class="team-card-info">
+        <div class="team-card-name">${esc(t.team_name)}</div>
+        <div class="team-card-meta">${t.type} · ${t.team_id}</div>
+      </div>
+      <button class="team-card-del" title="Delete team" onclick="deleteTeam(event, '${t.team_id}')">×</button>
+    `;
+    card.addEventListener('click', () => openTeamEditor(t.team_id));
+    container.appendChild(card);
+  });
+}
+
+function slugify(str) {
+  return str.trim().toLowerCase().replace(/\s+/g, '_').replace(/[^a-z0-9_]/g, '');
+}
+
+function addTeam() {
+  const name = prompt('New team display name (e.g. "Bar Crew"):');
+  if (!name || !name.trim()) return;
+
+  let clean = slugify(name);
+  if (!clean) return alert('Could not generate a valid ID from that name.');
+
+  // Avoid collisions by appending a number
+  let candidate = clean;
+  let n = 2;
+  while (state['_teams'].find(t => t.team_id === candidate)) {
+    candidate = clean + '_' + n++;
+  }
+  clean = candidate;
+
+  state['_teams'].push({
+    team_id: clean,
+    team_name: name.trim(),
+    type: 'team',
+    icon: '📋',
+    captain_name: '',
+    captain_phone: ''
+  });
+  state[clean] = [];
+  renderTeamsGrid();
+  scheduleAutoSave();
+  // Open the editor so the user can set icon, type, etc.
+  openTeamEditor(clean);
+}
+
+function deleteTeam(e, teamId) {
+  e.stopPropagation();
+  const t = state['_teams'].find(t => t.team_id === teamId);
+  if (!confirm(`Delete team "${t?.team_name || teamId}"? This also removes all its data.`)) return;
+  state['_teams'] = state['_teams'].filter(t => t.team_id !== teamId);
+  delete state[teamId];
+  if (currentTeamId === teamId) closeEditor();
+  renderTeamsGrid();
+  scheduleAutoSave();
+}
+
+// ── Team editor ───────────────────────────────────────────────────────────
+
+function openTeamEditor(teamId) {
+  currentTeamId = teamId;
+  const teamMeta = state['_teams'].find(t => t.team_id === teamId);
+  if (!teamMeta) return;
+
+  document.getElementById('tab-editor').style.display = '';
+  document.getElementById('editor-title').textContent = (teamMeta.icon || '') + ' ' + teamMeta.team_name;
+  switchTab('editor');
+  renderTeamsGrid(); // update active state
+
+  if (teamMeta.type === 'individual') {
+    renderIndividualEditor(teamId, teamMeta);
+  } else {
+    renderTeamEditor(teamId, teamMeta);
+  }
+}
+
+// ── Team (flat sections) editor ────────────────────────────────────────────
+
+function renderTeamEditor(teamId, teamMeta) {
+  const body = document.getElementById('editor-body');
+  body.innerHTML = '';
+
+  // Meta fields
+  body.appendChild(makeTeamMetaFields(teamId, teamMeta));
+
+  // Section label
+  const label = document.createElement('div');
+  label.className = 'section-divider';
+  label.textContent = 'Sections';
+  body.appendChild(label);
+
+  // Section list container
+  const listWrap = document.createElement('div');
+  listWrap.id = 'section-list-wrap';
+  body.appendChild(listWrap);
+
+  renderTeamSections(teamId);
+
+  const addBtn = document.createElement('button');
+  addBtn.className = 'btn btn-secondary btn-sm';
+  addBtn.textContent = '+ Add Section';
+  addBtn.onclick = () => {
+    const rows = state[teamId];
+    rows.push({ section: '', content: '' });
+    renderTeamSections(teamId);
+    scheduleAutoSave();
+  };
+  body.appendChild(addBtn);
+}
+
+function renderTeamSections(teamId) {
+  const wrap = document.getElementById('section-list-wrap');
+  if (!wrap) return;
+  wrap.innerHTML = '';
+  const rows = state[teamId] || [];
+
+  if (rows.length === 0) {
+    wrap.innerHTML = '<div class="empty-state">No sections yet. Add one below.</div>';
+    return;
+  }
+
+  const list = document.createElement('div');
+  list.className = 'section-list';
+  rows.forEach((row, idx) => {
+    list.appendChild(makeSectionItem(row, idx, {
+      onTitleChange: (v) => { state[teamId][idx].section = v; scheduleAutoSave(); },
+      onContentChange: (v) => { state[teamId][idx].content = v; scheduleAutoSave(); },
+      onDelete: () => { state[teamId].splice(idx, 1); renderTeamSections(teamId); scheduleAutoSave(); },
+      onMoveUp: idx > 0 ? () => {
+        const arr = state[teamId];
+        [arr[idx - 1], arr[idx]] = [arr[idx], arr[idx - 1]];
+        renderTeamSections(teamId);
+        scheduleAutoSave();
+      } : null,
+      onMoveDown: idx < rows.length - 1 ? () => {
+        const arr = state[teamId];
+        [arr[idx], arr[idx + 1]] = [arr[idx + 1], arr[idx]];
+        renderTeamSections(teamId);
+        scheduleAutoSave();
+      } : null,
+    }));
+  });
+  wrap.appendChild(list);
+}
+
+// ── Individual type editor ─────────────────────────────────────────────────
+
+function renderIndividualEditor(teamId, teamMeta) {
+  const body = document.getElementById('editor-body');
+  body.innerHTML = '';
+
+  // Meta fields
+  body.appendChild(makeTeamMetaFields(teamId, teamMeta));
+
+  const rows = state[teamId] || [];
+
+  // Shared sections
+  const sharedRows = rows.filter(r => r.person_id === '_shared' && (r.section || r.content));
+  const sharedLabel = document.createElement('div');
+  sharedLabel.className = 'section-divider';
+  sharedLabel.textContent = 'Shared Sections (shown to all)';
+  body.appendChild(sharedLabel);
+
+  const sharedListWrap = document.createElement('div');
+  sharedListWrap.id = 'shared-section-list-wrap';
+  body.appendChild(sharedListWrap);
+  renderSharedSections(teamId);
+
+  const addSharedBtn = document.createElement('button');
+  addSharedBtn.className = 'btn btn-secondary btn-sm';
+  addSharedBtn.textContent = '+ Add Shared Section';
+  addSharedBtn.style.marginBottom = '24px';
+  addSharedBtn.onclick = () => {
+    // Insert shared section before first non-shared row
+    const arr = state[teamId];
+    const lastSharedIdx = arr.reduce((acc, r, i) => r.person_id === '_shared' ? i : acc, -1);
+    arr.splice(lastSharedIdx + 1, 0, { person_id: '_shared', name: '', phone: '', role: '', section: '', content: '' });
+    renderSharedSections(teamId);
+    scheduleAutoSave();
+  };
+  body.appendChild(addSharedBtn);
+
+  // People
+  const peopleLabel = document.createElement('div');
+  peopleLabel.className = 'section-divider';
+  peopleLabel.textContent = 'People';
+  body.appendChild(peopleLabel);
+
+  const peopleListWrap = document.createElement('div');
+  peopleListWrap.id = 'people-list-wrap';
+  body.appendChild(peopleListWrap);
+  renderPeopleList(teamId);
+
+  const addPersonBtn = document.createElement('button');
+  addPersonBtn.className = 'btn btn-secondary btn-sm';
+  addPersonBtn.textContent = '+ Add Person';
+  addPersonBtn.onclick = () => {
+    const nameInput = prompt('New person\'s name (e.g. "Jules (he/him)"):');
+    if (!nameInput || !nameInput.trim()) return;
+    let clean = slugify(nameInput.replace(/\(.*?\)/g, '').trim()) || 'person';
+    // Avoid collisions
+    const existing = new Set((state[teamId] || []).map(r => r.person_id));
+    let candidate = clean;
+    let n = 2;
+    while (existing.has(candidate)) { candidate = clean + '_' + n++; }
+    clean = candidate;
+    state[teamId].push({ person_id: clean, name: nameInput.trim(), phone: '', role: '', paid: '', section: '', content: '' });
+    renderPeopleList(teamId);
+    scheduleAutoSave();
+  };
+  body.appendChild(addPersonBtn);
+}
+
+function renderSharedSections(teamId) {
+  const wrap = document.getElementById('shared-section-list-wrap');
+  if (!wrap) return;
+  wrap.innerHTML = '';
+  const arr = state[teamId] || [];
+  const sharedIndices = arr.reduce((acc, r, i) => {
+    if (r.person_id === '_shared') acc.push(i);
+    return acc;
+  }, []);
+
+  if (sharedIndices.length === 0) {
+    wrap.innerHTML = '<div class="empty-state">No shared sections. Add one below.</div>';
+    return;
+  }
+
+  const list = document.createElement('div');
+  list.className = 'section-list';
+  sharedIndices.forEach((absIdx, relIdx) => {
+    const row = arr[absIdx];
+    list.appendChild(makeSectionItem(row, relIdx, {
+      onTitleChange: (v) => { state[teamId][absIdx].section = v; scheduleAutoSave(); },
+      onContentChange: (v) => { state[teamId][absIdx].content = v; scheduleAutoSave(); },
+      onDelete: () => { state[teamId].splice(absIdx, 1); renderSharedSections(teamId); scheduleAutoSave(); },
+      onMoveUp: relIdx > 0 ? () => {
+        const prevAbsIdx = sharedIndices[relIdx - 1];
+        const tmp = state[teamId][absIdx];
+        state[teamId][absIdx] = state[teamId][prevAbsIdx];
+        state[teamId][prevAbsIdx] = tmp;
+        renderSharedSections(teamId);
+        scheduleAutoSave();
+      } : null,
+      onMoveDown: relIdx < sharedIndices.length - 1 ? () => {
+        const nextAbsIdx = sharedIndices[relIdx + 1];
+        const tmp = state[teamId][absIdx];
+        state[teamId][absIdx] = state[teamId][nextAbsIdx];
+        state[teamId][nextAbsIdx] = tmp;
+        renderSharedSections(teamId);
+        scheduleAutoSave();
+      } : null,
+    }));
+  });
+  wrap.appendChild(list);
+}
+
+function renderPeopleList(teamId) {
+  const wrap = document.getElementById('people-list-wrap');
+  if (!wrap) return;
+  wrap.innerHTML = '';
+  const arr = state[teamId] || [];
+
+  // Get unique people (non-shared)
+  const people = [];
+  const seen = new Set();
+  arr.forEach(r => {
+    if (r.person_id && r.person_id !== '_shared' && !seen.has(r.person_id)) {
+      seen.add(r.person_id);
+      people.push(r.person_id);
+    }
+  });
+
+  if (people.length === 0) {
+    wrap.innerHTML = '<div class="empty-state">No people yet. Add one below.</div>';
+    return;
+  }
+
+  const list = document.createElement('div');
+  list.className = 'people-list';
+
+  people.forEach(pid => {
+    const personRows = arr.filter(r => r.person_id === pid);
+    const headerRow = personRows.find(r => r.name) || personRows[0] || {};
+    const sections = personRows.filter(r => r.section || r.content);
+
+    const item = document.createElement('div');
+    item.className = 'person-item';
+    item.innerHTML = `
+      <div class="person-header" onclick="togglePerson('${teamId}', '${pid}', this)">
+        <div class="person-name">${esc(headerRow.name || pid)}</div>
+        <div class="person-role">${esc(headerRow.role || '')}</div>
+        <span style="font-family:var(--font-mono);font-size:11px;color:var(--text-3);margin-left:auto;margin-right:8px">${sections.length} section${sections.length !== 1 ? 's' : ''}</span>
+        <button class="btn btn-danger btn-sm" style="margin-right:4px" onclick="deletePerson(event,'${teamId}','${pid}')">Remove</button>
+        <span class="person-expand-icon">▼</span>
+      </div>
+      <div class="person-body" id="person-body-${teamId}-${pid}"></div>
+    `;
+    list.appendChild(item);
+  });
+
+  wrap.appendChild(list);
+
+  people.forEach(pid => renderPersonBody(teamId, pid));
+}
+
+function togglePerson(teamId, pid, headerEl) {
+  const body = document.getElementById(`person-body-${teamId}-${pid}`);
+  body.classList.toggle('open');
+  const icon = headerEl.querySelector('.person-expand-icon');
+  icon.textContent = body.classList.contains('open') ? '▲' : '▼';
+}
+
+function renderPersonBody(teamId, pid) {
+  const body = document.getElementById(`person-body-${teamId}-${pid}`);
+  if (!body) return;
+  const arr = state[teamId];
+  const personRows = arr.filter(r => r.person_id === pid);
+  const absIndicesAll = arr.reduce((acc, r, i) => { if (r.person_id === pid) acc.push(i); return acc; }, []);
+
+  // Header row (first row that has name, or just first)
+  let headerAbsIdx = absIndicesAll.find(i => arr[i].name !== undefined) ?? absIndicesAll[0];
+  const headerRow = arr[headerAbsIdx] || {};
+
+  body.innerHTML = '';
+
+  // Person meta
+  const metaGrid = document.createElement('div');
+  metaGrid.className = 'person-meta-grid';
+
+  const PARKING_OPTIONS = [
+    { value: '',          label: '— No parking assigned —' },
+    { value: 'ga',        label: 'General Admission' },
+    { value: 'paid_staff',label: 'Paid Staff / Artists' },
+    { value: 'special',   label: 'Special Access (in front of Inn)' }
+  ];
+
+  const personFieldDefs = [
+    { field: 'name',  label: 'Name',  type: 'text', placeholder: 'e.g. Jules (he/him)' },
+    { field: 'phone', label: 'Phone', type: 'tel',  placeholder: 'e.g. +44 7700 900000' },
+    { field: 'role',  label: 'Role',  type: 'text', placeholder: 'e.g. Stage Manager' },
+  ];
+
+  personFieldDefs.forEach(({ field, label, type, placeholder }) => {
+    const d = document.createElement('div');
+    d.className = 'field';
+    d.innerHTML = `<label>${label}</label><input type="${type}" value="${esc(headerRow[field] || '')}" placeholder="${placeholder}">`;
+    d.querySelector('input').addEventListener('input', e => {
+      if (headerAbsIdx === undefined) return;
+      state[teamId][headerAbsIdx][field] = e.target.value;
+      const nameEl = body.closest('.person-item').querySelector('.person-name');
+      const roleEl = body.closest('.person-item').querySelector('.person-role');
+      if (field === 'name') nameEl.textContent = e.target.value || pid;
+      if (field === 'role') roleEl.textContent = e.target.value;
+      scheduleAutoSave();
+    });
+    metaGrid.appendChild(d);
+  });
+
+  // Paid staff toggle
+  const isPaid = !!(headerRow.paid && headerRow.paid !== '' && headerRow.paid !== 'false' && headerRow.paid !== '0' && headerRow.paid !== 'no');
+  const paidDiv = document.createElement('div');
+  paidDiv.className = 'person-paid-row';
+  paidDiv.innerHTML = `
+    <label class="toggle-field" style="margin:0;cursor:pointer">
+      <span class="toggle-switch">
+        <input type="checkbox" id="paid-toggle-${teamId}-${pid}" ${isPaid ? 'checked' : ''}>
+        <span class="toggle-track"></span>
+      </span>
+      <span class="toggle-label">Paid Staff</span>
+    </label>
+  `;
+  paidDiv.querySelector('input[type="checkbox"]').addEventListener('change', e => {
+    if (headerAbsIdx === undefined) return;
+    state[teamId][headerAbsIdx].paid = e.target.checked ? 'yes' : '';
+    scheduleAutoSave();
+  });
+  metaGrid.appendChild(paidDiv);
+
+  body.appendChild(metaGrid);
+
+  // Parking dropdown
+  const parkingDiv = document.createElement('div');
+  parkingDiv.className = 'form-section';
+  parkingDiv.style.cssText = 'margin-bottom:16px;';
+  const parkingLabel = document.createElement('label');
+  parkingLabel.style.cssText = 'display:block;font-family:var(--font-mono);font-size:10px;letter-spacing:1.2px;text-transform:uppercase;color:var(--text-3);margin-bottom:6px;';
+  parkingLabel.textContent = 'Parking Type';
+  const parkingSel = document.createElement('select');
+  parkingSel.style.cssText = 'width:100%;max-width:320px;padding:8px 10px;background:var(--card);border:1px solid var(--card-border);color:var(--text);font-family:var(--font-mono);font-size:12px;outline:none;';
+  PARKING_OPTIONS.forEach(opt => {
+    const o = document.createElement('option');
+    o.value = opt.value;
+    o.textContent = opt.label;
+    if ((headerRow.parking || '') === opt.value) o.selected = true;
+    parkingSel.appendChild(o);
+  });
+  parkingSel.addEventListener('change', e => {
+    if (headerAbsIdx === undefined) return;
+    state[teamId][headerAbsIdx].parking = e.target.value;
+    scheduleAutoSave();
+  });
+  parkingDiv.appendChild(parkingLabel);
+  parkingDiv.appendChild(parkingSel);
+  body.appendChild(parkingDiv);
+
+  // Rider PDF upload (stage_managers and production only)
+  if (teamId === 'stage_managers') {
+    const riderDiv = document.createElement('div');
+    riderDiv.className = 'form-section';
+    riderDiv.style.cssText = 'margin-bottom:16px;padding:14px;background:var(--bg);border:1px solid var(--card-border);';
+
+    const riderHeading = document.createElement('div');
+    riderHeading.style.cssText = 'font-family:var(--font-mono);font-size:10px;letter-spacing:1.2px;text-transform:uppercase;color:var(--text-3);margin-bottom:10px;';
+    riderHeading.textContent = 'Full Rider PDF';
+    riderDiv.appendChild(riderHeading);
+
+    // Title input
+    const titleLabel = document.createElement('label');
+    titleLabel.style.cssText = 'display:block;font-family:var(--font-mono);font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--text-3);margin-bottom:4px;';
+    titleLabel.textContent = 'PDF Title';
+    const titleInput = document.createElement('input');
+    titleInput.type = 'text';
+    titleInput.placeholder = 'e.g. Friday Rider, Full Tech Rider';
+    titleInput.value = headerRow.rider_pdf_title || '';
+    titleInput.style.cssText = 'width:100%;padding:7px 10px;background:var(--card);border:1px solid var(--card-border);color:var(--text);font-family:var(--font);font-size:13px;outline:none;margin-bottom:10px;';
+    titleInput.addEventListener('input', e => {
+      if (headerAbsIdx === undefined) return;
+      state[teamId][headerAbsIdx].rider_pdf_title = e.target.value;
+      scheduleAutoSave();
+    });
+    riderDiv.appendChild(titleLabel);
+    riderDiv.appendChild(titleInput);
+
+    // Current file status
+    const currentUrl = headerRow.rider_pdf || '';
+    const riderStatus = document.createElement('div');
+    riderStatus.id = `rider-status-${teamId}-${pid}`;
+    riderStatus.style.cssText = 'font-family:var(--font-mono);font-size:12px;margin-bottom:8px;display:flex;align-items:center;gap:10px;';
+    if (currentUrl) {
+      riderStatus.innerHTML = `<a href="${currentUrl}" target="_blank" style="color:var(--success)">✓ PDF attached ↗</a><button class="btn btn-danger btn-sm" onclick="clearRiderPDF('${teamId}','${pid}')">Delete</button>`;
+    } else {
+      riderStatus.innerHTML = `<span style="color:var(--text-3)">No PDF attached</span>`;
+    }
+    riderDiv.appendChild(riderStatus);
+
+    // File upload row
+    const fileRow = document.createElement('div');
+    fileRow.style.cssText = 'display:flex;gap:8px;align-items:center;';
+    const fileInput = document.createElement('input');
+    fileInput.type = 'file';
+    fileInput.accept = 'application/pdf';
+    fileInput.style.cssText = 'font-family:var(--font-mono);font-size:12px;color:var(--text-2);flex:1;';
+    fileInput.id = `rider-file-${teamId}-${pid}`;
+    const uploadBtn = document.createElement('button');
+    uploadBtn.className = 'btn btn-secondary btn-sm';
+    uploadBtn.textContent = 'Upload PDF';
+    uploadBtn.onclick = () => uploadRiderPDF(teamId, pid, fileInput, headerAbsIdx);
+    fileRow.appendChild(fileInput);
+    fileRow.appendChild(uploadBtn);
+    riderDiv.appendChild(fileRow);
+
+    const uploadMsg = document.createElement('div');
+    uploadMsg.id = `rider-msg-${teamId}-${pid}`;
+    uploadMsg.style.cssText = 'font-family:var(--font-mono);font-size:11px;margin-top:6px;color:var(--text-3);';
+    riderDiv.appendChild(uploadMsg);
+
+    body.appendChild(riderDiv);
+  }
+
+  // Person sections
+  const secLabel = document.createElement('div');
+  secLabel.style.cssText = 'font-family:var(--font-mono);font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--text-3);padding:8px 0 10px;';
+  secLabel.textContent = 'Sections';
+  body.appendChild(secLabel);
+
+  const secListWrap = document.createElement('div');
+  secListWrap.id = `psec-wrap-${teamId}-${pid}`;
+  body.appendChild(secListWrap);
+  renderPersonSections(teamId, pid);
+
+  const addSecBtn = document.createElement('button');
+  addSecBtn.className = 'btn btn-secondary btn-sm';
+  addSecBtn.textContent = '+ Add Section';
+  addSecBtn.onclick = () => {
+    // Find last row for this person, insert after it
+    const lastIdx = absIndicesAll[absIndicesAll.length - 1];
+    state[teamId].splice(lastIdx + 1, 0, { person_id: pid, name: '', phone: '', role: '', section: '', content: '' });
+    renderPersonSections(teamId, pid);
+    renderPeopleList(teamId); // refresh count
+    scheduleAutoSave();
+  };
+  body.appendChild(addSecBtn);
+}
+
+function renderPersonSections(teamId, pid) {
+  const wrap = document.getElementById(`psec-wrap-${teamId}-${pid}`);
+  if (!wrap) return;
+  wrap.innerHTML = '';
+  const arr = state[teamId];
+  const sectionIndices = arr.reduce((acc, r, i) => {
+    if (r.person_id === pid && (r.section || r.content)) acc.push(i);
+    return acc;
+  }, []);
+
+  if (sectionIndices.length === 0) {
+    wrap.innerHTML = '<div class="empty-state" style="margin-bottom:8px">No sections. Add one below.</div>';
+    return;
+  }
+
+  const list = document.createElement('div');
+  list.className = 'section-list';
+  sectionIndices.forEach((absIdx, relIdx) => {
+    const row = arr[absIdx];
+    list.appendChild(makeSectionItem(row, relIdx, {
+      onTitleChange: (v) => { state[teamId][absIdx].section = v; scheduleAutoSave(); },
+      onContentChange: (v) => { state[teamId][absIdx].content = v; scheduleAutoSave(); },
+      onDelete: () => {
+        state[teamId].splice(absIdx, 1);
+        renderPersonSections(teamId, pid);
+        // update section count in header
+        const arr2 = state[teamId];
+        const cnt = arr2.filter(r => r.person_id === pid && (r.section || r.content)).length;
+        const item = wrap.closest('.person-item');
+        if (item) {
+          const countEl = item.querySelector('.person-header > span');
+          if (countEl) countEl.textContent = `${cnt} section${cnt !== 1 ? 's' : ''}`;
+        }
+        scheduleAutoSave();
+      },
+      onMoveUp: relIdx > 0 ? () => {
+        const prevAbsIdx = sectionIndices[relIdx - 1];
+        [state[teamId][absIdx], state[teamId][prevAbsIdx]] = [state[teamId][prevAbsIdx], state[teamId][absIdx]];
+        renderPersonSections(teamId, pid);
+        scheduleAutoSave();
+      } : null,
+      onMoveDown: relIdx < sectionIndices.length - 1 ? () => {
+        const nextAbsIdx = sectionIndices[relIdx + 1];
+        [state[teamId][absIdx], state[teamId][nextAbsIdx]] = [state[teamId][nextAbsIdx], state[teamId][absIdx]];
+        renderPersonSections(teamId, pid);
+        scheduleAutoSave();
+      } : null,
+    }));
+  });
+  wrap.appendChild(list);
+}
+
+function deletePerson(e, teamId, pid) {
+  e.stopPropagation();
+  if (!confirm(`Remove all rows for "${pid}" from this team?`)) return;
+  state[teamId] = state[teamId].filter(r => r.person_id !== pid);
+  renderPeopleList(teamId);
+  scheduleAutoSave();
+}
+
+// ── Shared helpers ────────────────────────────────────────────────────────
+
+const COMMON_TEAM_EMOJIS = ['📋','🎪','🎵','🎶','🎭','🍺','🍻','🎨','🔧','⚡','🚀','🎤','🥁','🎸','🎺','🎷','🎻','🪗','💡','📢','🔊','🏕️','🌿','🎠','🎡','🌟'];
+
+function makeTeamMetaFields(teamId, teamMeta) {
+  const teamIdx = state['_teams'].findIndex(t => t.team_id === teamId);
+  const grid = document.createElement('div');
+  grid.className = 'team-meta-grid';
+
+  // Team Name field
+  const nameDiv = document.createElement('div');
+  nameDiv.className = 'field';
+  nameDiv.innerHTML = `
+    <label>Team Name</label>
+    <input type="text" value="${esc(teamMeta.team_name || '')}" placeholder="e.g. Bar Crew" data-field="team_name">
+  `;
+  nameDiv.querySelector('input').addEventListener('input', e => {
+    state['_teams'][teamIdx].team_name = e.target.value;
+    document.getElementById('editor-title').textContent = (state['_teams'][teamIdx].icon || '') + ' ' + e.target.value;
+    scheduleAutoSave();
+  });
+  grid.appendChild(nameDiv);
+
+  // Type dropdown
+  const typeDiv = document.createElement('div');
+  typeDiv.className = 'field';
+  typeDiv.innerHTML = `
+    <label>Type</label>
+    <select data-field="type">
+      <option value="team" ${teamMeta.type === 'team' ? 'selected' : ''}>team — shared schedule view</option>
+      <option value="individual" ${teamMeta.type === 'individual' ? 'selected' : ''}>individual — per-person schedules</option>
+    </select>
+  `;
+  typeDiv.querySelector('select').addEventListener('change', e => {
+    state['_teams'][teamIdx].type = e.target.value;
+    scheduleAutoSave();
+  });
+  grid.appendChild(typeDiv);
+
+  // Icon / emoji field with suggestions
+  const iconDiv = document.createElement('div');
+  iconDiv.className = 'field emoji-field';
+  iconDiv.innerHTML = `
+    <label>Icon (emoji)</label>
+    <input type="text" value="${esc(teamMeta.icon || '')}" placeholder="e.g. 🎪" data-field="icon" maxlength="4" style="font-size:20px;padding:6px 10px;">
+    <div class="emoji-suggestions" id="emoji-suggestions-${teamId}"></div>
+  `;
+  const iconInput = iconDiv.querySelector('input');
+  iconInput.addEventListener('input', e => {
+    state['_teams'][teamIdx].icon = e.target.value;
+    document.getElementById('editor-title').textContent = e.target.value + ' ' + state['_teams'][teamIdx].team_name;
+    scheduleAutoSave();
+  });
+  // Populate emoji pills
+  const emojiWrap = iconDiv.querySelector(`#emoji-suggestions-${teamId}`);
+  COMMON_TEAM_EMOJIS.forEach(em => {
+    const pill = document.createElement('button');
+    pill.type = 'button';
+    pill.className = 'emoji-pill';
+    pill.textContent = em;
+    pill.title = em;
+    pill.addEventListener('click', () => {
+      iconInput.value = em;
+      state['_teams'][teamIdx].icon = em;
+      document.getElementById('editor-title').textContent = em + ' ' + state['_teams'][teamIdx].team_name;
+      scheduleAutoSave();
+    });
+    emojiWrap.appendChild(pill);
+  });
+  grid.appendChild(iconDiv);
+
+  // Team ID — read-only display
+  const idDiv = document.createElement('div');
+  idDiv.className = 'field';
+  idDiv.innerHTML = `
+    <label>Team ID <span style="color:var(--text-3);font-weight:normal;letter-spacing:0">(read-only)</span></label>
+    <div class="team-id-display" title="Click to copy">${esc(teamId)}</div>
+  `;
+  idDiv.querySelector('.team-id-display').addEventListener('click', () => {
+    navigator.clipboard.writeText(teamId).then(() => showToast('Team ID copied', 'success'));
+  });
+  grid.appendChild(idDiv);
+
+  return grid;
+}
+
+// ── Schedule editor helpers ───────────────────────────────────────────────
+
+const SCHED_TIMES = (() => {
+  const t = [];
+  for (let i = 0; i < 48; i++) {
+    const totalMin = ((12 * 60) + (i * 30)) % (24 * 60);
+    const h = Math.floor(totalMin / 60);
+    const m = totalMin % 60;
+    const hr12 = h === 0 ? 12 : (h > 12 ? h - 12 : h);
+    const ampm = h < 12 ? 'AM' : 'PM';
+    t.push(`${hr12}:${m === 0 ? '00' : '30'} ${ampm}`);
+  }
+  return t;
+})();
+
+const VENUES = ['The Inn', 'Outside Inn', 'Open Air', 'The Court', 'Hammock Grove', 'The Lake', 'The Barn', 'Lakeside Amphitheater'];
+const VENUE_RE = new RegExp('\\s*\\((' + VENUES.join('|').replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')\\)\\s*$');
+
+function parseSchedContent(content) {
+  if (!content) return [];
+  return content.split('\n').filter(l => l.trim()).map(line => {
+    const pm = line.match(/^(.+?)\s*\|\s*(.+)$/);
+    if (pm) {
+      let detail = pm[2].trim();
+      let location = '';
+      const lm = detail.match(VENUE_RE);
+      if (lm) { location = lm[1]; detail = detail.slice(0, lm.index).trim(); }
+      return { type: 'entry', time: pm[1].trim(), detail, location };
+    }
+    return { type: 'label', text: line.trim() };
+  });
+}
+
+function serializeSchedRows(rows) {
+  return rows.map(r => {
+    if (r.type === 'entry') {
+      let s = `${r.time || 'TBD'} | ${r.detail || ''}`;
+      if (r.location) s += ` (${r.location})`;
+      return s;
+    }
+    return r.text || '';
+  }).join('\n');
+}
+
+function buildScheduleEditor(container, content, onChange) {
+  const rows = parseSchedContent(content);
+
+  function rebuild() { onChange(serializeSchedRows(rows)); }
+
+  function render() {
+    container.innerHTML = '';
+
+    const label = document.createElement('div');
+    label.className = 'sched-editor-label';
+    label.textContent = 'Schedule Entries';
+    container.appendChild(label);
+
+    rows.forEach((r, i) => {
+      const el = document.createElement('div');
+      el.className = 'sched-edit-row';
+
+      if (r.type === 'entry') {
+        const timeSel = document.createElement('select');
+        timeSel.className = 'sched-edit-time';
+        const ph = document.createElement('option');
+        ph.value = ''; ph.textContent = 'Time...';
+        timeSel.appendChild(ph);
+        const tbd = document.createElement('option');
+        tbd.value = 'TBD'; tbd.textContent = 'TBD';
+        if (r.time === 'TBD') tbd.selected = true;
+        timeSel.appendChild(tbd);
+        const hasCustom = r.time && r.time !== 'TBD' && !SCHED_TIMES.includes(r.time);
+        if (hasCustom) {
+          const co = document.createElement('option');
+          co.value = r.time; co.textContent = r.time; co.selected = true;
+          timeSel.appendChild(co);
+        }
+        SCHED_TIMES.forEach(t => {
+          const o = document.createElement('option');
+          o.value = t; o.textContent = t;
+          if (t === r.time) o.selected = true;
+          timeSel.appendChild(o);
+        });
+        timeSel.addEventListener('change', e => { r.time = e.target.value; rebuild(); });
+
+        const detIn = document.createElement('input');
+        detIn.type = 'text';
+        detIn.className = 'sched-edit-detail';
+        detIn.value = r.detail;
+        detIn.placeholder = 'Artist, description, phone...';
+        detIn.addEventListener('input', e => { r.detail = e.target.value; rebuild(); });
+
+        const locSel = document.createElement('select');
+        locSel.className = 'sched-edit-loc';
+        const le = document.createElement('option');
+        le.value = ''; le.textContent = 'Location...';
+        locSel.appendChild(le);
+        VENUES.forEach(v => {
+          const o = document.createElement('option');
+          o.value = v; o.textContent = v;
+          if (v === r.location) o.selected = true;
+          locSel.appendChild(o);
+        });
+        locSel.addEventListener('change', e => { r.location = e.target.value; rebuild(); });
+
+        el.appendChild(timeSel);
+        el.appendChild(detIn);
+        el.appendChild(locSel);
+      } else {
+        const li = document.createElement('input');
+        li.type = 'text';
+        li.className = 'sched-edit-label-input';
+        li.value = r.text;
+        li.placeholder = 'Sub-heading (e.g. Performances, Portraits)';
+        li.addEventListener('input', e => { r.text = e.target.value; rebuild(); });
+        el.appendChild(li);
+      }
+
+      const del = document.createElement('button');
+      del.className = 'sched-edit-del';
+      del.textContent = '×';
+      del.onclick = () => { rows.splice(i, 1); rebuild(); render(); };
+      el.appendChild(del);
+
+      container.appendChild(el);
+    });
+
+    const btns = document.createElement('div');
+    btns.className = 'sched-edit-btns';
+    const addE = document.createElement('button');
+    addE.className = 'btn btn-secondary btn-sm';
+    addE.textContent = '+ Add Entry';
+    addE.onclick = () => { rows.push({ type: 'entry', time: '', detail: '', location: '' }); rebuild(); render(); };
+    const addL = document.createElement('button');
+    addL.className = 'btn btn-secondary btn-sm';
+    addL.textContent = '+ Add Label';
+    addL.onclick = () => { rows.push({ type: 'label', text: '' }); rebuild(); render(); };
+    btns.appendChild(addE);
+    btns.appendChild(addL);
+    container.appendChild(btns);
+  }
+
+  render();
+}
+
+// ── Section item builder ─────────────────────────────────────────────────
+
+function makeSectionItem(row, idx, { onTitleChange, onContentChange, onDelete, onMoveUp, onMoveDown }) {
+  const item = document.createElement('div');
+  item.className = 'section-item';
+
+  const head = document.createElement('div');
+  head.className = 'section-item-head';
+
+  const titleLabel = document.createElement('span');
+  titleLabel.className = 'section-item-label';
+  titleLabel.textContent = 'Section Title';
+
+  const titleInput = document.createElement('input');
+  titleInput.type = 'text';
+  titleInput.value = row.section || '';
+  titleInput.placeholder = 'e.g. Thursday, Friday, Your Assignment, Notes';
+
+  const moveBtns = document.createElement('div');
+  moveBtns.className = 'move-btns';
+  if (onMoveUp) {
+    const upBtn = document.createElement('button');
+    upBtn.className = 'move-btn';
+    upBtn.textContent = '▲';
+    upBtn.title = 'Move up';
+    upBtn.onclick = onMoveUp;
+    moveBtns.appendChild(upBtn);
+  }
+  if (onMoveDown) {
+    const downBtn = document.createElement('button');
+    downBtn.className = 'move-btn';
+    downBtn.textContent = '▼';
+    downBtn.title = 'Move down';
+    downBtn.onclick = onMoveDown;
+    moveBtns.appendChild(downBtn);
+  }
+
+  const delBtn = document.createElement('button');
+  delBtn.className = 'del-section-btn';
+  delBtn.textContent = '×';
+  delBtn.title = 'Remove section';
+  delBtn.onclick = onDelete;
+
+  const titleCol = document.createElement('div');
+  titleCol.style.cssText = 'flex:1;display:flex;flex-direction:column;gap:4px;';
+  titleCol.appendChild(titleLabel);
+  titleCol.appendChild(titleInput);
+
+  head.appendChild(titleCol);
+  head.appendChild(moveBtns);
+  head.appendChild(delBtn);
+
+  const contentWrap = document.createElement('div');
+  let prevMode = null;
+
+  function renderContentArea() {
+    const isSched = /^(thursday|friday|saturday|sunday)/i.test(row.section || '');
+    if (isSched === prevMode) return;
+    prevMode = isSched;
+    contentWrap.innerHTML = '';
+
+    if (isSched) {
+      buildScheduleEditor(contentWrap, row.content || '', v => {
+        row.content = v;
+        onContentChange(v);
+      });
+    } else {
+      const cl = document.createElement('span');
+      cl.className = 'section-item-label';
+      cl.style.marginTop = '10px';
+      cl.textContent = 'Content';
+      const ta = document.createElement('textarea');
+      ta.value = row.content || '';
+      ta.placeholder = 'Use - for bullet points, **text** for bold';
+      ta.className = 'schedule-content';
+      ta.addEventListener('input', e => {
+        row.content = e.target.value;
+        onContentChange(e.target.value);
+      });
+      contentWrap.appendChild(cl);
+      contentWrap.appendChild(ta);
+    }
+  }
+
+  titleInput.addEventListener('input', e => {
+    row.section = e.target.value;
+    onTitleChange(e.target.value);
+    renderContentArea();
+  });
+
+  item.appendChild(head);
+  item.appendChild(contentWrap);
+  renderContentArea();
+  return item;
+}
+
+// ── Rider PDF ─────────────────────────────────────────────────────────────
+
+async function uploadRiderPDF(teamId, pid, fileInput, headerAbsIdx) {
+  const file = fileInput.files[0];
+  if (!file) return showToast('Select a PDF file first', 'error');
+  if (file.type !== 'application/pdf') return showToast('File must be a PDF', 'error');
+
+  const msg = document.getElementById(`rider-msg-${teamId}-${pid}`);
+  const status = document.getElementById(`rider-status-${teamId}-${pid}`);
+  msg.textContent = 'Uploading…';
+
+  const password = localStorage.getItem('drip_admin_pass') || '';
+  const filename = `${teamId}-${pid}-${Date.now()}.pdf`;
+
+  try {
+    const resp = await fetch('/api/upload', {
+      method: 'POST',
+      headers: {
+        'Authorization': 'Bearer ' + password,
+        'X-Filename': filename,
+        'Content-Type': 'application/pdf'
+      },
+      body: file
+    });
+    const result = await resp.json();
+    if (!resp.ok || !result.ok) throw new Error(result.error || 'Upload failed');
+
+    state[teamId][headerAbsIdx].rider_pdf = result.url;
+    scheduleAutoSave();
+    msg.textContent = '';
+    status.innerHTML = `<a href="${result.url}" target="_blank" style="color:var(--success)">✓ PDF attached ↗</a><button class="btn btn-danger btn-sm" onclick="clearRiderPDF('${teamId}','${pid}')">Delete</button>`;
+    showToast('PDF uploaded', 'success');
+  } catch (err) {
+    msg.textContent = 'Error: ' + err.message;
+    msg.style.color = 'var(--danger)';
+  }
+}
+
+function clearRiderPDF(teamId, pid) {
+  const arr = state[teamId];
+  const headerAbsIdx = arr.findIndex(r => r.person_id === pid && r.name !== undefined && r.name !== '');
+  if (headerAbsIdx < 0) return;
+  if (!confirm('Delete this PDF? This cannot be undone.')) return;
+  state[teamId][headerAbsIdx].rider_pdf = '';
+  scheduleAutoSave();
+  const status = document.getElementById(`rider-status-${teamId}-${pid}`);
+  if (status) status.innerHTML = `<span style="color:var(--text-3)">No PDF attached</span>`;
+  showToast('PDF deleted', 'success');
+}
+
+// ── Publish ───────────────────────────────────────────────────────────────
+
+async function publish() {
+  const password = localStorage.getItem('drip_admin_pass') || prompt('Admin password:');
+  if (!password) return;
+
+  const btn = document.querySelector('.btn-publish');
+  const origText = btn.textContent;
+  btn.textContent = 'Publishing...';
+  btn.disabled = true;
+  btn.style.opacity = '0.6';
+
+  try {
+    const resp = await fetch('/api/data', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ' + password
+      },
+      body: JSON.stringify(state)
+    });
+
+    const result = await resp.json();
+
+    if (resp.ok && result.ok) {
+      showToast('Changes are live!', 'success');
+      setDraftStatus('Published live at ' + new Date().toLocaleTimeString());
+    } else {
+      showToast('Publish failed: ' + (result.error || 'Unknown error'), 'error');
+    }
+  } catch (err) {
+    showToast('Publish failed: ' + err.message, 'error');
+  }
+
+  btn.textContent = origText;
+  btn.disabled = false;
+  btn.style.opacity = '1';
+}
+
+function showToast(message, type) {
+  const existing = document.querySelector('.toast');
+  if (existing) existing.remove();
+
+  const toast = document.createElement('div');
+  toast.className = 'toast toast-' + type;
+  toast.innerHTML = (type === 'success' ? '&#10003; ' : '&#10007; ') + message;
+  document.body.appendChild(toast);
+
+  requestAnimationFrame(() => toast.classList.add('toast-visible'));
+  setTimeout(() => {
+    toast.classList.remove('toast-visible');
+    setTimeout(() => toast.remove(), 300);
+  }, 3500);
+}
+
+function downloadBackup() {
+  const json = JSON.stringify(state, null, 2);
+  const content = `/* Staff data for Dripping 2026 */\n\nwindow.DEMO_DATA = ${json};\n`;
+  const blob = new Blob([content], { type: 'application/javascript' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'demo-data.js';
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+}
+
+// ── Utility ───────────────────────────────────────────────────────────────
+
+function esc(str) {
+  return (str || '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+}
+</script>
+</body>
+</html>

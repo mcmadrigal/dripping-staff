@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="theme-color" content="#ece7df" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#1a1714" media="(prefers-color-scheme: dark)">
+  <title>Dripping — Staff</title>
+  <link rel="stylesheet" href="style.css?v=19">
+</head>
+<body>
+  <div id="hdr"></div>
+  <div class="shell" id="app"></div>
+  <script src="demo-data.js?v=14"></script>
+  <script src="app.js?v=19"></script>
+  <script>
+    const app = document.getElementById('app');
+    const teamId = getParam('id');
+
+    if (!teamId) { location.href = 'index.html'; }
+    else if (!getSheetId() && !window.DEMO_DATA) { location.href = 'index.html'; }
+    else {
+      showLoading(app);
+      Promise.all([fetchTab('_teams'), fetchTab('_contacts'), fetchTab(teamId)]).then(([teamsMeta, contacts, data]) => {
+        const meta = teamsMeta.find(t => t.team_id === teamId) || {};
+        const teamName = meta.team_name || teamId;
+        const type = meta.type || 'team';
+
+        document.title = `${teamName} — Dripping`;
+        document.getElementById('hdr').innerHTML = renderHeader(teamName);
+
+        let h = '';
+        h += `<a href="index.html" class="back">← All Staff</a>`;
+
+        if (type === 'individual') {
+          h += renderIndividualTeam(data, teamName, meta, contacts);
+        } else {
+          h += renderTeamPage(data, teamName, meta, contacts);
+        }
+
+        h += renderRefreshBar();
+        app.innerHTML = h;
+      }).catch(err => showError(app, err));
+    }
+
+    function renderTeamPage(data, teamName, meta, contacts) {
+      let h = '';
+      h += `<div class="title-area"><h1>${esc(teamName)}</h1></div>`;
+      h += renderContactsBar(contacts);
+      for (const row of data) {
+        h += renderSection(row.section || '', row.content || '');
+      }
+      return h;
+    }
+
+    function renderIndividualTeam(data, teamName, meta, contacts) {
+      const people = new Map();
+      const shared = [];
+      for (const row of data) {
+        const pid = row.person_id || '';
+        if (pid === '_shared' || pid === '') {
+          if (row.section || row.content) shared.push(row);
+          continue;
+        }
+        if (!people.has(pid)) {
+          people.set(pid, { id: pid, name: row.name || pid, phone: row.phone || '', role: row.role || '', paid: row.paid || '' });
+        } else {
+          const p = people.get(pid);
+          if (row.name && !p.name) p.name = row.name;
+          if (row.role && !p.role) p.role = row.role;
+          if (row.paid && !p.paid) p.paid = row.paid;
+        }
+      }
+      let h = '';
+      h += `<div class="title-area">
+        <h1>${esc(teamName)}</h1>
+        <div class="subtitle">Tap your name to view your schedule.</div>
+      </div>`;
+      h += renderContactsBar(contacts);
+      if (shared.length) {
+        for (const row of shared) h += renderSection(row.section, row.content);
+      }
+      h += `<div class="roster-head"><span class="section-icon">👤</span><span class="section-head-label">Team Members</span></div>`;
+      for (const [pid, p] of people) {
+        const initials = p.name.replace(/\s*\(.*\)/, '').split(' ').map(w => w[0] || '').join('').substring(0, 2).toUpperCase();
+        const href = `person.html?team=${encodeURIComponent(teamId)}&id=${encodeURIComponent(pid)}`;
+        h += `<a href="${href}" class="roster-row">
+          <span class="avatar">${initials}</span>
+          <span class="info">
+            <span class="name">${escName(p.name)}</span>
+            ${p.role ? `<span class="role">${esc(p.role)}</span>` : ''}
+          </span>
+          <span class="arrow">›</span>
+        </a>`;
+      }
+      return h;
+    }
+  </script>
+</body>
+</html>

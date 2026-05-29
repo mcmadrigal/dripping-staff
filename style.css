@@ -1,0 +1,847 @@
+/*
+  Dripping Staff Portal
+  Fonts: Basel Grotesk Bold / DM Sans / DM Mono
+  Palette: warm beige, cream cards, dark buttons
+*/
+
+@font-face {
+  font-family: 'Basel Grotesk';
+  src: url('fonts/Basel-Grotesk-Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'DM Sans';
+  src: url('fonts/DMSans-Variable.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'DM Sans';
+  src: url('fonts/DMSans-Variable-Italic.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'DM Mono';
+  src: url('fonts/DMMono-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'DM Mono';
+  src: url('fonts/DMMono-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --bg: #ece7df;
+  --card: #f5f2ed;
+  --card-border: #ddd8d0;
+  --text: #2c2420;
+  --text-2: #8a7e74;
+  --text-3: #b0a89e;
+  --btn-bg: #2c2420;
+  --btn-text: #f5f2ed;
+  --accent: #2c2420;
+  --danger: #9e2b2b;
+  --font: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-heading: 'Basel Grotesk', -apple-system, sans-serif;
+  --font-mono: 'DM Mono', 'SF Mono', monospace;
+  --tap: 44px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #1a1714;
+    --card: #252019;
+    --card-border: #3a342b;
+    --text: #ece7df;
+    --text-2: #998f85;
+    --text-3: #6b6158;
+    --btn-bg: #ece7df;
+    --btn-text: #1a1714;
+    --accent: #ece7df;
+    --danger: #e06060;
+  }
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html {
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  font-family: var(--font);
+  font-size: 15px;
+  line-height: 1.5;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100dvh;
+  padding-bottom: env(safe-area-inset-bottom, 24px);
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: var(--text); text-decoration: none; }
+strong { font-weight: 600; }
+
+/* ── Header ─────────────────────────────────────── */
+
+.header {
+  padding: 16px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--bg);
+}
+
+.header-inner {
+  max-width: 540px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.header-logo {
+  display: flex;
+  align-items: center;
+  color: var(--text);
+  flex-shrink: 0;
+}
+
+.logo-svg {
+  height: 16px;
+  width: auto;
+  display: block;
+}
+
+.header-sep { color: var(--text-3); font-size: 14px; }
+.header-context { color: var(--text-2); font-size: 14px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+.header-badge {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 3px 8px;
+  background: var(--btn-bg);
+  color: var(--btn-text);
+  margin-left: auto;
+}
+
+/* ── Shell ──────────────────────────────────────── */
+
+.shell {
+  max-width: 540px;
+  margin: 0 auto;
+  padding: 0 20px 40px;
+}
+
+/* ── Back link ──────────────────────────────────── */
+
+.back {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--text-2);
+  padding: 8px 0;
+  min-height: var(--tap);
+}
+
+/* ── Page title ─────────────────────────────────── */
+
+.title-area {
+  padding: 24px 0 20px;
+}
+
+.title-area h1 {
+  font-family: var(--font-heading);
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.title-area .subtitle {
+  margin-top: 4px;
+  font-size: 15px;
+  color: var(--text-2);
+}
+
+/* ── Section header (emoji + uppercase label) ──── */
+
+.section-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 24px 0 12px;
+}
+
+.section-icon {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  background: var(--card);
+  border: 1px solid var(--card-border);
+  border-radius: 6px;
+  flex-shrink: 0;
+}
+
+.section-head-label {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--text);
+}
+
+/* ── Card ───────────────────────────────────────── */
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--card-border);
+  border-radius: 6px;
+  padding: 20px;
+  margin-bottom: 10px;
+}
+
+.card-label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--text-2);
+  margin-bottom: 6px;
+}
+
+.card-title {
+  font-family: var(--font-heading);
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.3;
+  margin-bottom: 4px;
+}
+
+.card-detail {
+  font-family: var(--font-mono);
+  font-size: 14px;
+  color: var(--text-2);
+  line-height: 1.5;
+}
+
+.card-row {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.card-row .card-text { flex: 1; min-width: 0; }
+
+/* ── Dark action buttons (Maps ↗, Call ↗, Text ↗) */
+
+.action-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 16px;
+  background: var(--btn-bg);
+  color: var(--btn-text);
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  text-decoration: none;
+  white-space: nowrap;
+  flex-shrink: 0;
+  min-height: var(--tap);
+  border: none;
+  cursor: pointer;
+}
+
+.action-btn:active { opacity: 0.8; }
+
+.action-btns {
+  display: flex;
+  gap: 4px;
+  flex-shrink: 0;
+}
+
+/* ── Sections (content blocks) ──────────────────── */
+
+.s {
+  background: var(--card);
+  border: 1px solid var(--card-border);
+  border-radius: 6px;
+  padding: 20px;
+  margin-bottom: 10px;
+}
+
+/* Rain Plan collapsible */
+.s-collapsible {
+  padding: 0;
+}
+.s-collapsible .s-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  background: none;
+  border: none;
+  padding: 16px 20px;
+  cursor: pointer;
+  text-align: left;
+  gap: 8px;
+}
+.s-collapsible .s-toggle-label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--text-2);
+}
+.s-collapsible .s-toggle-hint {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--text-3);
+  letter-spacing: 0.5px;
+  flex-shrink: 0;
+}
+.s-collapsible .s-toggle-arrow {
+  font-size: 10px;
+  color: var(--text-3);
+  transition: transform 0.2s;
+  flex-shrink: 0;
+}
+.s-collapsible.open .s-toggle-arrow {
+  transform: rotate(180deg);
+}
+.s-collapsible .s-collapsible-body {
+  display: none;
+  padding: 0 20px 16px;
+  font-size: 15px;
+  line-height: 1.6;
+}
+.s-collapsible.open .s-collapsible-body {
+  display: block;
+}
+
+.s-label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--text-2);
+  margin-bottom: 10px;
+}
+
+.s-body {
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.s-body p { margin-bottom: 10px; }
+.s-body p:last-child { margin-bottom: 0; }
+
+.s-body ul { list-style: none; margin-bottom: 10px; }
+.s-body ul:last-child { margin-bottom: 0; }
+
+.s-body li {
+  padding-left: 14px;
+  position: relative;
+  margin-bottom: 6px;
+}
+
+.s-body li::before {
+  content: '–';
+  position: absolute;
+  left: 0;
+  color: var(--text-3);
+}
+
+/* ── Alert section ──────────────────────────────── */
+
+.s-alert {
+  border-left: 3px solid var(--danger);
+}
+
+.s-alert .s-label { color: var(--danger); }
+.s-alert .s-body { font-weight: 500; }
+
+/* ── Schedule rows ──────────────────────────────── */
+
+.sched-row {
+  padding: 10px 0;
+  border-bottom: 1px solid var(--card-border);
+}
+
+.sched-row:first-child { padding-top: 0; }
+.sched-row:last-child { border-bottom: none; padding-bottom: 0; }
+
+.sched-time {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-2);
+  margin-bottom: 2px;
+}
+
+.sched-detail {
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.sched-label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--text-2);
+  padding: 14px 0 4px;
+}
+
+.sched-label:first-child { padding-top: 0; }
+
+.sched-overview {
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--text-2);
+  font-style: italic;
+  padding: 10px 12px;
+  background: var(--bg);
+  border-left: 2px solid var(--card-border);
+  margin-bottom: 4px;
+}
+
+.sched-note {
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  color: var(--text-3);
+  margin-top: 5px;
+  line-height: 1.5;
+}
+
+/* ── Phone numbers ────────────────────────────────── */
+
+/* Tappable tel link — styled like the mono phone text */
+.ph-num {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--text-2);
+  text-decoration: none;
+}
+
+/* Hidden by default — shown only in .ph-row (standalone phone lines) */
+.ph-actions { display: none; }
+
+/* Standalone phone line: number left, buttons right */
+.ph-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 4px 0;
+}
+.ph-row .ph-actions {
+  display: flex;
+  gap: 4px;
+  margin-left: auto;
+  flex-shrink: 0;
+}
+
+/* Contact list inside section card */
+.s-contact-list { padding-bottom: 12px; }
+.s-contact-list .contact-card {
+  background: var(--bg);
+  margin-top: 8px;
+}
+
+/* ── Emergency contacts ─────────────────────────── */
+
+.contacts-section {
+  margin-bottom: 10px;
+}
+
+.contacts-toggle {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0;
+  min-height: var(--tap);
+  background: none;
+  border: none;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.contacts-toggle .section-icon {
+  background: var(--card);
+  border: 1px solid var(--card-border);
+}
+
+.contacts-toggle-label {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--danger);
+}
+
+.contacts-toggle svg {
+  width: 14px;
+  height: 14px;
+  fill: var(--danger);
+  margin-left: auto;
+  transition: transform 0.15s ease;
+}
+
+.contacts-toggle[aria-expanded="true"] svg {
+  transform: rotate(180deg);
+}
+
+.contacts-cards {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.25s ease;
+}
+
+.contacts-cards.open {
+  max-height: 1200px;
+}
+
+.contact-card {
+  background: var(--card);
+  border: 1px solid var(--card-border);
+  border-radius: 6px;
+  padding: 16px 20px;
+  margin-top: 8px;
+}
+
+.contact-card-inner {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.contact-card .card-label { margin-bottom: 4px; }
+
+.contact-card .card-title {
+  font-size: 18px;
+  margin-bottom: 2px;
+}
+
+.contact-card .card-detail {
+  font-size: 13px;
+}
+
+/* ── Roster ─────────────────────────────────────── */
+
+.roster-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 24px 0 12px;
+}
+
+.roster-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: var(--card);
+  border: 1px solid var(--card-border);
+  border-radius: 6px;
+  padding: 14px 20px;
+  margin-bottom: 8px;
+  text-decoration: none;
+  color: var(--text);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.roster-row:active { opacity: 0.9; }
+
+.avatar {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: var(--btn-bg);
+  color: var(--btn-text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  flex-shrink: 0;
+}
+
+.roster-row .info { flex: 1; min-width: 0; }
+
+.roster-row .name {
+  font-family: var(--font-heading);
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.roster-row .role {
+  font-size: 13px;
+  color: var(--text-2);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.roster-row .arrow {
+  color: var(--text-3);
+  font-size: 18px;
+}
+
+/* ── Admin hub — team list ──────────────────────── */
+
+.team-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: var(--card);
+  border: 1px solid var(--card-border);
+  border-radius: 6px;
+  padding: 14px 20px;
+  margin-bottom: 8px;
+  text-decoration: none;
+  color: var(--text);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.team-row:active { opacity: 0.9; }
+
+.team-emoji {
+  font-size: 20px;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg);
+  border-radius: 6px;
+  flex-shrink: 0;
+}
+
+.team-row .info { flex: 1; min-width: 0; }
+
+.team-row .name {
+  font-family: var(--font-heading);
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.team-row .meta {
+  font-size: 13px;
+  color: var(--text-2);
+}
+
+.team-row .tag {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--text-3);
+  flex-shrink: 0;
+}
+
+.team-row .arrow {
+  color: var(--text-3);
+  font-size: 18px;
+}
+
+/* ── Loading / error ────────────────────────────── */
+
+.state {
+  text-align: center;
+  padding: 80px 0;
+  color: var(--text-2);
+}
+
+.state p { font-size: 15px; margin-bottom: 16px; }
+
+.spinner {
+  width: 24px;
+  height: 24px;
+  border: 2px solid var(--card-border);
+  border-top-color: var(--text-2);
+  border-radius: 50%;
+  margin: 0 auto 16px;
+  animation: spin 0.7s linear infinite;
+}
+
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* ── Buttons ────────────────────────────────────── */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 20px;
+  background: var(--btn-bg);
+  color: var(--btn-text);
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  border: none;
+  cursor: pointer;
+}
+
+.btn:active { opacity: 0.8; }
+
+/* ── Refresh bar ────────────────────────────────── */
+
+.refresh {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 0;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--text-3);
+}
+
+.refresh a {
+  color: var(--text-2);
+  cursor: pointer;
+  padding: 8px;
+  min-height: var(--tap);
+  display: flex;
+  align-items: center;
+}
+
+/* ── Setup ──────────────────────────────────────── */
+
+.setup {
+  padding: 80px 0;
+  text-align: center;
+}
+
+.setup h2 {
+  font-family: var(--font-heading);
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.setup p {
+  font-size: 15px;
+  color: var(--text-2);
+  margin-bottom: 6px;
+}
+
+.setup .btn { margin-top: 20px; }
+
+/* ── Print ──────────────────────────────────────── */
+
+/* ── Pronouns (de-emphasize parenthetical) ──── */
+
+.roster-row .name .pronouns,
+.title-area h1 .pronouns,
+.card-title .pronouns {
+  font-family: var(--font);
+  font-weight: 400;
+  font-size: 0.65em;
+  color: var(--text-3);
+  letter-spacing: 0;
+}
+
+/* ── Page transitions ─────────────────────────── */
+
+.shell {
+  animation: fadeUp 0.3s ease both;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.s, .card, .contact-card, .team-row, .roster-row {
+  animation: fadeIn 0.25s ease both;
+}
+
+.s:nth-child(2) { animation-delay: 0.04s; }
+.s:nth-child(3) { animation-delay: 0.08s; }
+.s:nth-child(4) { animation-delay: 0.12s; }
+.s:nth-child(5) { animation-delay: 0.16s; }
+
+.team-row:nth-child(2) { animation-delay: 0.03s; }
+.team-row:nth-child(3) { animation-delay: 0.06s; }
+.team-row:nth-child(4) { animation-delay: 0.09s; }
+.team-row:nth-child(5) { animation-delay: 0.12s; }
+.team-row:nth-child(6) { animation-delay: 0.15s; }
+.team-row:nth-child(7) { animation-delay: 0.18s; }
+.team-row:nth-child(8) { animation-delay: 0.21s; }
+.team-row:nth-child(9) { animation-delay: 0.24s; }
+.team-row:nth-child(10) { animation-delay: 0.27s; }
+.team-row:nth-child(11) { animation-delay: 0.30s; }
+
+.roster-row:nth-child(2) { animation-delay: 0.03s; }
+.roster-row:nth-child(3) { animation-delay: 0.06s; }
+.roster-row:nth-child(4) { animation-delay: 0.09s; }
+.roster-row:nth-child(5) { animation-delay: 0.12s; }
+.roster-row:nth-child(6) { animation-delay: 0.15s; }
+.roster-row:nth-child(7) { animation-delay: 0.18s; }
+.roster-row:nth-child(8) { animation-delay: 0.21s; }
+.roster-row:nth-child(9) { animation-delay: 0.24s; }
+.roster-row:nth-child(10) { animation-delay: 0.27s; }
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.contacts-cards {
+  transition: max-height 0.3s ease;
+}
+
+.back {
+  transition: opacity 0.15s ease;
+}
+
+.back:active { opacity: 0.5; }
+
+/* ── Print ────────────────────────────────────── */
+
+@media print {
+  .contacts-section, .refresh, .header, .back { display: none; }
+  .s { break-inside: avoid; }
+  body { background: #fff; }
+}
+
+@media (min-width: 600px) {
+  .shell { max-width: 540px; }
+}

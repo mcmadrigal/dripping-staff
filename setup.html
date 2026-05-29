@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Setup — Dripping Staff Portal</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="page-header">
+    <div class="page-header-inner">
+      <a href="index.html" class="site-mark" style="text-decoration:none">dripping <span class="site-mark-divider">/</span> <span class="site-mark-label">Setup</span></a>
+    </div>
+  </header>
+
+  <div class="page-shell">
+    <div class="page-banner">
+      <h1>Google Sheet Setup</h1>
+      <div class="lead">Connect your staff data in 4 steps.</div>
+    </div>
+
+    <div class="section">
+      <div class="section-label">Step 1 — Create the Google Sheet</div>
+      <div class="section-body">
+        <p>Create a new Google Sheet. Add the following tabs — tab names must match exactly (lowercase, underscores).</p>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-label">Tab: _config</div>
+      <div class="section-body">
+        <p>Two columns: <strong>key</strong> and <strong>value</strong></p>
+        <ul>
+          <li>festival_name</li>
+          <li>dates</li>
+          <li>venue_name</li>
+          <li>venue_address</li>
+          <li>hotel_name</li>
+          <li>hotel_address</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-label">Tab: _contacts</div>
+      <div class="section-body">
+        <p>Emergency contacts shown on every staff page.</p>
+        <p>Columns: <strong>name</strong>, <strong>role</strong>, <strong>phone</strong>, <strong>hours</strong>, <strong>is_whatsapp</strong></p>
+        <p>Set is_whatsapp to <strong>whatsapp</strong> for WhatsApp numbers. Leave blank otherwise.</p>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-label">Tab: _teams</div>
+      <div class="section-body">
+        <p>One row per team.</p>
+        <p>Columns: <strong>team_id</strong>, <strong>team_name</strong>, <strong>type</strong>, <strong>icon</strong>, <strong>captain_name</strong>, <strong>captain_phone</strong></p>
+        <ul>
+          <li><strong>type = team</strong> — one shared page for the whole team</li>
+          <li><strong>type = individual</strong> — each person gets their own page</li>
+          <li><strong>team_id</strong> must match the data tab name exactly</li>
+          <li><strong>icon</strong> = any emoji</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-label">Team data tabs (type = team)</div>
+      <div class="section-body">
+        <p>Create a tab named after the team_id (e.g., <strong>check_in</strong>).</p>
+        <p>Columns: <strong>section</strong>, <strong>content</strong></p>
+        <p>Each row = one section on the page, rendered top to bottom.</p>
+        <ul>
+          <li>Use Alt+Enter for line breaks within a cell</li>
+          <li>Start lines with <strong>-</strong> for bullet points</li>
+          <li>Use <strong>**text**</strong> for bold</li>
+          <li>Phone numbers auto-link for tap-to-call</li>
+          <li>Use <strong>time | detail</strong> format for schedule rows</li>
+          <li>Start section name with ⚠️ for alert styling</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-label">Individual data tabs (type = individual)</div>
+      <div class="section-body">
+        <p>Create a tab named after the team_id (e.g., <strong>archival</strong>).</p>
+        <p>Columns: <strong>person_id</strong>, <strong>name</strong>, <strong>phone</strong>, <strong>role</strong>, <strong>section</strong>, <strong>content</strong></p>
+        <ul>
+          <li>First row for each person: fill in name, phone, role</li>
+          <li>Additional rows: only person_id + section + content needed</li>
+          <li>Use <strong>person_id = _shared</strong> for content shown on everyone's page</li>
+          <li>person_id = lowercase with underscores (e.g., sam_clarke)</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-label">Step 2 — Publish the Sheet</div>
+      <div class="section-body">
+        <ul>
+          <li>File → Share → Publish to web → Entire Document → CSV → Publish</li>
+          <li>Also: Share → Anyone with the link → Viewer</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-label">Step 3 — Connect</div>
+      <div class="section-body">
+        <p>Find your Sheet ID in the URL:</p>
+        <p>docs.google.com/spreadsheets/d/<strong>[SHEET_ID]</strong>/edit</p>
+        <ul>
+          <li>Visit the admin hub and click "Connect Google Sheet"</li>
+          <li>Or add <strong>?sheet=SHEET_ID</strong> to any portal URL</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-label">Step 4 — Share with staff</div>
+      <div class="section-body">
+        <p>Send each team their direct link. Staff only see their own page — no navigation to other teams.</p>
+        <ul>
+          <li>Team pages: <strong>team.html?id=check_in</strong></li>
+          <li>Individual pages: <strong>person.html?team=archival&id=sam_clarke</strong></li>
+        </ul>
+        <p>Staff can add to iPhone home screen (Share → Add to Home Screen) for app-like access.</p>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-label">Updating content</div>
+      <div class="section-body">
+        <p>Edit the Google Sheet — changes appear within minutes. Staff can tap Refresh at the bottom of any page. Pages also work offline after first load.</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

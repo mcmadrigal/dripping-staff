@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="theme-color" content="#ece7df" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#1a1714" media="(prefers-color-scheme: dark)">
+  <title>Dripping — Staff</title>
+  <link rel="stylesheet" href="style.css?v=19">
+</head>
+<body>
+  <div id="hdr"></div>
+  <div class="shell" id="app"></div>
+  <script src="demo-data.js?v=14"></script>
+  <script src="app.js?v=19"></script>
+  <script>
+    const app = document.getElementById('app');
+    const teamId = getParam('team');
+    const personId = getParam('id');
+
+    if (!teamId || !personId) { location.href = 'index.html'; }
+    else if (!getSheetId() && !window.DEMO_DATA) { location.href = 'index.html'; }
+    else {
+      showLoading(app);
+      Promise.all([fetchTab('_teams'), fetchTab('_contacts'), fetchTab(teamId)]).then(([teamsMeta, contacts, data]) => {
+        const meta = teamsMeta.find(t => t.team_id === teamId) || {};
+        const teamName = meta.team_name || teamId;
+
+        const shared = [];
+        const personRows = [];
+        let personInfo = null;
+        for (const row of data) {
+          const pid = row.person_id || '';
+          if (pid === '_shared') { if (row.section || row.content) shared.push(row); continue; }
+          if (pid === personId) {
+            if (!personInfo && (row.name || row.role)) {
+              personInfo = { name: row.name, phone: row.phone, role: row.role, paid: row.paid || '', parking: row.parking || '', rider_pdf: row.rider_pdf || '', rider_pdf_title: row.rider_pdf_title || '' };
+            }
+            if (row.section || row.content) personRows.push(row);
+          }
+        }
+
+        const name = personInfo?.name || personId;
+        const isPaid = personInfo?.paid === 'yes' || personInfo?.paid === true;
+        document.title = `${name} — Dripping`;
+        document.getElementById('hdr').innerHTML = renderHeader(teamName);
+
+        let h = '';
+        h += `<a href="team.html?id=${encodeURIComponent(teamId)}" class="back">← ${esc(teamName)}</a>`;
+
+        h += `<div class="title-area">
+          <h1>${escName(name)}</h1>
+          ${personInfo?.role ? `<div class="subtitle">${esc(personInfo.role)}</div>` : ''}
+        </div>`;
+
+        h += renderContactsBar(contacts);
+
+        // Shared sections (skip "Paid Staff" section if person is not paid)
+        for (const row of shared) {
+          if ((row.section === 'Paid Staff' || row.section === 'Perks') && !isPaid) continue;
+          h += renderSection(row.section, row.content);
+        }
+
+        for (const row of personRows) {
+          h += renderSection(row.section, row.content);
+        }
+
+        if (personInfo?.parking) h += renderParkingSection(personInfo.parking);
+        if (personInfo?.rider_pdf && teamId === 'stage_managers') {
+          h += renderRiderPDF(personInfo.rider_pdf, personInfo.rider_pdf_title);
+        }
+
+        h += renderRefreshBar();
+        app.innerHTML = h;
+      }).catch(err => showError(app, err));
+    }
+  </script>
+</body>
+</html>

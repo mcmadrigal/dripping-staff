@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="theme-color" content="#ece7df" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#1a1714" media="(prefers-color-scheme: dark)">
+  <title>Dripping — Staff</title>
+  <link rel="stylesheet" href="style.css?v=19">
+</head>
+<body>
+  <div id="hdr"></div>
+  <div class="shell" id="app"></div>
+  <script src="demo-data.js?v=14"></script>
+  <script src="app.js?v=19"></script>
+  <script>
+    const app = document.getElementById('app');
+    document.getElementById('hdr').innerHTML = renderHeader();
+
+    const sheetId = getSheetId();
+    const hasData = sheetId || window.DEMO_DATA;
+
+    if (!hasData) {
+      app.innerHTML = `
+        <div class="setup">
+          <h2>Staff Portal</h2>
+          <p>Connect a Google Sheet to manage staff schedules.</p>
+          <button class="btn" onclick="promptSheetId()">Connect Google Sheet</button>
+        </div>`;
+    } else {
+      showLoading(app);
+      Promise.all([fetchTab('_config'), fetchTab('_teams'), fetchTab('_contacts')]).then(([config, teams, contacts]) => {
+        const cfg = {};
+        config.forEach(r => { cfg[r.key] = r.value; });
+        let h = '';
+        h += `<div class="title-area">
+          <h1>All Staff</h1>
+          <div class="subtitle">${esc(cfg.dates || '')} · ${esc(cfg.venue_name || '')}</div>
+        </div>`;
+
+        h += renderContactsBar(contacts);
+
+        h += `<div class="s">
+          <div class="s-body">
+            <p>Hello! Thanks for being part of staff this year. Two quick things before we start:</p>
+            <ul>
+              <li><strong>Download Slack</strong> and join the <a href="http://join.slack.com/t/dripping/shared_invite/zt-3xc6516cw-kr0wpvBjww1HciED16E~eA" style="color:var(--accent);text-decoration:underline">Dripping workspace</a>. We use Slack during the event since we'll be coordinating across several channels.</li>
+              <li><strong>Save your staff microsite</strong> to your phone's Home Screen so it's easy to access during the event. To do it: tap the <strong>Share button</strong>, then "Add to Home Screen." We'll also share the link in Slack.</li>
+              <li><strong>Download the map and schedule PDF</strong> — <a href="https://gbc6vrg43nwcgkgd.public.blob.vercel-storage.com/riders/schedule-and-map-2026-3CPYUt4mN6lzYq0gG6eWAldcBSXNHl.pdf" target="_blank" style="color:var(--accent);text-decoration:underline">here</a>.</li>
+            </ul>
+          </div>
+        </div>`;
+
+        for (const t of teams) {
+          const href = `team.html?id=${encodeURIComponent(t.team_id)}`;
+          const typeLbl = t.type === 'individual' ? 'individual' : 'team';
+          h += `<a href="${href}" class="team-row">
+            <span class="team-emoji">${t.icon || '📋'}</span>
+            <span class="info">
+              <span class="name">${esc(t.team_name)}</span>
+            </span>
+            <span class="tag">${typeLbl}</span>
+            <span class="arrow">›</span>
+          </a>`;
+        }
+        h += renderRefreshBar();
+        app.innerHTML = h;
+      }).catch(err => showError(app, err));
+    }
+  </script>
+</body>
+</html>
