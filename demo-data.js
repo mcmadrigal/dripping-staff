@@ -762,7 +762,7 @@ window.DEMO_DATA = {
     {
       "person_id": "_shared",
       "section": "Important Contacts",
-      "content": "Empire Security — Nani\nEd (Bar Manager) — (413) 218-8853\nDiego (Bar Manager) — (917) 754-3013\nSphente (Production Manager, Slack) — (773) 370-7260\nKaren (Kitchen / Food Vendor Manager, Slack) — (240) 308-3018\nNick Coratti (Teardown lead, Slack) — (631) 697-1814 *(starts at noon Sunday)*\nToilets, Showers, Dumpster, Generators — United Rentals — James (908) 307-0241\nIce Trailer — Chuck (908) 310-9178\nRefrigerator Trailer"
+      "content": "Empire Security — Nani\nEd (Bar Manager) — (413) 218-8853\nDiego (Bar Manager) — (917) 754-3013\nSphente (Production Manager, Slack) — (773) 370-7260\nKaren Nicole (Kitchen / Food Vendor Manager, Slack) — (240) 308-3018\nNick Coratti (Teardown lead, Slack) — (631) 697-1814 *(starts at noon Sunday)*\nToilets, Showers, Dumpster, Generators — United Rentals — James (908) 307-0241\nIce Trailer — Chuck (908) 310-9178\nRefrigerator Trailer"
     },
     {
       "person_id": "_shared",
@@ -1684,8 +1684,29 @@ window.DEMO_DATA = {
       "content": "-Make sure you have the RA Ticket Scanner app on your phone and are logged in.\n-If you have battery powered phone chargers, please charge and bring them.\n-Leave with enough time to set up your tent and get settled before starting your shift ON TIME.\n-After the last shift, let security at the road know that check in is closed."
     },
     {
-      "section": "Sophia — Check In Captain",
-      "content": "**Position:** Check In Captain\n\n**Important Contacts:**\nMary (Morning Manager): 6am–2pm Friday, Saturday, Sunday\nLauren (Day Manager): 2pm–10pm Thursday, Friday, Saturday\nRonan (Night Manager): 10pm–6am Thursday, Friday, Saturday\nThe Innkeeper (WhatsApp) 347 986-7562\nLeo (415) 420-8884\nDaniel (202) 368-4568\n\n**Schedule — Official Check In Hours:**\n-Thursday: 3pm–10pm\n-Friday: Noon–10pm\n-Saturday: Noon–5pm\n\nWhile we need the team to be managed, we leave it to your discretion when you need to be on-site and when you can step away. However, here are some key moments we need to have you present with the team:\n-Thursday 11am: Early arrival Check In crew begins\n-Thursday 2pm: Full Check In crew assembles.\n-Thursday 3pm: Peak Times\n-EOD: Confirm that team has what they need and is closing up shop properly\n-Friday 11am: prep for day 2\n-Friday: Peak times\n-EOD\n-Saturday: Noon\n-Saturday: 5pm\n\n**Meals:** Check in with The Innkeeper backstage at The Inn upon arrival to collect your meal tokens.\nWelcome Dinner Token: 1\nRegular Meal Token: 2"
+      "person_id": "sophia",
+      "name": "Sophia",
+      "phone": "",
+      "role": "Check In Captain",
+      "paid": true,
+      "section": "",
+      "content": "",
+      "parking": ""
+    },
+    {
+      "person_id": "sophia",
+      "section": "Important Contacts",
+      "content": "Mary (Morning Manager): 6am–2pm Friday, Saturday, Sunday\nLauren (Day Manager): 2pm–10pm Thursday, Friday, Saturday\nRonan (Night Manager): 10pm–6am Thursday, Friday, Saturday\nThe Innkeeper (WhatsApp) 347 986-7562\nLeo (415) 420-8884\nDaniel (202) 368-4568"
+    },
+    {
+      "person_id": "sophia",
+      "section": "Schedule",
+      "content": "**Official Check In Hours:**\n-Thursday: 3pm–10pm\n-Friday: Noon–10pm\n-Saturday: Noon–5pm\n\nWhile we need the team to be managed, we leave it to your discretion when you need to be on-site and when you can step away. Key moments to be present with the team:\n-Thursday 11am: Early arrival Check In crew begins\n-Thursday 2pm: Full Check In crew assembles\n-Thursday 3pm: Peak Times\n-EOD: Confirm team has what they need and is closing up shop properly\n-Friday 11am: prep for day 2\n-Friday: Peak times\n-EOD\n-Saturday: Noon\n-Saturday: 5pm"
+    },
+    {
+      "person_id": "sophia",
+      "section": "Meals",
+      "content": "Check in with The Innkeeper backstage at The Inn upon arrival to collect your **meal tokens**.\n\n**Welcome Dinner Token:** 1\n**Regular Meal Token:** 2"
     }
   ],
   "archival": [
@@ -2859,8 +2880,8 @@ window.DEMO_DATA = {
   ],
   "vendor_manager": [
     {
-      "person_id": "karen",
-      "name": "Karen",
+      "person_id": "karen_nicole",
+      "name": "Karen Nicole",
       "phone": "(240) 308-3018",
       "role": "Vendor / Kitchen Manager",
       "paid": true,
@@ -2869,22 +2890,22 @@ window.DEMO_DATA = {
       "content": ""
     },
     {
-      "person_id": "karen",
+      "person_id": "karen_nicole",
       "section": "Vendor Contacts",
       "content": "Wadadli Jerk (Brods) · Arrival: Fri 10:30am\n(917) 687-1508\n\nOffbrand Goods (Kyle) · Arrival: Fri TBC\n\nHen House · Arrival: Thu TBC\n\nDila (LJ) · Arrival: Thu 11am\n(206) 434-5704\n\nBe Bep (Phoebe) · Arrival: TBC\n(714) 876-3957\n\nLeo (Director)\n(415) 420-8884"
     },
     {
-      "person_id": "karen",
+      "person_id": "karen_nicole",
       "section": "Shifts",
       "content": "**Wednesday:**\n- Make contact with each vendor and confirm their arrival plan.\n- Assist Eli with staff meal preparation (Breakfast/Dinner).\n- Setup Vendor/Kitchen tent with lights, tables, grills, and vendor schedules.\n- Setup refrigerator trailer with shelves.\n\n**Thursday:**\n- Assist Eli with staff meal preparation (Breakfast/Lunch).\n- Receive vendors and orient them to the vendor tent and fridge trailer.\n- Communicate to vendors that they must go to the Innkeeper after their last service to count their tokens.\n\n**Friday:**\n- Receive Wadadli and orient them to their spot at The Lake, as well as their Saturday spot at Open Air.\n- Receive other vendors.\n- Check in with vendors for general needs."
     },
     {
-      "person_id": "karen",
+      "person_id": "karen_nicole",
       "section": "Meals",
       "content": "Check in with The Innkeeper backstage at The Inn upon arrival to collect your **meal tokens**. Meals during setup are obviously covered."
     },
     {
-      "person_id": "karen",
+      "person_id": "karen_nicole",
       "section": "Vendor Schedule",
       "content": "**BREAKFAST** (9am–1pm)\nFri: Dila · Sat: Ramirez · Sun: Dila\n\n**LUNCH** (1pm–6pm)\nFri: Wadadli + Ramirez · Sat: Wadadli + Ramirez\n\n**DINNER** (6pm–10pm)\nThu: Be Bep · Fri: Dila + Henhouse · Sat: Dila + Henhouse\n\n**LATE NIGHT**\nFri: Offbrand Goods · Sat: Offbrand Goods\n\n**COFFEE** (always)\nThu–Sun: 109 Montrose"
     }
