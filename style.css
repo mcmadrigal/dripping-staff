@@ -2,6 +2,14 @@
   Dripping Staff Portal
   Fonts: Basel Grotesk Bold / DM Sans / DM Mono
   Palette: warm beige, cream cards, dark buttons
+
+  ── Type system (6 tokens, one job each) ──────────
+   t-display  32 / Basel 700 / 1.15 / -0.01em   page title
+   t-title    20 / Basel 700 / 1.30              card / sub-page title
+   t-body     15 / DM Sans 400 / 1.55            body, schedules
+   t-meta     14 / DM Sans 400 / 1.50 / text-2   role, overview, meta
+   t-label    11 / DM Mono 500 / 1.5px / UPPER   all section labels
+   t-mono     12 / DM Mono 500                   times, back link, buttons
 */
 
 @font-face {
@@ -87,7 +95,7 @@ html {
 body {
   font-family: var(--font);
   font-size: 15px;
-  line-height: 1.5;
+  line-height: 1.55;
   background: var(--bg);
   color: var(--text);
   min-height: 100dvh;
@@ -97,6 +105,50 @@ body {
 
 a { color: var(--text); text-decoration: none; }
 strong { font-weight: 600; }
+
+/* ── Type utility classes (canonical) ────────────── */
+
+.t-display {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+}
+
+.t-title {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.3;
+}
+
+.t-body {
+  font-family: var(--font);
+  font-size: 15px;
+  line-height: 1.55;
+}
+
+.t-meta {
+  font-family: var(--font);
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--text-2);
+}
+
+.t-label {
+  font-family: var(--font-mono);
+  font-weight: 500;
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.t-mono {
+  font-family: var(--font-mono);
+  font-weight: 500;
+  font-size: 12px;
+}
 
 /* ── Header ─────────────────────────────────────── */
 
@@ -129,14 +181,25 @@ strong { font-weight: 600; }
   display: block;
 }
 
-.header-sep { color: var(--text-3); font-size: 14px; }
-.header-context { color: var(--text-2); font-size: 14px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.header-sep {
+  font-family: var(--font);
+  font-size: 14px;
+  color: var(--text-3);
+}
+.header-context {
+  font-family: var(--font);
+  font-size: 14px;
+  color: var(--text-2);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 
 .header-badge {
   font-family: var(--font-mono);
-  font-size: 10px;
   font-weight: 500;
-  letter-spacing: 1px;
+  font-size: 11px;
+  letter-spacing: 1.5px;
   text-transform: uppercase;
   padding: 3px 8px;
   background: var(--btn-bg);
@@ -152,20 +215,21 @@ strong { font-weight: 600; }
   padding: 0 20px 40px;
 }
 
-/* ── Back link ──────────────────────────────────── */
+/* ── Back link (t-mono) ─────────────────────────── */
 
 .back {
   display: inline-flex;
   align-items: center;
   gap: 4px;
   font-family: var(--font-mono);
-  font-size: 13px;
+  font-weight: 500;
+  font-size: 12px;
   color: var(--text-2);
   padding: 8px 0;
   min-height: var(--tap);
 }
 
-/* ── Page title ─────────────────────────────────── */
+/* ── Page title (t-display) ─────────────────────── */
 
 .title-area {
   padding: 24px 0 20px;
@@ -173,18 +237,21 @@ strong { font-weight: 600; }
 
 .title-area h1 {
   font-family: var(--font-heading);
-  font-size: 28px;
   font-weight: 700;
-  line-height: 1.2;
+  font-size: 32px;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
 }
 
 .title-area .subtitle {
-  margin-top: 4px;
-  font-size: 15px;
+  margin-top: 6px;
+  font-family: var(--font);
+  font-size: 14px;
+  line-height: 1.5;
   color: var(--text-2);
 }
 
-/* ── Section header (emoji + uppercase label) ──── */
+/* ── Section header (icon + t-label) ─────────────── */
 
 .section-head {
   display: flex;
@@ -208,9 +275,9 @@ strong { font-weight: 600; }
 
 .section-head-label {
   font-family: var(--font-mono);
-  font-size: 12px;
   font-weight: 500;
-  letter-spacing: 2px;
+  font-size: 11px;
+  letter-spacing: 1.5px;
   text-transform: uppercase;
   color: var(--text);
 }
@@ -227,8 +294,8 @@ strong { font-weight: 600; }
 
 .card-label {
   font-family: var(--font-mono);
-  font-size: 11px;
   font-weight: 500;
+  font-size: 11px;
   letter-spacing: 1.5px;
   text-transform: uppercase;
   color: var(--text-2);
@@ -237,17 +304,17 @@ strong { font-weight: 600; }
 
 .card-title {
   font-family: var(--font-heading);
-  font-size: 20px;
   font-weight: 700;
+  font-size: 20px;
   line-height: 1.3;
   margin-bottom: 4px;
 }
 
 .card-detail {
-  font-family: var(--font-mono);
+  font-family: var(--font);
   font-size: 14px;
-  color: var(--text-2);
   line-height: 1.5;
+  color: var(--text-2);
 }
 
 .card-row {
@@ -269,9 +336,8 @@ strong { font-weight: 600; }
   background: var(--btn-bg);
   color: var(--btn-text);
   font-family: var(--font-mono);
-  font-size: 13px;
   font-weight: 500;
-  letter-spacing: 0.5px;
+  font-size: 12px;
   text-decoration: none;
   white-space: nowrap;
   flex-shrink: 0;
@@ -316,21 +382,21 @@ strong { font-weight: 600; }
 }
 .s-collapsible .s-toggle-label {
   font-family: var(--font-mono);
-  font-size: 11px;
   font-weight: 500;
+  font-size: 11px;
   letter-spacing: 1.5px;
   text-transform: uppercase;
   color: var(--text-2);
 }
 .s-collapsible .s-toggle-hint {
   font-family: var(--font-mono);
-  font-size: 10px;
+  font-weight: 500;
+  font-size: 12px;
   color: var(--text-3);
-  letter-spacing: 0.5px;
   flex-shrink: 0;
 }
 .s-collapsible .s-toggle-arrow {
-  font-size: 10px;
+  font-size: 12px;
   color: var(--text-3);
   transition: transform 0.2s;
   flex-shrink: 0;
@@ -341,6 +407,7 @@ strong { font-weight: 600; }
 .s-collapsible .s-collapsible-body {
   display: none;
   padding: 0 20px 16px;
+  font-family: var(--font);
   font-size: 15px;
   line-height: 1.6;
 }
@@ -350,8 +417,8 @@ strong { font-weight: 600; }
 
 .s-label {
   font-family: var(--font-mono);
-  font-size: 11px;
   font-weight: 500;
+  font-size: 11px;
   letter-spacing: 1.5px;
   text-transform: uppercase;
   color: var(--text-2);
@@ -359,6 +426,7 @@ strong { font-weight: 600; }
 }
 
 .s-body {
+  font-family: var(--font);
   font-size: 15px;
   line-height: 1.6;
 }
@@ -403,23 +471,24 @@ strong { font-weight: 600; }
 
 .sched-time {
   font-family: var(--font-mono);
-  font-size: 12px;
   font-weight: 500;
+  font-size: 12px;
   color: var(--text-2);
   margin-bottom: 2px;
 }
 
 .sched-detail {
+  font-family: var(--font);
   font-size: 15px;
-  line-height: 1.5;
+  line-height: 1.55;
 }
 
 .sched-label {
   font-family: var(--font-mono);
-  font-size: 11px;
   font-weight: 500;
+  font-size: 11px;
+  letter-spacing: 1.5px;
   text-transform: uppercase;
-  letter-spacing: 1px;
   color: var(--text-2);
   padding: 14px 0 4px;
 }
@@ -427,6 +496,7 @@ strong { font-weight: 600; }
 .sched-label:first-child { padding-top: 0; }
 
 .sched-overview {
+  font-family: var(--font);
   font-size: 14px;
   line-height: 1.55;
   color: var(--text-2);
@@ -439,7 +509,8 @@ strong { font-weight: 600; }
 
 .sched-note {
   font-family: var(--font-mono);
-  font-size: 11.5px;
+  font-weight: 500;
+  font-size: 12px;
   color: var(--text-3);
   margin-top: 5px;
   line-height: 1.5;
@@ -450,7 +521,8 @@ strong { font-weight: 600; }
 /* Tappable tel link — styled like the mono phone text */
 .ph-num {
   font-family: var(--font-mono);
-  font-size: 13px;
+  font-weight: 500;
+  font-size: 12px;
   color: var(--text-2);
   text-decoration: none;
 }
@@ -505,9 +577,9 @@ strong { font-weight: 600; }
 
 .contacts-toggle-label {
   font-family: var(--font-mono);
-  font-size: 12px;
   font-weight: 500;
-  letter-spacing: 2px;
+  font-size: 11px;
+  letter-spacing: 1.5px;
   text-transform: uppercase;
   color: var(--danger);
 }
@@ -552,12 +624,12 @@ strong { font-weight: 600; }
 .contact-card .card-label { margin-bottom: 4px; }
 
 .contact-card .card-title {
-  font-size: 18px;
+  font-size: 20px;
   margin-bottom: 2px;
 }
 
 .contact-card .card-detail {
-  font-size: 13px;
+  font-size: 14px;
 }
 
 /* ── Roster ─────────────────────────────────────── */
@@ -595,8 +667,8 @@ strong { font-weight: 600; }
   align-items: center;
   justify-content: center;
   font-family: var(--font-mono);
-  font-size: 11px;
   font-weight: 500;
+  font-size: 11px;
   letter-spacing: 0.5px;
   flex-shrink: 0;
 }
@@ -605,13 +677,15 @@ strong { font-weight: 600; }
 
 .roster-row .name {
   font-family: var(--font-heading);
-  font-size: 16px;
   font-weight: 700;
+  font-size: 16px;
   line-height: 1.3;
 }
 
 .roster-row .role {
-  font-size: 13px;
+  font-family: var(--font);
+  font-size: 14px;
+  line-height: 1.5;
   color: var(--text-2);
   white-space: nowrap;
   overflow: hidden;
@@ -657,20 +731,23 @@ strong { font-weight: 600; }
 
 .team-row .name {
   font-family: var(--font-heading);
-  font-size: 15px;
   font-weight: 700;
+  font-size: 16px;
   line-height: 1.3;
 }
 
 .team-row .meta {
-  font-size: 13px;
+  font-family: var(--font);
+  font-size: 14px;
+  line-height: 1.5;
   color: var(--text-2);
 }
 
 .team-row .tag {
   font-family: var(--font-mono);
-  font-size: 10px;
-  letter-spacing: 1px;
+  font-weight: 500;
+  font-size: 11px;
+  letter-spacing: 1.5px;
   text-transform: uppercase;
   color: var(--text-3);
   flex-shrink: 0;
@@ -689,7 +766,11 @@ strong { font-weight: 600; }
   color: var(--text-2);
 }
 
-.state p { font-size: 15px; margin-bottom: 16px; }
+.state p {
+  font-family: var(--font);
+  font-size: 15px;
+  margin-bottom: 16px;
+}
 
 .spinner {
   width: 24px;
@@ -712,9 +793,8 @@ strong { font-weight: 600; }
   background: var(--btn-bg);
   color: var(--btn-text);
   font-family: var(--font-mono);
-  font-size: 13px;
   font-weight: 500;
-  letter-spacing: 0.5px;
+  font-size: 12px;
   border: none;
   cursor: pointer;
 }
@@ -729,6 +809,7 @@ strong { font-weight: 600; }
   align-items: center;
   padding: 16px 0;
   font-family: var(--font-mono);
+  font-weight: 500;
   font-size: 12px;
   color: var(--text-3);
 }
@@ -751,20 +832,21 @@ strong { font-weight: 600; }
 
 .setup h2 {
   font-family: var(--font-heading);
-  font-size: 22px;
   font-weight: 700;
+  font-size: 20px;
+  line-height: 1.3;
   margin-bottom: 8px;
 }
 
 .setup p {
+  font-family: var(--font);
   font-size: 15px;
+  line-height: 1.55;
   color: var(--text-2);
   margin-bottom: 6px;
 }
 
 .setup .btn { margin-top: 20px; }
-
-/* ── Print ──────────────────────────────────────── */
 
 /* ── Pronouns (de-emphasize parenthetical) ──── */
 
@@ -773,7 +855,7 @@ strong { font-weight: 600; }
 .card-title .pronouns {
   font-family: var(--font);
   font-weight: 400;
-  font-size: 0.65em;
+  font-size: 0.6em;
   color: var(--text-3);
   letter-spacing: 0;
 }
