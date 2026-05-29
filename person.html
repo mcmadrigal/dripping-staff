@@ -7,13 +7,13 @@
   <meta name="theme-color" content="#ece7df" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#1a1714" media="(prefers-color-scheme: dark)">
   <title>Dripping — Staff</title>
-  <link rel="stylesheet" href="style.css?v=24">
+  <link rel="stylesheet" href="style.css?v=26">
 </head>
 <body>
   <div id="hdr"></div>
   <div class="shell" id="app"></div>
   <script src="demo-data.js?v=14"></script>
-  <script src="app.js?v=22"></script>
+  <script src="app.js?v=23"></script>
   <script>
     const app = document.getElementById('app');
     const teamId = getParam('team');
@@ -59,10 +59,15 @@
 
         h += renderContactsBar(contacts);
 
+        // Teams whose _shared content is team-page-only (not repeated on individual pages)
+        const TEAM_ONLY_SHARED = new Set(['artist_care']);
+
         // Shared sections (skip "Paid Staff" section if person is not paid)
-        for (const row of shared) {
-          if ((row.section === 'Paid Staff' || row.section === 'Perks') && !isPaid) continue;
-          h += renderSection(row.section, row.content);
+        if (!TEAM_ONLY_SHARED.has(teamId)) {
+          for (const row of shared) {
+            if ((row.section === 'Paid Staff' || row.section === 'Perks') && !isPaid) continue;
+            h += renderSection(row.section, row.content);
+          }
         }
 
         for (const row of personRows) {

@@ -447,7 +447,7 @@ strong { font-weight: 600; }
   content: '–';
   position: absolute;
   left: 0;
-  color: var(--text-3);
+  color: var(--text-2);
 }
 
 /* ── Rider groups (artist name → bullet list) ───── */
@@ -476,9 +476,9 @@ strong { font-weight: 600; }
 
 .rider-group li {
   font-family: var(--font);
-  font-size: 14px;
-  line-height: 1.45;
-  color: var(--text-2);
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--text);
   padding: 2px 0 2px 16px;
   position: relative;
   margin: 0;
@@ -488,10 +488,10 @@ strong { font-weight: 600; }
   content: '';
   position: absolute;
   left: 4px;
-  top: 10px;
+  top: 11px;
   width: 4px;
   height: 4px;
-  background: var(--text-3);
+  background: var(--text-2);
   border-radius: 50%;
 }
 
