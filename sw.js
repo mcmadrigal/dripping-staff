@@ -1,4 +1,4 @@
-const CACHE = 'dripping-v9';
+const CACHE = 'dripping-v10';
 const STATIC = ['/index.html', '/team.html', '/person.html', '/style.css', '/app.js', '/demo-data.js'];
 
 self.addEventListener('install', e => {
