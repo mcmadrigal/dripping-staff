@@ -911,25 +911,6 @@ window.DEMO_DATA = {
       "content": "Friday\nOverview: Assist at The Barn for sound checks + clown workshop\n-Noon: Meet Anika at The Barn, assist with soundchecks for four live acts - Buttechno, Isabella Koen, Hesaitix, Eden Aurelius.\n-4pm: Assist with Alex Tatarsky clown workshop in The Barn.\n-4:30pm: Alex Tatarsky clown workshop begins\n-5:30pm: Help pack down post-workshop\n-6pm: Wrap.\n\nSaturday:\nOverview: Assist with sound checks for overnight Open Air show, then return to assist with ROS.\n-10am: Arrive at Open Air, meet with Rey, assist with prep for sound checks\n-10:30am: Black Decelerant sound check\n-11:30am: Earthen Sea sound check\n-12:30pm: Paperclip Minimiser sound check\n-1:30pm: Assist Jade with stage turnover for day party\n-2:30pm: Break\n\n-11pm: Return to stage, Elori Saxl & Henry Solomon line check\n-12am: Elori Saxl & Henry Solomon live\n-1am: 20min changeover\n-1:20am: Black Decelerant live\n-2:20am: 20min changeover\n-2:40am: Earthen Sea live\n-3:40am: 20min changeover\n-4am: Paperclip Minimiser live\n-5:30am: Wrap. Thank you so, so much!"
     },
     {
-      "person_id": "franky_gonzalez",
-      "name": "Franky Gonzalez (he/him)",
-      "phone": "",
-      "role": "Production Hand",
-      "paid": true,
-      "section": "",
-      "content": "",
-      "parking": ""
-    },
-    {
-      "person_id": "franky_gonzalez",
-      "name": "",
-      "phone": "",
-      "role": "",
-      "section": "Meals",
-      "content": "Check in with The Innkeeper for your meals.\n\nYour green wristband gets you 50% off coffee at 109 Montrose — coffee only, not available on other items.",
-      "parking": ""
-    },
-    {
       "person_id": "haamid",
       "name": "Haamid (he/him)",
       "phone": "",
@@ -2708,12 +2689,12 @@ window.DEMO_DATA = {
     {
       "person_id": "francesca",
       "section": "Artist Info",
-      "content": "Keiyaa NYC pickup location: TBC\nKianna (gyrofield) departure flight: United Airlines UA70 EWR 5:55PM"
+      "content": "Keiyaa NYC pickup: Friday ~5am departure (flights not yet booked; pickup location TBC)\nKianna (gyrofield) departure flight: United Airlines UA70 EWR 5:55PM"
     },
     {
       "person_id": "francesca",
       "section": "Itinerary",
-      "content": "Wednesday:\nMessage Keiyaa and confirm pickup time and location. Important that artist arrives onsite no later than 11:15am Thursday.\n\nThursday:\n- 9am: Pickup Keiyaa and 3 band members in NYC, drive to site.\n- Send WhatsApp to Inn Keeper: \"This is driver Francesca. I have keiyaA with me. ETA at camp is XXpm\"\n- Drop off artist at the Special Access Lot. Help them load into the backstage area, then proceed to main parking area to receive your wristband and parking pass.\n- Drive them back either Thursday night or Friday am — TBC.\n- Option to pickup another artist in NYC.\n\nSunday:\n12pm — Meet Kianna backstage at The Inn. Drive her to EWR for departure."
+      "content": "Wednesday:\nMessage Keiyaa and confirm pickup time and location. Important that artist arrives onsite no later than 11:15am Thursday.\n\nThursday:\n- 9am: Pickup Keiyaa and 3 band members in NYC, drive to site.\n- Send WhatsApp to Inn Keeper: \"This is driver Francesca. I have keiyaA with me. ETA at camp is XXpm\"\n- Drop off artist at the Special Access Lot. Help them load into the backstage area, then proceed to main parking area to receive your wristband and parking pass.\n\nFriday:\n- ~5am: Depart camp with keiyaA, drive back to NYC. Flight info TBC — confirm with artist Thursday evening.\n- Option to pickup another artist in NYC.\n\nSunday:\n12pm — Meet Kianna backstage at The Inn. Drive her to EWR for departure."
     },
     {
       "person_id": "francesca",
@@ -3000,7 +2981,7 @@ window.DEMO_DATA = {
     {
       "person_id": "karen_nicole",
       "section": "Vendor Contacts",
-      "content": "Wadadli Jerk (Brods) · Arrival: Fri 10:30am\n(917) 687-1508\n\nArchive Chives\n\nHen House · Arrival: Thu TBC\n\nDila (LJ) · Arrival: Thu 11am\n(206) 434-5704\n\nBe Bep (Phoebe) · Arrival: TBC\n(714) 876-3957\n\nLeo (Director)\n(415) 420-8884"
+      "content": "Wadadli Jerk (Brods) · Arrival: Fri 10:30am\n(917) 687-1508\n\nArchive Chives · Direct contact (friends)\n\nHen House · Arrival: Fri afternoon\n\nDila (LJ) · Arrival: Thu 11am\n(206) 434-5704\n\nBe Bep (Phoebe) · Arrival: Wed 10am\n(714) 876-3957\n\nLeo (Director)\n(415) 420-8884"
     },
     {
       "person_id": "karen_nicole",
@@ -3143,7 +3124,7 @@ window.DEMO_DATA = {
     },
     {
       "person_id": "franky",
-      "name": "Franky",
+      "name": "Franky Gonzalez (he/him)",
       "role": "Audio Archiving",
       "paid": true,
       "section": "",
