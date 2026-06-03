@@ -7,13 +7,13 @@
   <meta name="theme-color" content="#ece7df" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#1a1714" media="(prefers-color-scheme: dark)">
   <title>Dripping — Staff</title>
-  <link rel="stylesheet" href="style.css?v=25">
+  <link rel="stylesheet" href="style.css?v=28">
 </head>
 <body>
   <div id="hdr"></div>
   <div class="shell" id="app"></div>
-  <script src="demo-data.js?v=14"></script>
-  <script src="app.js?v=25"></script>
+  <script src="demo-data.js?v=35"></script>
+  <script src="app.js?v=33"></script>
   <script>
     const app = document.getElementById('app');
     document.getElementById('hdr').innerHTML = renderHeader();
@@ -52,27 +52,31 @@
           </div>
         </div>`;
 
-        for (const t of teams) {
-          const href = `team.html?id=${encodeURIComponent(t.team_id)}`;
-          const typeLbl = t.type === 'individual' ? 'individual' : 'team';
-          h += `<a href="${href}" class="team-row">
-            <span class="team-emoji">${t.icon || '📋'}</span>
+        // Build entry list with all teams + Sophia (Check In Captain) as a sortable row.
+        const entries = teams.map(t => ({
+          name: t.team_name,
+          icon: t.icon || '📋',
+          href: `team.html?id=${encodeURIComponent(t.team_id)}`,
+          tag: t.type === 'individual' ? 'individual' : 'team',
+        }));
+        entries.push({
+          name: 'Check In – Sophia',
+          icon: '✅',
+          href: 'person.html?team=check_in&id=sophia&from=home',
+          tag: 'Check In Captain',
+        });
+        entries.sort((a, b) => a.name.localeCompare(b.name));
+
+        for (const e of entries) {
+          h += `<a href="${e.href}" class="team-row">
+            <span class="team-emoji">${e.icon}</span>
             <span class="info">
-              <span class="name">${esc(t.team_name)}</span>
+              <span class="name">${esc(e.name)}</span>
             </span>
-            <span class="tag">${typeLbl}</span>
+            <span class="tag">${esc(e.tag)}</span>
             <span class="arrow">›</span>
           </a>`;
         }
-
-        h += `<a href="person.html?team=check_in&id=sophia&from=home" class="team-row">
-          <span class="team-emoji">✅</span>
-          <span class="info">
-            <span class="name">Sophia</span>
-          </span>
-          <span class="tag">Check In Captain</span>
-          <span class="arrow">›</span>
-        </a>`;
         h += renderRefreshBar();
         app.innerHTML = h;
       }).catch(err => showError(app, err));

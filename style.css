@@ -688,13 +688,11 @@ strong { font-weight: 600; }
 }
 
 .contacts-cards {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.25s ease;
+  display: none;
 }
 
 .contacts-cards.open {
-  max-height: 1200px;
+  display: block;
 }
 
 .contact-card {
@@ -995,10 +993,6 @@ strong { font-weight: 600; }
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(4px); }
   to { opacity: 1; transform: translateY(0); }
-}
-
-.contacts-cards {
-  transition: max-height 0.3s ease;
 }
 
 .back {

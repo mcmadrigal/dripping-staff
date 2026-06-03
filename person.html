@@ -7,13 +7,13 @@
   <meta name="theme-color" content="#ece7df" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#1a1714" media="(prefers-color-scheme: dark)">
   <title>Dripping — Staff</title>
-  <link rel="stylesheet" href="style.css?v=26">
+  <link rel="stylesheet" href="style.css?v=28">
 </head>
 <body>
   <div id="hdr"></div>
   <div class="shell" id="app"></div>
-  <script src="demo-data.js?v=14"></script>
-  <script src="app.js?v=25"></script>
+  <script src="demo-data.js?v=35"></script>
+  <script src="app.js?v=33"></script>
   <script>
     const app = document.getElementById('app');
     const teamId = getParam('team');
@@ -24,7 +24,8 @@
     else if (!getSheetId() && !window.DEMO_DATA) { location.href = 'index.html'; }
     else {
       showLoading(app);
-      Promise.all([fetchTab('_teams'), fetchTab('_contacts'), fetchTab(teamId)]).then(([teamsMeta, contacts, data]) => {
+      Promise.all([fetchTab('_teams'), fetchTab('_contacts'), fetchTab(teamId), fetchTab('_config')]).then(([teamsMeta, contacts, data, config]) => {
+        const rainMode = (config || []).some(c => c.key === 'rain_mode' && String(c.value).toLowerCase() === 'true');
         const meta = teamsMeta.find(t => t.team_id === teamId) || {};
         const teamName = meta.team_name || teamId;
 
@@ -60,7 +61,19 @@
         h += renderContactsBar(contacts);
 
         // Teams whose _shared content is team-page-only (not repeated on individual pages)
-        const TEAM_ONLY_SHARED = new Set(['artist_care']);
+        const TEAM_ONLY_SHARED = new Set();
+        // Teams whose personal Meals row should render BEFORE the team-shared sections.
+        const MEALS_FIRST = new Set(['archival_audio']);
+
+        // If MEALS_FIRST for this team, hoist Meals to the very top.
+        let mealsRendered = false;
+        if (MEALS_FIRST.has(teamId)) {
+          const mealsRow = personRows.find(r => r.section === 'Meals');
+          if (mealsRow && isPaid) {
+            h += renderSection(mealsRow.section, mealsRow.content);
+            mealsRendered = true;
+          }
+        }
 
         // Shared sections (skip "Paid Staff" section if person is not paid)
         if (!TEAM_ONLY_SHARED.has(teamId)) {
@@ -70,7 +83,19 @@
           }
         }
 
+        // Rain mode: rename Rain Plan → Schedule and skip the original Schedule rows.
+        // Off mode: render rows as-is (Schedule + Rain Plan both visible).
+        const isScheduleSection = s => /Schedule$/i.test(s || '');
         for (const row of personRows) {
+          if (row.section === 'Meals' && !isPaid) continue;
+          if (row.section === 'Meals' && mealsRendered) continue;
+          if (rainMode) {
+            if (isScheduleSection(row.section)) continue;
+            if (row.section === 'Rain Plan') {
+              h += renderSection('Schedule', row.content);
+              continue;
+            }
+          }
           h += renderSection(row.section, row.content);
         }
 

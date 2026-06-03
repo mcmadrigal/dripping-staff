@@ -25,6 +25,10 @@ window.DEMO_DATA = {
     {
       "key": "hotel_address",
       "value": "448 US-206, Newton, NJ 07860"
+    },
+    {
+      "key": "rain_mode",
+      "value": "false"
     }
   ],
   "_contacts": [
@@ -53,12 +57,12 @@ window.DEMO_DATA = {
       "description": "Site Managers oversee the grounds, power, facilities, and safety. Contact them for emergencies, site issues, weather decisions, or anything affecting the physical space."
     },
     {
-      "name": "Inn Keeper",
-      "role": "Inn Keeper",
-      "phone": "(646) 464-6590",
+      "name": "Innkeeper",
+      "role": "Innkeeper",
+      "phone": "(347) 986-7562",
       "hours": "",
       "is_whatsapp": "whatsapp",
-      "description": "The Inn Keeper manages artist hospitality at The Inn — meal tokens, van keys, backstage access, and artist check-ins. Contact them for anything related to artist arrivals, accommodations, or backstage needs."
+      "description": "The Innkeeper manages artist hospitality at The Inn — meal tokens, van keys, backstage access, and artist check-ins. Contact them for anything related to artist arrivals, accommodations, or backstage needs."
     },
     {
       "name": "Daniel",
@@ -80,13 +84,13 @@ window.DEMO_DATA = {
   "_everyone": [
     {
       "section": "Notes for Everyone",
-      "content": "**Notes:**\n-Make sure you have **downloaded Slack** and have joined the Dripping workspace.\n\n**Parking type:**\n- General Admission Parking: Must have a prepurchased parking pass.\n- Paid Staff and Artists who are driving themselves: Park at The Loop, which is the first parking lot at check-in.\n- Special Access Parking in front of the Inn: for working vehicles, vendors, Site-managers, anyone one on the emergency contact sheet."
+      "content": "Notes:\n-Make sure you have downloaded Slack and have joined the Dripping workspace.\n\nParking type:\n- General Admission Parking: Must have a prepurchased parking pass.\n- Paid Staff and Artists who are driving themselves: Park at The Loop, which is the first parking lot at check-in.\n- Special Access Parking in front of the Inn: for working vehicles, vendors, Site-managers, anyone one on the emergency contact sheet."
     }
   ],
   "_teams": [
     {
       "team_id": "archival",
-      "team_name": "Archival",
+      "team_name": "Archival – Photography",
       "type": "individual",
       "icon": "📸",
       "captain_name": "",
@@ -179,6 +183,14 @@ window.DEMO_DATA = {
       "icon": "💚",
       "captain_name": "",
       "captain_phone": ""
+    },
+    {
+      "team_id": "archival_audio",
+      "team_name": "Archival – Audio",
+      "type": "individual",
+      "icon": "🎙️",
+      "captain_name": "",
+      "captain_phone": ""
     }
   ],
   "stage_managers": [
@@ -188,7 +200,7 @@ window.DEMO_DATA = {
       "phone": "",
       "role": "",
       "section": "Notes",
-      "content": "-Make sure you are in contact with artists **20 mins** before their set time.\n-**Check on each artist** before / after their set. Liaise with Artist Care via the Innkeeper or Slack as needed."
+      "content": "-Make sure you are in contact with artists 20 mins before their set time.\n-Check on each artist before / after their set. Liaise with Artist Care via the Innkeeper or Slack as needed."
     },
     {
       "person_id": "alex_rapp",
@@ -203,7 +215,7 @@ window.DEMO_DATA = {
     {
       "person_id": "alex_rapp",
       "section": "Transportation",
-      "content": "**Tuesday evening:** Take the **Lakeland 46** bus westbound from **Port Authority Bus Terminal** (42nd St). Buses depart at 5:20pm and 6pm — purchase a ticket at the station and we will reimburse you.\n\n**Sunday:** **12:30pm bus from Camp Sacajawea** back to NYC. Please arrive **15 minutes early** to check in."
+      "content": "Wednesday 6/10: Van from Ridgewood.\n\nSunday: 12:30pm bus from Camp Sacajawea back to NYC. Please arrive 15 minutes early to check in."
     },
     {
       "person_id": "alex_rapp",
@@ -211,46 +223,33 @@ window.DEMO_DATA = {
       "phone": "",
       "role": "",
       "section": "Meals",
-      "content": "Check in with the innkeeper for your meals.\n\nYour **green wristband** gets you **50% off coffee** at 109 Montrose — coffee only, not available on other items.\n\n**Welcome Dinner Token:** n/a\n**Regular Meal Token:** 2",
+      "content": "Check in with The Innkeeper for your meals.\n\nYour green wristband gets you 50% off coffee at 109 Montrose — coffee only, not available on other items.\n\nWelcome Dinner Token: n/a\nRegular Meal Token: 2",
       "parking": ""
     },
     {
       "person_id": "alex_rapp",
-      "name": "",
-      "phone": "",
-      "role": "",
       "section": "Shifts",
-      "content": "Shift 1: Fr 5pm–8:30pm\nShift 2: Sat 12:30pm–10:30pm",
-      "parking": ""
+      "content": "Setup: Wednesday noon-EOD\nShift 1: Fr 4pm-8:30pm\nShift 2: Sat 12:30pm-10:30pm"
     },
     {
       "person_id": "alex_rapp",
-      "name": "",
-      "phone": "",
-      "role": "",
+      "section": "Riders",
+      "content": "- [Bendik Giske](https://gbc6vrg43nwcgkgd.public.blob.vercel-storage.com/riders/Bendik_Giske_Tech_Rider_2026-0O6yWwWqUB0D1Bu2zTMu06OGlTmcXh.pdf)\n- [Choke Hole](https://gbc6vrg43nwcgkgd.public.blob.vercel-storage.com/riders/Choke_Hole_Tech_Rider-7J7QhVGU4bnKPJ1CsGfOTryBxa2PDW.pdf)"
+    },
+    {
+      "person_id": "alex_rapp",
       "section": "Rider Key Info",
-      "content": "Bendik Giske:\n● 4x wireless mic packs — artist provides mics\n● 1x IEM pack — artist provides earpiece\n\nChoke Hole:\n● 1 x Pioneer Mixer DJM 800 or other quality Mixer with USB functionality and laptop output cables\n● 2 x CDJs\n● 3 x Wireless Vocal Mics SM/Beta58 (2 active, 1 back up)\n● 2 x Monitor wedges (1 for Host side, 1 for DJ)",
-      "parking": ""
+      "content": "Bendik Giske:\n● 4x wireless mic packs - artist provides mics\n● 1x IEM pack - artist provides earpiece\n\nChoke Hole:\n● 1 x Pioneer Mixer DJM 800 or other quality Mixer with USB functionality and laptop output cables.\n● 2 x CDJs\n● 3 x Wireless Vocal Mics SM/Beta58 (2 active, 1 back up)\n● 2 x Monitor wedges for 1 for Host side, 1 for DJ,"
     },
     {
       "person_id": "alex_rapp",
-      "section": "Friday Schedule",
-      "content": "Overview: Bendik Giske at the Hammock Grove.\n-4:30pm: Prep wireless system at Hammock Grove. Four belt packs, Bendik brings his own mics + one IEM system, Bendik brings his own earpiece. Set up two pieces of 2x8 staging + mix desk that are stored in the small cabin adjacent. Nate will help with bringing over staging.\n-5:30pm: Retrieve mixer from The Outside Inn, take it to Hammock Grove, sound check Bendik.\n-7:30pm: Bendik Giske live.\n-8:30pm: Pack down subs, mics, staging. Strike stage, bring 2x8 staging platforms to the hut at The Inn Outside.\n-9pm: Wrap"
-    },
-    {
-      "person_id": "alex_rapp",
-      "section": "Saturday Schedule",
-      "content": "Overview: Choke Hole.\n-Noon: Confirm audio setup with One-Source, meet with Choke Hole and assist with all audio needs. Note: Devlin's is providing a projector and screen, which they are running. Grab 2x4\" plastic folding table for their DJ rig from The Inn.\n-Work with Dripping A2s to set up Easy Up tent coverage for equipment and audience members as needed. Tarp speakers if needed. There is no rain plan.\n-9pm: Choke Hole live.\n-10pm: Pack up, turn off all amps. Wrap. *Thank you so, so much!*"
-    },
-    {
-      "person_id": "alex_rapp",
-      "section": "Wednesday Schedule",
-      "content": "Overview: Choke Hole setup.\n-Noon: Help unload the ring from the truck, assist with setup as needed. Make gameplan for DOS mixing etc.\n-3pm (approx): Touch base with One-Source about Hammock Grove plan on Friday. Confirm extra subs to be added for the performance. Once that's done, wrap for the day."
+      "section": "Schedule",
+      "content": "Wednesday:\nOverview: Choke Hole + Setup. 8am: Depart from NYC - location TBC.\n-Noon: Help unload the ring from the truck, assist with setup as needed. Make gameplan for DOS mixing etc.\n-3pm (approx): Touch base with One-Source about Hammock Grove plan on Friday. Confirm extra subs to be added for the performance. Once that’s done, wrap for the day.\n\nFriday:\nOverview: Bendik Giske at the Hammock Grove.\n-3:45pm: Coordinate meetup with Nate McManus and Dalton Saffe.\n-4pm: Prep wireless system at Hammock Grove. Four belt packs + IEM system, Bendik brings his own mics + IEM earpiece. Bendik brings his own mics + IEM earpiece. These will be stored in The Inn. Set up two pieces of 2x8 staging + mix desk that are stored in the small cabin adjacent.\n-7:30pm: Bendik Giske live\n-8:30pm: pack down subs, mics, staging. Strike stage, bring 2x8 staging platforms to the hut at The Inn Outside.\n-9pm: Wrap\n\nSaturday:\nOverview: Choke Hole\n-Noon: confirm audio setup with One-Source, meet with Choke Hole and assist with all audio needs. Note: Devlin’s is providing a projector and screen, which they are running. Grab 2x4” plastic folding table for their DJ rig from The Inn.\n-Work with Dripping A2s to set up Easy Up tent coverage for equipment and audience members as needed. Tarp speakers if needed. There is no rain plan.\n-9pm: Choke Hole live\n-10pm: Pack up, turn off all amps. Wrap. Thank you so, so much!"
     },
     {
       "person_id": "alex_rapp",
       "section": "Rain Plan",
-      "content": "**Wednesday:**\nOverview: Choke Hole setup. (same as schedule)\n-Noon: Help unload the ring from the truck.\n-3pm: Touch base with One-Source about Hammock Grove plan on Friday.\n\n**Friday:**\nOverview: Bendik Giske at **The Barn**.\n-4:30pm: Prep wireless system at The Barn. Four belt packs, Bendik brings his own mics + one IEM system.\n-5:30pm: Sound check Bendik.\n-7:30pm: Bendik Giske live.\n-8:30pm: Pack down mics & staging. Wrap.\n\n**Saturday:**\nOverview: Choke Hole. (same as schedule)\n-12:30pm: Meet Choke Hole at The Court.\n-9pm: Choke Hole live.\n-10pm: Pack up, turn off all amps.\n-10:30pm: Wrap."
+      "content": "Wednesday:\nOverview: Choke Hole setup.\n-Noon: Help unload the ring from the truck, assist with setup as needed. Make gameplan for DOS mixing etc.\n-3pm (approx): Touch base with One-Source about Hammock Grove plan on Friday. Confirm extra subs to be added for the performance. Once that’s done, wrap for the day.\nFriday:\nOverview: Bendik Giske at The Barn.\n-4:30pm: Prep wireless system at The Barn. Four belt packs, Bendik brings his own mics + one IEM system, Bendik brings his own earpiece. Nate will help with bringing over staging.\n-5:30pm: Sound check Bendik.\n-7:30pm: Bendik Giske live\n-8:30pm: pack down mics & staging. Wrap.\n\nSaturday:\nOverview: Choke Hole\n-12:30pm: confirm audio setup with One-Source, meet with Choke Hole and assist with all audio needs. Note: Devlin’s is providing a projector and screen, which they are running. Grab 2x4” plastic folding table for their DJ rig from The Inn.\n-Work with Dripping A2s to set up Easy Up tent coverage for equipment and audience members as needed. Tarp speakers if needed. There is no rain plan.\n-9pm: Choke Hole live\n-10pm: Pack up, turn off all amps.\n-10:30pm: Wrap. Thank you so, so much!"
     },
     {
       "person_id": "anika",
@@ -272,59 +271,34 @@ window.DEMO_DATA = {
       "name": "",
       "phone": "",
       "role": "",
-      "section": "Shifts",
-      "content": "Thursday: Pick up from Soundhouse\nShift 1: Fr 11:30am–4:30pm, 8:30pm–5:30am\nShift 2: Sat 1–4pm, 9pm–7am",
-      "parking": ""
-    },
-    {
-      "person_id": "anika",
-      "name": "",
-      "phone": "",
-      "role": "",
       "section": "Meals",
-      "content": "Check in with the innkeeper for your meals.\n\nYour **green wristband** gets you **50% off coffee** at 109 Montrose — coffee only, not available on other items.\n\n**Welcome Dinner Token:** 1\n**Regular Meal Token:** 2",
+      "content": "Check in with The Innkeeper for your meals.\n\nYour green wristband gets you 50% off coffee at 109 Montrose — coffee only, not available on other items.\n\nWelcome Dinner Token: 1\nRegular Meal Token: 2",
       "parking": ""
     },
     {
       "person_id": "anika",
-      "name": "",
-      "phone": "",
-      "role": "",
-      "section": "Thursday Schedule",
-      "content": "Overview: Pick up rental gear from Soundhouse.\n-10am: pick up gear in GP, with a target of noon arrival. Drop off all gear at The Inn.",
-      "parking": ""
+      "section": "Shifts",
+      "content": "Thursday: Pick up from Soundhouse\nShift 1: Fr 11:30-4:30pm, 8:30-5:30am\nShift 2: Sat 1-4pm, 9pm-7am"
     },
     {
       "person_id": "anika",
-      "name": "",
-      "phone": "",
-      "role": "",
-      "section": "Friday Schedule",
-      "content": "Overview: Four live sets, two DJs.\n-11:30am: Soundchecks in The Barn. In order: Buttechno, Isabella, Hesaitix, Eden Aurelius. At least one dedicated table for live sets, riders attached. All artists provide some variation on stereo output. Otherwise, simple 4x CDJ + Pioneer setup for DJs.\n-4:30pm: Break.\n-8:30pm: Return to The Barn, get ready.\n-9pm: Eden Aurelius (live).\n-10pm: Hesaitix (live).\n-11pm: Doula (DJ).\n-1am: Isabella Koen (live).\n-2am: Buttechno (live).\n-3am: zi! (DJ).\n-5am: Stage closes",
-      "parking": ""
+      "section": "Riders",
+      "content": "- [Buttechno](https://gbc6vrg43nwcgkgd.public.blob.vercel-storage.com/riders/buttechno_LIVE_tech_rider-cHLNqdqVfu9MHKmYHx2TaFktX9i3Ee.pdf)\n- [Isabella Koen](https://gbc6vrg43nwcgkgd.public.blob.vercel-storage.com/riders/Isabella_Koen__Live_PA_Tech_and_Hospitality_Rider-PJ8L5qL3BkoNXsFeE3BJfVlwaMTZPZ.pdf)\n- [Hesaitix](https://gbc6vrg43nwcgkgd.public.blob.vercel-storage.com/riders/HESAITIX_-TECHNICAL_RIDER__LIVE_-3Sa2rd1lDki9a7NCt1jDYXzZ8Ck4hf.pdf)\n- [Eden Aurelius](https://gbc6vrg43nwcgkgd.public.blob.vercel-storage.com/riders/Eden_Aurelius_Rider-c91SmFvG5MWROIcv6GwYVZtTvuhUZf.jpg)\n- [zi!](https://gbc6vrg43nwcgkgd.public.blob.vercel-storage.com/riders/zi__tech_rider__eng_-XA1k8SfKgvDFr4SeAGbAyXeU30voOO.pdf)"
     },
     {
       "person_id": "anika",
-      "name": "",
-      "phone": "",
-      "role": "",
-      "section": "Saturday Schedule",
-      "content": "Overview: Run sound for Baalti installation in the day, Maricón takeover at night.\n-1pm: Soundcheck Baalti. Notes: their performance is meant to simulate the chaos of Indian soundclashes. To achieve this, they will be running separate signals out the L and R channels. They will be there all morning setting up projectors and we have a whole team ready to assist them with this. You are only on audio.\n-2:30pm: Baalti live.\n-3:30pm: Baalti finishes, reset.\n-4pm: Break.\n-9pm: Reset booth as needed.\n-10pm: Maricon begins. All artists using CDJs and Pioneer mixer. Set times are:\n  Joselo: 10–12\n  Fried Platano: 12–2\n  Sevyn Love: 2–4\n  Joao Lagrima de Ouro: 4–7\n-7am: Wrap. *Thank you so, so much!*",
-      "parking": ""
-    },
-    {
-      "person_id": "anika",
-      "name": "",
-      "phone": "",
-      "role": "",
       "section": "Rider Key Info",
-      "content": "Eden Aurelius\n● Xone 96 - standalone unit used as interface\n\nHesaitix\n● Two (2) CDJ2000NXS or similar on CDJ stand\n● One (1) Pioneer DJM mixer\n● Two (2) laptop stands\n● Three (3) power outlets\n\nIsabella Koen\n● Stereo XLR out\n\nButtechno\n● Xone 96 - standalone unit used as interface\n● Keyboard stand",
-      "parking": ""
+      "content": "Eden Aurelius\n● Xone 96 - standalone unit used as interface\n\nHesaitix\n● Two (2) CDJ2000NXS or similar on CDJ stand\n● One (1) Pioneer DJM mixer\n● Two (2) laptop stands\n● Three (3) power outlets\n\nIsabella Koen\n● Stereo XLR out\n\nButtechno\n● Xone 96 - standalone unit used as interface\n● Keyboard stand"
+    },
+    {
+      "person_id": "anika",
+      "section": "Schedule",
+      "content": "Thursday:\nOverview: Pick up rental gear from Soundhouse.\n-10am: pick up gear in GP, with a target of noon arrival. Drop off all gear at The Inn.\n\nFriday:\nOverview: Four live sets, two DJs\n-11:30am: Soundchecks in The Barn. In order: Buttechno, Isabella, Hesaitix, Eden Aurelius. At least one dedicated table for live sets, riders attached. All artists provide some variation on stereo output. Otherwise, simple 4x CDJ + Pioneer setup for DJs.\n-4:30pm: Break\n\n-8:30pm: Return to The Barn, get ready\n-9pm: Eden Aurelius (live)\n-10pm: Hesaitix (live)\n-11pm: Doula (DJ)\n-1am: Isabella Koen (live)\n-2am: Buttechno (live)\n-3am: zi! (DJ)\n-5am: Stage closes. Wrap.\n\nSaturday:\nOverview: Run sound for Baalti installation in the day, Maricón takeover at night.\n-1pm: Souncheck Baalti. Notes: their performance is meant to simulate the chaos of Indian soundclashes. To achieve this, they will be running separate signals out the L and R channels. They will be there all morning setting up projectors and we have a whole team ready to assist them with this. You are only on audio.\n-2:30pm: Baalti live\n-3:30pm: Baalti finishes, reset\n-4pm: Break\n\n-9pm: Reset booth as needed.\n-10pm: Maricon begins. All artists using CDJs and Pioneer mixer. Set times are: ​      Joselo: 10-12 ​      Fried Platano: 12-2 ​      Sevyn Love: 2-4 ​      Joao Lagrima de Ouro: 4-7\n-7am: Wrap. Thank you so, so much!"
     },
     {
       "person_id": "anika",
       "section": "Rain Plan",
-      "content": "**Friday:**\nOverview: Four live sets, two DJs. (same as schedule — The Barn is covered)\n-11:30am: Soundchecks in The Barn.\n-4:30pm: Break.\n-8:30pm: Return to The Barn.\n-9pm: Eden Aurelius (live).\n-10pm: Hesaitix (live).\n-11pm: Doula (DJ).\n-1am: Isabella Koen (live).\n-2am: Buttechno (live).\n-3am: zi! (DJ).\n-5am: Stage closes\n\n**Saturday:**\nOverview: Run sound for Baalti installation in the day, Maricón takeover at night. (same as schedule — The Barn is covered)\n-1pm: Soundcheck Baalti.\n-2:30pm: Baalti live.\n-3:30pm: Baalti finishes, reset.\n-4pm: Break.\n-9pm: Reset booth as needed.\n-10pm: Maricon begins.\n-7am: Wrap."
+      "content": "Friday:\nOverview: Four live sets, two DJs.\n-11:30am: Soundchecks in The Barn. In order: Buttechno, Isabella, Hesaitix, Eden Aurelius. At least one dedicated table for live sets, riders attached. All artists provide some variation on stereo output. Otherwise, simple 4x CDJ + Pioneer setup for DJs.\n-4:30pm: Break.\n-8:30pm: Return to The Barn, get ready.\n-9pm: Eden Aurelius (live).\n-10pm: Hesaitix (live).\n-11pm: Doula (DJ).\n-1am: Isabella Koen (live).\n-2am: Buttechno (live).\n-3am: zi! (DJ).\n-5am: Stage closes. Wrap.\n\nSaturday:\nOverview: Run sound for Baalti installation in the day, Maricón takeover at night.\n-1pm: Soundcheck Baalti. Notes: their performance is meant to simulate the chaos of Indian soundclashes. To achieve this, they will be running separate signals out the L and R channels.\n-2:30pm: Baalti live.\n-3:30pm: Baalti finishes, reset.\n-4pm: Break.\n-9pm: Reset booth as needed.\n-10pm: Maricon begins. All artists using CDJs and Pioneer mixer. Set times: Joselo 10–12, Fried Platano 12–2, Sevyn Love 2–4, Joao Lagrima de Ouro 4–7.\n-7am: Wrap. Thank you so, so much!"
     },
     {
       "person_id": "devoye",
@@ -339,16 +313,7 @@ window.DEMO_DATA = {
     {
       "person_id": "devoye",
       "section": "Transportation",
-      "content": "**Thursday:** **3pm bus from Nowadays** (56 Wyckoff Ave, Bushwick). Please arrive by 2:30pm.\n\n**Sunday:** **12:30pm bus from Camp Sacajawea** back to NYC. Please arrive **30 minutes early** to check in."
-    },
-    {
-      "person_id": "devoye",
-      "name": "",
-      "phone": "",
-      "role": "",
-      "section": "Shifts",
-      "content": "Shift 1: Fr 12pm–2:30pm, 4–6pm\nShift 2: Sat 9:30am–7pm",
-      "parking": ""
+      "content": "Thursday: 3pm bus from Nowadays (56-06 Cooper Ave, Glendale, NY). Please arrive by 2:30pm.\n\nSunday: 12:30pm bus from Camp Sacajawea back to NYC. Please arrive 30 minutes early to check in."
     },
     {
       "person_id": "devoye",
@@ -356,32 +321,33 @@ window.DEMO_DATA = {
       "phone": "",
       "role": "",
       "section": "Meals",
-      "content": "Check in with the innkeeper for your meals.\n\nYour **green wristband** gets you **50% off coffee** at 109 Montrose — coffee only, not available on other items.\n\n**Welcome Dinner Token:** n/a\n**Regular Meal Token:** 2",
+      "content": "Check in with The Innkeeper for your meals.\n\nYour green wristband gets you 50% off coffee at 109 Montrose — coffee only, not available on other items.\n\nWelcome Dinner Token: n/a\nRegular Meal Token: 2",
       "parking": ""
     },
     {
       "person_id": "devoye",
-      "name": "",
-      "phone": "",
-      "role": "",
+      "section": "Shifts",
+      "content": "Shift 1: Fr 12pm-2:30pm, 4-6pm\nShift 2: Sat 9:30am - 7pm"
+    },
+    {
+      "person_id": "devoye",
+      "section": "Riders",
+      "content": "- [Alex Tatarsky](https://gbc6vrg43nwcgkgd.public.blob.vercel-storage.com/riders/Alex_Tatarsky_-_Rider-gFSiotUioXt2Esh8Aj59hVHERYnSag.pdf)\n- [Max in the World & Kroba](https://gbc6vrg43nwcgkgd.public.blob.vercel-storage.com/riders/Max_In_The_World___Kroba_Rider__2026_-71ERvKEg1sMXxMh6oqkLJt10IktN0V.png)"
+    },
+    {
+      "person_id": "devoye",
       "section": "Rider Key Info",
-      "content": "bossy boots:\n● Headset mic\n● Aux input\n\nAlex Tatarsky:\n● 1x mic\n● Stereo input for music\n\nMax in the World & Kroba\n● Stereo output from mixer\n● Table space\n\nSpike Einbinder & Honey Pluton\n● Two microphones",
-      "parking": ""
+      "content": "bossy boots:\n● headset mic\n● aux input\n\nAlex Tatarsky:\n● 1x mic\n● stereo input for music\n\nMax in the World & Kroba\n● Stereo output from mixer\n● Table space\n\nSpike Einbinder & Honey Pluton\n● Two microphones"
     },
     {
       "person_id": "devoye",
-      "section": "Friday Schedule",
-      "content": "Overview: Elinah's stretching workshop (1x headset mic), participatory clowning workshop led by Alex Tatarsky + a musical collaborator at The Outside Inn.\n-Noon: mixer check, sync headset mic, turn on soundsystem.\n-12:30pm: Elina soundcheck.\n-1pm: bossy boots recovery stretch.\n-2pm: Break.\n-4pm: Sound check Alex Tatarsky. 1x mic, stereo electronics feed into PA.\n-4:30pm: Alex Tatarsky workshop.\n-5:30pm: pack down gear, turn off system, hand off mixer to Alex Rapp for Bendik Giske. Wrap."
-    },
-    {
-      "person_id": "devoye",
-      "section": "Saturday Schedule",
-      "content": "Overview: Live hardware set at The Lake, standup comedy at The Amphitheater, assist at Open Air.\n-9:30am: Arrive at The Lake, set up table, DI's for Max in the World & Kroba. Single stereo output from a mixer the artist provides.\n-10am: Max in the World & Kroba soundcheck.\n-When completed: set up 2x Harbinger powered speakers, two mics and a small Mackie at the Amphitheater.\n-Noon: Max in the World & Kroba live.\n-1pm: Line check Spike Einbinder & Honey Pluton.\n-1:30pm: Max in the World & Kroba end, Spike & Honey begin.\n-2:30pm: Spike & Honey wrap. Pack down gear at both stages.\n-3pm: Assist at Open Air as needed.\n-7pm: Wrap. *Thank you so, so much!*"
+      "section": "Schedule",
+      "content": "Friday:\nOverview: Elinah’s stretching workshop (1x headset mic), participatory clowning workshop led by Alex Tatarsky + a musical collaborator at The Outside Inn.\n-Noon: mixer check, sync headset mic, turn on soundsystem\n-12:30pm: Elina soundcheck.\n-1pm: bossy boots recovery stretch\n-2pm: Break\n\n-4pm: Sound check Alex Tatarsky. 1x mic, stereo electronics feed into PA\n-4:30pm: Alex Tatarsky workshop.\n-5:30pm: pack down gear, turn off system, hand off mixer to Alex Rapp for Bendik Giske. Wrap.\n\nSaturday:\nOverview: Live hardware set at The Lake, standup comedy at The Amphitheater, assist at Open Air.\n-9:30am: Arrive at The Lake, set up table, DI’s for Max in the World & Kroba. Single stereo output from a mixer the artist provides.\n-10am: Max in the World & Kroba soundcheck.\n-When completed: set up 2x Harbinger powered speakers, two mics and a small Mackie at the Amphitheater.\n-Noon: Max in the World & Kroba live\n-1pm: Line check Spike Einbinder & Honey Pluton\n-1:30pm: Max in the World & Kroba end, Spike & Honey begin\n-2:30pm: Spike & Honey wrap. Pack down gear at both stages.\n-3pm: Assist at Open Air as needed\n-7pm: Wrap. Thank you so, so much!"
     },
     {
       "person_id": "devoye",
       "section": "Rain Plan",
-      "content": "**Friday:**\nOverview: Participatory clowning workshop led by Alex Tatarsky + a musical collaborator at **The Barn**.\n-Noon: Elinah's recovery stretch will be cancelled in the event of rain.\n-4pm: Sound check Alex Tatarsky. 1x mic, stereo electronics feed into PA.\n-4:30pm: Alex Tatarsky workshop.\n-5:30pm: Pack down gear, turn off system. Wrap.\n\n**Saturday:**\nOverview: Live hardware set and standup comedy at **The Inn**, assist at Open Air.\n-9:30am: Arrive at The Inn, set up DI's for Max in the World & Kroba.\n-10am: Max in the World & Kroba soundcheck.\n-11am: Line check Spike Einbinder & Honey Pluton.\n-Noon: Max in the World & Kroba live.\n-1:30pm: Max in the World & Kroba end, Spike & Honey begin.\n-2:30pm: Spike & Honey wrap.\n-3pm: Assist at Open Air as needed.\n-7pm: Wrap."
+      "content": "Friday:\nOverview: Participatory clowning workshop led by Alex Tatarsky + a musical collaborator at The Barn\n-Noon: Elinah’s recovery stretch will be cancelled in the event of rain.\n-4pm: Sound check Alex Tatarsky. 1x mic, stereo electronics feed into PA\n-4:30pm: Alex Tatarsky workshop.\n-5:30pm: pack down gear, turn off system. Wrap.\nSaturday:\nOverview: Live hardware set and standup comedy at The Inn, assist at Open Air.\n-9:30am: Arrive at The Inn, set up DI’s for Max in the World & Kroba. Single stereo output from a mixer the artist provides.\n-10am: Max in the World & Kroba soundcheck.\n-11am: Line check Spike Einbinder & Honey Pluton\n\n-Noon: Max in the World & Kroba live\n-1:30pm: Max in the World & Kroba end, Spike & Honey begin\n-2:30pm: Spike & Honey wrap.\n-3pm: Assist at Open Air as needed\n-7pm: Wrap. Thank you so, so much!"
     },
     {
       "person_id": "jade",
@@ -396,16 +362,7 @@ window.DEMO_DATA = {
     {
       "person_id": "jade",
       "section": "Transportation",
-      "content": "**Thursday:** **1pm bus from Nowadays** (56 Wyckoff Ave, Bushwick). Please arrive by 12:30pm.\n\n**Sunday:** **12:30pm bus from Camp Sacajawea** back to NYC. Please arrive **30 minutes early** to check in."
-    },
-    {
-      "person_id": "jade",
-      "name": "",
-      "phone": "",
-      "role": "",
-      "section": "Shifts",
-      "content": "Shift 1: Th 4–6:30pm, 10pm–12:30am\nShift 2: Fr 12pm–2pm, 1–6am\nShift 3: Sat 1:30–8:30pm",
-      "parking": ""
+      "content": "Thursday: 1pm bus from Nowadays (56-06 Cooper Ave, Glendale, NY). Please arrive by 12:30pm.\n\nSunday: 12:30pm bus from Camp Sacajawea back to NYC. Please arrive 30 minutes early to check in."
     },
     {
       "person_id": "jade",
@@ -413,37 +370,33 @@ window.DEMO_DATA = {
       "phone": "",
       "role": "",
       "section": "Meals",
-      "content": "Check in with the innkeeper for your meals.\n\nYour **green wristband** gets you **50% off coffee** at 109 Montrose — coffee only, not available on other items.\n\n**Welcome Dinner Token:** 1\n**Regular Meal Token:** 2",
+      "content": "Check in with The Innkeeper for your meals.\n\nYour green wristband gets you 50% off coffee at 109 Montrose — coffee only, not available on other items.\n\nWelcome Dinner Token: 1\nRegular Meal Token: 2",
       "parking": ""
     },
     {
       "person_id": "jade",
-      "name": "",
-      "phone": "",
-      "role": "",
+      "section": "Shifts",
+      "content": "Shift 1: Th 4-6:30pm, 10-12:30am\nShift 2: Fr 12pm-2pm, 1-6am\nShift 3: Sat 1:30-8:30pm"
+    },
+    {
+      "person_id": "jade",
+      "section": "Riders",
+      "content": "- [Pavel Milyakov](https://gbc6vrg43nwcgkgd.public.blob.vercel-storage.com/riders/Pavel_Milyakov_LIVE_TECH_RIDER-psdYtPQPXauSIijFx9qFftmI8bjkMD.pdf)\n- [Multicast Dynamics](https://gbc6vrg43nwcgkgd.public.blob.vercel-storage.com/riders/Multicast_Dynamics_-_DJ_-_Rider-L24lq6Pyg84lVPqGWNWIEtTJCEMtlP.pdf)\n- [C. Lavender](https://gbc6vrg43nwcgkgd.public.blob.vercel-storage.com/riders/C._Lavender_Tech_Rider-vx3le3YIoYSAZblB2Nf8bHBchKagMH.pdf)\n- [Ayanna Heaven](https://gbc6vrg43nwcgkgd.public.blob.vercel-storage.com/riders/Ayanna_Heaven_DJ_Rider_2025__1_-VacZGjMhTWBDykdqoEIlJMW68oEDGu.pdf)\n- [Everything Upful (Groundsound, Kay7 & Tóke)](https://gbc6vrg43nwcgkgd.public.blob.vercel-storage.com/riders/GROUNDSOUND__KAY7___TOKE_ANNEX_ARTIST_RIDER-q5ZAk5xkP29FDNdi7th3si2EcYQQbJ.pdf)"
+    },
+    {
+      "person_id": "jade",
       "section": "Rider Key Info",
-      "content": "Pavel Milyakov\n● Xone 96 - standalone unit used as interface\n● Gibson SG\n● Laptop stand\n\nMulticast Dynamics\n● 4x CDJs\n● Xone 96\n● Akai MIDIMix\n● Scarlett Focusrite 4i4\n● Step up voltage converter\n● EU→US plug adapters\n● Extra cables\n\nC. Lavender\n● 1x boom mic stand\n● Stereo feed from mixer\n\nAyanna Heaven\n● DJ\n\nEverything Upful\n● 5 x DI\n● 6 x 6.3mm Jack Cable\n● Bass amp + cabinet\n● 2 x Jack 6.3mm TS output to 2x jack 6.3mm TS input\n● 3 x Jack 6.3mm to RCA output\n● 1x Pioneer CDJ2000nxs or nxs2\n● 1x Technics SL-1200\n● Pioneer DJM900nxs or nxs2\n● XLR cables for Gavs pedal board and Exiles Vocals\n● 4 x Shure sm58 microphone with stands + 25ft cable\n● DJ riser with enough space for all listed equipment\n● 2 x Double braced X frame keyboard/e-piano stand",
-      "parking": ""
+      "content": "Pavel Milyakov\n● Xone 96 - standalone unit used as interface\n● Gibson SG\n● Laptop stand\n\nMulticast Dynamics\n● 4x CDJs\n● Xone 96\n● Akai MIDIMix\n● Scarlett Focusrite 4i4\n● Step up voltage converter\n● EU->US plug adapters\n● Extra cables\n\nC. Lavender\n● 1x boom mic stand\n● Stereo feed from mixer\n\nAyanna Heaven\n● DJ\n\nEverything Upful\n● 5 x DI\n● 6 x 6.3mm Jack Cable\n● Bass amp + cabinet\n● 2 x Jack 6.3 mm TS output to 2x jack 6.3 mm TS input.\n● 3 x Jack 6.3 mm to RCA output (from Gav’s multitrack to DJM900nxs or nxs2 )\n● 1x Pioneer CDJ2000nxs or nxs2\n● 1x Technics SL-1200\n● Pioneer DJM900nxs or nxs2\n● XLR cables for Gavs pedal board and Exiles Vocals (to be sent to venues desk)\n● 4 x Shure sm58 microphone with microphone stands + 25ft Microphone cable\n● 4 x 0.6 m TS cables\n● 2 x 1.5m wide x 1m high (approx) flat desk with no obstructions in front\n● DJ riser with enough space for all listed equipment\n● 2 x Double braced X frame keyboard/e-piano stand with flat top or suitable equivalent. (Must be able to hold case with dimensions of sampler & FX unit listed below"
     },
     {
       "person_id": "jade",
-      "section": "Thursday Schedule",
-      "content": "Overview: Pavel Milyakov live set at Open Air - assist Rey as needed.\n-4pm: upon arrival, meet with Pavel. He'll be riding the same bus as you. Set up and soundcheck at Open Air.\n-Once sound check is completed, break.\n-10pm: Return to stage, prep for concert.\n-10:30pm: Pavel Milyakov live.\n-Midnight: Wrap"
-    },
-    {
-      "person_id": "jade",
-      "section": "Friday Schedule",
-      "content": "Overview: Morning sound check + late night DJ set at Open Air, live set from C. Lavender.\n\n⚠️ **Please bring USB with latest CDJ 3000 firmware update, in case it's needed.**\n\n-Noon: Arrive at Open Air to sound check Multicast Dynamics. 4x CDJs, no TTs needed.\n-Once sound check is completed, break.\n-1am: Multicast Dynamics.\n-4am: Multicast Dynamics ends, line check C. Lavender.\n-5:15am: C. Lavender live.\n-6am (approx): Wrap"
-    },
-    {
-      "person_id": "jade",
-      "section": "Saturday Schedule",
-      "content": "Overview: Day party with Everything Upful (Gavsborg + collaborators).\nDripping provides: 1x TT, bass amp + cabinet, CDJs, DIs, mics, keyboard stands, staging for artists.\n-1:30pm: Sound check Gavsborg, set up DJ booth.\n-3pm: Ayanna Heaven.\n-4pm: Everything Upful.\n-7pm: Everything Upful wraps, reset stage for night performances.\n-8:30pm: Wrap. *Thank you so, so much!*"
+      "section": "Schedule",
+      "content": "Thursday:\nOverview: Pavel Milyakov live set at Open Air - assist Rey as needed.\n-4pm: upon arrival, meet with Pavel. He’ll be riding the same bus as you. Set up and soundcheck at Open Air.\n-Once sound check is completed, break.\n\n-10pm: Return to stage, prep for concert\n-10:30pm: Pavel Milyakov live\n-Midnight: Wrap\n\nFriday:\nOverview: Morning sound check + late night DJ set at Open Air, live set from C. Lavender. Please bring USB with latest CDJ 3000 firmware update, linked here, in case it’s needed.\n-Noon: Arrive at Open Air to sound check Multicast Dynamics. 4x CDJs, no TTs needed.\n-Once sound check is completed, break.\n\n1am: Multicast Dynamics 4: Multicast Dynamics ends, line check C. Lavender 5:15am: C. Lavender live 6:am (approx): Wrap\n\nSaturday:\nOverview: Day party with Everything Upful (Gavsborg + collaborators) Dripping provides: 1x TT, bass amp + cabinet, CDJs, DIs, mics, keyboard stands, staging for artists.\n-1:30pm: Sound check Gavsborg, set up DJ booth\n-3pm: Ayanna Heaven\n-4pm: Everything Upful\n-7pm: Everything Upful wraps, reset stage for night performances.\n-8:30pm: Wrap. Thank you so, so much!"
     },
     {
       "person_id": "jade",
       "section": "Rain Plan",
-      "content": "**Thursday:**\nOverview: Pavel Milyakov live set at Open Air — assist Rey as needed. **Activate inward-facing speakers. All performers and audience members go under the tent.**\n-4pm: Set up and soundcheck at Open Air.\n-Once sound check is completed, break.\n-10pm: Return to stage.\n-10:30pm: Pavel Milyakov live.\n-Midnight: Wrap\n\n**Friday:**\nOverview: Morning sound check + late night DJ set at Open Air, live set from C. Lavender. **Activate inward-facing speakers. All performers and audience members go under the tent.**\n⚠️ **Please bring USB with latest CDJ 3000 firmware update.**\n-Noon: Sound check Multicast Dynamics.\n-Once sound check is completed, break.\n-1am: Multicast Dynamics.\n-4am: Line check C. Lavender.\n-5:15am: C. Lavender live.\n-6am: Wrap\n\n**Saturday:**\nOverview: Day party with Everything Upful. **Activate inward-facing speakers. All performers and audience members go under the tent.**\n-1:30pm: Sound check Gavsborg.\n-3pm: Ayanna Heaven.\n-4pm: Everything Upful.\n-7pm: Everything Upful wraps.\n-8:30pm: Wrap."
+      "content": "Thursday:\nOverview: Pavel Milyakov live set at Open Air - assist Rey as needed. Activate inward-facing speakers. All performers and audience members go under the tent.\n-4pm: upon arrival, meet with Pavel. He’ll be riding the same bus as you. Set up and soundcheck at Open Air.\n-Once sound check is completed, break.\n\n-10pm: Return to stage, prep for concert\n-10:30pm: Pavel Milyakov live\n-Midnight: Wrap\n\nFriday:\nOverview: Morning sound check + late night DJ set at Open Air, live set from C. Lavender. Activate inward-facing speakers. All performers and audience members go under the tent. Please bring USB with latest CDJ 3000 firmware update, linked here, in case it’s needed.\n-Noon: Arrive at Open Air to sound check Multicast Dynamics. 4x CDJs, no TTs needed.\n-Once sound check is completed, break.\n\n1am: Multicast Dynamics 4: Multicast Dynamics ends, line check C. Lavender 5:15am: C. Lavender live 6:am (approx): Wrap\n\nSaturday:\nOverview: Day party with Everything Upful (Gavsborg + collaborators). Activate inward-facing speakers. All performers and audience members go under the tent. Dripping provides: 1x TT, bass amp + cabinet, CDJs, DIs, mics, keyboard stands, staging for artists.\n-1:30pm: Sound check Gavsborg, set up DJ booth\n-3pm: Ayanna Heaven\n-4pm: Everything Upful\n-7pm: Everything Upful wraps, reset stage for night performances.\n-8:30pm: Wrap. Thank you so, so much!"
     },
     {
       "person_id": "jules",
@@ -465,59 +418,34 @@ window.DEMO_DATA = {
       "name": "",
       "phone": "",
       "role": "",
-      "section": "Shifts",
-      "content": "Shift 1: Th 12–2:30pm, 6:30–10:30pm\nShift 2: Fr 12–5:30pm, 1–5:30am\nShift 3: Sat 2–6:30pm, 7–11pm",
-      "parking": ""
-    },
-    {
-      "person_id": "jules",
-      "name": "",
-      "phone": "",
-      "role": "",
       "section": "Meals",
-      "content": "Check in with the innkeeper for your meals.\n\nYour **green wristband** gets you **50% off coffee** at 109 Montrose — coffee only, not available on other items.\n\n**Welcome Dinner Token:** 1\n**Regular Meal Token:** 2",
+      "content": "Check in with The Innkeeper for your meals.\n\nYour green wristband gets you 50% off coffee at 109 Montrose — coffee only, not available on other items.\n\nWelcome Dinner Token: 1\nRegular Meal Token: 2",
       "parking": ""
     },
     {
       "person_id": "jules",
-      "name": "",
-      "phone": "",
-      "role": "",
-      "section": "Thursday Schedule",
-      "content": "Overview: keiyaA headlining concert at The Outside Inn, MOTHERBOARD opening at The Inn. Assist FOH engineer Katie Lau, liaise with artist care.\n-11:45am arrive, check in with Katie Lau.\n-Noon: keiyaA soundcheck: 3 performers. Make sure they check in with Artist Care at The Inn.\n-2pm (approx): Break.\n-6:30pm: MOTHERBOARD soundcheck: 3 performers, staged in-the-round. Make sure they check in with Artist Care at The Inn.\n-8pm: MOTHERBOARD live - The Inn.\n-9pm: keiyaA live - The Outside Inn.\n-10pm: wrap",
-      "parking": ""
+      "section": "Shifts",
+      "content": "Shift 1: Th 12-2:30pm, 6:30-10:30pm\nShift 2: Fr 12-5:30pm, 1-5:30am\nShift 3: Sat 2-6:30pm, 7-11pm"
     },
     {
       "person_id": "jules",
-      "name": "",
-      "phone": "",
-      "role": "",
-      "section": "Friday Schedule",
-      "content": "Overview: Soundchecks for Ash Fure, late night Stage Managing.\n-Noon: Assist Katie with Ash Fure soundcheck. Note: Ash doesn't play until Saturday, but requires a significant check. At the end of SC, make all necessary notes and strike mics / gear. You will be part of the reset crew on Saturday. **Two 2x8 platforms are confirmed dedicated for Ash's staging. Position and spike these, then store out-of-the-way until Saturday.**\n-4:30pm: Break\n\n-1am: Return to stage, check in with Michael King.\n-1:30am: Badsista set.\n-5am: Stage closes",
-      "parking": ""
+      "section": "Riders",
+      "content": "- [keiyaA — Lighting](https://gbc6vrg43nwcgkgd.public.blob.vercel-storage.com/riders/keiyaA_Lighting_Rider_v2-Xy4darfSjIWSwXkln8An52qNuqOtEX.pdf)\n- [keiyaA — Trio](https://gbc6vrg43nwcgkgd.public.blob.vercel-storage.com/riders/keiyaA_trio_rider_2026-zEdesnjZp3YZkWzPM16walLxtik4N2.pdf)\n- [MOTHERBOARD — Tech](https://gbc6vrg43nwcgkgd.public.blob.vercel-storage.com/riders/Tech_Rider_Motherboard_2026-i6OsoUOhU2grIJda49HGnBHE1QN35T.pdf)\n- [MOTHERBOARD — Stage Plot](https://gbc6vrg43nwcgkgd.public.blob.vercel-storage.com/riders/Motherboard_Updated_Stage_Plot-ssrdJz3Ega5AjdKgGYhVIq7LJUsUTY.png)\n- [Ash Fure](https://gbc6vrg43nwcgkgd.public.blob.vercel-storage.com/riders/Ashe_Fure_ANIMAL_Rider___Jan2025-n5GnbVqMLsX0SFovdAKFnZWZ1PqCMN.pdf)\n- [Badsista](https://gbc6vrg43nwcgkgd.public.blob.vercel-storage.com/riders/BADSISTA_TECHNICAL_AND_HOSPITALITY_RIDER-T0r1jcyctZFOatCr0uc6vFvt1nN4vY.pdf)\n- [FujilIIIIIIIIIIlta — Input List / Backline](https://gbc6vrg43nwcgkgd.public.blob.vercel-storage.com/riders/Fujita_1.Input_list_-_Backline-h3QvN1952VdIL9Xuv20QqGK3Vwzdtr.pdf)\n- [FujilIIIIIIIIIIlta — Stage Setting](https://gbc6vrg43nwcgkgd.public.blob.vercel-storage.com/riders/Fujita_2.Stage_Setting-DD3uV8FNFvz9bnm357UVazLrdNyeY3.pdf)\n- [FujilIIIIIIIIIIlta — Important Notes](https://gbc6vrg43nwcgkgd.public.blob.vercel-storage.com/riders/Fujita_3.Important_Notes-1rtGnbx7VaQFkDx0Mki0RfeuNV96e0.pdf)\n- [FujilIIIIIIIIIIlta — Lights](https://gbc6vrg43nwcgkgd.public.blob.vercel-storage.com/riders/Fujita_4.Lights-Vz5013UDhcKltseu5tmq0khIhdTbsL.pdf)\n- [Breadwoman](https://gbc6vrg43nwcgkgd.public.blob.vercel-storage.com/riders/Breadwoman_Tech_Rider-1lCi4v8yvpdyJATfx4PeI4vf0TfCq5.docx)"
     },
     {
       "person_id": "jules",
-      "name": "",
-      "phone": "",
-      "role": "",
-      "section": "Saturday Schedule",
-      "content": "Overview: FujilIIIIIIIIIIlta and Ash Fure concerts at The Inn, Breadwoman at The Outside Inn.\n-2pm: Meet Ramses at The Inn. Take 12\" legs off one of the 4x8 platforms and put on 6\". This will be FujilIIIIIIIIIIlta's platform. Check in at The Outside Inn, confirm whether Breadwoman plays inside or outside.\n-2:30pm: Breadwoman soundcheck. Confirm if weather permits outdoor performance. Vocals, electronics, dancer. Note: Dripping provides keyboard, mixer, effects pedals, significant stage dressing. We have production hands available to help with stage setting, please make sure they have what they need.\n-5pm: FujilIIIIIIIIIIlta soundcheck. If you're still working with Breadwoman, Ramses will split off to assist.\n-7pm: FujilIIIIIIIIIIlta performance.\n-8pm: reset for Ash Fure - add 12\" legs to FujilIIIIIIIIIIlta's stage, resetting it as audience platform.\n-10pm: Ash Fure performance.\n-11pm: Wrap. *Thank you so, so much!*",
-      "parking": ""
-    },
-    {
-      "person_id": "jules",
-      "name": "",
-      "phone": "",
-      "role": "",
       "section": "Rider Key Info",
-      "content": "MOTHERBOARD\n● 6x stereo DI\n● Bass amp + cabinet\n● Tables / keyboard stands\n\nkeiyaA\n● In-ear monitoring battery packs and transmitter system (provided + ran by in-house staff)\n○ keiyaA + band have their own ears\n● Professional Jazz Drum Kit (Yamaha Oak Custom/Gretsch Renown/similar)\n○ (4) piece kit, (2) snare drums 1 with mesh head, c3 cymbal stands, 1 Kick pedal, 1 hi-hat stand, 2 snare stands, 1 Drum throne, 1 Carpet/rug\n● Bass Amp + Cabinet\n● (3) Stereo DI box\n● (1) 2X4X4 table/keyboard stand with wooden board, floor length black stage cloth\n● (12) TRS/Jack Cables ≥10ft, (8) XLR Cables ≥20ft, (2) black stage fans ≥18\", Glow tape, Black tape, 10x outlets\n\nAsh Fure\n● 14 mic stands\n● 4 Shure KSM condenser mics\n● Stereo amp\n● Firm table + stand\n\nFujilIIIIIIIIIIlta\n● Allen & Heath MixWizard 16\n● Cables\n\nBreadwoman\n● 2 mics on boom stands\n● Nord Stage 3 keyboard + stand\n● Mixer\n● ElectroHarmonix Looper Pedal\n● Flanger Pedal",
-      "parking": ""
+      "content": "MOTHERBOARD\n● 6x stereo DI\n● Bass amp + cabinet\n● Tables / keyboard stands\n\nkeiyaA\n● In-ear monitoring battery packs and transmitter system (provided + ran by in-house staff) ○ keiyaA + band have their own ears\n● Professional Jazz Drum Kit (Yamaha Oak Custom/Gretsch Renown/similar) ○ (4) piece kit ○ (2) snare drums, 1 with mesh head ○ c3 cymbal stands ○ 1 Kick pedal ○ 1 hi-hat stand ○ 2 snare stands ○ 1 Drum throne ○ 1 Carpet/rug\n● Bass Amp + Cabinet\n● (3) Stereo DI box\n● (1) 2X4X4 table or keyboard stand with wooden board, draped with floor length black stage cloth\n● (12) TRS/Jack Cables, at least 10ft/6m\n● (8) XLR Cables at least 20 ft\n● (2) black stage fans at least 18”\n● Glow in the dark electric tape\n● Black Electric tape\n● 10x powered outlets\n\nAsh Fure\n● 14 mic stands\n● 4 Shure KSM condenser mics\n● Stereo amp\n● Firm table + stand\n\nFujiIIIIIIIIIIIta\n● Allen & Heath MixWizard 16\n● Cables\n\nBreadwoman\n● 2 mics on boom stands\n● Nord Stage 3 keyboard + stand\n● Mixer\n● ElectroHarmonix Looper Pedal\n● Flanger Pedal"
+    },
+    {
+      "person_id": "jules",
+      "section": "Schedule",
+      "content": "Thursday:\nOverview: keiyaA headlining concert at The Outside Inn, MOTHERBOARD opening at The Inn. Assist FOH engineer Katie Lau, liaise with artist care.\n-11:45am arrive, check in with Katie Lau.\n-Noon: keiyaA soundcheck: 3 performers. Make sure they check in with Artist Care at The Inn.\n-2pm (approx): Break\n\n-6:30pm: MOTHERBOARD soundcheck: 3 performers, staged in-the-round. Make sure they check in with Artist Care at The Inn.\n-8pm: MOTHERBOARD live - The Inn\n-9pm: keiyaA live - The Outside Inn\n-10pm: When keiyaA’s done, help pack up the stage and make sure IEMs are stored somewhere accessible in The Inn - they will be used on Saturday. Wrap\n\nFriday:\nOverview: Soundchecks for Ash Fure, late night Stage Managing\n-Noon: Assist Katie with Ash Fure soundcheck. Note: Ash doesn’t play until Saturday, but requires a significant check. At the end of SC, make all necessary notes and strike mics / gear. You will be part of the reset crew on Saturday. Two 2x8 platforms are confirmed dedicated for Ash’s staging. Position and spike these, then store out-of-the-way until Saturday.\n-4:30pm: Break\n\n-1am: Return to stage, check in with Michael King\n-1:30am: Badsista set\n-5am: Stage closes\n\nSaturday:\nOverview: FujiIIIIIIIIIIIta and Ash Fure concerts at The Inn, Breadwoman at The Outside Inn\n-2pm: Ramses at The Inn, take 12” legs off one of the 4x8 platforms and put on 6” This will be FujiIIIIIIIIIIIta’s platform. Check in at The Outside Inn, confirm whether Breadwoman plays inside or outside.\n\n-2:30pm: Breadwoman soundcheck. Confirm if weather permits outdoor performance. Vocals, electronics, dancer. Note: Dripping provides keyboard, mixer, effects pedals, significant stage dressing. We have production hands available to help with stage setting, please make sure they have what they need.\n-5pm: FujiIIIIIIIIIIIta soundcheck. If you’re still working with Breadwoman, Ramses will split off to assist.\n-7pm: FujiIIIIIIIIIIIta performance\n-8pm: reset for Ash Fure - add 12” legs to FujiIIIIIIIIIIIta’s stage, resetting it as audience platform.\n-10pm: Ash Fure performance\n-11pm: Wrap. Thank you so, so much!"
     },
     {
       "person_id": "jules",
       "section": "Rain Plan",
-      "content": "**Thursday:**\nOverview: keiyaA and MOTHERBOARD at The Inn.\n-11:45am arrive, check in with Katie Lau.\n-Noon: keiyaA soundcheck.\n-2pm: Break.\n-6:30pm: MOTHERBOARD soundcheck.\n-8pm: MOTHERBOARD live.\n-9pm: keiyaA live.\n-10pm: wrap\n\n**Friday:**\nOverview: Soundchecks for Ash Fure, late night Stage Managing.\n-Noon: Assist Katie with Ash Fure soundcheck.\n-4:30pm: Break\n-1am: Return to stage, check in with Michael King.\n-1:30am: Badsista set.\n-5am: Stage closes\n\n**Saturday:**\nOverview: FujilIIIIIIIIIIlta, Breadwoman and Ash Fure concerts at The Inn.\n-2pm: Meet Ramses at The Inn, set up FujilIIIIIIIIIIlta's platform.\n-2:30pm: Breadwoman soundcheck at The Inn.\n-5pm: FujilIIIIIIIIIIlta soundcheck.\n-7pm: FujilIIIIIIIIIIlta performance.\n-8pm: Breadwoman performance.\n-8pm: reset for Ash Fure.\n-10pm: Ash Fure performance.\n-11pm: Wrap."
+      "content": "Thursday:\nOverview: keiyaA and MOTHERBOARD at The Inn\n-11:45am arrive, check in with One-Source at The Inn. Confirm if weather permits keiyaA to perform outside.\n-Noon: keiyaA soundcheck: Vocals, electronics, bass, drums - 3 performers using IEMs. Note: Dripping provides bass amp, drum kit, keyboard stands + IEMs minus earpieces.\n-2pm (approx): Break\n-6:30pm: MOTHERBOARD soundcheck: vocals, 6x stereo DI, bass - 3 performers, staged in-the-round. Note: Dripping provides bass amp.\n-8pm: MOTHERBOARD live.\n-9pm: keiyaA live\n-10pm: wrap\n\nFriday:\nOverview: Soundchecks for Ash Fure, late night Stage Managing\n-Noon: Assist Katie with Ash Fure soundcheck. Note: Ash doesn’t play until Saturday, but requires a significant check. At the end of SC, make all necessary notes and strike mics / gear. You will be part of the reset crew on Saturday. Two 2x8 platforms are confirmed dedicated for Ash’s staging. Position and spike these, then store out-of-the-way until Saturday.\n-4:30pm: Break\n\n-1am: Return to stage, check in with Michael King\n-1:30am: Badsista set\n-5am: Stage closes\n\nSaturday:\nOverview: FujiIIIIIIIIIIIta, Breadwoman and Ash Fure concerts at The Inn,\n-2pm: Meet Ramses at The Inn, take 12” legs off one of the 4x8 platforms and put on 6” This will be FujiIIIIIIIIIIIta’s platform.\n-2:30pm: Breadwoman soundcheck. Vocals, electronics, dancer. Note: Dripping provides keyboard, mixer, effects pedals, significant stage dressing. We have production hands available to help with stage setting, please make sure they have what they need.\n-5pm: FujiIIIIIIIIIIIta soundcheck.\n-7pm: FujiIIIIIIIIIIIta performance\n-8pm: Breadwoman performance\n-8pm: reset for Ash Fure - add 12” legs to FujiIIIIIIIIIIIta’s stage, resetting it as audience platform.\n-10pm: Ash Fure performance\n-11pm: wWrap. Thank you so, so much!"
     },
     {
       "person_id": "katie_lau",
@@ -539,59 +467,34 @@ window.DEMO_DATA = {
       "name": "",
       "phone": "",
       "role": "",
-      "section": "Shifts",
-      "content": "Shift 1: Th 12pm–2:30pm, 6:30–10:30pm\nShift 2: Fr 12pm–9:30pm\nShift 3: Sat 2:30pm–11pm",
-      "parking": ""
-    },
-    {
-      "person_id": "katie_lau",
-      "name": "",
-      "phone": "",
-      "role": "",
       "section": "Meals",
-      "content": "Check in with the innkeeper for your meals.\n\nYour **green wristband** gets you **50% off coffee** at 109 Montrose — coffee only, not available on other items.\n\n**Welcome Dinner Token:** 1\n**Regular Meal Token:** 2",
+      "content": "Check in with The Innkeeper for your meals.\n\nYour green wristband gets you 50% off coffee at 109 Montrose — coffee only, not available on other items.\n\nWelcome Dinner Token: 1\nRegular Meal Token: 2",
       "parking": ""
     },
     {
       "person_id": "katie_lau",
-      "name": "",
-      "phone": "",
-      "role": "",
-      "section": "Thursday Schedule",
-      "content": "Overview: keiyaA headlining concert at The Outside Inn, MOTHERBOARD opening at The Inn.\n-11:45am arrive, check in with One-Source at The Inn. Confirm if weather permits keiyaA to perform outside.\n-Noon: keiyaA soundcheck: Vocals, electronics, bass, drums - 3 performers using IEMs. Note: Dripping provides bass amp, drum kit, keyboard stands + IEMs minus earpieces.\n-2pm (approx): Break.\n-6:30pm: MOTHERBOARD soundcheck: vocals, 6x stereo DI, bass - 3 performers, staged in-the-round. Note: Dripping provides bass amp.\n-8pm: MOTHERBOARD live.\n-9pm: keiyaA live.\n-10pm: wrap",
-      "parking": ""
+      "section": "Shifts",
+      "content": "Shift 1: Th 12pm-2:30pm, 6:30pm-10:30pm\nShift 2: Fr 12pm-9:30pm\nShift 3: Sat 2:30pm - 11pm"
     },
     {
       "person_id": "katie_lau",
-      "name": "",
-      "phone": "",
-      "role": "",
-      "section": "Friday Schedule",
-      "content": "Overview: Ka Baird headlining concert at The Inn, soundchecks for Ash Fure, Mad Professor & DJ ojo also at The Inn.\n-Noon: Daniel Neumann soundchecks Ash Fure at The Inn. You are welcome to assist as needed.\n-4:30pm: DJ ojo soundcheck: electronics, stereo out - 1 performer staged on a dedicated table in-the-round. Note: Dripping provides Soundcraft Signature 12 MTK.\n-5:30pm: Mad Professor soundcheck: electronics, stereo out - 1 performer staged in the DJ booth. Note: Dripping provides Allen & Heath MixWizard 16.\n-7pm: Ka Baird soundcheck: electronics, stereo out - 1 performer staged on a dedicated table in-the-round. Note: Ka uses feedback.\n-8:30pm: Ka Baird live.\n-9:30pm: wrap.",
-      "parking": ""
+      "section": "Riders",
+      "content": "- [keiyaA — Lighting](https://gbc6vrg43nwcgkgd.public.blob.vercel-storage.com/riders/keiyaA_Lighting_Rider_v2-Xy4darfSjIWSwXkln8An52qNuqOtEX.pdf)\n- [keiyaA — Trio](https://gbc6vrg43nwcgkgd.public.blob.vercel-storage.com/riders/keiyaA_trio_rider_2026-zEdesnjZp3YZkWzPM16walLxtik4N2.pdf)\n- [MOTHERBOARD — Tech](https://gbc6vrg43nwcgkgd.public.blob.vercel-storage.com/riders/Tech_Rider_Motherboard_2026-i6OsoUOhU2grIJda49HGnBHE1QN35T.pdf)\n- [MOTHERBOARD — Stage Plot](https://gbc6vrg43nwcgkgd.public.blob.vercel-storage.com/riders/Motherboard_Updated_Stage_Plot-ssrdJz3Ega5AjdKgGYhVIq7LJUsUTY.png)\n- [Ash Fure](https://gbc6vrg43nwcgkgd.public.blob.vercel-storage.com/riders/Ashe_Fure_ANIMAL_Rider___Jan2025-n5GnbVqMLsX0SFovdAKFnZWZ1PqCMN.pdf)\n- [DJ ojo](https://gbc6vrg43nwcgkgd.public.blob.vercel-storage.com/riders/DJ_ojo_technical_rider-ITafyWdUDz1ckl4uGltn4497nh3S2R.pdf)\n- [Mad Professor](https://gbc6vrg43nwcgkgd.public.blob.vercel-storage.com/riders/Mad_Professor_Tech_Rider-BK6N3GBH8hNXePd1tIRlJ3VjvC9iQp.pdf)\n- [Ka Baird](https://gbc6vrg43nwcgkgd.public.blob.vercel-storage.com/riders/KA_BAIRD_TECH_RIDER_2025_LOCAL-LBBlE14GNaJGvw5VZlo7QCFF6ah4wK.pdf)\n- [FujilIIIIIIIIIIlta — Input List / Backline](https://gbc6vrg43nwcgkgd.public.blob.vercel-storage.com/riders/Fujita_1.Input_list_-_Backline-h3QvN1952VdIL9Xuv20QqGK3Vwzdtr.pdf)\n- [FujilIIIIIIIIIIlta — Stage Setting](https://gbc6vrg43nwcgkgd.public.blob.vercel-storage.com/riders/Fujita_2.Stage_Setting-DD3uV8FNFvz9bnm357UVazLrdNyeY3.pdf)\n- [FujilIIIIIIIIIIlta — Important Notes](https://gbc6vrg43nwcgkgd.public.blob.vercel-storage.com/riders/Fujita_3.Important_Notes-1rtGnbx7VaQFkDx0Mki0RfeuNV96e0.pdf)\n- [FujilIIIIIIIIIIlta — Lights](https://gbc6vrg43nwcgkgd.public.blob.vercel-storage.com/riders/Fujita_4.Lights-Vz5013UDhcKltseu5tmq0khIhdTbsL.pdf)\n- [Breadwoman](https://gbc6vrg43nwcgkgd.public.blob.vercel-storage.com/riders/Breadwoman_Tech_Rider-1lCi4v8yvpdyJATfx4PeI4vf0TfCq5.docx)"
     },
     {
       "person_id": "katie_lau",
-      "name": "",
-      "phone": "",
-      "role": "",
-      "section": "Saturday Schedule",
-      "content": "Overview: FujilIIIIIIIIIIlta and Ash Fure concerts at The Inn, Breadwoman at The Outside Inn.\n-2:30pm: Breadwoman soundcheck. Confirm if weather permits outdoor performance. Vocals, electronics, dancer. Note: Dripping provides keyboard, mixer, effects pedals, significant stage dressing.\n-5pm: FujilIIIIIIIIIIlta soundcheck: organ pipe, electronics. Note: Dripping provides Allen & Heath MixWizard 16.\n-7pm: FujilIIIIIIIIIIlta performance.\n-8pm: Breadwoman performance - note: Ramses will assist you for this one, while Jules leads preliminary reset in The Inn.\n-9pm: Help Breadwoman teardown.\n-10pm: If available, assist with Ash Fure changeover.\n-11pm: Ash Fure strike. Wrap. *Thank you so, so much!*",
-      "parking": ""
-    },
-    {
-      "person_id": "katie_lau",
-      "name": "",
-      "phone": "",
-      "role": "",
       "section": "Rider Key Info",
-      "content": "MOTHERBOARD\n● 6x stereo DI\n● Bass amp + cabinet\n● Tables / keyboard stands\n\nkeiyaA\n● In-ear monitoring battery packs and transmitter system (provided + ran by in-house staff)\n○ keiyaA + band have their own ears\n● Professional Jazz Drum Kit (Yamaha Oak Custom/Gretsch Renown/similar)\n○ (4) piece kit\n○ (2) snare drums, 1 with mesh head\n○ c3 cymbal stands\n○ 1 Kick pedal\n○ 1 hi-hat stand\n○ 2 snare stands\n○ 1 Drum throne\n○ 1 Carpet/rug\n● Bass Amp + Cabinet\n● (3) Stereo DI box\n● (1) 2X4X4 table or keyboard stand with wooden board, draped with floor length black stage cloth\n● (12) TRS/Jack Cables, at least 10ft/6m\n● (8) XLR Cables at least 20 ft\n● (2) black stage fans at least 18\"\n● Glow in the dark electric tape\n● Black Electric tape\n● 10x powered outlets\n\nAsh Fure\n● 14 mic stands\n● 4 Shure KSM condenser mics\n● Stereo amp\n● Firm table + stand\n\nDJ ojo\n● Soundcraft Signature 12 MTK\n● Ableton Push\n● Laptop stands\n\nMad Professor\n● Allen & Heath MixWizard 16\n● 3 mics\n\nKa Baird\n● Long XLR cables\n● Stereo out into PA\n\nFujilIIIIIIIIIIlta\n● Allen & Heath MixWizard 16\n● Cables\n\nBreadwoman\n● 2 mics on boom stands\n● Nord Stage 3 keyboard + stand\n● Mixer\n● ElectroHarmonix Looper Pedal\n● Flanger Pedal",
-      "parking": ""
+      "content": "MOTHERBOARD\n● 6x stereo DI\n● Bass amp + cabinet\n● Tables / keyboard stands\n\nkeiyaA:\n● In-ear monitoring battery packs and transmitter system (provided + ran by in-house staff) ○ keiyaA + band have their own ears\n● Professional Jazz Drum Kit (Yamaha Oak Custom/Gretsch Renown/similar) ○ (4) piece kit ○ (2) snare drums, 1 with mesh head ○ c3 cymbal stands ○ 1 Kick pedal ○ 1 hi-hat stand ○ 2 snare stands ○ 1 Drum throne ○ 1 Carpet/rug\n● Bass Amp + Cabinet\n● (3) Stereo DI box\n● (1) 2X4X4 table or keyboard stand with wooden board, draped with floor length black stage cloth\n● (12) TRS/Jack Cables, at least 10ft/6m\n● (8) XLR Cables at least 20 ft\n● (2) black stage fans at least 18”\n● Glow in the dark electric tape\n● Black Electric tape\n● 10x powered outlets\n\nAsh Fure\n● 14 mic stands\n● 4 Shure KSM condenser mics\n● Stereo amp\n● Firm table + stand\n\nDJ ojo\n● Soundcraft Signature 12 MTK\n● Ableton Push\n● Laptop stands\n\nMad Professor\n● Allen & Heath MixWizard 16\n● 3 mics\n\nKa Baird\n● Long XLR cables\n● Stereo out into PA\n\nFujiIIIIIIIIIIIta\n● Allen & Heath MixWizard 16\n● Cables\n\nBreadwoman\n● 2 mics on boom stands\n● Nord Stage 3 keyboard + stand\n● Mixer\n● ElectroHarmonix Looper Pedal\n● Flanger Pedal"
+    },
+    {
+      "person_id": "katie_lau",
+      "section": "Schedule",
+      "content": "Thursday:\nOverview: keiyaA headlining concert at The Outside Inn, MOTHERBOARD opening at The Inn\n-11:45am arrive, check in with One-Source at The Inn. Confirm if weather permits keiyaA to perform outside.\n-Noon: keiyaA soundcheck: Vocals, electronics, bass, drums - 3 performers using IEMs. Note: Dripping provides bass amp, drum kit, keyboard stands + IEMs minus earpieces.\n-2pm (approx): Break\n-6:30pm: MOTHERBOARD soundcheck: vocals, 6x stereo DI, bass - 3 performers, staged in-the-round. Note: Dripping provides bass amp.\n-8pm: MOTHERBOARD live.\n-9pm: keiyaA live\n-10pm: When keiyaA’s done, help pack up the stage and make sure IEMs are stored somewhere accessible in The Inn - they will be used on Saturday. Wrap.\n\nFriday:\nOverview: Ka Baird headlining concert at The Inn, soundchecks for Mad Professor & DJ ojo also at The Inn\n\n-Noon: Daniel Neumann soundchecks Ash Fure at The Inn. You are welcome to assist as needed.\n-4:30pm: DJ ojo soundcheck: electronics, stereo out - 1 performer staged on a dedicated table in-the-round. Note: Dripping provides Soundcraft Signature 12 MTK.\n-5:30pm: Mad Professor soundcheck: electronics, stereo out - 1 performer staged in the DJ booth. Note: Dripping provides Allen & Heath MixWizard 16.\n-7pm: Ka Baird soundcheck: electronics, stereo out - 1 performer staged on a dedicated table in-the-round. Note: Ka uses feedback.\n-8:30pm: Ka Baird live\n-9:30pm: wrap.\n\nSaturday:\nOverview: FujiIIIIIIIIIIIta and Ash Fure concerts at The Inn, Breadwoman at The Outside Inn\n-2:30pm: Breadwoman soundcheck. Confirm if weather permits outdoor performance. Vocals, electronics, dancer. Note: Dripping provides keyboard, mixer, effects pedals, significant stage dressing.\n-5pm: FujiIIIIIIIIIIIta soundcheck: organ pipe, electronics. Note: Dripping provides Allen & Heath MixWizard 16.\n-7pm: FujiIIIIIIIIIIIta performance\n-8pm: Breadwoman performance - note: Rameses will assist you for this one, while Jules leads preliminary reset in The Inn.\n-9pm: Help Breadwoman teardown\n-10pm: If available, assist with Ash Fure changeover.\n-11pm: Ash Fure strike. Wrap. Thank you so, so much!"
     },
     {
       "person_id": "katie_lau",
       "section": "Rain Plan",
-      "content": "**Thursday:**\nOverview: keiyaA and MOTHERBOARD at The Inn.\n-11:45am arrive, check in with One-Source at The Inn. Confirm if weather permits keiyaA to perform outside.\n-Noon: keiyaA soundcheck.\n-2pm (approx): Break.\n-6:30pm: MOTHERBOARD soundcheck.\n-8pm: MOTHERBOARD live.\n-9pm: keiyaA live.\n-10pm: wrap\n\n**Friday:**\nOverview: Ka Baird headlining concert at The Inn, soundchecks for Ash Fure, Mad Professor & DJ ojo also at The Inn.\n-Noon: Daniel Neumann soundchecks Ash Fure at The Inn. You are welcome to assist as needed.\n-4:30pm: DJ ojo soundcheck.\n-5:30pm: Mad Professor soundcheck.\n-7pm: Ka Baird soundcheck.\n-8:30pm: Ka Baird live.\n-9:30pm: wrap.\n\n**Saturday:**\nOverview: FujilIIIIIIIIIIlta, Breadwoman and Ash Fure concerts at The Inn.\n-2:30pm: Breadwoman soundcheck at The Inn. Vocals, electronics, dancer. Note: Dripping provides keyboard, mixer, effects pedals, significant stage dressing.\n-5pm: FujilIIIIIIIIIIlta soundcheck.\n-7pm: FujilIIIIIIIIIIlta performance.\n-8pm: Breadwoman performance.\n-9pm: Help Breadwoman teardown.\n-10pm: Ash Fure performance.\n-11pm: Wrap."
+      "content": "Thursday:\nOverview: keiyaA and MOTHERBOARD at The Inn\n-11:45am arrive, check in with One-Source at The Inn. Confirm if weather permits keiyaA to perform outside.\n-Noon: keiyaA soundcheck: Vocals, electronics, bass, drums - 3 performers using IEMs. Note: Dripping provides bass amp, drum kit, keyboard stands + IEMs minus earpieces.\n-2pm (approx): Break\n-6:30pm: MOTHERBOARD soundcheck: vocals, 6x stereo DI, bass - 3 performers, staged in-the-round. Note: Dripping provides bass amp.\n-8pm: MOTHERBOARD live.\n-9pm: keiyaA live\n-10pm: wrap\n\nFriday:\nOverview: Ka Baird headlining concert at The Inn, soundchecks for Ash Fure, Mad Professor & DJ ojo also at The Inn\n-Noon: Daniel Neumann soundchecks Ash Fure at The Inn. You are welcome to assist as needed.\n-4:30pm: DJ ojo soundcheck: electronics, stereo out - 1 performer staged on a dedicated table in-the-round. Note: Dripping provides Soundcraft Signature 12 MTK.\n-5:30pm: Mad Professor soundcheck: electronics, stereo out - 1 performer staged in the DJ booth. Note: Dripping provides Allen & Heath MixWizard 16.\n-7pm: Ka Baird soundcheck: electronics, stereo out - 1 performer staged on a dedicated table in-the-round. Note: Ka uses feedback.\n-8:30pm: Ka Baird live\n-9:30pm: wrap.\n\nSaturday:\nOverview: FujiIIIIIIIIIIIta, Breadwoman and Ash Fure concerts at The Inn,\n-2:30pm: Breadwoman soundcheck at The Inn. Vocals, electronics, dancer. Note: Dripping provides keyboard, mixer, effects pedals, significant stage dressing.\n-5pm: FujiIIIIIIIIIIIta soundcheck: organ pipe, electronics. Note: Dripping provides Allen & Heath MixWizard 16.\n-7pm: FujiIIIIIIIIIIIta performance\n-8pm: Breadwoman performance\n-9pm: reset for Ash Fure\n-10pm: Ash Fure performance\n-11pm: Wrap. Thank you so, so much!"
     },
     {
       "person_id": "michael_king",
@@ -613,50 +516,34 @@ window.DEMO_DATA = {
       "name": "",
       "phone": "",
       "role": "",
-      "section": "Shifts",
-      "content": "Shift 1: Fr 5:30pm–1:30am\nShift 2: Sat 11pm–Sun 11am",
-      "parking": ""
-    },
-    {
-      "person_id": "michael_king",
-      "name": "",
-      "phone": "",
-      "role": "",
       "section": "Meals",
-      "content": "Check in with the innkeeper for your meals.\n\nYour **green wristband** gets you **50% off coffee** at 109 Montrose — coffee only, not available on other items.\n\n**Welcome Dinner Token:** n/a\n**Regular Meal Token:** 2",
+      "content": "Check in with The Innkeeper for your meals.\n\nYour green wristband gets you 50% off coffee at 109 Montrose — coffee only, not available on other items.\n\nWelcome Dinner Token: n/a\nRegular Meal Token: 2",
       "parking": ""
     },
     {
       "person_id": "michael_king",
-      "name": "",
-      "phone": "",
-      "role": "",
-      "section": "Friday Schedule",
-      "content": "Overview: Ka Baird live concert, Mad Professor & DJ ojo live club sets, livwutang DJ set.\n-4:30pm: DJ ojo soundcheck: electronics, stereo out - 1 performer staged on a dedicated table in-the-round. Note: Dripping provides Soundcraft Signature 12 MTK.\n-5:30pm: Mad Professor soundcheck: electronics, stereo out - 1 performer staged in the DJ booth. Note: Dripping provides Allen & Heath MixWizard 16.\n-7pm: Ka Baird soundcheck: electronics, stereo out - 1 performer staged on a dedicated table in-the-round. Note: Ka uses feedback.\n-8:30pm: Ka Baird live.\n-9:30pm: livwutang DJ.\n-10:30pm: Make sure you have a gameplan for DJ ojo moving into the center of the room.\n-11:30pm: DJ ojo live (dedicated table in-the-round).\n-12:30am: Mad Professor live.\n-1am: Trade off with Jules, give him any info needed for changeover.\n-1:30am: Wrap",
-      "parking": ""
+      "section": "Shifts",
+      "content": "Shift 1: Fr 5:30-1:30am\nShift 2: Sat 11pm - Sun 11am"
     },
     {
       "person_id": "michael_king",
-      "name": "",
-      "phone": "",
-      "role": "",
-      "section": "Saturday Schedule",
-      "content": "Overview: All-night DJs in The Inn. Possible move outdoors for Juliana at 7am.\n-11pm: DJ Manny.\n-1am: gyrofield.\n-3am: Bobby Beethoven - Pioneer RMX1000 needed.\n-5am: Juliana Huxtable.\n-7am: Possible move to The Outside Inn for JH. We decide night-of if it's a go.\n-11am: Absolute final track. Wrap. *Thank you so, so much!*",
-      "parking": ""
+      "section": "Riders",
+      "content": "- [Ka Baird](https://gbc6vrg43nwcgkgd.public.blob.vercel-storage.com/riders/KA_BAIRD_TECH_RIDER_2025_LOCAL-LBBlE14GNaJGvw5VZlo7QCFF6ah4wK.pdf)\n- [Mad Professor](https://gbc6vrg43nwcgkgd.public.blob.vercel-storage.com/riders/Mad_Professor_Tech_Rider-BK6N3GBH8hNXePd1tIRlJ3VjvC9iQp.pdf)\n- [DJ ojo](https://gbc6vrg43nwcgkgd.public.blob.vercel-storage.com/riders/DJ_ojo_technical_rider-ITafyWdUDz1ckl4uGltn4497nh3S2R.pdf)\n- [livwutang](https://gbc6vrg43nwcgkgd.public.blob.vercel-storage.com/riders/livwutang_-_Tech___Hospitality_Rider_-_2026-9CrYajy8DMVfSHfA42vbh3oj7QlgN6.docx)\n- [Gyrofield](https://gbc6vrg43nwcgkgd.public.blob.vercel-storage.com/riders/Gyrofield-x845FX0pnldeFt9Izl0tLmd4t0hMQs.jpg)\n- [Bobby Beethoven](https://gbc6vrg43nwcgkgd.public.blob.vercel-storage.com/riders/BOBBY_BEETHOVEN-TECHNICAL_RIDER__DJ_-Ty15miOPT5pw1QFakGNhty4NHvvBbO.pdf)\n- [Livwutang](https://gbc6vrg43nwcgkgd.public.blob.vercel-storage.com/riders/livwutang_-_Tech___Hospitality_Rider_-_2026-wYnVs3OeI0WH721njYAl9eNdzyh6K3.pdf)"
     },
     {
       "person_id": "michael_king",
-      "name": "",
-      "phone": "",
-      "role": "",
       "section": "Rider Key Info",
-      "content": "Ka Baird\n● Long XLR cables\n● Stereo out into PA\n\nDJ ojo\n● Soundcraft Signature 12 MTK\n● Ableton Push\n● Laptop stands\n\nMad Professor\n● Allen & Heath MixWizard 16\n● 3 mics\n\nSaturday night DJs:\n● 4x linked CDJs\n● Pioneer V10\n● Pioneer RMX for Bobby Beethoven",
-      "parking": ""
+      "content": "Ka Baird\n● Long XLR cables\n● Stereo out into PA\n\nDJ ojo\n● Soundcraft Signature 12 MTK\n● Ableton Push\n● Laptop stands\n\nMad Professor\n● Allen & Heath MixWizard 16\n● 3 mics\n\nSaturday night DJs:\n● 4x linked CDJs\n● Pioneer V10\n● Pioneer RMX for Bobby Beethoven"
+    },
+    {
+      "person_id": "michael_king",
+      "section": "Schedule",
+      "content": "Friday:\nOverview: Ka Bair live concert, Mad Professor & DJ ojo live club sets, livwutang DJ set.\n-4:30pm: DJ ojo soundcheck: electronics, stereo out - 1 performer staged on a dedicated table in-the-round. Note: Dripping provides Soundcraft Signature 12 MTK.\n-5:30pm: Mad Professor soundcheck: electronics, stereo out - 1 performer staged in the DJ booth. Note: Dripping provides Allen & Heath MixWizard 16.\n-7pm: Ka Baird soundcheck: electronics, stereo out - 1 performer staged on a dedicated table in-the-round. Note: Ka uses feedback.\n-8:30pm: Ka Baird live\n-9:30pm: livwutang DJ\n-10:30pm: Make sure you have a gameplan for DJ ojo moving into the center of the room.\n-11:30pm: DJ ojo live (dedicated table in-the-round)\n-12:30am: Mad Professor live\n-1am: Trade off with Jules, give him any info needed for changeover.\n-1:30am: Wrap\n\nSaturday:\nOverview: All-night DJs in The Inn. Possible move outdoors for Juliana at 7am.\n-11pm: DJ Manny\n-1am: gyrofield\n-3am: Bobby Beethoven - Pioneer RMX1000 needed.\n-5am: Juliana Huxtable\n-7am: Possible more to The Outside Inn for JH. We decide night-of if it’s a go.\n-11am: Absolute final track. Wrap. Thank you so, so much!"
     },
     {
       "person_id": "michael_king",
       "section": "Rain Plan",
-      "content": "**Friday:**\nOverview: Ka Baird live concert, Mad Professor & DJ ojo live club sets. (same as schedule — The Inn is covered)\n-4:30pm: DJ ojo soundcheck.\n-5:30pm: Mad Professor soundcheck.\n-7pm: Ka Baird soundcheck.\n-8:30pm: Ka Baird live.\n-9:30pm: livwutang DJ.\n-11:30pm: DJ ojo live.\n-12:30am: Mad Professor live.\n-1am: Trade off with Jules.\n-1:30am: Wrap\n\n**Saturday:**\nOverview: All-night DJs in The Inn. (same as schedule)\n-11pm: DJ Manny.\n-1am: gyrofield.\n-3am: Bobby Beethoven - Pioneer RMX1000 needed.\n-5am: Juliana Huxtable.\n-7am: Possible move to The Outside Inn for JH.\n-11am: Absolute final track. Wrap."
+      "content": "Friday:\nOverview: Ka Bair live concert, Mad Professor & DJ ojo live club sets, livwutang DJ set.\n-4:30pm: DJ ojo soundcheck: electronics, stereo out - 1 performer staged on a dedicated table in-the-round. Note: Dripping provides Soundcraft Signature 12 MTK.\n-5:30pm: Mad Professor soundcheck: electronics, stereo out - 1 performer staged in the DJ booth. Note: Dripping provides Allen & Heath MixWizard 16.\n-7pm: Ka Baird soundcheck: electronics, stereo out - 1 performer staged on a dedicated table in-the-round. Note: Ka uses feedback.\n-8:30pm: Ka Baird live.\n-9:30pm: livwutang DJ.\n-10:30pm: Make sure you have a gameplan for DJ ojo moving into the center of the room.\n-11:30pm: DJ ojo live (dedicated table in-the-round).\n-12:30am: Mad Professor live.\n-1am: Trade off with Jules, give him any info needed for changeover.\n-1:30am: Wrap\n\nSaturday:\nOverview: All-night DJs in The Inn. Possible move outdoors for Juliana at 7am.\n-11pm: DJ Manny.\n-1am: gyrofield.\n-3am: Bobby Beethoven - Pioneer RMX1000 needed.\n-5am: Juliana Huxtable.\n-7am: Possible move to The Outside Inn for JH. We decide night-of if it's a go.\n-11am: Absolute final track. Wrap. Thank you so, so much!"
     },
     {
       "person_id": "rey",
@@ -671,16 +558,7 @@ window.DEMO_DATA = {
     {
       "person_id": "rey",
       "section": "Transportation",
-      "content": "**Thursday:** **1pm bus from Nowadays** (56 Wyckoff Ave, Bushwick). Please arrive by 12:30pm.\n\n**Sunday:** **12:30pm bus from Camp Sacajawea** back to NYC. Please arrive **30 minutes early** to check in."
-    },
-    {
-      "person_id": "rey",
-      "name": "",
-      "phone": "",
-      "role": "",
-      "section": "Shifts",
-      "content": "Shift 1: Th 4–6:30pm, 10pm–12:30am\nShift 2: Fr 12pm–8:30pm, 11:30pm–1am\nShift 3: Sat 11pm–6am",
-      "parking": ""
+      "content": "Thursday: 1pm bus from Nowadays (56-06 Cooper Ave, Glendale, NY). Please arrive by 12:30pm.\n\nSunday: 12:30pm bus from Camp Sacajawea back to NYC. Please arrive 30 minutes early to check in."
     },
     {
       "person_id": "rey",
@@ -688,41 +566,33 @@ window.DEMO_DATA = {
       "phone": "",
       "role": "",
       "section": "Meals",
-      "content": "Check in with the innkeeper for your meals.\n\nYour **green wristband** gets you **50% off coffee** at 109 Montrose — coffee only, not available on other items.\n\n**Welcome Dinner Token:** 1\n**Regular Meal Token:** 2",
+      "content": "Check in with The Innkeeper for your meals.\n\nYour green wristband gets you 50% off coffee at 109 Montrose — coffee only, not available on other items.\n\nWelcome Dinner Token: 1\nRegular Meal Token: 2",
       "parking": ""
     },
     {
       "person_id": "rey",
-      "name": "",
-      "phone": "",
-      "role": "",
-      "section": "Thursday Schedule",
-      "content": "Overview: Pavel Milyakov live set at Open Air. Jade assists.\n-4pm: upon arrival, meet with Pavel. He'll be riding the same bus as you. Set up and soundcheck at Open Air. He needs a Xone 96, laptop stand, guitar.\n-Once sound check is completed, break.\n-10pm: Return to stage, prep for concert.\n-10:30pm: Pavel Milyakov live.\n-Midnight: Wrap",
-      "parking": ""
+      "section": "Shifts",
+      "content": "Shift 1: Th 4-6:30pm, 10-12:30am\nShift 2: Fr 12pm-8:30pm, 11:30-1am\nShift 3: Sat 11pm-6am"
     },
     {
       "person_id": "rey",
-      "name": "",
-      "phone": "",
-      "role": "",
+      "section": "Riders",
+      "content": "- [Pavel Milyakov](https://gbc6vrg43nwcgkgd.public.blob.vercel-storage.com/riders/Pavel_Milyakov_LIVE_TECH_RIDER-psdYtPQPXauSIijFx9qFftmI8bjkMD.pdf)\n- [Monica Mirabile & ADR](https://gbc6vrg43nwcgkgd.public.blob.vercel-storage.com/riders/ADR_Rider-6pgIF3GKYnjHsfBrWTsUoZd22VWvGX.pdf)\n- [Black Decelerant](https://gbc6vrg43nwcgkgd.public.blob.vercel-storage.com/riders/Black_Decelerant_-_Rider__updated_-m2a0vAzpdEaoCRK0QjIQLpw7RzxSBD.pdf)\n- [Earthen Sea](https://gbc6vrg43nwcgkgd.public.blob.vercel-storage.com/riders/Earthen_Sea_Technical_Rider-me16cGDgr9a8Oc8HSOQgmbpc8gVfcz.pdf)\n- [Paperclip Minimiser](https://gbc6vrg43nwcgkgd.public.blob.vercel-storage.com/riders/Paperclip_Minimiser-h7ZWLGwp2WlRpg9RNyHjKfgp7EZpeB.jpg)\n- [Elori Saxl & Henry Solomon](https://gbc6vrg43nwcgkgd.public.blob.vercel-storage.com/riders/Elori_Saxl_Henry_Solomon_Tech_Rider-VMxGoiXtVdbL31BuhASuWePtZJga9l.pdf)\n- [Kiernan Laveaux](https://gbc6vrg43nwcgkgd.public.blob.vercel-storage.com/riders/Kiernan_Laveaux_Rider-DmM0sGUWnJ8CfJTLul35hL6ALSiIhg.pdf)"
+    },
+    {
+      "person_id": "rey",
       "section": "Rider Key Info",
-      "content": "Pavel Milyakov\n● Xone 96 - standalone unit used as interface\n● Gibson SG\n● Laptop stand\n\nArtist Talk\n● 3 microphones\n\nKiernan Laveaux\n● 3x CDJs, linked\n● 2x Turntables\n\nMonica Mirabile & ADR\n● They are bringing two cars on site to be a part of the performance. UNDER NO CIRCUMSTANCES ARE THESE CARS AUTHORIZED TO MOVE DURING THE PERFORMANCE.\n● Long RCA cable to connect to DJ mixer (from cars)\n\nElori Saxl & Henry Solomon\n● 1 Stereo DI\n● 2 Mono DI\n● 2 SM57\n\nBlack Decelerant\n● 1 Dynamic Microphone\n● 1 long table + table cloth\n● 1 Keyboard stand\n● 2 Mic stands\n● 3 Stereo DIs\n● 2 Chair/Stool\n\nEarthen Sea\n● Stereo out from interface\n● Table space\n\nPaperclip Minimiser\n● Stereo DI, connection to DJ mixer preferred",
-      "parking": ""
+      "content": "Pavel Milyakov\n● Xone 96 - standalone unit used as interface\n● Gibson SG\n● Laptop stand\n\nArtist Talk\n● 3 microphones\n\nKiernan Laveaux\n● 3x CDJs, linked\n● 2x Turntables\n\nMonica Mirabile & ADR\n● They are bringing two cars on site to be a part of the performance. UNDER NO CIRCUMSTANCES ARE THESE CARS AUTHORIZED TO MOVE DURING THE PERFORMANCE.\n● Long RCA cable to connect to DJ mixer.. From cars?\n\nElori Saxl & Henry Solomon\n● 1 Stereo DI\n● 2 Mono DI\n● 2 SM57\n\nBlack Decelerant\n● 1 Dynamic Microphones\n● 1 long table + table cloth\n● 1 Keyboard stand\n● 2 Mic stands\n● 3 Stereo DIs\n● 2 Chair/Stool\n\nEarthen Sea\n● Stereo out from interface\n● table space\n\nPaperclip Minimiser\n● Stereo DI, connection to DJ mixer preferred"
     },
     {
       "person_id": "rey",
-      "section": "Friday Schedule",
-      "content": "Overview: DJ set at The Lake, artist talk at The Amphitheater, dance performance at Open Air.\n\n⚠️ **Please bring USB with latest CDJ 3000 firmware update, in case it's needed.**\n\n-11:45am: Meet Nick & Alexa at The Inn. Confirm 3x CDJs, 1x Pioneer A9, 2x TTs + ethernet hub for the setup. They should be at The Inn. Request golf cart assistance to move them to the lake.\n-Noon: Set up DJ rig at The Lake: 3x CDJs, 2x TT, Pioneer A9. Nick and Alexa assist.\n-1pm: Oversee setup of QSC powered speakers for artist talk — 3x mics, small mixer. If busy at The Lake, have Nick take care of it.\n-2pm: Artist talk — Ayanna Heaven, Gavsborg, Mad Professor\n-3pm: Kiernan Laveaux (DJ) / oversee Amphitheater packdown\n-5:45pm: Make sure Nick & Alexa are good to pack down The Lake, head to Open Air.\n-6pm: Monica & ADR sound check. NOTE: two cars are being incorporated into the set. CARS CANNOT BE MOVING DURING THE PERFORMANCE. Otherwise, simple stereo RCA output from ADR.\n-Once sound check is completed, break.\n-11:30pm: Return to stage, prep for performance.\n-12am: Monica Mirabile & ADR live.\n-1am: Wrap"
-    },
-    {
-      "person_id": "rey",
-      "section": "Saturday Schedule",
-      "content": "Overview: Morning sound checks + late night concerts at Open Air.\n-10am: Arrive at Open Air, prep for sound checks.\n-10:30am: Black Decelerant sound check.\n-11:30am: Earthen Sea sound check.\n-12:30pm: Paperclip Minimiser sound check.\n-1:30pm: Break.\n-11pm: Return to stage, Elori Saxl & Henry Solomon line check.\n-12am: Elori Saxl & Henry Solomon live.\n-1am: 20min changeover.\n-1:20am: Black Decelerant live.\n-2:20am: 20min changeover.\n-2:40am: Earthen Sea live.\n-3:40am: 20min changeover.\n-4am: Paperclip Minimiser live.\n-5:30am: Wrap. *Thank you so, so much!*"
+      "section": "Schedule",
+      "content": "Thursday:\nOverview: Pavel Milyakov live set at Open Air. Jade assists.\n-4pm: upon arrival, meet with Pavel. He’ll be riding the same bus as you. Set up and soundcheck at Open Air. He needs a Xone 96, laptop stand, guitar\n-Once sound check is completed, break.\n\n-10pm: Return to stage, prep for concert\n-10:30pm: Pavel Milyakov live\n-Midnight: Wrap\n\nFriday:\nOverview: DJ set at The Lake, artist talk at The Amphitheater, dance performance at Open Air. Please bring USB with latest CDJ 3000 firmware update, linked here, in case it’s needed.\n-11:45: Meet Nick & Alexa at The Inn Confirm 3x CDJs, 1x Pioneer A9, 2x TTs + ethernet hub for the setup. They should be at The Inn. Request golf cart assistance to move them to the lake.\n-Noon: Set up DJ rig at The Lake: Nick and Alexa assist.\n-1pm: Oversee setup of QSC powered speakers for artist talk - 3x mics, small mixer. If busy at The Lake, have Nick take care of it.\n-2pm: Artist talk - Ayanna Heaven, Gavsborg, Mad Professor\n-3pm: Kiernan Laveaux (DJ) / oversee Amphitheater packdown\n-5:45pm: Make sure Nick & Alexa are good to pack down The Lake, head to Open Air.\n-6pm: Monica & ADR sound check.\n\nNOTE: two cars are being incorporated into the set. CARS CANNOT BE MOVING DURING THE PERFORMANCE. Otherwise, it should be a simple stereo RCA output from ADR.\n\n-Once sound check is completed, break.\n\n-11:30pm: Return to stage, prep for performance\n-12am: Monica Mirabile & ADR live\n-1am: Wrap\n\nSaturday:\nOverview: Morning sound checks + late night concerts at Open Air\n-9:45am: Grab 12 D.I. inputs (mixture of stereo and mono) from The Inn, take to Open Air.\n-10am: Arrive at Open Air, prep for sound checks\n-10:30am: Black Decelerant sound check\n-11:30am: Earthen Sea sound check\n-12:30pm: Paperclip Minimiser sound check\n-1:30pm: Break\n\n-11pm: Return to stage, Elori Saxl & Henry Solomon line check\n-12am: Elori Saxl & Henry Solomon live\n-1am: 20min changeover\n-1:20am: Black Decelerant live\n-2:20am: 20min changeover\n-2:40am: Earthen Sea live\n-3:40am: 20min changeover\n-4am: Paperclip Minimiser live\n-5:30am: Wrap. Thank you so, so much!"
     },
     {
       "person_id": "rey",
       "section": "Rain Plan",
-      "content": "**Thursday:**\nOverview: Pavel Milyakov live set at Open Air. **Activate inward-facing speakers. All performers and audience members go under the tent.**\n-4pm: meet with Pavel. Set up and soundcheck at Open Air.\n-Once sound check is completed, break.\n-10pm: Return to stage, prep for concert.\n-10:30pm: Pavel Milyakov live.\n-Midnight: Wrap\n\n**Friday:**\nOverview: Artist talk and DJ set at Open Air under the tent. Dance performance also at Open Air under the tent. **Activate inward-facing speakers.**\n⚠️ **Please bring USB with latest CDJ 3000 firmware update.**\n-Noon: Set up DJ rig at The Lake: 3x CDJs, 2x TT, Pioneer A9. Nick and Alexa assist.\n-1pm: Oversee setup for artist talk.\n-2pm: Artist talk.\n-3pm: Kiernan Laveaux DJ.\n-5:45pm: Head to Open Air.\n-6pm: Monica & ADR sound check. Should be simple stereo output from ADR.\n-Once sound check is completed, break.\n-11:30pm: Return to stage.\n-12am: Monica Mirabile & ADR live.\n-1am: Wrap\n\n**Saturday:**\nOverview: Morning sound checks + late night concerts at Open Air. **Activate inward-facing speakers. All performers and audience members go under the tent.**\n-10am: Arrive at Open Air, prep for sound checks.\n-10:30am: Black Decelerant sound check.\n-11:30am: Earthen Sea sound check.\n-12:30pm: Paperclip Minimiser sound check.\n-1:30pm: Break.\n-11pm: Return to stage.\n-12am: Elori Saxl & Henry Solomon live.\n-1:20am: Black Decelerant live.\n-2:40am: Earthen Sea live.\n-4am: Paperclip Minimiser live.\n-5:30am: Wrap."
+      "content": "Thursday:\nOverview: Pavel Milyakov live set at Open Air. Jade assists. Activate inward-facing speakers. All performers and audience members go under the tent.\n-4pm: upon arrival, meet with Pavel. He’ll be riding the same bus as you. Set up and soundcheck at Open Air. He needs a Xone 96, laptop stand, guitar\n-Once sound check is completed, break.\n\n-10pm: Return to stage, prep for concert\n-10:30pm: Pavel Milyakov live\n-Midnight: Wrap\n\nFriday:\nOverview: Artist talk and DJ set at Open Air underneath the tent. Dance performance also at Open Air under the tent. Activate inward-facing speakers. Please bring USB with latest CDJ 3000 firmware update, linked here, in case it’s needed.\n-Noon: Set up DJ rig at Open Air: 3x CDJs, 2x TT, Pioneer mixer. Nick and Alexa assist.\n-1pm: Setup up 3x mics for the artist talk.\n-2pm: Artist talk - Ayanna Heaven, Gavsborg, Mad Professor\n-3pm: Kiernan Laveaux (DJ)\n-6pm: Monica & ADR sound check. Should be simple stereo output from ADR.\n-Once sound check is completed, break.\n\n-11:30pm: Return to stage, prep for performance\n-12am: Monica Mirabile & ADR live\n-1am: Wrap\n\nSaturday:\nOverview: Morning sound checks + late night concerts at Open Air. Activate inward-facing speakers. All performers and audience members go under the tent.\n-9:45am: Grab 12 D.I. inputs (mixture of stereo and mono) from The Inn, take to Open Air.\n-10am: Arrive at Open Air, prep for sound checks\n-10:30am: Black Decelerant sound check\n-11:30am: Earthen Sea sound check\n-12:30pm: Paperclip Minimiser sound check\n-1:30pm: Break\n\n-11pm: Return to stage, Elori Saxl & Henry Solomon line check\n-12am: Elori Saxl & Henry Solomon live\n-1am: 20min changeover\n-1:20am: Black Decelerant live\n-2:20am: 20min changeover\n-2:40am: Earthen Sea live\n-3:40am: 20min changeover\n-4am: Paperclip Minimiser live\n-5:30am: Wrap. Thank you so, so much!"
     },
     {
       "person_id": "sphente",
@@ -740,7 +610,7 @@ window.DEMO_DATA = {
       "phone": "",
       "role": "",
       "section": "Meals",
-      "content": "Check in with the innkeeper for your meals.\n\nYour **green wristband** gets you **50% off coffee** at 109 Montrose — coffee only, not available on other items.",
+      "content": "Check in with The Innkeeper for your meals.\n\nYour green wristband gets you 50% off coffee at 109 Montrose — coffee only, not available on other items.",
       "parking": ""
     },
     {
@@ -757,17 +627,12 @@ window.DEMO_DATA = {
     {
       "person_id": "_shared",
       "section": "Notes",
-      "content": "- Introduce yourself to EMS and Security on staff at the start of your shift. Both are on walkie talkie.\n- Circulate site with attention to bathrooms, trash, and safety.\n- **8am Friday & Saturday (Mary):** Coordinate access for toilet/shower cleaning.\n- Refill toilet paper at porta potties and bath house.\n- Ensure proper functioning of water dispenser.\n- Check in regularly with security. Make sure they are awake and have water, lights, and basic needs met.\n- Retrieve cash from bar and place in the locked safe at the office. Count cash and write amount deposited on envelope."
+      "content": "- Introduce yourself to EMS and Security on staff at the start of your shift. Both are on walkie talkie.\n- Circulate site with attention to bathrooms, trash, and safety.\n- 8am Friday & Saturday (Mary): Coordinate access for toilet/shower cleaning.\n- Refill toilet paper at porta potties and bath house.\n- Ensure proper functioning of water dispenser.\n- Check in regularly with security. Make sure they are awake and have water, lights, and basic needs met.\n- Retrieve cash from bar and place in the locked safe at the office. Count cash and write amount deposited on envelope."
     },
     {
       "person_id": "_shared",
       "section": "Important Contacts",
-      "content": "Empire Security — Nani\nEd (Bar Manager) — (413) 218-8853\nDiego (Bar Manager) — (917) 754-3013\nSphente (Production Manager, Slack) — (773) 370-7260\nKaren Nicole (Kitchen / Food Vendor Manager, Slack) — (240) 308-3018\nNick Coratti (Teardown lead, Slack) — (631) 697-1814 *(starts at noon Sunday)*\nToilets, Showers, Dumpster, Generators — United Rentals — James (908) 307-0241\nIce Trailer — Chuck (908) 310-9178\nRefrigerator Trailer"
-    },
-    {
-      "person_id": "_shared",
-      "section": "Pending",
-      "content": "Lost and Found\nBus arrival protocol\nExtend hotel to Wednesday night for site managers"
+      "content": "Empire Security — Nani\nEd (Bar Manager) — (413) 218-8853\nDiego (Bar Manager) — (917) 754-3013\nSphente (Production Manager, Slack) — (773) 370-7260\nKaren Nicole (Kitchen / Food Vendor Manager, Slack) — (240) 308-3018\nNick Coratti (Teardown lead, Slack) — (631) 697-1814 (starts at noon Sunday)\nToilets, Showers, Dumpster, Generators — United Rentals — James (908) 307-0241\nIce Trailer — Chuck (908) 310-9178\nRefrigerator Trailer"
     },
     {
       "person_id": "lauren_brady",
@@ -785,7 +650,7 @@ window.DEMO_DATA = {
       "phone": "",
       "role": "",
       "section": "Meals",
-      "content": "Check in with the innkeeper for your meals.\n\nYour **green wristband** gets you **50% off coffee** at 109 Montrose — coffee only, not available on other items.",
+      "content": "Check in with The Innkeeper for your meals.\n\nYour green wristband gets you 50% off coffee at 109 Montrose — coffee only, not available on other items.",
       "parking": ""
     },
     {
@@ -794,7 +659,7 @@ window.DEMO_DATA = {
       "phone": "",
       "role": "",
       "section": "Shifts",
-      "content": "**Thursday June 11:** 2–10PM\n**Friday June 12:** 2–10PM\n**Saturday June 13:** 2–10PM",
+      "content": "Thursday June 11: 2–10PM\nFriday June 12: 2–10PM\nSaturday June 13: 2–10PM",
       "parking": ""
     },
     {
@@ -813,7 +678,7 @@ window.DEMO_DATA = {
       "phone": "",
       "role": "",
       "section": "Meals",
-      "content": "Check in with the innkeeper for your meals.\n\nYour **green wristband** gets you **50% off coffee** at 109 Montrose — coffee only, not available on other items.",
+      "content": "Check in with The Innkeeper for your meals.\n\nYour green wristband gets you 50% off coffee at 109 Montrose — coffee only, not available on other items.",
       "parking": ""
     },
     {
@@ -822,7 +687,7 @@ window.DEMO_DATA = {
       "phone": "",
       "role": "",
       "section": "Shifts",
-      "content": "**Friday June 12:** 6AM–2PM\n**Saturday June 13:** 6AM–2PM\n**Sunday June 14:** 6AM–2PM",
+      "content": "Friday June 12: 6AM–2PM\nSaturday June 13: 6AM–2PM\nSunday June 14: 6AM–2PM",
       "parking": ""
     },
     {
@@ -841,7 +706,7 @@ window.DEMO_DATA = {
       "phone": "",
       "role": "",
       "section": "Meals",
-      "content": "Check in with the innkeeper for your meals.\n\nYour **green wristband** gets you **50% off coffee** at 109 Montrose — coffee only, not available on other items."
+      "content": "Check in with The Innkeeper for your meals.\n\nYour green wristband gets you 50% off coffee at 109 Montrose — coffee only, not available on other items."
     },
     {
       "person_id": "ronan",
@@ -849,7 +714,7 @@ window.DEMO_DATA = {
       "phone": "",
       "role": "",
       "section": "Shifts",
-      "content": "**Thursday June 11:** 10PM–6AM\n**Friday June 12:** 10PM–6AM\n**Saturday June 13:** 10PM–6AM"
+      "content": "Thursday June 11: 10PM–6AM\nFriday June 12: 10PM–6AM\nSaturday June 13: 10PM–6AM"
     }
   ],
   "production": [
@@ -865,36 +730,42 @@ window.DEMO_DATA = {
     },
     {
       "person_id": "alex_hamm",
-      "name": "",
-      "phone": "",
-      "role": "",
-      "section": "Meals",
-      "content": "Check in with the innkeeper for your meals.\n\nYour **green wristband** gets you **50% off coffee** at 109 Montrose — coffee only, not available on other items.\n\n**Welcome Dinner Token:** n/a\n**Regular Meal Token:** 2",
-      "parking": ""
-    },
-    {
-      "person_id": "alex_hamm",
-      "name": "",
-      "phone": "",
-      "role": "",
-      "section": "Shifts",
-      "content": "**Friday June 12:** 7:30PM–5AM (The Inn)\n**Saturday June 13:** 12–8PM (Open Air)",
-      "parking": ""
-    },
-    {
-      "person_id": "alex_hamm",
       "section": "Transportation",
       "content": "Driving to camp."
     },
     {
       "person_id": "alex_hamm",
+      "name": "",
+      "phone": "",
+      "role": "",
+      "section": "Meals",
+      "content": "Check in with The Innkeeper for your meals.\n\nYour green wristband gets you 50% off coffee at 109 Montrose — coffee only, not available on other items.\n\nWelcome Dinner Token: n/a\nRegular Meal Token: 2",
+      "parking": ""
+    },
+    {
+      "person_id": "alex_hamm",
+      "section": "Shifts",
+      "content": "Shift 2: Fr 7:30pm-5am\nShift 3: Sat 12-8pm"
+    },
+    {
+      "person_id": "alex_hamm",
+      "section": "Riders",
+      "content": "- [Ka Baird](https://gbc6vrg43nwcgkgd.public.blob.vercel-storage.com/riders/KA_BAIRD_TECH_RIDER_2025_LOCAL-LBBlE14GNaJGvw5VZlo7QCFF6ah4wK.pdf)\n- [Mad Professor](https://gbc6vrg43nwcgkgd.public.blob.vercel-storage.com/riders/Mad_Professor_Tech_Rider-BK6N3GBH8hNXePd1tIRlJ3VjvC9iQp.pdf)\n- [DJ ojo](https://gbc6vrg43nwcgkgd.public.blob.vercel-storage.com/riders/DJ_ojo_technical_rider-ITafyWdUDz1ckl4uGltn4497nh3S2R.pdf)\n- [livwutang](https://gbc6vrg43nwcgkgd.public.blob.vercel-storage.com/riders/livwutang_-_Tech___Hospitality_Rider_-_2026-9CrYajy8DMVfSHfA42vbh3oj7QlgN6.docx)\n- [Badsista](https://gbc6vrg43nwcgkgd.public.blob.vercel-storage.com/riders/BADSISTA_TECHNICAL_AND_HOSPITALITY_RIDER-T0r1jcyctZFOatCr0uc6vFvt1nN4vY.pdf)\n- [Ayanna Heaven](https://gbc6vrg43nwcgkgd.public.blob.vercel-storage.com/riders/Ayanna_Heaven_DJ_Rider_2025__1_-VacZGjMhTWBDykdqoEIlJMW68oEDGu.pdf)\n- [Everything Upful (Groundsound, Kay7 & Tóke)](https://gbc6vrg43nwcgkgd.public.blob.vercel-storage.com/riders/GROUNDSOUND__KAY7___TOKE_ANNEX_ARTIST_RIDER-q5ZAk5xkP29FDNdi7th3si2EcYQQbJ.pdf)\n- [Livwutang](https://gbc6vrg43nwcgkgd.public.blob.vercel-storage.com/riders/livwutang_-_Tech___Hospitality_Rider_-_2026-wYnVs3OeI0WH721njYAl9eNdzyh6K3.pdf)"
+    },
+    {
+      "person_id": "alex_hamm",
+      "section": "Rider Key Info",
+      "content": "Ka Baird\n● Long XLR cables\n● Stereo out into PA\n\nDJ ojo\n● Soundcraft Signature 12 MTK\n● Ableton Push\n● Laptop stands\n\nMad Professor\n● Allen & Heath MixWizard 16\n● 3 mics\n\nEverything Upful\n● 5 x DI\n● 6 x 6.3mm Jack Cable\n● Bass amp + cabinet\n● 2 x Jack 6.3 mm TS output to 2x jack 6.3 mm TS input.\n● 3 x Jack 6.3 mm to RCA output (from Gav’s multitrack to DJM900nxs or nxs2 )\n● 1x Pioneer CDJ2000nxs or nxs2\n● 1x Technics SL-1200\n● Pioneer DJM900nxs or nxs2\n● XLR cables for Gavs pedal board and Exiles Vocals (to be sent to venues desk)\n● 4 x Shure sm58 microphone with microphone stands + 25ft Microphone cable\n● 4 x 0.6 m TS cables\n● 2 x 1.5m wide x 1m high (approx) flat desk with no obstructions in front\n● DJ riser with enough space for all listed equipment\n● 2 x Double braced X frame keyboard/e-piano stand with flat top or suitable equivalent. (Must be able to hold case with dimensions of sampler & FX unit listed below"
+    },
+    {
+      "person_id": "alex_hamm",
       "section": "Schedule",
-      "content": "**Friday:**\nOverview: Assist with concert, DJ sets, and live sets at The Inn.\n-7:30pm: Meet Michael King at The Inn, assist with staging Ka Baird.\n-8:30pm: Ka Baird live.\n-9:30pm: livwutang.\n-10:30pm: Make sure you have a gameplan for DJ ojo moving into the center of the room.\n-11:30pm: DJ ojo live in-the-round.\n-12:30am: Mad Professor live (clear DJ ojo table).\n-2:30am: Badsista DJ.\n-5am: Stage closes. Pack down as needed, wrap.\n\n**Saturday:**\nOverview: Assist with sound checks + day party at Open Air.\n-Noon: Meet Rey at Open Air to help with last late-night soundchecks, prep for daytime DJ takeover.\n-1:30pm: Jade arrives to stage manage day party, assist her with Gavsborg/Everything Upful and Ayanna Heaven soundchecks.\n-3pm: Ayanna Heaven DJ.\n-4pm: Everything Upful live.\n-7pm: Party ends, reset the stage.\n-8pm: You're done."
+      "content": "Friday:\nOverview: Assist with concert, DJ sets and live sets at The Inn.\n-7:30pm: Meet Michael King at The Inn, assist with staging Ka Baird.\n-8:30pm: Ka Baird live\n-9:30pm: livwutang\n-10:30pm: Make sure you have a gameplan for DJ ojo moving into the center of the room.\n-11:30pm: DJ ojo live in-the-round.\n-12:30am: Mad Professor live (clear DJ ojo table)\n-2:30am: Badsista DJ\n-5am: Stage closes. Pack down as needed, wrap.\n\nSaturday:\nOverview: Assist with sound checks + day party at Open Air.\n-Noon: Meet Rey at Open Air to help with last late-night soundchecks, prep for daytime DJ takeover\n-1:30pm: Jade arrives to stage manage day party, assist her with Gavsborg/Everything Upful and Ayanna Heaven soundchecks\n-3pm: Ayanna Heaven DJ\n-4pm: Everything Upful live\n-7pm: Party ends, reset the stage.\n-8pm: You’re done. Thank you so, so much!"
     },
     {
       "person_id": "alex_hamm",
       "section": "Rain Plan",
-      "content": "**Friday:**\nOverview: Assist with concert, DJ sets and live sets at The Inn. (same as schedule — The Inn is covered)\n-7:30pm: Meet Michael King at The Inn, assist with staging Ka Baird.\n-8:30pm: Ka Baird live.\n-9:30pm: livwutang.\n-10:30pm: Gameplan for DJ ojo.\n-11:30pm: DJ ojo live in-the-round.\n-12:30am: Mad Professor live.\n-2:30am: Badsista DJ.\n-5am: Stage closes. Wrap.\n\n**Saturday:**\nOverview: Assist with sound checks + day party at Open Air. (same as schedule)\n-Noon: Meet Rey at Open Air.\n-1:30pm: Jade arrives, assist with soundchecks.\n-3pm: Ayanna Heaven DJ.\n-4pm: Everything Upful live.\n-7pm: Party ends, reset.\n-8pm: You're done."
+      "content": "Friday:\nOverview: Assist with concert, DJ sets and live sets at The Inn.\n-7:30pm: Meet Michael King at The Inn, assist with staging Ka Baird.\n-8:30pm: Ka Baird live\n-9:30pm: livwutang\n-10:30pm: Make sure you have a gameplan for DJ ojo moving into the center of the room.\n-11:30pm: DJ ojo live in-the-round.\n-12:30am: Mad Professor live (clear DJ ojo table)\n-2:30am: Badsista DJ\n-5am: Stage closes. Pack down as needed, wrap.\n\nSaturday:\nOverview: Assist with sound checks + day party at Open Air.\n-Noon: Meet Rey at Open Air to help with last late-night soundchecks, prep for daytime DJ takeover\n-1:30pm: Jade arrives to stage manage day party, assist her with Gavsborg/Everything Upful and Ayanna Heaven soundchecks\n-3pm: Ayanna Heaven DJ\n-4pm: Everything Upful live\n-7pm: Party ends, reset the stage.\n-8pm: You’re done. Thank you so, so much!"
     },
     {
       "person_id": "alexa_schilero",
@@ -908,41 +779,42 @@ window.DEMO_DATA = {
     },
     {
       "person_id": "alexa_schilero",
+      "section": "Transportation",
+      "content": "Wednesday 6/10: Van from Ridgewood.\n\nSunday 6/14: Van from camp."
+    },
+    {
+      "person_id": "alexa_schilero",
       "name": "",
       "phone": "",
       "role": "",
       "section": "Meals",
-      "content": "Check in with the innkeeper for your meals.\n\nYour **green wristband** gets you **50% off coffee** at 109 Montrose — coffee only, not available on other items.\n\n**Welcome Dinner Token:** n/a\n**Regular Meal Token:** 2",
+      "content": "Check in with The Innkeeper for your meals.\n\nYour green wristband gets you 50% off coffee at 109 Montrose — coffee only, not available on other items.\n\nWelcome Dinner Token: n/a\nRegular Meal Token: 2",
       "parking": ""
     },
     {
       "person_id": "alexa_schilero",
-      "name": "",
-      "phone": "",
-      "role": "",
       "section": "Shifts",
-      "content": "Setup Week: M–Th\nShift 1: Fr 12pm–8pm\nShift 2: Sat 9am–5pm\nShift 3: Teardown",
-      "parking": ""
+      "content": "Setup: Wednesday noon-EOD\nShift 1: Fr 12pm-8pm\nShift 2: Sat 9-5pm\nShift 3: Teardown"
     },
     {
       "person_id": "alexa_schilero",
-      "section": "Transportation",
-      "content": "**Sunday June 7:** Van from Ridgewood to camp.\n\n**Sunday June 14:** Van from camp back."
-    },
-    {
-      "person_id": "alexa_schilero",
-      "section": "Schedule",
-      "content": "**Sunday June 7:**\nOverview: Meet to ride to camp. We leave from Ridgewood in the evening.\n\n**Monday–Wednesday:**\nSetup.\n\n**Friday:**\nOverview: Assist at The Lake, The Amphitheater, Hammock Grove.\n-11:45am: Meet Rey at The Inn, confirm 3x CDJs, 1x Pioneer A9, 2x TTs + ethernet hub for the setup. They should be at The Inn. Request golf cart assistance to move them to the lake.\n-Noon: Set up for Kiernan Laveaux at The Lake.\n-As needed: set up 2x QSC speakers + 3 mics for Artist Talk at The Amphitheater.\n-2pm: Artist Talk at The Amphitheater.\n-3pm: Kiernan Laveaux at The Lake.\n-6pm: Strike stage. Turn off and cover amps (confirm protocol with One-Source in advance), cover speakers, bring the following items to the following locations on a golf cart:\n  -Open Air: 2x TT + TPI anti-feedback bases, 1x CDJ. Store all in the back of the Wolves' Den.\n  -The Barn: 1x CDJ\n  -The Inn: 1x CDJ + Pioneer A9\n-Once completed, meet Alex Rapp at the Hammock Grove.\n-7:30pm: Bendik Giske live.\n-8:30pm: Pack down subs, mics, staging. Strike stage, bring 2x8 staging platforms and mixer to the yurt at The Inn Outside.\n-9pm: Wrap.\n\n**Saturday:**\nOverview: Assist Baalti and Sayoko at The Barn.\n-9am: Meet Baalti & Sayoko at The Barn. They are mounting 2 projectors, one screen and two scrims. Assist as needed.\n-2:30pm: Baalti live.\n-3:30pm: Strike, reset.\n-5pm: Wrap.\n\n**Sunday:**\n-Noon: Head to The Inn, join the Teardown crew.\nCollect Dripping-owned equipment.\nReset office.\nBring benches back into The Inn.\nClean stages.\nWhen done: ride back in the van."
+      "section": "Riders",
+      "content": "- [Bendik Giske](https://gbc6vrg43nwcgkgd.public.blob.vercel-storage.com/riders/Bendik_Giske_Tech_Rider_2026-0O6yWwWqUB0D1Bu2zTMu06OGlTmcXh.pdf)\n- [Kiernan Laveaux](https://gbc6vrg43nwcgkgd.public.blob.vercel-storage.com/riders/Kiernan_Laveaux_Rider-DmM0sGUWnJ8CfJTLul35hL6ALSiIhg.pdf)"
     },
     {
       "person_id": "alexa_schilero",
       "section": "Rider Key Info",
-      "content": "Kiernan Laveaux\n● 3x CDJs, linked\n● 2x Turntables\n\nArtist Talk\n● 3 microphones\n\nBendik Giske:\n● 4x wireless mic packs — artist provides mics\n● 1x IEM pack — artist provides earpiece"
+      "content": "Kiernan Laveaux\n● 3x CDJs, linked\n● 2x Turntables\n\nArtist Talk\n● 3 microphones\n\nBendik Giske:\n● 4x wireless mic packs - artist provides mics\n● 1x IEM pack - artist provides earpiece"
+    },
+    {
+      "person_id": "alexa_schilero",
+      "section": "Schedule",
+      "content": "Wednesday\nOverview: Setup 8am: Depart from NYC - location TBC. Noon: Setup\n\nMonday-Wed: Setup.\n\nFriday:\nOverview: Assist at The Lake, The Amphitheater, Hammock Grove\n-11:45: Meet Rey at The Inn, confirm 3x CDJs, 1x Pioneer A9, 2x TTs + ethernet hub for the setup. They should be at The Inn. Request golf cart assistance to move them to the lake.\n-Noon: Set up for Kiernan Laveaux\n-Set up 2x QSC speakers + 3 mics for Artist Talk at The Amphitheater\n-2pm: Artist Talk at The Amphitheater\n-3pm: Kiernan Laveaux at The Lake\n-6pm: Strike stage. Turn off and cover amps (confirm protocol with One-Source in advance), cover speakers, bring the following items to the following locations on a golf cart:\n-Open Air: 2x TT + TPI anti-feedback bases, 1x CDJ. Store all in the back of the Wolves’ Den.\n-The Barn: 1x CDJ\n-The Inn: 1x CDJ + Pioneer A9\n-Once completed, meet Alex Rapp at the Hammock Grove\n-7:30pm: Bendik Giske live\n-8:30pm: Pack down subs, mics, staging. Strike stage, bring 2x8 staging platforms and mixer to the yurt at The Inn Outside.\n-9pm: Wrap\n\nSaturday:\nOverview: Assist Baalti and Sayoko at The Barn\n-9am: Meet Baalti & Sayoko at The Barn. They are mounting 2 projectors, one screen and two scrims. They will already have a plan for projector and scrim mounting. Assist as needed.\n-2:30pm: Baalti live.\n-3:30pm: Strike, reset.\n-5pm: Wrap.\n\nSunday:\n-Noon: Head to The Inn, join the Teardown crew. Collect Dripping-owned equipment Reset office Bring benches back into The Inn Clean stages\n\nWhen done: ride back in the van. Thank you so, so much!"
     },
     {
       "person_id": "alexa_schilero",
       "section": "Rain Plan",
-      "content": "**Friday:**\nOverview: Assist at Open Air, **The Barn** (Hammock Grove rain backup).\n-Noon: Meet Rey at Open Air, set up for Kiernan Laveaux & the Artist Talk.\n-2pm: Artist Talk at Open Air.\n-3pm: Kiernan Laveaux at Open Air.\n-6pm: Strike stage. Bring the following items to the following locations on a golf cart:\n  -Open Air: 2x TT + TPI anti-feedback bases, 1x CDJ. Store all in the back of the Wolves' Den.\n  -The Barn: 1x CDJ\n  -The Inn: 1x CDJ + Pioneer A9\n-Once completed, meet Alex Rapp at The Barn.\n-7:30pm: Bendik Giske live.\n-8:30pm: Pack down mics, staging. Strike stage, bring 2x8 staging platforms and mixer to the yurt at The Inn Outside.\n-9pm: Wrap.\n\n**Saturday:**\nOverview: Assist Baalti and Sayoko at The Barn. (same as schedule — The Barn is covered)\n\n**Sunday:**\nTeardown crew (same as schedule)."
+      "content": "Sunday June 7:\nOverview: Meet to ride to camp. We leave from Ridgewood in the evening.\n\nMonday-Wed: Setup.\n\nOverview: Assist at Open Air, The Barn\n-Noon: Meet Rey at Open Air, set up for Kiernan Laveaux & the Artist Talk\n-2pm: Artist Talk at Open Air\n-3pm: Kiernan Laveaux at Open Air\n-6pm: Strike stage. Bring the following items to the following locations on a golf cart:\n-Open Air: 2x TT + TPI anti-feedback bases, 1x CDJ. Store all in the back of the Wolves’ Den.\n-The Barn: 1x CDJ\n-The Inn: 1x CDJ + Pioneer A9\n-Once completed, meet Alex Rapp at The Barn\n-7:30pm: Bendik Giske live\n-8:30pm: Strike stage, bring any 2x8 staging platforms to the hut at The Inn Outside.\n-9pm: Wrap\n-7:30pm: Bendik Giske live\n-8:30pm: Pack down mics, staging. Strike stage, bring both 2x8 staging platforms + the third 2x8 that’s already in the room and mixer to the yurt at The Inn Outside.\n-9pm: Wrap\n\nSaturday:\nOverview: Assist Baalti and Sayoko at The Barn\n-9am: Meet Baalti & Sayoko at The Barn. They are mounting 2 projectors, one screen and two scrims. They will already have a plan for projector and scrim mounting. Assist as needed.\n-2:30pm: Baalti live.\n-3:30pm: Strike, reset.\n-5pm: Wrap.\n\nSunday:\n-Noon: Head to The Inn, lead the Teardown crew. Collect Dripping-owned equipment Reset office Bring benches back into The Inn Clean stages When done: ride back in the van. Thank you so, so much!"
     },
     {
       "person_id": "dalton_saffe",
@@ -956,12 +828,38 @@ window.DEMO_DATA = {
     },
     {
       "person_id": "dalton_saffe",
-      "name": "",
-      "phone": "",
-      "role": "",
+      "section": "Transportation",
+      "content": "Wednesday 6/10: Van from Ridgewood.\n\nSunday: 12:30pm bus from Camp Sacajawea back to NYC. Please arrive 15 minutes early to check in."
+    },
+    {
+      "person_id": "dalton_saffe",
       "section": "Meals",
-      "content": "Check in with the innkeeper for your meals.\n\nYour **green wristband** gets you **50% off coffee** at 109 Montrose — coffee only, not available on other items.",
-      "parking": ""
+      "content": "Check in with The Innkeeper backstage at The Inn upon arrival to collect your meal tokens.\n\nWelcome Dinner Token: 1\nRegular Meal Token: 2"
+    },
+    {
+      "person_id": "dalton_saffe",
+      "section": "Shifts",
+      "content": "Setup: Wednesday noon-EOD\nShift 1: Th 9am-5pm\nShift 2: Fr 4pm-9pm"
+    },
+    {
+      "person_id": "dalton_saffe",
+      "section": "Riders",
+      "content": "- [Bendik Giske](https://gbc6vrg43nwcgkgd.public.blob.vercel-storage.com/riders/Bendik_Giske_Tech_Rider_2026-0O6yWwWqUB0D1Bu2zTMu06OGlTmcXh.pdf)"
+    },
+    {
+      "person_id": "dalton_saffe",
+      "section": "Rider Key Info",
+      "content": "Bendik Giske:\n● 4x wireless mic packs - artist provides mics\n● 1x IEM pack - artist provides earpiece"
+    },
+    {
+      "person_id": "dalton_saffe",
+      "section": "Schedule",
+      "content": "Wednesday:\nOverview: Setup 8am: Depart from NYC - location TBC. Noon: Setup\n\nThursday:\nOverview: Setup 9am: Final setup day 5pm: Wrap\n\nFriday:\nOverview: Assist with Bendik Giske concert\n-3;45pm: Coordinate meetup up with Alex Rapp and Nate McManus.\n-4pm: Prep wireless system at Hammock Grove. Four belt packs + IEM system, Bendik brings his own mics + IEM earpiece. Bendik brings his own mics + IEM earpiece. These will be stored in The Inn. Set up two pieces of 2x8 staging + mix desk that are stored in the small cabin adjacent.\n-5:30pm: retrieve mixer from The Outside Inn, take it to Hammock Grove, sound check Bendik.\n-7:30pm: Bendik Giske live\n-8:30pm: Pack down subs, mics, staging. Strike stage, bring 2x8 staging platforms and mixer to the yurt at The Inn Outside.\n-9pm: Wrap. You’re done. Thank you so, so much!"
+    },
+    {
+      "person_id": "dalton_saffe",
+      "section": "Rain Plan",
+      "content": "Friday:\nOverview: Bendik Giske at The Barn\n-4pm: Coordinate meetup up with Alex Rapp. Get golf cart access.\n-4:30pm: Prep wireless system at The Barn. Four belt packs, Bendik brings his own mics + one IEM system, Bendik brings his own earpiece. Set up two pieces of 2x8 staging + mix desk that are stored in the small cabin adjacent to the Hammock Grove.\n-5:30pm: retrieve mixer from The Outside Inn, take it to Hammock Grove, sound check Bendik.\n-7:30pm: Bendik Giske live\n-8:30pm: Pack down mics, staging. Strike stage, bring both 2x8 staging platforms + the third 2x8 that’s already in the room and mixer to the yurt at The Inn Outside.\n-9pm: Wrap. You’re done. Thank you so, so much!"
     },
     {
       "person_id": "erika_menze",
@@ -975,41 +873,42 @@ window.DEMO_DATA = {
     },
     {
       "person_id": "erika_menze",
+      "section": "Transportation",
+      "content": "Thursday: 1pm bus from Nowadays (56-06 Cooper Ave, Glendale, NY). Please arrive by 12:30pm.\n\nSunday: 12:30pm bus from Camp Sacajawea. Please arrive 30 minutes early to check in."
+    },
+    {
+      "person_id": "erika_menze",
       "name": "",
       "phone": "",
       "role": "",
       "section": "Meals",
-      "content": "Check in with the innkeeper for your meals.\n\nYour **green wristband** gets you **50% off coffee** at 109 Montrose — coffee only, not available on other items.\n\n**Welcome Dinner Token:** n/a\n**Regular Meal Token:** 3",
+      "content": "Check in with The Innkeeper for your meals.\n\nYour green wristband gets you 50% off coffee at 109 Montrose — coffee only, not available on other items.\n\nWelcome Dinner Token: n/a\nRegular Meal Token: 3",
       "parking": ""
     },
     {
       "person_id": "erika_menze",
-      "name": "",
-      "phone": "",
-      "role": "",
       "section": "Shifts",
-      "content": "Shift 1: Fr 12pm–6pm\nShift 2: Sat 9:30am–2:30pm\nShift 3: Sat 11:30pm–6am",
-      "parking": ""
+      "content": "Shift 1: Fr 12pm-6pm\nShift 2: Sat 9:30-2:30pm\nShift 3: Sat 11:30pm-6am"
     },
     {
       "person_id": "erika_menze",
-      "section": "Transportation",
-      "content": "**Thursday:** 1pm bus from Nowadays (56 Wyckoff Ave, Bushwick). Please arrive by 12:30pm.\n\n**Sunday:** 12:30pm bus from Camp Sacajawea. Please arrive **30 minutes early** to check in."
-    },
-    {
-      "person_id": "erika_menze",
-      "section": "Schedule",
-      "content": "**Friday:**\nOverview: Assist at The Barn and The Outside Inn for sound checks + clown workshop.\n-Noon: Meet Anika at The Barn, assist with soundchecks for four live acts — Buttechno, Isabella Koen, Hesaitix, Eden Aurelius.\n-4pm: Meet Devoye at The Outside Inn to assist with Alex Tatarsky clown workshop.\n-4:30pm: Alex Tatarsky clown workshop begins.\n-5:30pm: Help pack down post-workshop.\n-6pm: Wrap.\n\n**Saturday:**\nOverview: Assist with sound checks for overnight Open Air show, then return to assist with ROS.\n-10am: Arrive at Open Air, meet with Rey, assist with prep for sound checks.\n-10:30am: Black Decelerant sound check.\n-11:30am: Earthen Sea sound check.\n-12:30pm: Paperclip Minimiser sound check.\n-1:30pm: Assist Jade with stage turnover for day party.\n-2:30pm: Break.\n-11pm: Return to stage, Elori Saxl & Henry Solomon line check.\n-12am: Elori Saxl & Henry Solomon live.\n-1am: 20min changeover.\n-1:20am: Black Decelerant live.\n-2:20am: 20min changeover.\n-2:40am: Earthen Sea live.\n-3:40am: 20min changeover.\n-4am: Paperclip Minimiser live.\n-5:30am: Wrap. *Thank you so, so much!*"
+      "section": "Riders",
+      "content": "- [Buttechno](https://gbc6vrg43nwcgkgd.public.blob.vercel-storage.com/riders/buttechno_LIVE_tech_rider-cHLNqdqVfu9MHKmYHx2TaFktX9i3Ee.pdf)\n- [Isabella Koen](https://gbc6vrg43nwcgkgd.public.blob.vercel-storage.com/riders/Isabella_Koen__Live_PA_Tech_and_Hospitality_Rider-PJ8L5qL3BkoNXsFeE3BJfVlwaMTZPZ.pdf)\n- [Hesaitix](https://gbc6vrg43nwcgkgd.public.blob.vercel-storage.com/riders/HESAITIX_-TECHNICAL_RIDER__LIVE_-3Sa2rd1lDki9a7NCt1jDYXzZ8Ck4hf.pdf)\n- [Eden Aurelius](https://gbc6vrg43nwcgkgd.public.blob.vercel-storage.com/riders/Eden_Aurelius_Rider-c91SmFvG5MWROIcv6GwYVZtTvuhUZf.jpg)\n- [Alex Tatarsky](https://gbc6vrg43nwcgkgd.public.blob.vercel-storage.com/riders/Alex_Tatarsky_-_Rider-gFSiotUioXt2Esh8Aj59hVHERYnSag.pdf)\n- [Black Decelerant](https://gbc6vrg43nwcgkgd.public.blob.vercel-storage.com/riders/Black_Decelerant_-_Rider__updated_-m2a0vAzpdEaoCRK0QjIQLpw7RzxSBD.pdf)\n- [Earthen Sea](https://gbc6vrg43nwcgkgd.public.blob.vercel-storage.com/riders/Earthen_Sea_Technical_Rider-me16cGDgr9a8Oc8HSOQgmbpc8gVfcz.pdf)\n- [Paperclip Minimiser](https://gbc6vrg43nwcgkgd.public.blob.vercel-storage.com/riders/Paperclip_Minimiser-h7ZWLGwp2WlRpg9RNyHjKfgp7EZpeB.jpg)\n- [Elori Saxl & Henry Solomon](https://gbc6vrg43nwcgkgd.public.blob.vercel-storage.com/riders/Elori_Saxl_Henry_Solomon_Tech_Rider-VMxGoiXtVdbL31BuhASuWePtZJga9l.pdf)"
     },
     {
       "person_id": "erika_menze",
       "section": "Rider Key Info",
-      "content": "Eden Aurelius\n● Xone 96 - standalone unit used as interface\n\nHesaitix\n● Two (2) CDJ2000NXS or similar on CDJ stand\n● One (1) Pioneer DJM mixer\n● Two (2) laptop stands\n● Three (3) power outlets\n\nIsabella Koen\n● Stereo XLR out\n\nButtechno\n● Xone 96 - standalone unit used as interface\n● Keyboard stand\n\nAlex Tatarsky:\n● 1x mic\n● Stereo input for music\n\nElori Saxl & Henry Solomon\n● 1 Stereo DI, 2 Mono DI, 2 SM57\n\nBlack Decelerant\n● 1 Dynamic Mic, 1 long table, 1 Keyboard stand, 2 Mic stands, 3 Stereo DIs, 2 Chair/Stool\n\nEarthen Sea\n● Stereo out from interface, table space\n\nPaperclip Minimiser\n● Stereo DI, connection to DJ mixer preferred"
+      "content": "Eden Aurelius\n● Xone 96 - standalone unit used as interface\n\nHesaitix\n● Two (2) CDJ2000NXS or similar on CDJ stand\n● One (1) Pioneer DJM mixer\n● Two (2) laptop stands\n● Three (3) power outlets\n\nIsabella Koen\n● Stereo XLR out\n\nButtechno\n● Xone 96 - standalone unit used as interface\n● Keyboard stand\n\nAlex Tatarsky:\n● 1x mic\n● stereo input for music\n\nElori Saxl & Henry Solomon\n● 1 Stereo DI\n● 2 Mono DI\n● 2 SM57\n\nBlack Decelerant\n● 1 Dynamic Microphones\n● 1 long table + table cloth\n● 1 Keyboard stand\n● 2 Mic stands\n● 3 Stereo DIs\n● 2 Chair/Stool\n\nEarthen Sea\n● Stereo out from interface\n● table space\n\nPaperclip Minimiser\n● Stereo DI, connection to DJ mixer preferred"
+    },
+    {
+      "person_id": "erika_menze",
+      "section": "Schedule",
+      "content": "Friday\nOverview: Assist at The Barn and The Outside Inn for sound checks + clown workshop\n-Noon: Meet Anika at The Barn, assist with soundchecks for four live acts - Buttechno, Isabella Koen, Hesaitix, Eden Aurelius.\n-4pm: Meet Devoye at The Outside Inn to assist with Alex Tatarsky clown workshop.\n-4:30pm: Alex Tatarsky clown workshop begins\n-5:30pm: Help pack down post-workshop\n-6pm: Wrap.\n\nSaturday:\nOverview: Assist with sound checks for overnight Open Air show, then return to assist with ROS.\n-10am: Arrive at Open Air, meet with Rey, assist with prep for sound checks\n-10:30am: Black Decelerant sound check\n-11:30am: Earthen Sea sound check\n-12:30pm: Paperclip Minimiser sound check\n-1:30pm: Assist Jade with stage turnover for day party\n-2:30pm: Break\n-11pm: Return to stage, Elori Saxl & Henry Solomon line check\n-12am: Elori Saxl & Henry Solomon live\n-1am: 20min changeover\n-1:20am: Black Decelerant live\n-2:20am: 20min changeover\n-2:40am: Earthen Sea live\n-3:40am: 20min changeover\n-4am: Paperclip Minimiser live\n-5:30am: Wrap. Thank you so, so much!"
     },
     {
       "person_id": "erika_menze",
       "section": "Rain Plan",
-      "content": "**Friday:**\nOverview: Assist at The Barn for sound checks + clown workshop. (same — The Barn is covered. Alex Tatarsky workshop also moves to The Barn.)\n-Noon: Meet Anika at The Barn, assist with soundchecks.\n-4pm: Assist with Alex Tatarsky clown workshop in The Barn.\n-4:30pm: Workshop begins.\n-5:30pm: Help pack down.\n-6pm: Wrap.\n\n**Saturday:**\nOverview: Assist with sound checks for overnight Open Air show, then return to assist with ROS. (same as schedule)\n-10am: Arrive at Open Air.\n-10:30am: Black Decelerant sound check.\n-11:30am: Earthen Sea sound check.\n-12:30pm: Paperclip Minimiser sound check.\n-1:30pm: Assist Jade.\n-2:30pm: Break.\n-11pm: Return to stage.\n-12am: Elori Saxl & Henry Solomon live.\n-1:20am: Black Decelerant live.\n-2:40am: Earthen Sea live.\n-4am: Paperclip Minimiser live.\n-5:30am: Wrap."
+      "content": "Friday\nOverview: Assist at The Barn for sound checks + clown workshop\n-Noon: Meet Anika at The Barn, assist with soundchecks for four live acts - Buttechno, Isabella Koen, Hesaitix, Eden Aurelius.\n-4pm: Assist with Alex Tatarsky clown workshop in The Barn.\n-4:30pm: Alex Tatarsky clown workshop begins\n-5:30pm: Help pack down post-workshop\n-6pm: Wrap.\n\nSaturday:\nOverview: Assist with sound checks for overnight Open Air show, then return to assist with ROS.\n-10am: Arrive at Open Air, meet with Rey, assist with prep for sound checks\n-10:30am: Black Decelerant sound check\n-11:30am: Earthen Sea sound check\n-12:30pm: Paperclip Minimiser sound check\n-1:30pm: Assist Jade with stage turnover for day party\n-2:30pm: Break\n\n-11pm: Return to stage, Elori Saxl & Henry Solomon line check\n-12am: Elori Saxl & Henry Solomon live\n-1am: 20min changeover\n-1:20am: Black Decelerant live\n-2:20am: 20min changeover\n-2:40am: Earthen Sea live\n-3:40am: 20min changeover\n-4am: Paperclip Minimiser live\n-5:30am: Wrap. Thank you so, so much!"
     },
     {
       "person_id": "franky_gonzalez",
@@ -1027,7 +926,7 @@ window.DEMO_DATA = {
       "phone": "",
       "role": "",
       "section": "Meals",
-      "content": "Check in with the innkeeper for your meals.\n\nYour **green wristband** gets you **50% off coffee** at 109 Montrose — coffee only, not available on other items.",
+      "content": "Check in with The Innkeeper for your meals.\n\nYour green wristband gets you 50% off coffee at 109 Montrose — coffee only, not available on other items.",
       "parking": ""
     },
     {
@@ -1042,21 +941,42 @@ window.DEMO_DATA = {
     },
     {
       "person_id": "haamid",
-      "name": "",
-      "phone": "",
-      "role": "",
-      "section": "Meals",
-      "content": "Check in with the innkeeper for your meals.\n\nYour **green wristband** gets you **50% off coffee** at 109 Montrose — coffee only, not available on other items.",
-      "parking": ""
+      "section": "Transportation",
+      "content": "Thursday 1pm bus from Nowadays\nSunday 12:30pm bus from Camp Sacajawea\nPlease arrive 30 minutes early to the bus to check in.\n\nTony Seibert"
     },
     {
       "person_id": "haamid",
       "name": "",
       "phone": "",
       "role": "",
-      "section": "Shifts",
-      "content": "**Friday June 12:** 12–8:30PM (Assist Devoye + Bendik)\n**Saturday June 13:** 9PM–6:30AM (The Barn)",
+      "section": "Meals",
+      "content": "Check in with The Innkeeper for your meals.\n\nYour green wristband gets you 50% off coffee at 109 Montrose — coffee only, not available on other items.",
       "parking": ""
+    },
+    {
+      "person_id": "haamid",
+      "section": "Shifts",
+      "content": "Shift 1: Fr 12pm-9pm\nShift 2: Fr 9pm-6:30am"
+    },
+    {
+      "person_id": "haamid",
+      "section": "Riders",
+      "content": "- [Bendik Giske](https://gbc6vrg43nwcgkgd.public.blob.vercel-storage.com/riders/Bendik_Giske_Tech_Rider_2026-0O6yWwWqUB0D1Bu2zTMu06OGlTmcXh.pdf)"
+    },
+    {
+      "person_id": "haamid",
+      "section": "Rider Key Info",
+      "content": "bossy boots:\n● headset mic\n● aux input\n\nAlex Tatarsky:\n● 1x mic\n● stereo input for music\n\nBendik Giske:\n● 4x wireless mic packs - artist provides mics\n● 1x IEM pack - artist provides earpiece"
+    },
+    {
+      "person_id": "haamid",
+      "section": "Schedule",
+      "content": "Friday:\nOverview: Assist Elinah’s stretching workshop + Alex Tatarsky clown workshop at The Outside Inn, assist with Bendik Giske at Hammock Grove.\n-Noon: mixer check, sync headset mic, turn on soundsystem\n-12:30pm: Elina soundcheck.\n-1pm: bossy boots recovery stretch\n-2pm: Break\n\n-4pm: Sound check Alex Tatarsky. 1x mic, stereo electronics feed into PA\n-4:30pm: Alex Tatarsky workshop.\n-5:30pm: pack down gear, turn off system, hand off mixer to Alex Rapp for Bendik Giske.\n-Once done with packdown at The Outside Inn, head to Hammock Grove. Assist with Bendik Giske stage setting as needed.\n-7:30pm: Bendik Giske\n-8:30pm: Teardown, take staging platforms to the yurt at The Outside Inn\n-9pm: Wrap.\n\nSaturday:\nOverview: Assist Anika at The Barn.\n-9pm: Meet with Anika, take care of any last minute stage setting.\n-10pm: The Barn begins. Help with any changeovers, taking over as needed.\n-6am: Wrap. You’re done. Thank you so, so much!"
+    },
+    {
+      "person_id": "haamid",
+      "section": "Rain Plan",
+      "content": "Friday: Alex Tatarsky clown workshop, Bendik Giske at The Barn\n-4pm: Sound check Alex Tatarsky. 1x mic, stereo electronics feed into PA\n-4:30pm: Alex Tatarsky workshop.\n-5:30pm: Bendik Giske soundcheck\n-7:30pm: Bendik Giske\n-8:30pm: Teardown, take staging platforms to the yurt at The Outside Inn\n-9pm: Wrap.\n\nSaturday:\nOverview: Assist Anika at The Barn.\n-9pm: Meet with Anika, take care of any last minute stage setting.\n-10pm: The Barn begins. Help with any changeovers, taking over as needed.\n-6am: Wrap. You’re done. Thank you so, so much!"
     },
     {
       "person_id": "horacio",
@@ -1070,36 +990,42 @@ window.DEMO_DATA = {
     },
     {
       "person_id": "horacio",
+      "section": "Transportation",
+      "content": "Arrival to camp: TBC.\n\nSunday June 14: 12:30pm bus from Camp Sacajawea. Please arrive 30 minutes early to check in."
+    },
+    {
+      "person_id": "horacio",
       "name": "",
       "phone": "",
       "role": "",
       "section": "Meals",
-      "content": "Check in with the innkeeper for your meals.\n\nYour **green wristband** gets you **50% off coffee** at 109 Montrose — coffee only, not available on other items.\n\n**Welcome Dinner Token:** 1\n**Regular Meal Token:** 2",
+      "content": "Check in with The Innkeeper for your meals.\n\nYour green wristband gets you 50% off coffee at 109 Montrose — coffee only, not available on other items.\n\nWelcome Dinner Token: 1\nRegular Meal Token: 2",
       "parking": ""
     },
     {
       "person_id": "horacio",
-      "name": "",
-      "phone": "",
-      "role": "",
       "section": "Shifts",
-      "content": "**Thursday June 11:** 1–11PM (General)\n**Friday June 12:** 12–6PM (Open Air + General)\n**Saturday June 13:** 4–6:30AM (Open Air)\n**Saturday June 13:** 12:30–10:30PM (Basketball Court)",
-      "parking": ""
+      "content": "Shift 1: Th 1-11pm\nShift 2: Fr 12-6pm\nShift 3: Sat 4am-6:30am, 12:30-10:30"
     },
     {
       "person_id": "horacio",
-      "section": "Transportation",
-      "content": "Arrival to camp: TBC.\n\n**Sunday June 14:** 12:30pm bus from Camp Sacajawea. Please arrive **30 minutes early** to check in."
+      "section": "Riders",
+      "content": "- [Pavel Milyakov](https://gbc6vrg43nwcgkgd.public.blob.vercel-storage.com/riders/Pavel_Milyakov_LIVE_TECH_RIDER-psdYtPQPXauSIijFx9qFftmI8bjkMD.pdf)\n- [MOTHERBOARD — Tech](https://gbc6vrg43nwcgkgd.public.blob.vercel-storage.com/riders/Tech_Rider_Motherboard_2026-i6OsoUOhU2grIJda49HGnBHE1QN35T.pdf)\n- [MOTHERBOARD — Stage Plot](https://gbc6vrg43nwcgkgd.public.blob.vercel-storage.com/riders/Motherboard_Updated_Stage_Plot-ssrdJz3Ega5AjdKgGYhVIq7LJUsUTY.png)\n- [keiyaA — Lighting](https://gbc6vrg43nwcgkgd.public.blob.vercel-storage.com/riders/keiyaA_Lighting_Rider_v2-Xy4darfSjIWSwXkln8An52qNuqOtEX.pdf)\n- [keiyaA — Trio](https://gbc6vrg43nwcgkgd.public.blob.vercel-storage.com/riders/keiyaA_trio_rider_2026-zEdesnjZp3YZkWzPM16walLxtik4N2.pdf)\n- [Multicast Dynamics](https://gbc6vrg43nwcgkgd.public.blob.vercel-storage.com/riders/Multicast_Dynamics_-_DJ_-_Rider-L24lq6Pyg84lVPqGWNWIEtTJCEMtlP.pdf)\n- [C. Lavender](https://gbc6vrg43nwcgkgd.public.blob.vercel-storage.com/riders/C._Lavender_Tech_Rider-vx3le3YIoYSAZblB2Nf8bHBchKagMH.pdf)\n- [Choke Hole](https://gbc6vrg43nwcgkgd.public.blob.vercel-storage.com/riders/Choke_Hole_Tech_Rider-7J7QhVGU4bnKPJ1CsGfOTryBxa2PDW.pdf)"
+    },
+    {
+      "person_id": "horacio",
+      "section": "Rider Key Info",
+      "content": "MOTHERBOARD\n● 6x stereo DI\n● Bass amp + cabinet\n● Tables / keyboard stands\n\nkeiyaA\n● In-ear monitoring battery packs and transmitter system (provided + ran by in-house staff) ○ keiyaA + band have their own ears\n● Professional Jazz Drum Kit (Yamaha Oak Custom/Gretsch Renown/similar) ○ (4) piece kit ○ (2) snare drums, 1 with mesh head ○ c3 cymbal stands ○ 1 Kick pedal ○ 1 hi-hat stand ○ 2 snare stands ○ 1 Drum throne ○ 1 Carpet/rug\n● Bass Amp + Cabinet\n● (3) Stereo DI box\n● (1) 2X4X4 table or keyboard stand with wooden board, draped with floor length black stage cloth\n● (12) TRS/Jack Cables, at least 10ft/6m\n● (8) XLR Cables at least 20 ft\n● (2) black stage fans at least 18”\n● Glow in the dark electric tape\n● Black Electric tape\n● 10x powered outlets\n\nMulticast Dynamics\n● 4x CDJs\n● Xone 96\n● Akai MIDIMix\n● Scarlett Focusrite 4i4\n● Step up voltage converter\n● EU->US plug adapters\n● Extra cables\n\nC. Lavender\n● 1x boom mic stand\n● Stereo feed from mixer\n\nChoke Hole:\n● 1 x Pioneer Mixer DJM 800 or other quality Mixer with USB functionality and laptop output cables.\n● 2 x CDJs\n● 3 x Wireless Vocal Mics SM/Beta58 (2 active, 1 back up)\n● 2 x Monitor wedges for 1 for Host side, 1 for DJ."
     },
     {
       "person_id": "horacio",
       "section": "Schedule",
-      "content": "**Thursday:**\nOverview: General assistance launching the weekend.\n-1pm: Upon arrival, check in with Daniel, Leo and/or the Day Manager to see what's needed as we wrap setup and transition into ROS. Notable events:\n  - Pavel Milyakov soundcheck at Open Air at 4pm\n  - Backline + gear arriving throughout the day from personal rentals — needs to be distributed to stages\n  - Final setup tasks can include staging lights, signage, etc.\n-6:30pm: MOTHERBOARD soundcheck at The Inn.\n-8pm: MOTHERBOARD live.\n-9pm: keiyaA live at The Outside Inn — strike MOTHERBOARD.\n-10pm: Strike keiyaA.\n-11pm: Wrap.\n\n**Friday:**\nOverview: Assist with Open Air, The Lake and Amphitheater. Return at dawn to help with C. Lavender Open Air.\n-Noon: Meet up with Jade to get Open Air prepped for Multicast Dynamics hybrid DJ soundcheck.\n-1pm: Multicast Dynamics soundcheck.\n-2pm: Break away and assist Rey at The Lake / Amphitheater as needed. Help get Kiernan Laveaux running / tear down Artist Talk when done.\n-3pm: Kiernan Laveaux DJ.\n-6pm: Teardown Kiernan Laveaux. Break.\n-4am: Return to Open Air to assist with C. Lavender line check.\n-5:15am: C. Lavender live.\n-6am: Tidy up stage, make sure things are covered and put away.\n-6:30am: Wrap.\n\n**Saturday:**\nOverview: Assist with Choke Hole build, ROS, and post-show cleanup.\n-12:30pm: Arrive at The Court. Check in with Alex Rapp. Choke Hole will need help with sound / general production. Notes:\n  - Assist with any sound needs, including speaker builds, wireless mic setup, DJ equipment setup, etc.\n  - Set up Easy Up tent coverage for equipment and audience members as needed. Tarp speakers if needed. There is no rain plan.\n  - Devlin's is providing a projector and screen, which they are running.\n-9pm: Choke Hole live.\n-10pm: Tidy up, make sure everything is off & covered and that loose DJ gear has been taken to appropriate locations.\n-10:30pm: You're done."
+      "content": "Thursday:\nOverview: General assistance launching the weekend\n-1pm: Upon arrival, check in with Daniel, Leo and/or the Day Manager to see what’s needed as we wrap setup and transition into ROS. Some notable events:\n-Pavel Milyakov soundcheck at Open Air at 4pm\n-Backline + gear arriving throughout the day from personal rentals. This needs to be distributed to various stages.\n-Final set up tasks can include staging lights, signage etc\n\n-6:30pm: MOTHERBOARD soundcheck at The Inn\n-8pm: MOTHERBOARD live\n-9pm: keiyaA live at The Outside Inn - strike MOTHERBOARD\n-10pm: Strike keiyaA. Break down stage. Leave one 4x8 piece + legs for all three decks in the hut. Take two 4x8 pieces to The Inn, set them up on 12” feet as audience standing platforms around the perimeter.\n-11pm: Wrap.\n\nFriday:\nOverview: Assist with Open Air, The Lake and Amphitheater. Return at dawn to help with C. Lavender Open Air.\n-Noon: Meet up with Jade to get Open Air prepped for Multicast Dynamics hybrid DJ soundcheck.\n-1pm: Multicast Dynamics soundcheck.\n-2pm: Break away and assist Rey at The Lake / Amphitheater as needed. Help get Kiernan Laveaux running / tear down Artist Talk when done.\n-3pm: Kiernan Laveaux DJ\n-6pm: Teardown Kiernan Laveaux. Break.\n\n-4am: Return to Open Air to assist with C. Lavender line check.\n-5:15am: C. Lavender live\n-6am: tidy up stage, make sure things are covered and put away.\n-6:30am: Wrap.\n\nSaturday:\nOverview: Assist with Choke Hole build, ROS and post-show cleanup.\n-12:30pm: Arrive at The Court. Check in with Alex Rapp. Choke Hole will need help with sound / general production. Notes:\n-Assist with any sound needs, including speaker builds, wireless mic setup, DJ equipment setup, etc.\n-Set up Easy Up tent coverage for equipment and audience members as needed. Tarp speakers if needed. There is no rain plan.\n-Devlin’s is providing a projector and screen, which they are running.\n\n-9pm: Choke Hole live\n-10pm: Tidy up, make sure everything is off & covered and that loose DJ gear etc has been taken to appropriate location(s)\n-10:30pm: You’re done. Thank you so, so much!"
     },
     {
       "person_id": "horacio",
       "section": "Rain Plan",
-      "content": "**Thursday:**\nOverview: General assistance launching the weekend.\n-1pm: Check in with Daniel, Leo and/or the Day Manager.\n-Pavel Milyakov soundcheck at Open Air at 4pm.\n-6:30pm: MOTHERBOARD soundcheck at The Inn.\n-8pm: MOTHERBOARD live.\n-9pm: keiyaA live at **The Inn**.\n-10pm: Strike keiyaA. Pack down stage.\n-11pm: Wrap.\n\n**Friday:**\nOverview: Assist with Open Air, The Lake and Amphitheater. Return at dawn for C. Lavender.\n-Noon: Meet up with Jade to get Open Air prepped for Multicast Dynamics.\n-1pm: Multicast Dynamics soundcheck.\n-2pm: Break away and assist Rey at **The Inn** as needed.\n-3pm: Kiernan Laveaux DJ.\n-6pm: Teardown Kiernan Laveaux. Break.\n-4am: Return to Open Air to assist with C. Lavender line check.\n-5:15am: C. Lavender live.\n-6am: Tidy up stage.\n-6:30am: Wrap.\n\n**Saturday:**\nOverview: Assist with Choke Hole build, ROS and post-show cleanup. (same as schedule — The Court/Choke Hole has no rain plan)\n-12:30pm: Arrive at The Court.\n-9pm: Choke Hole live.\n-10pm: Tidy up.\n-10:30pm: You're done."
+      "content": "Thursday:\nOverview: General assistance launching the weekend\n-1pm: Upon arrival, check in with Daniel, Leo and/or the Day Manager to see what’s needed as we wrap setup and transition into ROS. Some notable events:\n-Pavel Milyakov soundcheck at Open Air at 4pm\n-Backline + gear arriving throughout the day from personal rentals. This needs to be distributed to various stages.\n-Final set up tasks can include staging lights, signage etc\n\n-6:30pm: MOTHERBOARD soundcheck at The Inn\n-8pm: MOTHERBOARD live\n-9pm: keiyaA live at The Inn\n-10pm: Strike keiyaA, clear stage area and pack down gear.\n-11pm: Wrap.\n\nFriday:\nOverview: Assist with Open Air, The Lake and Amphitheater. Return at dawn to help with C. Lavender Open Air.\n-Noon: Meet up with Jade to get Open Air prepped for Multicast Dynamics hybrid DJ soundcheck.\n-1pm: Multicast Dynamics soundcheck.\n-2pm: Break away and assist Rey at The Inn as needed.\n-3pm: Kiernan Laveaux DJ\n-6pm: Teardown Kiernan Laveaux. Break.\n\n-4am: Return to Open Air to assist with C. Lavender line check.\n-5:15am: C. Lavender live\n-6am: tidy up stage, make sure things are covered and put away.\n-6:30am: Wrap.\n\nSaturday:\nOverview: Assist with Choke Hole build, ROS and post-show cleanup.\n-12:30pm: Arrive at The Court. Check in with Alex Rapp. Choke Hole will need help with sound / general production. Notes:\n-Assist with any sound needs, including speaker builds, wireless mic setup, DJ equipment setup, etc.\n-Set up Easy Up tent coverage for equipment and audience members as needed. Tarp speakers if needed. There is no rain plan.\n-Devlin’s is providing a projector and screen, which they are running.\n-9pm: Choke Hole live\n-10pm: Tidy up, make sure everything is off & covered and that loose DJ gear etc has been taken to appropriate location(s)\n-10:30pm: You’re done. Thank you so, so much!"
     },
     {
       "person_id": "jhon_jairo",
@@ -1117,7 +1043,7 @@ window.DEMO_DATA = {
       "phone": "",
       "role": "",
       "section": "Meals",
-      "content": "Check in with the innkeeper for your meals.\n\nYour **green wristband** gets you **50% off coffee** at 109 Montrose — coffee only, not available on other items.",
+      "content": "Check in with The Innkeeper for your meals.\n\nYour green wristband gets you 50% off coffee at 109 Montrose — coffee only, not available on other items.",
       "parking": ""
     },
     {
@@ -1136,7 +1062,7 @@ window.DEMO_DATA = {
       "phone": "",
       "role": "",
       "section": "Meals",
-      "content": "Check in with the innkeeper for your meals.\n\nYour **green wristband** gets you **50% off coffee** at 109 Montrose — coffee only, not available on other items.",
+      "content": "Check in with The Innkeeper for your meals.\n\nYour green wristband gets you 50% off coffee at 109 Montrose — coffee only, not available on other items.",
       "parking": ""
     },
     {
@@ -1160,22 +1086,28 @@ window.DEMO_DATA = {
     },
     {
       "person_id": "liz_pigott",
-      "name": "",
-      "phone": "",
-      "role": "",
       "section": "Shifts",
-      "content": "**Sunday June 14:** 1–9AM (The Inn)",
-      "parking": ""
+      "content": "Shift 1: Sun 1-9am"
+    },
+    {
+      "person_id": "liz_pigott",
+      "section": "Riders",
+      "content": "Saturday night DJs:\n● 4x linked CDJs\n● Pioneer V10\n● Pioneer RMX for Bobby Beethoven"
+    },
+    {
+      "person_id": "liz_pigott",
+      "section": "Rider Key Info",
+      "content": "Saturday night DJs:\n● 4x linked CDJs\n● Pioneer V10\n● Pioneer RMX for Bobby Beethoven"
     },
     {
       "person_id": "liz_pigott",
       "section": "Schedule",
-      "content": "**Saturday night into Sunday morning:**\nOverview: Assist stage manager at The Inn with late night Saturday night / Sunday morning changeovers.\n-1am: Arrive at The Inn, check in with Michael King (Stage Manager). Assist as needed, follow his lead re: outdoor switchup in the morning.\n-1am: gyrofield.\n-3am: Bobby Beethoven — Pioneer RMX1000 needed.\n-5am: Juliana Huxtable.\n-7am: Possible move of JH to outdoor stage.\n-9am: You're done."
+      "content": "Saturday:\nOverview: Assist stage manager at The Inn with late night Saturday night / Sunday morning changeovers.\n-1am: Arrive at The Inn, check in with Michael King (Stage Manager). Assist as needed, follow his lead re: outdoor switchup in the morning.\n-1am: gyrofield\n-3am: Bobby Beethoven - Pioneer RMX1000 needed.\n-5am: Juliana Huxtable\n-7am: Possible move of JH to outdoor stage.\n-9am: You’re done. Thank you so, so much!"
     },
     {
       "person_id": "liz_pigott",
       "section": "Rain Plan",
-      "content": "**Saturday night into Sunday morning:**\nOverview: Assist stage manager at The Inn with late night changeovers. (same as schedule — The Inn is covered)\n-1am: Arrive at The Inn, check in with Michael King.\n-1am: gyrofield.\n-3am: Bobby Beethoven.\n-5am: Juliana Huxtable.\n-7am: Possible move of JH to outdoor stage.\n-9am: You're done."
+      "content": "Saturday:\nOverview: Assist stage manager at The Inn with late night Saturday night / Sunday morning changeovers.\n-1am: Arrive at The Inn, check in with Michael King (Stage Manager). Assist as needed, follow his lead re: outdoor switchup in the morning.\n-1am: gyrofield\n-3am: Bobby Beethoven - Pioneer RMX1000 needed.\n-5am: Juliana Huxtable\n-7am: Possible move of JH to outdoor stage.\n-9am: You’re done. Thank you so, so much! Haamid"
     },
     {
       "person_id": "michael_aniekwe",
@@ -1189,22 +1121,23 @@ window.DEMO_DATA = {
     },
     {
       "person_id": "michael_aniekwe",
-      "name": "",
-      "phone": "",
-      "role": "",
+      "section": "Meals",
+      "content": "n/a"
+    },
+    {
+      "person_id": "michael_aniekwe",
       "section": "Shifts",
-      "content": "**Thursday June 11:** 1:30PM (2hr generator training)\n**Friday June 12:** 9AM + 7PM (Generator Loop)\n**Saturday June 13:** 10:30AM + 6:30PM (Generator Loop)",
-      "parking": ""
+      "content": "Shift 1: Th 1:30pm\nShift 2: Fr 9am, 7pm\nShift 3: Sat 10am, 6:30pm"
     },
     {
       "person_id": "michael_aniekwe",
       "section": "Schedule",
-      "content": "**Thursday:**\nOverview: Generator orientation, first loop.\n-1:30pm: Meet with Sphente and One-Source to get trained on generator protocols, including refilling and on-off sequences as well as their locations.\n\n**Friday:**\nOverview: Two loops of all generators, checking gas levels and turning on/off as needed.\n-9am: Loop one.\n-7pm: Loop two.\n\n**Saturday:**\n-10am: Loop one.\n-6:30pm: Loop two.\nOnce completed, you're done."
+      "content": "Thursday:\nOverview: Generator orientation, first loop.\n-1:30pm: meet with Sphente and One-Source to get trained on generator protocols, including refilling and on-off sequences as well as their locations.\n\nFriday:\nOverview: Two loops of all generators, checking gas levels and turning on/off as needed\n-9am: Loop one\n-7pm: Loop two\n\nSaturday:\n-10am: Loop one\n-6:30pm: Loop two\n\nOnce completed, you’re done. Thank you so, so much!"
     },
     {
       "person_id": "michael_aniekwe",
       "section": "Rain Plan",
-      "content": "**Thursday/Friday/Saturday:** Generator loops are the same in all weather conditions. (same as schedule)"
+      "content": "Thursday:\nOverview: Generator orientation, first loop.\n-1:30pm: meet with Sphente and One-Source to get trained on generator protocols, including refilling and on-off sequences as well as their locations.\n\nFriday:\nOverview: Two loops of all generators, checking gas levels and turning on/off as needed\n-9am: Loop one\n-7pm: Loop two\n\nSaturday:\n-10am: Loop one\n-6:30pm: Loop two\n\nOnce completed, you’re done. Thank you so, so much! Liz Pigott"
     },
     {
       "person_id": "mike_xu",
@@ -1218,36 +1151,42 @@ window.DEMO_DATA = {
     },
     {
       "person_id": "mike_xu",
-      "name": "",
-      "phone": "",
-      "role": "",
-      "section": "Meals",
-      "content": "Check in with the innkeeper for your meals.\n\nYour **green wristband** gets you **50% off coffee** at 109 Montrose — coffee only, not available on other items.\n\n**Welcome Dinner Token:** n/a\n**Regular Meal Token:** 2",
-      "parking": ""
-    },
-    {
-      "person_id": "mike_xu",
-      "name": "",
-      "phone": "",
-      "role": "",
-      "section": "Shifts",
-      "content": "**Friday June 12:** 12–8PM (Sphente Assistant)\n**Saturday June 13:** 10AM–2:30PM (Lake)",
-      "parking": ""
-    },
-    {
-      "person_id": "mike_xu",
       "section": "Transportation",
       "content": "Driving to camp."
     },
     {
       "person_id": "mike_xu",
+      "name": "",
+      "phone": "",
+      "role": "",
+      "section": "Meals",
+      "content": "Check in with The Innkeeper for your meals.\n\nYour green wristband gets you 50% off coffee at 109 Montrose — coffee only, not available on other items.\n\nWelcome Dinner Token: n/a\nRegular Meal Token: 2",
+      "parking": ""
+    },
+    {
+      "person_id": "mike_xu",
+      "section": "Shifts",
+      "content": "Shift 1: Fr 12-8pm\nShift 2: Sat 10am-2:30pm"
+    },
+    {
+      "person_id": "mike_xu",
+      "section": "Riders",
+      "content": "- [Max in the World & Kroba](https://gbc6vrg43nwcgkgd.public.blob.vercel-storage.com/riders/Max_In_The_World___Kroba_Rider__2026_-71ERvKEg1sMXxMh6oqkLJt10IktN0V.png)"
+    },
+    {
+      "person_id": "mike_xu",
+      "section": "Rider Key Info",
+      "content": "Max in the World & Kroba\n● Stereo output from mixer\n● Table space\n\nSpike Einbinder & Honey Pluton\n● Two microphones"
+    },
+    {
+      "person_id": "mike_xu",
       "section": "Schedule",
-      "content": "**Friday:**\nOverview: Assist Sphente as needed.\n-Noon: Meet up with Sphente, assist as needed. Important events throughout the day include:\n  - Noon–4pm: Ash Fure soundcheck\n  - Noon–4pm: Four live act soundchecks in The Barn\n  - 2pm: Artist Talk at The Amphitheater\n  - 3pm: Kiernan Laveaux at The Lake\n  - 4:30pm: Alex Tatarsky clown workshop\n  - 4:30–8:30pm: Mad Professor, DJ ojo, Ka Baird soundchecks at The Inn\n  - 6pm: Monica Mirabile & ADR soundcheck at Open Air\n-8pm: Wrap.\n\n**Saturday:**\nOverview: Assist Devoye at The Lake.\n-9:30am: Meet Devoye at The Lake. Get set up for Max in the World & Kroba live set.\n-10am: Max in the World & Kroba soundcheck.\n-11am: Assist with setup of 2x powered speakers, small mixer for Honey Pluton & Spike Einbinder.\n-Noon: Max in the World & Kroba live.\n-1:30pm: Honey Pluton & Spike Einbinder live.\n-2:30pm: Break down speakers, pack equipment away. You're done."
+      "content": "Friday:\nOverview: Assist Sphente as needed\n-Noon: meet up with Sphente, assist as needed. Important events throughout the day include:\n\n-Noon-4pm: Ash Fure soundcheck\n-Noon-4pm: Four live act soundchecks in The Barn\n-2pm: Artist Talk at The Amphitheater\n-3pm: Kiernan Laveaux at The Lake\n-4:30pm: Alex Tatarsky clown workshop\n-4:30pm-8:30pm: Mad Professor, DJ ojo, Ka Baird soundchecks at The Inn\n-6pm: Monica Mirabile & ADR soundcheck at Open Air\n\n-8pm: Wrap\n\nSaturday:\nOverview: Assist Devoye at The Lake.\n-9:30am: Meet Devoye at The Lake. Get set up for Max in the World & Krona live set.\n-10am: Max in the World & Kroba soundcheck\n-11am: Assist with setup of 2x powered speakers, small mixer for Honey Pluton & Spike Einbinder.\n-Noon: Max in the World & Kroba live\n-1:30: Honey Pluton & Spike Einbinder live\n-2:30: Break down speakers, pack equipment away. You’re done. Thank you so, so much!"
     },
     {
       "person_id": "mike_xu",
       "section": "Rain Plan",
-      "content": "**Friday:**\nOverview: Assist Sphente as needed. (same as schedule)\n\n**Saturday:**\nOverview: Assist Devoye at **The Inn**.\n-9:30am: Meet Devoye at The Inn. Get set up for Max in the World & Krona live set.\n-10am: Max in the World & Kroba soundcheck.\n-Noon: Max in the World & Kroba live.\n-1:30: Honey Pluton & Spike Einbinder live.\n-2:30: Break down speakers, pack equipment away. You're done."
+      "content": "Friday:\nOverview: Assist Sphente as needed\n-Noon: meet up with Sphente, assist as needed. Important events throughout the day include:\n\n-Noon-4pm: Ash Fure soundcheck\n-Noon-4pm: Four live act soundchecks in The Barn\n-2pm: Artist Talk at The Amphitheater\n-3pm: Kiernan Laveaux at The Lake\n-4:30pm: Alex Tatarsky clown workshop\n-4:30pm-8:30pm: Mad Professor, DJ ojo, Ka Baird soundchecks at The Inn\n-6pm: Monica Mirabile & ADR soundcheck at Open Air\n\n-8pm: Wrap\n\nSaturday:\nOverview: Assist Devoye at The Inn.\n-9:30am: Meet Devoye at The Inn. Get set up for Max in the World & Krona live set.\n-10am: Max in the World & Kroba soundcheck\n-11am: Assist with setup of 2x powered speakers, small mixer for Honey Pluton & Spike Einbinder.\n-Noon: Max in the World & Kroba live\n-1:30: Honey Pluton & Spike Einbinder live\n-2:30: Break down speakers, pack equipment away. You’re done. Thank you so, so much!"
     },
     {
       "person_id": "nate_mcnanus",
@@ -1261,36 +1200,42 @@ window.DEMO_DATA = {
     },
     {
       "person_id": "nate_mcnanus",
+      "section": "Transportation",
+      "content": "Wednesday 6/10: Van from Ridgewood.\n\nSunday: 12:30pm bus from Camp Sacajawea back to NYC. Please arrive 30 minutes early to check in."
+    },
+    {
+      "person_id": "nate_mcnanus",
       "name": "",
       "phone": "",
       "role": "",
       "section": "Meals",
-      "content": "Check in with the innkeeper for your meals.\n\nYour **green wristband** gets you **50% off coffee** at 109 Montrose — coffee only, not available on other items.\n\n**Welcome Dinner Token:** n/a\n**Regular Meal Token:** 2",
+      "content": "Check in with The Innkeeper for your meals.\n\nYour green wristband gets you 50% off coffee at 109 Montrose — coffee only, not available on other items.\n\nWelcome Dinner Token: n/a\nRegular Meal Token: 2",
       "parking": ""
     },
     {
       "person_id": "nate_mcnanus",
-      "name": "",
-      "phone": "",
-      "role": "",
       "section": "Shifts",
-      "content": "Setup: Wed\nShift 1: Fr 12pm–10:30pm\nShift 2: Sat 12:30–10:30PM (Basketball Court)\nShift 3: Sun 12PM+ (Breakdown)",
-      "parking": ""
+      "content": "Setup: Wednesday noon-EOD\nShift 2: Fri 4pm-9pm\nShift 3: Sat 12-10:30pm"
     },
     {
       "person_id": "nate_mcnanus",
-      "section": "Transportation",
-      "content": "Arrival to camp: TBC.\n\n**Sunday June 14:** 12:30pm bus from Camp Sacajawea. Please arrive **30 minutes early** to check in."
+      "section": "Riders",
+      "content": "- [Choke Hole](https://gbc6vrg43nwcgkgd.public.blob.vercel-storage.com/riders/Choke_Hole_Tech_Rider-7J7QhVGU4bnKPJ1CsGfOTryBxa2PDW.pdf)\n- [Bendik Giske](https://gbc6vrg43nwcgkgd.public.blob.vercel-storage.com/riders/Bendik_Giske_Tech_Rider_2026-0O6yWwWqUB0D1Bu2zTMu06OGlTmcXh.pdf)"
+    },
+    {
+      "person_id": "nate_mcnanus",
+      "section": "Rider Key Info",
+      "content": "Bendik Giske:\n● 4x wireless mic packs - artist provides mics\n● 1x IEM pack - artist provides earpiece\n\nChoke Hole:\n● 1 x Pioneer Mixer DJM 800 or other quality Mixer with USB functionality and laptop output cables.\n● 2 x CDJs\n● 3 x Wireless Vocal Mics SM/Beta58 (2 active, 1 back up)\n● 2 x Monitor wedges for 1 for Host side, 1 for DJ."
     },
     {
       "person_id": "nate_mcnanus",
       "section": "Schedule",
-      "content": "**Wednesday:**\nOverview: Help Choke Hole set up.\n-Noon: Meet Choke Hole at The Court to unload the ring from their truck and get it set up. Speak with Ellery (Choke Hole) and Alex Rapp (Stage Manager) to make an effective plan for Saturday.\n-Upon completion, join the setup team to help with further setup work. Please keep track of hours worked and share them with us.\n\n**Friday:**\nOverview: Bendik Giske at the Hammock Grove\n-4pm: Coordinate meetup up with Alex Rapp\n-4:30pm: Prep wireless system at Hammock Grove. Four belt packs, Bendik brings his own mics + one IEM system, Bendik brings his own earpiece. Set up two pieces of 2x8 staging + mix desk that are stored in the small cabin adjacent.\n-5:30pm: retrieve mixer from The Outside Inn, take it to Hammock Grove, sound check Bendik.\n-7:30pm: Bendik Giske live.\n-8:30pm: Pack down subs, mics, staging. Strike stage, bring 2x8 staging platforms and mixer to the yurt at The Inn Outside.\n-9pm: Wrap.\n\n**Saturday:**\nOverview: Choke Hole.\n-12:30pm: Meet Alex at The Court. Choke Hole will need help with sound / general production. Notes:\n  - Assist with any sound needs, including speaker builds, wireless mic setup, DJ equipment setup, etc.\n  - Set up Easy Up tent coverage for equipment and audience members as needed. Tarp speakers if needed. There is no rain plan.\n  - Devlin's is providing a projector and screen, which they are running.\n-9pm: Choke Hole live.\n-10pm: Tidy up, make sure everything is off & covered and that loose DJ gear has been taken to appropriate locations.\n-10:30pm: You're done."
+      "content": "Wednesday:\nOverview: Help Choke Hole set up.\n-Noon: Meet Choke Hole at The Court to unload the ring from their truck and get it set up. Speak with Ellery (Choke Hole) and Alex Rapp (Stage Manager) to make an effective plan for Saturday.\n-Upon completion, join the setup team to help with further setup work. Please keep track of hours worked and share them with us.\n\nFriday:\nOverview: Bendik Giske at the Hammock Grove\n-3;45pm: Coordinate meetup up with Alex Rapp and Dalton Saffe.\n-4pm: Prep wireless system at Hammock Grove. Four belt packs + IEM system, Bendik brings his own mics + IEM earpiece. Bendik brings his own mics + IEM earpiece. These will be stored in The Inn. Set up two pieces of 2x8 staging + mix desk that are stored in the small cabin adjacent.\n-5:30pm: retrieve mixer from The Outside Inn, take it to Hammock Grove, sound check Bendik.\n-7:30pm: Bendik Giske live\n-8:30pm: Pack down subs, mics, staging. Strike stage, bring 2x8 staging platforms and mixer to the yurt at The Inn Outside.\n-9pm: Wrap\n\nSaturday:\nOverview: Choke Hole.\n-12:30pm: Meet Alex at The Court. Choke Hole will need help with sound / general production.\nNotes:\n-Assist with any sound needs, including speaker builds, wireless mic setup, DJ equipment setup, etc.\n-Set up Easy Up tent coverage for equipment and audience members as needed. Tarp speakers if needed. There is no rain plan.\n-Devlin’s is providing a projector and screen, which they are running.\n\n-9pm: Choke Hole live\n-10pm: Tidy up, make sure everything is off & covered and that loose DJ gear etc has been taken to appropriate location(s)\n-10:30pm: You’re done. Thank you so, so much!"
     },
     {
       "person_id": "nate_mcnanus",
       "section": "Rain Plan",
-      "content": "**Wednesday:**\nOverview: Help Choke Hole set up. (same as schedule)\n\n**Saturday:**\nOverview: Choke Hole. (same as schedule — there is no rain plan for Choke Hole)\n-12:30pm: Meet Alex at The Court.\n-9pm: Choke Hole live.\n-10pm: Tidy up.\n-10:30pm: You're done."
+      "content": "Wednesday:\nOverview: Help Choke Hole set up.\n-Noon: Meet Choke Hole at The Court to unload the ring from their truck and get it set up. Speak with Ellery (Choke Hole) and Alex Rapp (Stage Manager) to make an effective plan for Saturday.\n-Upon completion, join the setup team to help with further setup work. Please keep track of hours worked and share them with us.\nFriday:\nOverview: Bendik Giske at The Barn\n-4pm: Coordinate meetup up with Alex Rapp. Get golf cart access.\n-4:30pm: Prep wireless system at The Barn. Four belt packs, Bendik brings his own mics + one IEM system, Bendik brings his own earpiece. Set up two pieces of 2x8 staging + mix desk that are stored in the small cabin adjacent to the Hammock Grove.\n-5:30pm: retrieve mixer from The Outside Inn, take it to Hammock Grove, sound check Bendik.\n-7:30pm: Bendik Giske live\n-8:30pm: Pack down mics, staging. Strike stage, bring both 2x8 staging platforms + the third 2x8 that’s already in the room and mixer to the yurt at The Inn Outside.\n-9pm: Wrap\n\nSaturday:\nOverview: Choke Hole.\n-12:30pm: Meet Alex at The Court. Choke Hole will need help with sound / general production.\nNotes:\n-Assist with any sound needs, including speaker builds, wireless mic setup, DJ equipment setup, etc.\n-Set up Easy Up tent coverage for equipment and audience members as needed. Tarp speakers if needed. There is no rain plan.\n-Devlin’s is providing a projector and screen, which they are running.\n\n-9pm: Choke Hole live\n-10pm: Tidy up, make sure everything is off & covered and that loose DJ gear etc has been taken to appropriate location(s)\n-10:30pm: You’re done. Thank you so, so much!"
     },
     {
       "person_id": "nick_coratti",
@@ -1304,41 +1249,42 @@ window.DEMO_DATA = {
     },
     {
       "person_id": "nick_coratti",
+      "section": "Transportation",
+      "content": "Wednesday 6/10: Van from Ridgewood.\n\nSunday 6/14: Van from camp."
+    },
+    {
+      "person_id": "nick_coratti",
       "name": "",
       "phone": "",
       "role": "",
       "section": "Meals",
-      "content": "Check in with the innkeeper for your meals.\n\nYour **green wristband** gets you **50% off coffee** at 109 Montrose — coffee only, not available on other items.\n\n**Welcome Dinner Token:** 1\n**Regular Meal Token:** 2",
+      "content": "Check in with The Innkeeper for your meals.\n\nYour green wristband gets you 50% off coffee at 109 Montrose — coffee only, not available on other items.\n\nWelcome Dinner Token: 1\nRegular Meal Token: 2",
       "parking": ""
     },
     {
       "person_id": "nick_coratti",
-      "name": "",
-      "phone": "",
-      "role": "",
       "section": "Shifts",
-      "content": "Setup Week: M–Th\nShift 1: Th 2pm–10pm\nShift 2: Fr 12pm–8pm\nShift 3: Sat 9am–5pm\nShift 4: Teardown",
-      "parking": ""
+      "content": "Setup: Wednesday noon-EOD\nShift 1: Th 2pm-11pm\nShift 2: Fr 12pm-8pm\nShift 3: Sat 9-5pm\nShift 4: Teardown"
     },
     {
       "person_id": "nick_coratti",
-      "section": "Transportation",
-      "content": "**Sunday June 7:** Van from Ridgewood to camp.\n\n**Sunday June 14:** Van from camp back."
-    },
-    {
-      "person_id": "nick_coratti",
-      "section": "Schedule",
-      "content": "**Sunday June 7:**\nOverview: Meet to ride to camp. We leave from Ridgewood in the evening.\n\n**Monday–Wednesday:**\nSetup.\n\n**Thursday:**\nOverview: Final setup, assist at The Inn.\n-2pm: Final setup tasks. Head to The Inn to finalize the stage setting. Consult with Sphente / Daniel / Leo about where you'll be needed.\n-4pm: If needed, assist with Pavel Milyakov sound check at Open Air.\n-6:30pm: If needed, assist with MOTHERBOARD sound check.\n-8pm: MOTHERBOARD live at The Inn.\n-9pm: keiyaA live at The Outside Inn.\n-10pm: Help pack down keiyaA, wrap.\n\n**Friday:**\nOverview: Assist at The Lake, The Amphitheater, Hammock Grove.\n-11:45am: Meet Rey at The Inn, confirm 3x CDJs, 1x Pioneer A9, 2x TTs + ethernet hub for the setup. They should be at The Inn. Request golf cart assistance to move them to the lake.\n-Noon: Set up for Kiernan Laveaux at The Lake.\n-As needed: set up 2x QSC speakers + 3 mics for Artist Talk at The Amphitheater.\n-2pm: Artist Talk at The Amphitheater.\n-3pm: Kiernan Laveaux at The Lake.\n-6pm: Strike stage. Turn off and cover amps (confirm protocol with One-Source in advance), cover speakers, bring the following items to the following locations on a golf cart:\n  -Open Air: 2x TT + TPI anti-feedback bases, 1x CDJ. Store all in the back of the Wolves' Den.\n  -The Barn: 1x CDJ\n  -The Inn: 1x CDJ + Pioneer A9\n-Once completed, meet Alex Rapp at the Hammock Grove.\n-7:30pm: Bendik Giske live.\n-8:30pm: Pack down subs, mics, staging. Strike stage, bring 2x8 staging platforms and mixer to the yurt at The Inn Outside.\n-9pm: Wrap.\n\n**Saturday:**\nOverview: Assist Baalti and Sayoko at The Barn.\n-9am: Meet Baalti & Sayoko at The Barn. They are mounting 2 projectors, one screen and two scrims. They will already have a plan for projector and scrim mounting. Assist as needed.\n-2:30pm: Baalti live.\n-3:30pm: Strike, reset.\n-5pm: Wrap.\n\n**Sunday:**\n-Noon: Head to The Inn, lead the Teardown crew.\nCollect Dripping-owned equipment.\nReset office.\nBring benches back into The Inn.\nClean stages.\nWhen done: ride back in the van."
+      "section": "Riders",
+      "content": "- [MOTHERBOARD — Tech](https://gbc6vrg43nwcgkgd.public.blob.vercel-storage.com/riders/Tech_Rider_Motherboard_2026-i6OsoUOhU2grIJda49HGnBHE1QN35T.pdf)\n- [MOTHERBOARD — Stage Plot](https://gbc6vrg43nwcgkgd.public.blob.vercel-storage.com/riders/Motherboard_Updated_Stage_Plot-ssrdJz3Ega5AjdKgGYhVIq7LJUsUTY.png)\n- [keiyaA — Trio](https://gbc6vrg43nwcgkgd.public.blob.vercel-storage.com/riders/keiyaA_trio_rider_2026-zEdesnjZp3YZkWzPM16walLxtik4N2.pdf)\n- [keiyaA — Lighting](https://gbc6vrg43nwcgkgd.public.blob.vercel-storage.com/riders/keiyaA_Lighting_Rider_v2-Xy4darfSjIWSwXkln8An52qNuqOtEX.pdf)\n- [Artist Talk](https://gbc6vrg43nwcgkgd.public.blob.vercel-storage.com/riders/Artist_Talk_Technical_Rider-6epqHcGqSY3rURk2X1Ct2Abc3I4NBH.pdf)\n- [Bendik Giske](https://gbc6vrg43nwcgkgd.public.blob.vercel-storage.com/riders/Bendik_Giske_Tech_Rider_2026-0O6yWwWqUB0D1Bu2zTMu06OGlTmcXh.pdf)\n- [Kiernan Laveaux](https://gbc6vrg43nwcgkgd.public.blob.vercel-storage.com/riders/Kiernan_Laveaux_Rider-DmM0sGUWnJ8CfJTLul35hL6ALSiIhg.pdf)"
     },
     {
       "person_id": "nick_coratti",
       "section": "Rider Key Info",
-      "content": "MOTHERBOARD\n● 6x stereo DI\n● Bass amp + cabinet\n● Tables / keyboard stands\n\nkeiyaA\n● In-ear monitoring + drum kit (full kit — see Katie/Jules for full rider)\n\nKiernan Laveaux\n● 3x CDJs, linked\n● 2x Turntables\n\nArtist Talk\n● 3 microphones\n\nBendik Giske:\n● 4x wireless mic packs — artist provides mics\n● 1x IEM pack — artist provides earpiece"
+      "content": "MOTHERBOARD\n● 6x stereo DI\n● Bass amp + cabinet\n● Tables / keyboard stands\n\nkeiyaA\n● In-ear monitoring battery packs and transmitter system (provided + ran by in-house staff) ○ keiyaA + band have their own ears\n● Professional Jazz Drum Kit (Yamaha Oak Custom/Gretsch Renown/similar) ○ (4) piece kit ○ (2) snare drums, 1 with mesh head ○ c3 cymbal stands ○ 1 Kick pedal ○ 1 hi-hat stand ○ 2 snare stands ○ 1 Drum throne ○ 1 Carpet/rug\n● Bass Amp + Cabinet\n● (3) Stereo DI box\n● (1) 2X4X4 table or keyboard stand with wooden board, draped with floor length black stage cloth\n● (12) TRS/Jack Cables, at least 10ft/6m\n● (8) XLR Cables at least 20 ft\n● (2) black stage fans at least 18”\n● Glow in the dark electric tape\n● Black Electric tape\n● 10x powered outlets\n\nKiernan Laveaux\n● 3x CDJs, linked\n● 2x Turntables\n\nArtist Talk\n● 3 microphones\n\nBendik Giske:\n● 4x wireless mic packs - artist provides mics\n● 1x IEM pack - artist provides earpiece"
+    },
+    {
+      "person_id": "nick_coratti",
+      "section": "Schedule",
+      "content": "Wednesday\nOverview: Setup 8am: Depart from NYC - location TBC. Noon: Setup\n\nThursday:\nOverview: Final setup, assist at The Inn.\n-2pm: final setup tasks. Head to The Inn to finalize the stage setting. Consult with Sphente / Daniel / Leo about where you’ll be needed.\n-4pm: If needed, assist with Pavel Milyakov sound check at Open Air.\n-6:30pm: If needed, assist with MOTHERBOARD sound check\n-8pm: MOTHERBOARD live at The Inn\n-9pm: keiyaA live at The Outside Inn\n-10pm: Strike keiyaA. Break down stage. Leave one 4x8 piece + legs for all three decks in the hut. Take two 4x8 pieces to The Inn, set them up on 12” feet as audience standing platforms around the perimeter. ALSO - confirm storage for IEMs in The Inn. These will be used for Bendik.\n\nFriday:\nOverview: Assist at The Lake, The Amphitheater, Hammock Grove\n-11:45: Meet Rey at The Inn, confirm 3x CDJs, 1x Pioneer A9, 2x TTs + ethernet hub for the setup. They should be at The Inn. Request golf cart assistance to move them to the lake.\n-Noon: Set up for Kiernan Laveaux\n-Set up 2x QSC speakers + 3 mics for Artist Talk at The Amphitheater\n-2pm: Artist Talk at The Amphitheater\n-3pm: Kiernan Laveaux at The Lake\n-6pm: Strike stage. Turn off and cover amps (confirm protocol with One-Source in advance), cover speakers, bring the following items to the following locations on a golf cart:\n-Open Air: 2x TT + TPI anti-feedback bases, 1x CDJ. Store all in the back of the Wolves’ Den.\n-The Barn: 1x CDJ\n-The Inn: 1x CDJ + Pioneer A9\n-Once completed, meet Alex Rapp at the Hammock Grove\n-7:30pm: Bendik Giske live\n-8:30pm: Pack down subs, mics, staging. Strike stage, bring 2x8 staging platforms and mixer to the yurt at The Inn Outside.\n-9pm: Wrap\n\nSaturday:\nOverview: Assist Baalti and Sayoko at The Barn\n-9am: Meet Baalti & Sayoko at The Barn. They are mounting 2 projectors, one screen and two scrims. They will already have a plan for projector and scrim mounting. Assist as needed.\n-2:30pm: Baalti live.\n-3:30pm: Strike, reset.\n-5pm: Wrap.\n\nSunday:\n-Noon: Head to The Inn, lead the Teardown crew. Collect Dripping-owned equipment Reset office Bring benches back into The Inn Clean stages\n\nWhen done: ride back in the van. Thank you so, so much!"
     },
     {
       "person_id": "nick_coratti",
       "section": "Rain Plan",
-      "content": "**Thursday:**\nOverview: Final setup, assist at The Inn. (same as schedule — venue is indoors)\n\n**Friday:**\nOverview: Assist at Open Air, **The Barn** (Hammock Grove rain backup).\n-Noon: Meet Rey at Open Air, set up for Kiernan Laveaux & the Artist Talk.\n-2pm: Artist Talk at Open Air.\n-3pm: Kiernan Laveaux at Open Air.\n-6pm: Strike stage. Bring the following items to the following locations on a golf cart:\n  -Open Air: 2x TT + TPI anti-feedback bases, 1x CDJ. Store all in the back of the Wolves' Den.\n  -The Barn: 1x CDJ\n  -The Inn: 1x CDJ + Pioneer A9\n-Once completed, meet Alex Rapp at The Barn.\n-7:30pm: Bendik Giske live.\n-8:30pm: Pack down mics, staging. Strike stage, bring 2x8 staging platforms and mixer to the yurt at The Inn Outside.\n-9pm: Wrap.\n\n**Saturday:**\nOverview: Assist Baalti and Sayoko at The Barn. (same as schedule — The Barn is covered)\n\n**Sunday:**\nTeardown crew (same as schedule)."
+      "content": "Sunday June 7:\nOverview: Meet to ride to camp. We leave from Ridgewood in the evening.\n\nMonday-Wed: Setup.\n\nThursday:\nOverview: Final setup, assist at The Inn.\n-2pm: final setup tasks. Head to The Inn to finalize the stage setting. Consult with Sphente / Daniel / Leo about where you’ll be needed.\n-4pm: If needed, assist with Pavel Milyakov sound check at Open Air.\n-6:30pm: If needed, assist with MOTHERBOARD sound check\n-8pm: MOTHERBOARD live at The Inn\n-9pm: keiyaA live at The Inn\n-10pm: help pack down keiyaA, wrap.\n\nFriday:\nOverview: Assist at Open Air, The Barn\n-Noon: Meet Rey at Open Air, set up for Kiernan Laveaux & the Artist Talk\n-2pm: Artist Talk at Open Air\n-3pm: Kiernan Laveaux at Open Air\n-6pm: Strike stage. Bring the following items to the following locations on a golf cart:\n-Open Air: 2x TT + TPI anti-feedback bases, 1x CDJ. Store all in the back of the Wolves’ Den.\n-The Barn: 1x CDJ\n-The Inn: 1x CDJ + Pioneer A9\n-Once completed, meet Alex Rapp at The Barn\n-7:30pm: Bendik Giske live\n-8:30pm: Strike stage, bring any 2x8 staging platforms to the hut at The Inn Outside.\n-9pm: Wrap\n-7:30pm: Bendik Giske live\n-8:30pm: Pack down mics, staging. Strike stage, bring both 2x8 staging platforms + the third 2x8 that’s already in the room and mixer to the yurt at The Inn Outside.\n-9pm: Wrap\n\nSaturday:\nOverview: Assist Baalti and Sayoko at The Barn\n-9am: Meet Baalti & Sayoko at The Barn. They are mounting 2 projectors, one screen and two scrims. They will already have a plan for projector and scrim mounting. Assist as needed.\n-2:30pm: Baalti live.\n-3:30pm: Strike, reset.\n-5pm: Wrap.\n\nSunday:\n-Noon: Head to The Inn, lead the Teardown crew. Collect Dripping-owned equipment Reset office Bring benches back into The Inn Clean stages\n\nWhen done: ride back in the van. Thank you so, so much!"
     },
     {
       "person_id": "ricardo",
@@ -1352,22 +1298,23 @@ window.DEMO_DATA = {
     },
     {
       "person_id": "ricardo",
-      "name": "",
-      "phone": "",
-      "role": "",
+      "section": "Meals",
+      "content": "n/a"
+    },
+    {
+      "person_id": "ricardo",
       "section": "Shifts",
-      "content": "**Saturday June 13:** 12–8PM (Sphente Assistant)",
-      "parking": ""
+      "content": "Shift 1: Sat 12-8pm"
     },
     {
       "person_id": "ricardo",
       "section": "Schedule",
-      "content": "**Saturday:**\nOverview: Sphente Assistant.\n-Noon: Meet up with Sphente, assist as needed. Important events throughout the day include:\n  - 10:30am–2:30pm: Late night soundchecks at Open Air\n  - Noon: Max in the World & Kroba live at The Lake\n  - 1:30pm: Honey Pluton & Spike Einbinder at The Amphitheater\n  - 2:30pm: Baalti sonic installation in The Barn\n  - 2:30pm: Breadwoman soundcheck\n  - 3–7pm: Open Air day party with Gavsborg & co, Ayanna Heaven\n  - 7pm: FujilIIIIIIIIIIlta soundcheck\n-8pm: You're done."
+      "content": "Saturday:\nOverview: Sphente Assistant.\n-Noon: meet up with Sphente, assist as needed. Important events throughout the day include:\n\n-10:30am-2:30pm: Late night soundchecks at Open Air\n-Noon: Max in the World & Kroba live at The Lake\n-1:30pm: Honey Pluton & Spike Einbinder at The Amphitheater\n-2:30pm: Baalti sonic installation in The Barn\n-2:30pm: Breadwoman soundcheck\n-3pm-7pm: Open Air day party with Gavsborg & co, Ayanna Heaven\n-7pm: FujiIIIIIIIIIIIIta soundcheck\n\n-8pm: You’re done. Thank you so, so much!"
     },
     {
       "person_id": "ricardo",
       "section": "Rain Plan",
-      "content": "**Saturday:**\nOverview: Sphente Assistant. (same as schedule)\n-Noon: Meet up with Sphente.\n-8pm: You're done."
+      "content": "Saturday:\nOverview: Sphente Assistant.\n-Noon: meet up with Sphente, assist as needed. Important events throughout the day include:\n\n-10:30am-2:30pm: Late night soundchecks at Open Air\n-Noon: Max in the World & Kroba live at The Lake\n-1:30pm: Honey Pluton & Spike Einbinder at The Amphitheater\n-2:30pm: Baalti sonic installation in The Barn\n-2:30pm: Breadwoman soundcheck\n-3pm-7pm: Open Air day party with Gavsborg & co, Ayanna Heaven\n-7pm: FujiIIIIIIIIIIIIta soundcheck\n\n-8pm: You’re done. Thank you so, so much! Michael Aniekwe"
     },
     {
       "person_id": "savino_barile",
@@ -1381,45 +1328,46 @@ window.DEMO_DATA = {
     },
     {
       "person_id": "savino_barile",
-      "name": "",
-      "phone": "",
-      "role": "",
-      "section": "Meals",
-      "content": "Check in with the innkeeper for your meals.\n\nYour **green wristband** gets you **50% off coffee** at 109 Montrose — coffee only, not available on other items.\n\n**Welcome Dinner Token:** n/a\n**Regular Meal Token:** 2",
-      "parking": ""
-    },
-    {
-      "person_id": "savino_barile",
-      "name": "",
-      "phone": "",
-      "role": "",
-      "section": "Shifts",
-      "content": "**Friday June 12:** 7:30PM–5AM (The Barn)\n**Saturday June 13:** 5PM–1AM (The Inn)",
-      "parking": ""
-    },
-    {
-      "person_id": "savino_barile",
       "section": "Transportation",
       "content": "Driving to camp."
     },
     {
       "person_id": "savino_barile",
-      "section": "Schedule",
-      "content": "**Friday:**\nOverview: Assist with two DJ sets and four live sets at The Barn.\n-7:30pm: Check in with Anika about tech needs at The Barn, make sure the room is ready and you have a solid understanding of the changeovers between live sets.\n-9pm: Eden Aurelius (live).\n-10pm: Hesaitix (live).\n-11pm: Doula (DJ).\n-1am: Isabella Koen (live).\n-2am: Buttechno (live).\n-3am: zi! (DJ).\n-5am: Stage closes. Wrap.\n\n**Saturday:**\nOverview: Assist with FujilIIIIIIIIIIlta soundcheck + live set, Ash Fure concert, and DJ sets at The Inn.\n-5pm: Assist with FujilIIIIIIIIIIlta soundcheck at The Inn.\n-7pm: FujilIIIIIIIIIIlta live.\n-8pm: Strike FujilIIIIIIIIIIlta staging, prep for Ash Fure with Jules.\n-10pm: Ash Fure live.\n-11pm: Strike Ash Fure / DJ Manny begins.\n-1am: gyrofield begins, make sure changeover goes smooth. You're done."
+      "name": "",
+      "phone": "",
+      "role": "",
+      "section": "Meals",
+      "content": "Check in with The Innkeeper for your meals.\n\nYour green wristband gets you 50% off coffee at 109 Montrose — coffee only, not available on other items.\n\nWelcome Dinner Token: n/a\nRegular Meal Token: 2",
+      "parking": ""
+    },
+    {
+      "person_id": "savino_barile",
+      "section": "Shifts",
+      "content": "Shift 2: Fr 7:30pm-5am\nShift 3: Sat 5pm-1am"
+    },
+    {
+      "person_id": "savino_barile",
+      "section": "Riders",
+      "content": "- [Buttechno](https://gbc6vrg43nwcgkgd.public.blob.vercel-storage.com/riders/buttechno_LIVE_tech_rider-cHLNqdqVfu9MHKmYHx2TaFktX9i3Ee.pdf)\n- [Isabella Koen](https://gbc6vrg43nwcgkgd.public.blob.vercel-storage.com/riders/Isabella_Koen__Live_PA_Tech_and_Hospitality_Rider-PJ8L5qL3BkoNXsFeE3BJfVlwaMTZPZ.pdf)\n- [Hesaitix](https://gbc6vrg43nwcgkgd.public.blob.vercel-storage.com/riders/HESAITIX_-TECHNICAL_RIDER__LIVE_-3Sa2rd1lDki9a7NCt1jDYXzZ8Ck4hf.pdf)\n- [Eden Aurelius](https://gbc6vrg43nwcgkgd.public.blob.vercel-storage.com/riders/Eden_Aurelius_Rider-c91SmFvG5MWROIcv6GwYVZtTvuhUZf.jpg)\n- [zi!](https://gbc6vrg43nwcgkgd.public.blob.vercel-storage.com/riders/zi__tech_rider__eng_-XA1k8SfKgvDFr4SeAGbAyXeU30voOO.pdf)\n- [FujilIIIIIIIIIIlta — Input List / Backline](https://gbc6vrg43nwcgkgd.public.blob.vercel-storage.com/riders/Fujita_1.Input_list_-_Backline-h3QvN1952VdIL9Xuv20QqGK3Vwzdtr.pdf)\n- [FujilIIIIIIIIIIlta — Stage Setting](https://gbc6vrg43nwcgkgd.public.blob.vercel-storage.com/riders/Fujita_2.Stage_Setting-DD3uV8FNFvz9bnm357UVazLrdNyeY3.pdf)\n- [FujilIIIIIIIIIIlta — Important Notes](https://gbc6vrg43nwcgkgd.public.blob.vercel-storage.com/riders/Fujita_3.Important_Notes-1rtGnbx7VaQFkDx0Mki0RfeuNV96e0.pdf)\n- [FujilIIIIIIIIIIlta — Lights](https://gbc6vrg43nwcgkgd.public.blob.vercel-storage.com/riders/Fujita_4.Lights-Vz5013UDhcKltseu5tmq0khIhdTbsL.pdf)\n- [Ash Fure](https://gbc6vrg43nwcgkgd.public.blob.vercel-storage.com/riders/Ashe_Fure_ANIMAL_Rider___Jan2025-n5GnbVqMLsX0SFovdAKFnZWZ1PqCMN.pdf)\n- [Gyrofield](https://gbc6vrg43nwcgkgd.public.blob.vercel-storage.com/riders/Gyrofield-x845FX0pnldeFt9Izl0tLmd4t0hMQs.jpg)"
     },
     {
       "person_id": "savino_barile",
       "section": "Rider Key Info",
-      "content": "Eden Aurelius\n● Xone 96 - standalone unit used as interface\n\nHesaitix\n● Two (2) CDJ2000NXS or similar on CDJ stand\n● One (1) Pioneer DJM mixer\n● Two (2) laptop stands\n● Three (3) power outlets\n\nIsabella Koen\n● Stereo XLR out\n\nButtechno\n● Xone 96 - standalone unit used as interface\n● Keyboard stand\n\nAsh Fure\n● 14 mic stands\n● 4 Shure KSM condenser mics\n● Stereo amp\n● Firm table + stand\n\nFujilIIIIIIIIIIlta\n● Allen & Heath MixWizard 16\n● Cables\n\nBreadwoman\n● 2 mics on boom stands\n● Nord Stage 3 keyboard + stand\n● Mixer\n● ElectroHarmonix Looper Pedal\n● Flanger Pedal"
+      "content": "Eden Aurelius\n● Xone 96 - standalone unit used as interface\n\nHesaitix\n● Two (2) CDJ2000NXS or similar on CDJ stand\n● One (1) Pioneer DJM mixer\n● Two (2) laptop stands\n● Three (3) power outlets\n\nIsabella Koen\n● Stereo XLR out\n\nButtechno\n● Xone 96 - standalone unit used as interface\n● Keyboard stand\n\nAsh Fure\n● 14 mic stands\n● 4 Shure KSM condenser mics\n● Stereo amp\n● Firm table + stand\n\nFujiIIIIIIIIIIIta\n● Allen & Heath MixWizard 16\n● Cables\n\nBreadwoman\n● 2 mics on boom stands\n● Nord Stage 3 keyboard + stand\n● Mixer\n● ElectroHarmonix Looper Pedal\n● Flanger Pedal"
+    },
+    {
+      "person_id": "savino_barile",
+      "section": "Schedule",
+      "content": "Friday:\nOverview: Assist with two DJ sets and four live sets at The Barn.\n-7:30pm: Check in with Anika about tech needs at The Barn, make sure the room is ready and you have a solid understanding of the changeovers between live sets.\n-9pm: Eden Aurelius (live)\n-10pm: Hesaitix (live)\n-11pm: Doula (DJ)\n-1am: Isabella Koen (live)\n-2am: Buttechno (live)\n-3am: zi! (DJ)\n-5am: Stage closes. Wrap.\n\nSaturday:\nOverview: Assist with FujiIIIIIIIIIIIta soundcheck + live set, Ash Fure concert and DJ sets at The Inn\n-5pm: Assist with FujiIIIIIIIIIIIta soundcheck at The Inn.\n-7pm: FujiIIIIIIIIIIIta live\n-8pm: Strike FujiIIIIIIIIIIIta staging, prep for Ash Fure with Jules. Add 12” legs to FujiIIIIIIIIIIIta’s stage, resetting it as audience platform.\n-10pm: Ash Fure live\n-11pm: Strike Ash Fure / DJ Manny begins\n-1am: gyrofield begins, make sure changeover goes smooth. You’re done. Thank you so, so much!"
     },
     {
       "person_id": "savino_barile",
       "section": "Rain Plan",
-      "content": "**Friday:**\nOverview: Assist with two DJ sets and four live sets at The Barn. (same as schedule — The Barn is covered)\n-7:30pm: Check in with Anika.\n-9pm: Eden Aurelius (live).\n-10pm: Hesaitix (live).\n-11pm: Doula (DJ).\n-1am: Isabella Koen (live).\n-2am: Buttechno (live).\n-3am: zi! (DJ).\n-5am: Stage closes. Wrap.\n\n**Saturday:**\nOverview: Assist with FujilIIIIIIIIIIlta soundcheck + live set, Breadwoman live set, Ash Fure concert and DJ sets at The Inn.\n-5pm: Assist with FujilIIIIIIIIIIlta soundcheck.\n-7pm: FujilIIIIIIIIIIlta live.\n-8pm: Strike FujilIIIIIIIIIIlta staging, prep for Ash Fure. Add 12\" legs to FujilIIIIIIIIIIlta's stage, resetting it as audience platform.\n-8pm: Breadwoman live.\n-9pm: Strike Breadwoman, Ash Fure changeover.\n-10pm: Ash Fure live.\n-11pm: Strike Ash Fure / DJ Manny begins.\n-1am: gyrofield begins. You're done."
+      "content": "Friday:\nOverview: Assist with two DJ sets and four live sets at The Barn.\n-7:30pm: Check in with Anika about tech needs at The Barn, make sure the room is ready and you have a solid understanding of the changeovers between live sets.\n-9pm: Eden Aurelius (live)\n-10pm: Hesaitix (live)\n-11pm: Doula (DJ)\n-1am: Isabella Koen (live)\n-2am: Buttechno (live)\n-3am: zi! (DJ)\n-5am: Stage closes. Wrap.\n\nSaturday:\nOverview: Assist with FujiIIIIIIIIIIIta soundcheck + live set, Breadwoman live set, Ash Fure concert and DJ sets at The Inn\n-5pm: Assist with FujiIIIIIIIIIIIta soundcheck at The Inn.\n-7pm: FujiIIIIIIIIIIIta live\n-8pm: Breadwoman live\n-9m: Strike Breadwoman, Ash Fure changeover. Add 12” legs to FujiIIIIIIIIIIIta’s stage, resetting it as audience platform.\n-10pm: Ash Fure live\n-11pm: Strike Ash Fure / DJ Manny begins\n-1am: gyrofield begins, make sure changeover goes smooth. You’re done. Thank you so, so much!"
     },
     {
       "person_id": "seb",
-      "name": "Seb (he/him)",
+      "name": "Sebastian Ortega (he/him)",
       "phone": "",
       "role": "Production Hand",
       "paid": true,
@@ -1429,41 +1377,42 @@ window.DEMO_DATA = {
     },
     {
       "person_id": "seb",
+      "section": "Transportation",
+      "content": "Wednesday 6/10: Van from Ridgewood.\n\nSunday: 12:30pm bus from Camp Sacajawea back to NYC. Please arrive 15 minutes early to check in."
+    },
+    {
+      "person_id": "seb",
       "name": "",
       "phone": "",
       "role": "",
       "section": "Meals",
-      "content": "Check in with the innkeeper for your meals.\n\nYour **green wristband** gets you **50% off coffee** at 109 Montrose — coffee only, not available on other items.\n\n**Welcome Dinner Token:** 1\n**Regular Meal Token:** 2",
+      "content": "Check in with The Innkeeper for your meals.\n\nYour green wristband gets you 50% off coffee at 109 Montrose — coffee only, not available on other items.\n\nWelcome Dinner Token: 1\nRegular Meal Token: 2",
       "parking": ""
     },
     {
       "person_id": "seb",
-      "name": "",
-      "phone": "",
-      "role": "",
       "section": "Shifts",
-      "content": "**Thursday June 11:** 12–5PM (The Inn + Site)\n**Thursday June 11:** 6:30–11PM (The Inn)\n**Friday June 12:** 6PM–1:30AM (Monica & ADR Setup)\n**Saturday June 13:** 2:30–9:30PM (Breadwoman)",
-      "parking": ""
+      "content": "Setup: Wednesday noon-EOD\nShift 1: Th 12pm-5pm, 6:30-11pm\nShift 2: Fr 6-1:30am\nShift 3: Sat 2:30-9:30pm"
     },
     {
       "person_id": "seb",
-      "section": "Transportation",
-      "content": "**Sunday June 7:** Van from Ridgewood to camp.\n\n**Sunday June 14:** 12:30pm bus from Camp Sacajawea. Please arrive **30 minutes early** to check in."
-    },
-    {
-      "person_id": "seb",
-      "section": "Schedule",
-      "content": "**Sunday June 7:**\nOverview: Meet to ride to camp. Pickup location TBC.\n\n**Monday–Wednesday:**\nSetup.\n\n**Thursday:**\nOverview: Assist with keiyaA setup / soundcheck at The Outside Inn, overall site launch, MOTHERBOARD concert at The Inn.\n-Noon: Meet Katie and Jules at The Outside Inn. Assist with keiyaA soundcheck as needed.\n-2pm: Last site work before doors. Make sure The Inn is ready for the evening concert, etc.\n-5pm: Break.\n-6:30pm: Return to The Inn to help with MOTHERBOARD soundcheck.\n-8pm: MOTHERBOARD live.\n-9pm: keiyaA live.\n-10pm: Strike keiyaA. Break down stage. Leave one 4x8 piece + legs for all three decks in the hut. Take two 4x8 pieces to The Inn, set them up on 12\" feet as audience standing platforms around the perimeter.\n-11pm: Wrap.\n\n**Friday:**\nOverview: Assist with Monica & ADR soundcheck, ROS at Open Air.\n-6pm: Meet Rey at Open Air, help with Monica & ADR soundcheck.\nNOTE: two cars are being incorporated into the set. CARS CANNOT BE MOVING DURING THE PERFORMANCE. Otherwise, it should be a simple stereo RCA output from ADR.\n-8:30pm: Check Slack and see if other stages need assistance.\n-11:30pm: Return to stage, prep for performance.\n-12am: Monica Mirabile & ADR live.\n-1am: Pack down stage.\n-1:30am: Wrap.\n\n**Saturday:**\nOverview: Breadwoman duty at The Outside Inn.\n-2pm: Pick up one 2x8 steel deck from The Barn. Set up a 10x8 stage with one 4x8 (in the shed), three 2x8 tables (2 in the shed, one from The Barn). Make sure all legs are 6\" high.\n-2:30pm: Meet Breadwoman, Katie and Jules at The Outside Inn. Assist with stage dressing and soundcheck. Taia will have purchased bread in advance.\n-Throughout the afternoon: Do whatever is necessary for Breadwoman.\n-8pm: Breadwoman live.\n-9pm: Pack down stage.\n-9:30pm: Wrap. *Thank you so, so much!*"
+      "section": "Riders",
+      "content": "- [keiyaA — Lighting](https://gbc6vrg43nwcgkgd.public.blob.vercel-storage.com/riders/keiyaA_Lighting_Rider_v2-Xy4darfSjIWSwXkln8An52qNuqOtEX.pdf)\n- [keiyaA — Trio](https://gbc6vrg43nwcgkgd.public.blob.vercel-storage.com/riders/keiyaA_trio_rider_2026-zEdesnjZp3YZkWzPM16walLxtik4N2.pdf)\n- [MOTHERBOARD — Tech](https://gbc6vrg43nwcgkgd.public.blob.vercel-storage.com/riders/Tech_Rider_Motherboard_2026-i6OsoUOhU2grIJda49HGnBHE1QN35T.pdf)\n- [MOTHERBOARD — Stage Plot](https://gbc6vrg43nwcgkgd.public.blob.vercel-storage.com/riders/Motherboard_Updated_Stage_Plot-ssrdJz3Ega5AjdKgGYhVIq7LJUsUTY.png)\n- [Monica Mirabile & ADR](https://gbc6vrg43nwcgkgd.public.blob.vercel-storage.com/riders/ADR_Rider-6pgIF3GKYnjHsfBrWTsUoZd22VWvGX.pdf)\n- [Breadwoman](https://gbc6vrg43nwcgkgd.public.blob.vercel-storage.com/riders/Breadwoman_Tech_Rider-1lCi4v8yvpdyJATfx4PeI4vf0TfCq5.docx)"
     },
     {
       "person_id": "seb",
       "section": "Rider Key Info",
-      "content": "MOTHERBOARD\n● 6x stereo DI\n● Bass amp + cabinet\n● Tables / keyboard stands\n\nkeiyaA\n● In-ear monitoring + full drum kit (see Katie for full rider)\n\nMonica Mirabile & ADR\n● They are bringing two cars on site. UNDER NO CIRCUMSTANCES ARE THESE CARS AUTHORIZED TO MOVE DURING THE PERFORMANCE.\n● Long RCA cable to connect to DJ mixer (from cars)\n\nBreadwoman\n● 2 mics on boom stands\n● Nord Stage 3 keyboard + stand\n● Mixer\n● ElectroHarmonix Looper Pedal\n● Flanger Pedal"
+      "content": "MOTHERBOARD\n● 6x stereo DI\n● Bass amp + cabinet\n● Tables / keyboard stands\n\nkeiyaA\n● In-ear monitoring battery packs and transmitter system (provided + ran by in-house staff) ○ keiyaA + band have their own ears\n● Professional Jazz Drum Kit (Yamaha Oak Custom/Gretsch Renown/similar) ○ (4) piece kit ○ (2) snare drums, 1 with mesh head ○ c3 cymbal stands ○ 1 Kick pedal ○ 1 hi-hat stand ○ 2 snare stands ○ 1 Drum throne ○ 1 Carpet/rug\n● Bass Amp + Cabinet\n● (3) Stereo DI box\n● (1) 2X4X4 table or keyboard stand with wooden board, draped with floor length black stage cloth\n● (12) TRS/Jack Cables, at least 10ft/6m\n● (8) XLR Cables at least 20 ft\n● (2) black stage fans at least 18”\n● Glow in the dark electric tape\n● Black Electric tape\n● 10x powered outlets\n\nMonica Mirabile & ADR\n● They are bringing two cars on site to be a part of the performance. UNDER NO CIRCUMSTANCES ARE THESE CARS AUTHORIZED TO MOVE DURING THE PERFORMANCE.\n● Long RCA cable to connect to DJ mixer.. From cars?\n\nBreadwoman\n● 2 mics on boom stands\n● Nord Stage 3 keyboard + stand\n● Mixer\n● ElectroHarmonix Looper Pedal\n● Flanger Pedal"
+    },
+    {
+      "person_id": "seb",
+      "section": "Schedule",
+      "content": "Wednesday\nOverview: Setup 8am: Depart from NYC - location TBC. Noon: Setup\n\nMonday-Wed: Setup.\n\nThursday:\nOverview: Assist with keiyaA setup / soundcheck at The Outside Inn, overall site launch, MOTHERBOARD concert at The Inn.\n-Noon: Meet Katie and Jules at The Outside Inn. Assist with keiyaA soundcheck as needed.\n-2pm: Last site work before doors. Make sure The Inn is ready for the evening concert, etc.\n-5pm: Break.\n\n-6:30pm: return to The Inn to help with MOTHERBOARD soundcheck\n-8pm: MOTHERBOARD live\n-9pm: keiyaA live\n-10pm: Strike keiyaA. Break down stage. Leave one 4x8 piece + legs for all three decks in the hut. Take two 4x8 pieces to The Inn, set them up on 12” feet as audience standing platforms around the perimeter. ALSO - confirm storage for IEMs in The Inn. These will be used for Bendik.\n-11pm: Wrap.\n\nFriday:\nOverview: Assist with Monica & ADR soundcheck, ROS at Open Air.\n-6pm: Meet Rey at Open Air, help with Monica & ADR soundcheck.\nNOTE: two cars are being incorporated into the set. One car will move a little during the performance. Daniel and Leo will confirm how much, Otherwise, it should be a simple stereo RCA output from ADR.\n\n-8:30pm: Check Slack and see if other stages need assistance.\n-11:30pm: Return to stage, prep for performance\n-12am: Monica Mirabile & ADR live\n-1am: Pack down stage.\n-1:30am: Wrap.\n\nSaturday:\nOverview: Breadwoman duty at The Outside Inn.\n-2pm: Pick up one 2x8 steel deck from The Barn. Set up a 10x8 stage with one 4x8 (in the shed), three 2x8 tables (2 in the shed, one from The Barn). Make sure all legs are 6” high.\n-2:30pm: Meet Breadwoman, Katie and Jules at The Outside Inn. Assist with stage dressing and soundcheck. Taia will have purchased bread in advance.\n-Throughout the afternoon: Do whatever is necessary for Breadwoman\n-8pm: Breadwoman live\n-9pm: pack down stage\n-9:30pm: Wrap. Thank you so, so much!"
     },
     {
       "person_id": "seb",
       "section": "Rain Plan",
-      "content": "**Thursday:**\nOverview: Assist with keiyaA and MOTHERBOARD concerts at The Inn.\n-Noon: Meet Katie and Jules at The Inn. Assist with keiyaA soundcheck as needed.\n-2pm: Last site work before doors.\n-5pm: Break.\n-6:30pm: Return to The Inn to help with MOTHERBOARD soundcheck.\n-8pm: MOTHERBOARD live.\n-9pm: keiyaA live.\n-10pm: Strike keiyaA, clear stage area and pack down gear.\n-11pm: Wrap.\n\n**Friday:**\nOverview: Assist with Monica & ADR soundcheck, ROS at Open Air. (same as schedule)\n-6pm: Meet Rey at Open Air, help with Monica & ADR soundcheck.\n-8:30pm: Check Slack.\n-11:30pm: Return to stage.\n-12am: Monica Mirabile & ADR live.\n-1am: Pack down stage.\n-1:30am: Wrap.\n\n**Saturday:**\nOverview: Breadwoman duty at **The Inn**.\n-2:30pm: Meet Breadwoman, Katie and Jules at The Inn. Assist with stage dressing and soundcheck.\n-NOTE: rainplan activation means that set dressing will need to be moved quickly before / after performance.\n-8pm: Breadwoman live.\n-9pm: pack down stage.\n-9:30pm: Wrap."
+      "content": "Sunday June 7:\nOverview: Meet to ride to camp. Pickup location TBC\n\nMonday-Wed: Setup.\nThursday:\nOverview: Assist with keiyaA and MOTHERBOARD concerts at The Inn.\n-Noon: Meet Katie and Jules at The Inn. Assist with keiyaA soundcheck as needed.\n-2pm: Last site work before doors. Make sure The Inn is ready for the evening concert, etc.\n-5pm: Break.\n\n-6:30pm: return to The Inn to help with MOTHERBOARD soundcheck\n-8pm: MOTHERBOARD live\n-9pm: keiyaA live\n-10pm: Strike keiyaA, clear stage area and pack down gear.\n-11pm: Wrap.\n\nFriday:\nOverview: Assist with Monica & ADR soundcheck, ROS at Open Air.\n-6pm: Meet Rey at Open Air, help with Monica & ADR soundcheck.\nNOTE: two cars are being incorporated into the set. One car will move a little during the performance. Daniel and Leo will confirm how much, Otherwise, it should be a simple stereo RCA output from ADR.\n\n-8:30pm: Check Slack and see if other stages need assistance.\n-11:30pm: Return to stage, prep for performance\n-12am: Monica Mirabile & ADR live\n-1am: Pack down stage.\n-1:30am: Wrap.\n\nSaturday:\nOverview: Breadwoman duty at The Inn.\n-2:30pm: Meet Breadwoman, Katie and Jules at The Inn. Assist with stage dressing and soundcheck. Taia will have purchased bread in advance.\n-Throughout the afternoon: Do whatever is necessary for Breadwoman.\n-NOTE: rainplan activation means that set dressing will need to be moved quickly before / after performance.\n-8pm: Breadwoman live\n-9pm: pack down stage\n-9:30pm: Wrap. Thank you so, so much!"
     },
     {
       "person_id": "stiwar",
@@ -1481,7 +1430,7 @@ window.DEMO_DATA = {
       "phone": "",
       "role": "",
       "section": "Meals",
-      "content": "Check in with the innkeeper for your meals.\n\nYour **green wristband** gets you **50% off coffee** at 109 Montrose — coffee only, not available on other items.",
+      "content": "Check in with The Innkeeper for your meals.\n\nYour green wristband gets you 50% off coffee at 109 Montrose — coffee only, not available on other items.",
       "parking": ""
     },
     {
@@ -1496,36 +1445,42 @@ window.DEMO_DATA = {
     },
     {
       "person_id": "taia_leituala",
+      "section": "Transportation",
+      "content": "Wednesday 6/10: Van from Ridgewood.\n\nSunday: 12:30pm bus from Camp Sacajawea back to NYC. Please arrive 30 minutes early to check in."
+    },
+    {
+      "person_id": "taia_leituala",
       "name": "",
       "phone": "",
       "role": "",
       "section": "Meals",
-      "content": "Check in with the innkeeper for your meals.\n\nYour **green wristband** gets you **50% off coffee** at 109 Montrose — coffee only, not available on other items.\n\n**Welcome Dinner Token:** n/a\n**Regular Meal Token:** 2",
+      "content": "Check in with The Innkeeper for your meals.\n\nYour green wristband gets you 50% off coffee at 109 Montrose — coffee only, not available on other items.\n\nWelcome Dinner Token: n/a\nRegular Meal Token: 2",
       "parking": ""
     },
     {
       "person_id": "taia_leituala",
-      "name": "",
-      "phone": "",
-      "role": "",
       "section": "Shifts",
-      "content": "**Friday June 12:** 6PM–1:30AM (Monica & ADR)\n**Saturday June 13:** 2:30–9:30PM (Breadwoman)",
-      "parking": ""
+      "content": "Setup: Wednesday noon-EOD\nShift 1: Fr 6-1:30am\nShift 2: Sat 2:30-9:30pm"
     },
     {
       "person_id": "taia_leituala",
-      "section": "Transportation",
-      "content": "**Sunday June 7:** Van from Ridgewood to camp.\n\n**Sunday June 14:** 12:30pm bus from Camp Sacajawea. Please arrive **30 minutes early** to check in."
+      "section": "Riders",
+      "content": "- [Monica Mirabile & ADR](https://gbc6vrg43nwcgkgd.public.blob.vercel-storage.com/riders/ADR_Rider-6pgIF3GKYnjHsfBrWTsUoZd22VWvGX.pdf)\n- [Breadwoman](https://gbc6vrg43nwcgkgd.public.blob.vercel-storage.com/riders/Breadwoman_Tech_Rider-1lCi4v8yvpdyJATfx4PeI4vf0TfCq5.docx)"
+    },
+    {
+      "person_id": "taia_leituala",
+      "section": "Rider Key Info",
+      "content": "Monica Mirabile & ADR\n● They are bringing two cars on site to be a part of the performance. UNDER NO CIRCUMSTANCES ARE THESE CARS AUTHORIZED TO MOVE DURING THE PERFORMANCE.\n● Long RCA cable to connect to DJ mixer.. From cars?\n\nBreadwoman\n● 2 mics on boom stands\n● Nord Stage 3 keyboard + stand\n● Mixer\n● ElectroHarmonix Looper Pedal\n● Flanger Pedal"
     },
     {
       "person_id": "taia_leituala",
       "section": "Schedule",
-      "content": "**Sunday June 7:**\nOverview: Meet to ride to camp. Pickup location TBC.\n\n**Monday–Wednesday:**\nSetup.\n\n**Friday:**\nOverview: Assist with Monica & ADR soundcheck, ROS at Open Air.\n-6pm: Meet Rey at Open Air, help with Monica & ADR soundcheck. *NOTE: Two cars are being incorporated into the set — CARS CANNOT BE MOVING DURING THE PERFORMANCE. Simple stereo RCA output from ADR.*\n-8:30pm: Check Slack and see if other stages need assistance.\n-11:30pm: Return to stage, prep for performance.\n-12am: Monica Mirabile & ADR live.\n-1am: Pack down stage.\n-1:30am: Wrap.\n\n**Saturday:**\nOverview: Breadwoman duty at The Outside Inn.\n-2:30pm: Meet Breadwoman, Katie and Jules at The Outside Inn. Assist with stage dressing and soundcheck. Taia will have purchased bread in advance.\n-Throughout the afternoon: Do whatever is necessary for Breadwoman.\n-8pm: Breadwoman live.\n-9pm: Pack down stage.\n-9:30pm: Wrap."
+      "content": "Wednesday\nOverview: Setup 8am: Depart from NYC - location TBC. Noon: Setup\n\nFriday:\nOverview: Assist with Monica & ADR soundcheck, ROS at Open Air.\n-6pm: Meet Rey at Open Air, help with Monica & ADR soundcheck.\nNOTE: two cars are being incorporated into the set. One car will move a little during the performance. Daniel and Leo will confirm how much, Otherwise, it should be a simple stereo RCA output from ADR.\n\n-8:30pm: Check Slack and see if other stages need assistance.\n-11:30pm: Return to stage, prep for performance\n-12am: Monica Mirabile & ADR live\n-1am: Pack down stage.\n-1:30am: Wrap.\n\nSaturday:\nOverview: Breadwoman duty at The Outside Inn.\n-2:30pm: Meet Breadwoman, Katie and Jules at The Outside Inn. Assist with stage dressing and soundcheck. Taia will have purchased bread in advance.\n-Throughout the afternoon: Do whatever is necessary for Breadwoman\n-8pm: Breadwoman live\n-9pm: pack down stage\n-9:30pm: Wrap. Thank you so, so much!"
     },
     {
       "person_id": "taia_leituala",
       "section": "Rain Plan",
-      "content": "**Sunday June 7:**\nOverview: Meet to ride to camp. Pickup location TBC.\n\n**Monday–Wednesday:**\nSetup.\n\n**Friday:**\nOverview: Assist with Monica & ADR soundcheck, ROS at Open Air. (same as schedule)\n-6pm: Meet Rey at Open Air, help with Monica & ADR soundcheck.\n-NOTE: CARS CANNOT BE MOVING DURING THE PERFORMANCE.\n-8:30pm: Check Slack.\n-11:30pm: Return to stage.\n-12am: Monica Mirabile & ADR live.\n-1am: Pack down stage.\n-1:30am: Wrap.\n\n**Saturday:**\nOverview: Breadwoman duty at **The Inn**.\n-2:30pm: Meet Breadwoman, Katie and Jules at The Inn.\n-NOTE: rainplan activation means that set dressing will need to be moved quickly before / after performance.\n-8pm: Breadwoman live.\n-9pm: Pack down stage.\n-9:30pm: Wrap."
+      "content": "Sunday June 7:\nOverview: Meet to ride to camp. Pickup location TBC\n\nMonday-Wed: Setup.\n\nFriday:\nOverview: Assist with Monica & ADR soundcheck, ROS at Open Air.\n-6pm: Meet Rey at Open Air, help with Monica & ADR soundcheck.\nNOTE: two cars are being incorporated into the set. One car will move a little during the performance. Daniel and Leo will confirm how much, Otherwise, it should be a simple stereo RCA output from ADR.\n\n-8:30pm: Check Slack and see if other stages need assistance.\n-11:30pm: Return to stage, prep for performance\n-12am: Monica Mirabile & ADR live\n-1am: Pack down stage.\n-1:30am: Wrap.\n\nSaturday:\nOverview: Breadwoman duty at The Inn.\n-2:30pm: Meet Breadwoman, Katie and Jules at The Inn. Assist with stage dressing and soundcheck. Taia will have purchased bread in advance.\n-Throughout the afternoon: Do whatever is necessary for Breadwoman.\n-NOTE: rainplan activation means that set dressing will need to be moved quickly before / after performance.\n-8pm: Breadwoman live\n-9pm: pack down stage\n-9:30pm: Wrap. Thank you so, so much!"
     },
     {
       "person_id": "tony_seibert",
@@ -1536,6 +1491,26 @@ window.DEMO_DATA = {
       "section": "",
       "content": "",
       "parking": ""
+    },
+    {
+      "person_id": "tony_seibert",
+      "section": "Transportation",
+      "content": "Driving."
+    },
+    {
+      "person_id": "tony_seibert",
+      "section": "Meals",
+      "content": "n/a"
+    },
+    {
+      "person_id": "tony_seibert",
+      "section": "Shifts",
+      "content": "Shift 1: Wednesday noon-EOD\nShift 2: Fr 12pm-8pm"
+    },
+    {
+      "person_id": "tony_seibert",
+      "section": "Schedule",
+      "content": "Wednesday\nOverview: Setup 8am: Depart from NYC - location TBC. Noon: Unload and set up Choke Hole ring. Upon completion, join general setup crew.\n\nSunday\nOverview: Choke Hole teardown Noon: Help Choke Hole get the ring back on the truck. When that’s complete. You’re done. Thank you so, so much!"
     },
     {
       "person_id": "ramses",
@@ -1549,43 +1524,43 @@ window.DEMO_DATA = {
     },
     {
       "person_id": "ramses",
+      "section": "Transportation",
+      "content": "Thursday: 2pm bus from Nowadays (56-06 Cooper Ave, Glendale, NY). Please arrive by 1:30pm.\n\nSunday: 12:30pm bus from Camp Sacajawea. Please arrive 30 minutes early to check in."
+    },
+    {
+      "person_id": "ramses",
       "section": "Meals",
-      "content": "Check in with the innkeeper for your meals.\n\nYour **green wristband** gets you **50% off coffee** at 109 Montrose — coffee only, not available on other items.\n\n**Welcome Dinner Token:** n/a\n**Regular Meal Token:** 2"
+      "content": "Check in with The Innkeeper for your meals.\n\nYour green wristband gets you 50% off coffee at 109 Montrose — coffee only, not available on other items.\n\nWelcome Dinner Token: n/a\nRegular Meal Token: 2"
     },
     {
       "person_id": "ramses",
       "section": "Shifts",
-      "content": "Shift 1: Fr 12:30pm–9:30pm\nShift 2: Sat 2:30am–11pm"
+      "content": "Shift 1: FR 12:30pm-9:30pm\nShift 2: Sat 2:30am - 11pm"
     },
     {
       "person_id": "ramses",
       "section": "Notes",
-      "content": "You and Jules will be assisting Breadwoman during her sound check and show. She is scheduled to play at The Outside Inn. If her soundcheck is going long, you will break off to assist FujilIIIIIIIIIIlta for his sound check while Jules stays on with Breadwoman."
+      "content": "You and Jules will be assisting Breadwoman during her sound check and show. She is scheduled to play at The Outside Inn. If her soundcheck is going long, you will break off to assist FujiIIIIIIIIIIIta for his sound check while Jules stays on with Breadwoman."
     },
     {
       "person_id": "ramses",
-      "section": "Friday Schedule",
-      "content": "Overview: Afternoon soundchecks at The Inn through the first concert.\n-Noon: Assist with Ash Fure soundcheck. Note: Ash doesn't play until Saturday, but requires a significant check. At the end of SC, assist Katie and Jules to make all necessary notes and strike mics / gear. You will be part of the reset crew on Saturday. Two 2x8 platforms are confirmed dedicated for Ash's staging. Position and spike these, then store out-of-the-way until Saturday.\n-4:30pm: DJ ojo sound check.\n-5:30pm: Mad Professor sound check.\n-7pm: Ka Baird sound check.\n-8:30pm: Ka Baird performance.\n-9:30pm: Wrap."
-    },
-    {
-      "person_id": "ramses",
-      "section": "Saturday Schedule",
-      "content": "Overview: Afternoon soundchecks at The Inn/The Outside Inn through full concert program.\n-2pm: Meet Jules at The Inn. Take 12\" legs off one of the 4x8 platforms and put on 6\". This will be FujilIIIIIIIIIIlta's platform.\n-2:30pm: Soundcheck Breadwoman at The Outside Inn.\n-5pm: Sound check FujilIIIIIIIIIIlta at The Inn. If Jules is not available, you act as stage manager.\n-7pm: FujilIIIIIIIIIIlta performance.\n-8pm: Breadwoman performance — Assist Katie with audio needs / assist artists as needed.\n-9pm: Ash Fure reset.\n-10pm: Ash Fure set + strike.\n-11pm: Wrap. *Thank you so, so much!*"
+      "section": "Riders",
+      "content": "- [Ash Fure](https://gbc6vrg43nwcgkgd.public.blob.vercel-storage.com/riders/Ashe_Fure_ANIMAL_Rider___Jan2025-n5GnbVqMLsX0SFovdAKFnZWZ1PqCMN.pdf)\n- [DJ ojo](https://gbc6vrg43nwcgkgd.public.blob.vercel-storage.com/riders/DJ_ojo_technical_rider-ITafyWdUDz1ckl4uGltn4497nh3S2R.pdf)\n- [Mad Professor](https://gbc6vrg43nwcgkgd.public.blob.vercel-storage.com/riders/Mad_Professor_Tech_Rider-BK6N3GBH8hNXePd1tIRlJ3VjvC9iQp.pdf)\n- [Ka Baird](https://gbc6vrg43nwcgkgd.public.blob.vercel-storage.com/riders/KA_BAIRD_TECH_RIDER_2025_LOCAL-LBBlE14GNaJGvw5VZlo7QCFF6ah4wK.pdf)\n- [FujilIIIIIIIIIIlta — Input List / Backline](https://gbc6vrg43nwcgkgd.public.blob.vercel-storage.com/riders/Fujita_1.Input_list_-_Backline-h3QvN1952VdIL9Xuv20QqGK3Vwzdtr.pdf)\n- [FujilIIIIIIIIIIlta — Stage Setting](https://gbc6vrg43nwcgkgd.public.blob.vercel-storage.com/riders/Fujita_2.Stage_Setting-DD3uV8FNFvz9bnm357UVazLrdNyeY3.pdf)\n- [FujilIIIIIIIIIIlta — Important Notes](https://gbc6vrg43nwcgkgd.public.blob.vercel-storage.com/riders/Fujita_3.Important_Notes-1rtGnbx7VaQFkDx0Mki0RfeuNV96e0.pdf)\n- [FujilIIIIIIIIIIlta — Lights](https://gbc6vrg43nwcgkgd.public.blob.vercel-storage.com/riders/Fujita_4.Lights-Vz5013UDhcKltseu5tmq0khIhdTbsL.pdf)\n- [Breadwoman](https://gbc6vrg43nwcgkgd.public.blob.vercel-storage.com/riders/Breadwoman_Tech_Rider-1lCi4v8yvpdyJATfx4PeI4vf0TfCq5.docx)"
     },
     {
       "person_id": "ramses",
       "section": "Rider Key Info",
-      "content": "Ash Fure\n● 14 mic stands\n● 4 Shure KSM condenser mics\n● Stereo amp\n● Firm table + stand\n\nDJ ojo\n● Soundcraft Signature 12 MTK\n● Ableton Push\n● Laptop stands\n\nMad Professor\n● Allen & Heath MixWizard 16\n● 3 mics\n\nKa Baird\n● Long XLR cables\n● Stereo out into PA\n\nFujilIIIIIIIIIIlta\n● Allen & Heath MixWizard 16\n● Cables\n\nBreadwoman\n● 2 mics on boom stands\n● Nord Stage 3 keyboard + stand\n● Mixer\n● ElectroHarmonix Looper Pedal\n● Flanger Pedal"
+      "content": "Ash Fure\n● 14 mic stands\n● 4 Shure KSM condenser mics\n● Stereo amp\n● Firm table + stand\n\nDJ ojo\n● Soundcraft Signature 12 MTK\n● Ableton Push\n● Laptop stands\n\nMad Professor\n● Allen & Heath MixWizard 16\n● 3 mics\n\nKa Baird\n● Long XLR cables\n● Stereo out into PA\n\nFujiIIIIIIIIIIIta\n● Allen & Heath MixWizard 16\n● Cables\n\nBreadwoman\n● 2 mics on boom stands\n● Nord Stage 3 keyboard + stand\n● Mixer\n● ElectroHarmonix Looper Pedal\n● Flanger Pedal"
+    },
+    {
+      "person_id": "ramses",
+      "section": "Schedule",
+      "content": "Friday:\nOverview: Afternoon soundchecks at The Inn through the first concert.\n-Noon: Assist with Ash Fure soundcheck. Note: Ash doesn’t play until Saturday, but requires a significant check. At the end of SC, assist Katie and Jules to make all necessary notes and strike mics / gear. You will be part of the reset crew on Saturday. Two 2x8 platforms are confirmed dedicated for Ash’s staging. Position and spike these, then store out-of-the-way until Saturday.\n\n-4:30pm: DJ ojo sound check\n-5:30pm: Mad Professor sound check\n-7pm: Ka Baird sound check\n-8:30pm: Ka Baird performance\n-9:30pm: Wrap.\nSaturday:\nOverview: Afternoon soundchecks at The Inn/The Outside Inn through full concert program.\n-2pm: Meet Jules at The Inn, take 12” legs off one of the 4x8 platforms and put on 6” This will be FujiIIIIIIIIIIIta’s platform.\n-2:30: Soundcheck Breadwoman at The Outside Inn 5pm: Sound check FujiIIIIIIIIIIIta at The Inn - If Jules is not available, you act as stage manager 7pm: FujiIIIIIIIIIIIta performance 8pm: Breadwoman performance - Assist Katie with audio needs / assist artists as needed. 9pm: Ash Fure reset 10pm: Ash Fure set + strike 11pm: Wrap. Thank you so, so much!"
     },
     {
       "person_id": "ramses",
       "section": "Rain Plan",
-      "content": "**Friday:**\nOverview: Afternoon soundchecks at The Inn through the first concert. (same as schedule)\n-Noon: Ash Fure soundcheck.\n-4:30pm: DJ ojo sound check.\n-5:30pm: Mad Professor sound check.\n-7pm: Ka Baird sound check.\n-8:30pm: Ka Baird performance.\n-9:30pm: Wrap.\n\n**Saturday:**\nOverview: Afternoon soundchecks at The Inn through full concert program. Breadwoman moves indoors.\n-2pm: Meet Jules at The Inn, set up FujilIIIIIIIIIIlta's platform.\n-2:30pm: Soundcheck Breadwoman at **The Inn**.\n-NOTE: If rain, Breadwoman set dressing will need to be moved quickly before / after performance.\n-5pm: Sound check FujilIIIIIIIIIIlta.\n-7pm: FujilIIIIIIIIIIlta performance.\n-8pm: Breadwoman performance.\n-9pm: Ash Fure reset.\n-10pm: Ash Fure set + strike.\n-11pm: Wrap."
-    },
-    {
-      "person_id": "ramses",
-      "section": "Transportation",
-      "content": "**Thursday:** 2pm bus from Nowadays (56 Wyckoff Ave, Bushwick). Please arrive by 1:30pm.\n\n**Sunday:** 12:30pm bus from Camp Sacajawea. Please arrive **30 minutes early** to check in."
+      "content": "Friday:\nOverview: Afternoon soundchecks at The Inn through the first concert.\n-Noon: Assist with Ash Fure soundcheck. Note: Ash doesn’t play until Saturday, but requires a significant check. At the end of SC, assist Katie and Jules to make all necessary notes and strike mics / gear. You will be part of the reset crew on Saturday. Two 2x8 platforms are confirmed dedicated for Ash’s staging. Position and spike these, then store out-of-the-way until Saturday.\n\n-4:30pm: DJ ojo sound check\n-5:30pm: Mad Professor sound check\n-7pm: Ka Baird sound check\n-8:30pm: Ka Baird performance\n-9:30pm: Wrap.\n\nSaturday:\nOverview: Afternoon soundchecks at The Inn through full concert program.\n-2pm: Meet Jules at The Inn, take 12” legs off one of the 4x8 platforms and put on 6” This will be FujiIIIIIIIIIIIta’s platform.\n-2:30: Soundcheck Breadwoman at The Inn 5pm: Sound check FujiIIIIIIIIIIIta 7pm: FujiIIIIIIIIIIIta performance 8pm: Breadwoman performance\nNOTE: If rain, Breadwoman set dressing will need to be moved quickly before and after set. 9pm: Ash Fure reset 10pm: Ash Fure set + strike 11pm: Wrap. Thank you so, so much!"
     }
   ],
   "wellness": [
@@ -1669,7 +1644,7 @@ window.DEMO_DATA = {
     },
     {
       "section": "Primary Checks",
-      "content": "-Everyone has a **ticket**\n-Everyone is **21+**\n-Every car has purchased a **parking pass**\n-No visible drugs, no alcohol, no weapons, no fireworks. Confiscate all. If they have a gas stove, confiscate the gas tank only. Make all searches quick and pleasant.\n-If someone doesn't have a ticket or parking pass, refer them to Sophia."
+      "content": "-Everyone has a ticket\n-Everyone is 21+\n-Every car has purchased a parking pass\n-No visible drugs, no alcohol, no weapons, no fireworks. Confiscate all. If they have a gas stove, confiscate the gas tank only. Make all searches quick and pleasant.\n-If someone doesn't have a ticket or parking pass, refer them to Sophia."
     },
     {
       "section": "Job: Parking",
@@ -1695,13 +1670,18 @@ window.DEMO_DATA = {
     },
     {
       "person_id": "sophia",
-      "section": "Schedule",
-      "content": "**Official Check In Hours:**\n-Thursday: 3pm–10pm\n-Friday: Noon–10pm\n-Saturday: Noon–5pm\n\nWhile we need the team to be managed, we leave it to your discretion when you need to be on-site and when you can step away. Key moments to be present with the team:\n-Thursday 11am: Early arrival Check In crew begins\n-Thursday 2pm: Full Check In crew assembles\n-Thursday 3pm: Peak Times\n-EOD: Confirm team has what they need and is closing up shop properly\n-Friday 11am: prep for day 2\n-Friday: Peak times\n-EOD\n-Saturday: Noon\n-Saturday: 5pm"
+      "section": "Transportation",
+      "content": "Driving"
     },
     {
       "person_id": "sophia",
       "section": "Meals",
-      "content": "Check in with The Innkeeper backstage at The Inn upon arrival to collect your **meal tokens**.\n\n**Welcome Dinner Token:** 1\n**Regular Meal Token:** 2"
+      "content": "Check in with The Innkeeper backstage at The Inn upon arrival to collect your meal tokens.\n\nWelcome Dinner Token: 1\nRegular Meal Token: 2"
+    },
+    {
+      "person_id": "sophia",
+      "section": "Schedule",
+      "content": "Official Check In Hours:\n-Thursday: 3pm-10pm\n-Friday: Noon-10pm\n-Saturday: Noon-5pm\n\nWhile we need the team to be managed, we leave it to your discretion when you need to be at the Check In area and when you can step away. However, here are some key moments we need to have you present with the team.\n-Thursday 11am: Early arrival Check In crew begins\n-Thursday 2pm: Full Check In crew assembles.\n-Thursday 3pm-Peak Times\n-EOD: Confirm that team has what they need and is closing up shop properly\n-Friday: 11am: prep for day 2\n-Friday: Peak times\n-EOD\n-Saturday: Noon\n-Saturday: 5pm"
     }
   ],
   "archival": [
@@ -1711,7 +1691,7 @@ window.DEMO_DATA = {
       "phone": "",
       "role": "",
       "section": "Notes",
-      "content": "- Make sure you have downloaded Slack and have joined the Dripping workspace. Communicate with the Artist Care team as needed via Slack to locate your artists.\n- Scout a location or two for artist portraits.\n- **Find your portrait artists at their scheduled time and place.** If they are missing, text/call them. If still missing, go to their soundcheck/performance."
+      "content": "- Make sure you have downloaded Slack and have joined the Dripping workspace. Communicate with the Artist Care team as needed via Slack to locate your artists.\n- Scout a location or two for artist portraits.\n- Find your portrait artists at their scheduled time and place. If they are missing, text/call them. If still missing, go to their soundcheck/performance."
     },
     {
       "person_id": "danny_roche",
@@ -1729,7 +1709,7 @@ window.DEMO_DATA = {
       "phone": "",
       "role": "",
       "section": "Meals",
-      "content": "Check in with the innkeeper for your meals.\n\nYour **green wristband** gets you **50% off coffee** at 109 Montrose — coffee only, not available on other items.",
+      "content": "Check in with The Innkeeper for your meals.\n\nYour green wristband gets you 50% off coffee at 109 Montrose — coffee only, not available on other items.",
       "parking": ""
     },
     {
@@ -1738,7 +1718,7 @@ window.DEMO_DATA = {
       "phone": "",
       "role": "",
       "section": "Your Assignment",
-      "content": "Photograph all performances at the Inn and Open Air Stages. Additional festival coverage as desired.\n\n**Meal tokens:** 3",
+      "content": "Photograph all performances at the Inn and Open Air Stages. Additional festival coverage as desired.\n\nMeal tokens: 3",
       "parking": ""
     },
     {
@@ -1784,7 +1764,7 @@ window.DEMO_DATA = {
       "phone": "",
       "role": "",
       "section": "Meals",
-      "content": "Check in with the innkeeper for your meals.\n\nYour **green wristband** gets you **50% off coffee** at 109 Montrose — coffee only, not available on other items.",
+      "content": "Check in with The Innkeeper for your meals.\n\nYour green wristband gets you 50% off coffee at 109 Montrose — coffee only, not available on other items.",
       "parking": ""
     },
     {
@@ -1793,7 +1773,7 @@ window.DEMO_DATA = {
       "phone": "",
       "role": "",
       "section": "Your Assignment",
-      "content": "Photograph artist portraits. Additional festival coverage as desired.\n\n**Portrait subjects:** keiyaA, Mad Professor, Ayanna Heaven, Elori Saxl & Henry Solomon, Black Decelerant, Everything Upful (Gavsborg, Toke, Groundsound & Kat 7), Toki Fuko, Juliana Huxtable, Fujita\n\n**Meal tokens:** 2",
+      "content": "Photograph artist portraits. Additional festival coverage as desired.\n\nPortrait subjects: keiyaA, Mad Professor, Ayanna Heaven, Elori Saxl & Henry Solomon, Black Decelerant, Everything Upful (Gavsborg, Toke, Groundsound & Kat 7), Toki Fuko, Juliana Huxtable, Fujita\n\nMeal tokens: 2",
       "parking": ""
     },
     {
@@ -1839,7 +1819,7 @@ window.DEMO_DATA = {
       "phone": "",
       "role": "",
       "section": "Meals",
-      "content": "Check in with the innkeeper for your meals.\n\nYour **green wristband** gets you **50% off coffee** at 109 Montrose — coffee only, not available on other items.",
+      "content": "Check in with The Innkeeper for your meals.\n\nYour green wristband gets you 50% off coffee at 109 Montrose — coffee only, not available on other items.",
       "parking": ""
     },
     {
@@ -1848,7 +1828,7 @@ window.DEMO_DATA = {
       "phone": "",
       "role": "",
       "section": "Your Assignment",
-      "content": "Photograph select performances as well as interesting details, gatherings, and curiosities around the site. Artist portraits. Additional coverage as desired.\n\n**Meal tokens:** 3",
+      "content": "Photograph select performances as well as interesting details, gatherings, and curiosities around the site. Artist portraits. Additional coverage as desired.\n\nMeal tokens: 3",
       "parking": ""
     },
     {
@@ -1894,7 +1874,7 @@ window.DEMO_DATA = {
       "phone": "",
       "role": "",
       "section": "Meals",
-      "content": "Check in with the innkeeper for your meals.\n\nYour **green wristband** gets you **50% off coffee** at 109 Montrose — coffee only, not available on other items.",
+      "content": "Check in with The Innkeeper for your meals.\n\nYour green wristband gets you 50% off coffee at 109 Montrose — coffee only, not available on other items.",
       "parking": ""
     },
     {
@@ -1903,7 +1883,7 @@ window.DEMO_DATA = {
       "phone": "",
       "role": "",
       "section": "Your Assignment",
-      "content": "Photograph daytime/evening performances at all stages as well as interesting details, textures, and curiosities around the site. Artist portraits. Additional coverage as desired.\n\n**Meal tokens:** 3",
+      "content": "Photograph daytime/evening performances at all stages as well as interesting details, textures, and curiosities around the site. Artist portraits. Additional coverage as desired.\n\nMeal tokens: 3",
       "parking": ""
     },
     {
@@ -1949,7 +1929,7 @@ window.DEMO_DATA = {
       "phone": "",
       "role": "",
       "section": "Meals",
-      "content": "Check in with the innkeeper for your meals.\n\nYour **green wristband** gets you **50% off coffee** at 109 Montrose — coffee only, not available on other items.",
+      "content": "Check in with The Innkeeper for your meals.\n\nYour green wristband gets you 50% off coffee at 109 Montrose — coffee only, not available on other items.",
       "parking": ""
     },
     {
@@ -1958,7 +1938,7 @@ window.DEMO_DATA = {
       "phone": "",
       "role": "",
       "section": "Your Assignment",
-      "content": "Artist portraits. Additional coverage of performances and people as well as interesting details, textures, and curiosities around the site as desired.\n\n**Meal tokens:** 2",
+      "content": "Artist portraits. Additional coverage of performances and people as well as interesting details, textures, and curiosities around the site as desired.\n\nMeal tokens: 2",
       "parking": ""
     },
     {
@@ -2004,7 +1984,7 @@ window.DEMO_DATA = {
       "phone": "",
       "role": "",
       "section": "Meals",
-      "content": "Check in with the innkeeper for your meals.\n\nYour **green wristband** gets you **50% off coffee** at 109 Montrose — coffee only, not available on other items.",
+      "content": "Check in with The Innkeeper for your meals.\n\nYour green wristband gets you 50% off coffee at 109 Montrose — coffee only, not available on other items.",
       "parking": ""
     },
     {
@@ -2013,7 +1993,7 @@ window.DEMO_DATA = {
       "phone": "",
       "role": "",
       "section": "Your Assignment",
-      "content": "Photograph artist portraits and select performances as well as interesting details, gatherings, and curiosities around the site. Additional coverage as desired.\n\n**Meal tokens:** 2",
+      "content": "Photograph artist portraits and select performances as well as interesting details, gatherings, and curiosities around the site. Additional coverage as desired.\n\nMeal tokens: 2",
       "parking": ""
     },
     {
@@ -2059,7 +2039,7 @@ window.DEMO_DATA = {
       "phone": "",
       "role": "",
       "section": "Meals",
-      "content": "Check in with the innkeeper for your meals.\n\nYour **green wristband** gets you **50% off coffee** at 109 Montrose — coffee only, not available on other items."
+      "content": "Check in with The Innkeeper for your meals.\n\nYour green wristband gets you 50% off coffee at 109 Montrose — coffee only, not available on other items."
     },
     {
       "person_id": "luis_nieto_dickens",
@@ -2067,7 +2047,7 @@ window.DEMO_DATA = {
       "phone": "",
       "role": "",
       "section": "Your Assignment",
-      "content": "Photograph all performances at The Barn and Open Air Stages. Additional festival coverage as desired.\n\n**Meal tokens:** 2"
+      "content": "Photograph all performances at The Barn and Open Air Stages. Additional festival coverage as desired.\n\nMeal tokens: 2"
     },
     {
       "person_id": "luis_nieto_dickens",
@@ -2086,44 +2066,6 @@ window.DEMO_DATA = {
       "content": "Performances @ Open Air\n12:00 AM | Elori Saxl & Henry Solomon\n1:20 AM | Black Decelerant\n2:40 AM | Earthen Sea\n4:00–7:00 AM | Toki Fuko\n\nPerformances @ The Barn\n2:30 PM | Baalti & Sayoko\n10:00 PM–7:00 AM | Maricon Takeover: Joselo, Fried Platano, Sevyn Love, Joao Lagrima De Ouro"
     },
     {
-      "person_id": "nema",
-      "name": "Nema",
-      "phone": "",
-      "role": "Sound Recording",
-      "paid": "yes",
-      "section": "",
-      "content": "",
-      "parking": ""
-    },
-    {
-      "person_id": "nema",
-      "name": "",
-      "phone": "",
-      "role": "",
-      "section": "Meals",
-      "content": "Check in with the innkeeper for your meals.\n\nYour **green wristband** gets you **50% off coffee** at 109 Montrose — coffee only, not available on other items.",
-      "parking": ""
-    },
-    {
-      "person_id": "sol",
-      "name": "Sol (they/them)",
-      "phone": "",
-      "role": "Sound Recording",
-      "paid": "yes",
-      "section": "",
-      "content": "",
-      "parking": ""
-    },
-    {
-      "person_id": "sol",
-      "name": "",
-      "phone": "",
-      "role": "",
-      "section": "Meals",
-      "content": "Check in with the innkeeper for your meals.\n\nYour **green wristband** gets you **50% off coffee** at 109 Montrose — coffee only, not available on other items.",
-      "parking": ""
-    },
-    {
       "person_id": "spurge_carter",
       "name": "Spurge Carter (he/him)",
       "phone": "",
@@ -2139,7 +2081,7 @@ window.DEMO_DATA = {
       "phone": "",
       "role": "",
       "section": "Your Assignment",
-      "content": "Artist portraits. Additional coverage of performances and people as well as interesting details, textures, and curiosities around the site as desired.\n\n**Meal tokens:** 2",
+      "content": "Artist portraits. Additional coverage of performances and people as well as interesting details, textures, and curiosities around the site as desired.\n\nMeal tokens: 2",
       "parking": ""
     },
     {
@@ -2172,26 +2114,6 @@ window.DEMO_DATA = {
   ],
   "artist_care": [
     {
-      "person_id": "_shared",
-      "section": "Artist Orientation Checklist",
-      "content": "★ Welcome the artist backstage, offer to help with bags/gear. If they have gear, label it with tape (artist name) and store it in the backstage office (right of entrance, before the stairs) — log it in the handover.\n★ Offer food or drink.\n★ Put on their **orange artist wristband**.\n★ Confirm any guests are on the guest list and explain backstage access: **orange wristband only**, and guests must be accompanied by the artist.\n★ Introduce them to the team, explaining the Innkeeper role and where to make contact (WhatsApp).\n★ Let them know there's good reception onsite, plus wifi if needed (network: **campsacajewa** / password: **rangerron** — to be confirmed on site).\n★ Assist them in navigating their artist microsite — we can print it out if they prefer.\n★ Show their stage manager contact for soundcheck and set, and how to reach them.\n★ Give them a map of the site and the schedule — highlight their set time and location on the map.\n★ If they're staying in a cabin, highlight where it is on the map.\n★ Give them their packet — confirm they have their meal tokens and their 8 drink tickets. Highlight the dining tent and refer them to vendor times on their microsite. Confirm any allergies or dietary needs.\n★ If staying in a hotel, give them their key and orient them with the shuttle drop-off/pick-up location and departure times on the microsite. If we haven't already dropped snacks and water in their room, give them a bag to take.\n★ Note their portrait time and where to meet the photographer (backstage at The Inn or at the stage).\n★ If it's raining and their SC or set is affected, let them know the changes and how we'll notify them (WhatsApp and updated microsite).\n★ If they have a personal driver, show them where to contact their driver through the microsite.\n★ Let them know the EMT location and Safe Rave testing.\n★ Explain who the safe space monitors are, and that any concerns can go to the stage manager or Innkeeper."
-    },
-    {
-      "person_id": "_shared",
-      "section": "Handover — Start & End of Shift",
-      "content": "Post in Slack **#artist-care**.\n\n**Start of shift:** Read the latest handover in #artist-care — outstanding items to follow up, gear stored backstage & who it belongs to, artists already on site, any soundcheck/set time changes.\n\n**End of shift:** Post your handover to #artist-care — artists on site, pending actions, supplies needed, set time changes, gear moved, etc."
-    },
-    {
-      "person_id": "_shared",
-      "section": "Artist Check-in",
-      "content": "- One hour before soundcheck/set — see if artist is on site. If not, remind them which shuttle to catch to be at SC/set on time.\n- If an artist hasn't responded within 30 min of their set/SC, visit their cabin or send the shuttle driver to knock on their door during the shuttle run.\n- If an artist has gear, ask if they need help bringing it to the stage from The Inn. Arrange an AC runner or use the golf cart.\n- Confirm the artist is at the stage **20 minutes before set**.\n- Introduce the artist to their Stage Manager.\n- Check on water and refill if necessary.\n- If an artist is eating on site, remind them of vending hours. If they can't come to site, send a plate via shuttle/driver/AC and collect their meal token.\n- Point them to the nearest restroom."
-    },
-    {
-      "person_id": "_shared",
-      "section": "On Shift Duties",
-      "content": "★ Clean and refill tea, coffee, hot water and snacks — kept backstage, the office or kitchen.\n★ Clean and refill bathroom supplies — toilet paper, soap, hand towels — kept backstage, the office or kitchen.\n★ Regularly check the gate to the bus shuttle is secure.\n★ Connect artists with the shuttle driver for upcoming rides.\n★ If gear is dropped off, label with tape (artist name) and store in the office right of the backstage entrance, before the stairs. Log it in the handover.\n★ Consider artist comfort — offer a fan / jacket; communicate with Stage Managers where necessary.\n★ Monitor backstage — ask anyone without an **orange** or **green** wristband to leave, unless they're a guest accompanied by the artist.\n★ If the backstage toilet is occupied, send the artist upstairs to the restrooms — check toilet paper, soap, paper towels.\n★ Assist staff seeking their meal token packets where necessary.\n★ Sweep/vacuum the floor when necessary."
-    },
-    {
       "person_id": "ali",
       "name": "Ali (she/her)",
       "phone": "",
@@ -2207,23 +2129,39 @@ window.DEMO_DATA = {
       "phone": "",
       "role": "",
       "section": "Meals",
-      "content": "Check in with the innkeeper for your meals.\n\nYour **green wristband** gets you **50% off coffee** at 109 Montrose — coffee only, not available on other items.",
+      "content": "Check in with The Innkeeper for your meals.\n\nYour green wristband gets you 50% off coffee at 109 Montrose — coffee only, not available on other items.",
       "parking": ""
     },
     {
       "person_id": "ali",
-      "name": "",
-      "phone": "",
-      "role": "",
       "section": "Shifts",
-      "content": "**Friday June 12:** 10AM–3PM\n**Saturday June 13:** 9AM–1PM\n**Sunday June 14:** 9AM–bus departure",
-      "parking": ""
+      "content": "Friday June 12: 10AM–3PM Saturday June 13: 9AM–1PM Sunday June 14: 9AM–bus departure"
+    },
+    {
+      "person_id": "ali",
+      "section": "Primary Duties",
+      "content": "★ Check in and orient incoming artists\n★ Make sure artists get to their sets and are received after their performance\n★ Attend to artist needs across the site\n★ Help facilitate portraits\n★ Support The Innkeeper in maintaining back stage."
+    },
+    {
+      "person_id": "ali",
+      "section": "Basic Shift Schedule",
+      "content": "-Check handover at beginning of shift\n-Review upcoming hours\n-Receive and orient artists / respond to requests from The Innkeeper\n-Confirm that the artist is at the stage 20 minutes before set.\n-At end of shift, write handover note\n\nNote: for late night performers, remind them of dining hours.\n\nHandover - start & end of shift (slack #artist-care)\n■ Start: read the latest handover in #artist-care -- outstanding items to follow up, gear stored backstage & who it belongs to, artists already on site, any soundcheck/set time changes.\n■ End: post your handover to #artist-care - artists on site, pending actions, supplies needed, set time changes, gear moved etc."
+    },
+    {
+      "person_id": "ali",
+      "section": "Handover",
+      "content": "_(slack #artist-care)_\n\n■ Start: read the latest handover in #artist-care — outstanding items to follow up, gear stored backstage & who it belongs to, artists already on site, any soundcheck/set time changes.\n■ End: post your handover to #artist-care — artists on site, pending actions, supplies needed, set time changes, gear moved etc."
+    },
+    {
+      "person_id": "ali",
+      "section": "Artist Orientation Checklist",
+      "content": "★ Welcome the artist backstage, offer to help with bags/gear. Label it with tape (artist name) and store it in the backstage office (right of entrance, before the stairs) — log it in the handover.\n★ Offer food or drink.\n★ Orange wristbands for performers only\n★ Explain backstage access: orange wristband only, and guests must be accompanied by the artist.\n★ Introduce them to the team, explaining the Innkeeper and where to make contact (WhatsApp).\n★ WiFi network: campsacajewa /password: rangerron\n★ Artist microsite orientation — we can print it out if they prefer.\n★ Give them a map — highlight their set time and location on the map.\n★ Give them their packet — confirm they have their meal tokens and 8 drink tickets. Confirm any allergies or dietary needs.\n★ If staying in a hotel, give them their key and orient them with the shuttle. If we haven't already dropped snacks and water in their room, give them a bag to take.\n★ If they're staying in a cabin, highlight where it is on the map.\n★ Note their portrait time and location\n★ If rain, explain that we'll notify them (whatsapp and updated microsite)\n★ If they have a personal driver, show them where to contact their driver.\n★ EMT location and Safe Rave testing.\n★ Explain who the safe space monitors are, and that any concerns can go to the stage manager or Innkeeper."
     },
     {
       "person_id": "alyce",
       "name": "Alyce (they/them)",
       "phone": "",
-      "role": "Artist Care",
+      "role": "Innkeeper",
       "paid": true,
       "section": "",
       "content": "",
@@ -2235,17 +2173,33 @@ window.DEMO_DATA = {
       "phone": "",
       "role": "",
       "section": "Meals",
-      "content": "Check in with the innkeeper for your meals.\n\nYour **green wristband** gets you **50% off coffee** at 109 Montrose — coffee only, not available on other items.",
+      "content": "Check in with The Innkeeper backstage at The Inn upon arrival to collect your meal tokens.\n\n**Welcome Dinner Token:** 1\n**Regular Meal Token:** 2",
       "parking": ""
     },
     {
       "person_id": "alyce",
-      "name": "",
-      "phone": "",
-      "role": "",
       "section": "Shifts",
-      "content": "**Thursday June 11:** 8PM–1AM (Innkeeper)\n**Saturday June 13:** 5–10AM (Innkeeper)\n**Sunday June 14:** 6–11AM (Innkeeper)",
-      "parking": ""
+      "content": "**Thursday June 11:** 8PM–1AM (Innkeeper)\n**Saturday June 13:** 5–10AM (Innkeeper)\n**Sunday June 14:** 6–11AM (Innkeeper)"
+    },
+    {
+      "person_id": "alyce",
+      "section": "On Shift Duties",
+      "content": "★ Respond to artist requests via WhatsApp, looping in necessary teams via Slack\n★ Maintain + monitor backstage - refill coffee, snacks etc, check wristbands\n★ When necessary, check in and orient incoming artists\n★ Clean and restock bathroom\n★ Communicate to shuttle drivers via Slack\n★ Assist staff seeking their meal token packets where necessary.\n★ Receive cash drops and meal token drops\n★ Review handover at beginning of shift / write handover at the end."
+    },
+    {
+      "person_id": "alyce",
+      "section": "Handover",
+      "content": "_(slack #artist-care)_\n\n■ Start: read the latest handover in #artist-care — outstanding items to follow up, gear stored backstage & who it belongs to, artists already on site, any soundcheck/set time changes.\n■ End: post your handover to #artist-care — artists on site, pending actions, supplies needed, set time changes, gear moved etc."
+    },
+    {
+      "person_id": "alyce",
+      "section": "Pre-set Artist Comms",
+      "content": "■ One hour before soundcheck/set - see if the artist is on site. If not, remind them which shuttle to catch to be at SC/set on time."
+    },
+    {
+      "person_id": "alyce",
+      "section": "Artist Orientation Checklist",
+      "content": "★ Welcome the artist backstage, offer to help with bags/gear. Label it with tape (artist name) and store it in the backstage office (right of entrance, before the stairs) — log it in the handover.\n★ Offer food or drink.\n★ Orange wristbands for performers only\n★ Explain backstage access: orange wristband only, and guests must be accompanied by the artist.\n★ Introduce them to the team, explaining the Innkeeper and where to make contact (WhatsApp).\n★ WiFi network: campsacajewa /password: rangerron\n★ Artist microsite orientation — we can print it out if they prefer.\n★ Give them a map — highlight their set time and location on the map.\n★ Give them their packet — confirm they have their meal tokens and 8 drink tickets. Confirm any allergies or dietary needs.\n★ If staying in a hotel, give them their key and orient them with the shuttle. If we haven't already dropped snacks and water in their room, give them a bag to take.\n★ If they're staying in a cabin, highlight where it is on the map.\n★ Note their portrait time and location\n★ If rain, explain that we'll notify them (whatsapp and updated microsite)\n★ If they have a personal driver, show them where to contact their driver.\n★ EMT location and Safe Rave testing.\n★ Explain who the safe space monitors are, and that any concerns can go to the stage manager or Innkeeper."
     },
     {
       "person_id": "briana_milman",
@@ -2263,17 +2217,33 @@ window.DEMO_DATA = {
       "phone": "",
       "role": "",
       "section": "Meals",
-      "content": "Check in with the innkeeper for your meals.\n\nYour **green wristband** gets you **50% off coffee** at 109 Montrose — coffee only, not available on other items.",
+      "content": "Check in with The Innkeeper for your meals.\n\nYour green wristband gets you 50% off coffee at 109 Montrose — coffee only, not available on other items.",
       "parking": ""
     },
     {
       "person_id": "briana_milman",
-      "name": "",
-      "phone": "",
-      "role": "",
       "section": "Shifts",
-      "content": "**Thursday June 11:** 2:30–7:30PM (Innkeeper)\n**Friday June 12:** 11PM–6:30AM (Innkeeper)\n**Saturday June 13:** 4–9PM (Innkeeper)",
-      "parking": ""
+      "content": "Thursday June 11: 2:30–7:30PM (Innkeeper) Friday June 12: 11PM–6:30AM (Innkeeper) Saturday June 13: 4–9PM (Innkeeper)"
+    },
+    {
+      "person_id": "briana_milman",
+      "section": "Primary Duties",
+      "content": "★ Check in and orient incoming artists\n★ Make sure artists get to their sets and are received after their performance\n★ Attend to artist needs across the site\n★ Help facilitate portraits\n★ Support The Innkeeper in maintaining back stage."
+    },
+    {
+      "person_id": "briana_milman",
+      "section": "Basic Shift Schedule",
+      "content": "-Check handover at beginning of shift\n-Review upcoming hours\n-Receive and orient artists / respond to requests from The Innkeeper\n-Confirm that the artist is at the stage 20 minutes before set.\n-At end of shift, write handover note\n\nNote: for late night performers, remind them of dining hours.\n\nHandover - start & end of shift (slack #artist-care)\n■ Start: read the latest handover in #artist-care -- outstanding items to follow up, gear stored backstage & who it belongs to, artists already on site, any soundcheck/set time changes.\n■ End: post your handover to #artist-care - artists on site, pending actions, supplies needed, set time changes, gear moved etc."
+    },
+    {
+      "person_id": "briana_milman",
+      "section": "Handover",
+      "content": "_(slack #artist-care)_\n\n■ Start: read the latest handover in #artist-care — outstanding items to follow up, gear stored backstage & who it belongs to, artists already on site, any soundcheck/set time changes.\n■ End: post your handover to #artist-care — artists on site, pending actions, supplies needed, set time changes, gear moved etc."
+    },
+    {
+      "person_id": "briana_milman",
+      "section": "Artist Orientation Checklist",
+      "content": "★ Welcome the artist backstage, offer to help with bags/gear. Label it with tape (artist name) and store it in the backstage office (right of entrance, before the stairs) — log it in the handover.\n★ Offer food or drink.\n★ Orange wristbands for performers only\n★ Explain backstage access: orange wristband only, and guests must be accompanied by the artist.\n★ Introduce them to the team, explaining the Innkeeper and where to make contact (WhatsApp).\n★ WiFi network: campsacajewa /password: rangerron\n★ Artist microsite orientation — we can print it out if they prefer.\n★ Give them a map — highlight their set time and location on the map.\n★ Give them their packet — confirm they have their meal tokens and 8 drink tickets. Confirm any allergies or dietary needs.\n★ If staying in a hotel, give them their key and orient them with the shuttle. If we haven't already dropped snacks and water in their room, give them a bag to take.\n★ If they're staying in a cabin, highlight where it is on the map.\n★ Note their portrait time and location\n★ If rain, explain that we'll notify them (whatsapp and updated microsite)\n★ If they have a personal driver, show them where to contact their driver.\n★ EMT location and Safe Rave testing.\n★ Explain who the safe space monitors are, and that any concerns can go to the stage manager or Innkeeper."
     },
     {
       "person_id": "davis",
@@ -2291,17 +2261,33 @@ window.DEMO_DATA = {
       "phone": "",
       "role": "",
       "section": "Meals",
-      "content": "Check in with the innkeeper for your meals.\n\nYour **green wristband** gets you **50% off coffee** at 109 Montrose — coffee only, not available on other items.",
+      "content": "Check in with The Innkeeper for your meals.\n\nYour green wristband gets you 50% off coffee at 109 Montrose — coffee only, not available on other items.",
       "parking": ""
     },
     {
       "person_id": "davis",
-      "name": "",
-      "phone": "",
-      "role": "",
       "section": "Shifts",
-      "content": "**Thursday June 11:** 7:30PM–12:30AM\n**Friday June 12:** 3–9PM\n**Saturday June 13:** 9PM–3AM",
-      "parking": ""
+      "content": "Thursday June 11: 7:30PM–12:30AM Friday June 12: 3–9PM Saturday June 13: 9PM–3AM"
+    },
+    {
+      "person_id": "davis",
+      "section": "Primary Duties",
+      "content": "★ Check in and orient incoming artists\n★ Make sure artists get to their sets and are received after their performance\n★ Attend to artist needs across the site\n★ Help facilitate portraits\n★ Support The Innkeeper in maintaining back stage."
+    },
+    {
+      "person_id": "davis",
+      "section": "Basic Shift Schedule",
+      "content": "-Check handover at beginning of shift\n-Review upcoming hours\n-Receive and orient artists / respond to requests from The Innkeeper\n-Confirm that the artist is at the stage 20 minutes before set.\n-At end of shift, write handover note\n\nNote: for late night performers, remind them of dining hours.\n\nHandover - start & end of shift (slack #artist-care)\n■ Start: read the latest handover in #artist-care -- outstanding items to follow up, gear stored backstage & who it belongs to, artists already on site, any soundcheck/set time changes.\n■ End: post your handover to #artist-care - artists on site, pending actions, supplies needed, set time changes, gear moved etc."
+    },
+    {
+      "person_id": "davis",
+      "section": "Handover",
+      "content": "_(slack #artist-care)_\n\n■ Start: read the latest handover in #artist-care — outstanding items to follow up, gear stored backstage & who it belongs to, artists already on site, any soundcheck/set time changes.\n■ End: post your handover to #artist-care — artists on site, pending actions, supplies needed, set time changes, gear moved etc."
+    },
+    {
+      "person_id": "davis",
+      "section": "Artist Orientation Checklist",
+      "content": "★ Welcome the artist backstage, offer to help with bags/gear. Label it with tape (artist name) and store it in the backstage office (right of entrance, before the stairs) — log it in the handover.\n★ Offer food or drink.\n★ Orange wristbands for performers only\n★ Explain backstage access: orange wristband only, and guests must be accompanied by the artist.\n★ Introduce them to the team, explaining the Innkeeper and where to make contact (WhatsApp).\n★ WiFi network: campsacajewa /password: rangerron\n★ Artist microsite orientation — we can print it out if they prefer.\n★ Give them a map — highlight their set time and location on the map.\n★ Give them their packet — confirm they have their meal tokens and 8 drink tickets. Confirm any allergies or dietary needs.\n★ If staying in a hotel, give them their key and orient them with the shuttle. If we haven't already dropped snacks and water in their room, give them a bag to take.\n★ If they're staying in a cabin, highlight where it is on the map.\n★ Note their portrait time and location\n★ If rain, explain that we'll notify them (whatsapp and updated microsite)\n★ If they have a personal driver, show them where to contact their driver.\n★ EMT location and Safe Rave testing.\n★ Explain who the safe space monitors are, and that any concerns can go to the stage manager or Innkeeper."
     },
     {
       "person_id": "elsa_henderson",
@@ -2319,17 +2305,33 @@ window.DEMO_DATA = {
       "phone": "",
       "role": "",
       "section": "Meals",
-      "content": "Check in with the innkeeper for your meals.\n\nYour **green wristband** gets you **50% off coffee** at 109 Montrose — coffee only, not available on other items.",
+      "content": "Check in with The Innkeeper for your meals.\n\nYour green wristband gets you 50% off coffee at 109 Montrose — coffee only, not available on other items.",
       "parking": ""
     },
     {
       "person_id": "elsa_henderson",
-      "name": "",
-      "phone": "",
-      "role": "",
       "section": "Shifts",
-      "content": "**Friday June 12:** 9AM–2PM (Innkeeper)\n**Saturday June 13:** 10AM–3PM (Innkeeper)\n**Sunday June 14:** 11AM–2PM (Innkeeper)",
-      "parking": ""
+      "content": "Friday June 12: 9AM–2PM (Innkeeper) Saturday June 13: 10AM–3PM (Innkeeper) Sunday June 14: 11AM–2PM (Innkeeper)"
+    },
+    {
+      "person_id": "elsa_henderson",
+      "section": "On Shift Duties",
+      "content": "★ Respond to artist requests via WhatsApp, looping in necessary teams via Slack\n★ Maintain + monitor backstage - refill coffee, snacks etc, check wristbands\n★ When necessary, check in and orient incoming artists\n★ Clean and restock bathroom\n★ Communicate to shuttle drivers via Slack\n★ Assist staff seeking their meal token packets where necessary.\n★ Receive cash drops and meal token drops\n★Review handover at beginning of shift / write handover at the end.\n\nHandover - start & end of shift (slack #artist-care)\n■ Start: read the latest handover in #artist-care -- outstanding items to follow up, gear stored backstage & who it belongs to, artists already on site, any soundcheck/set time changes.\n■ End: post your handover to #artist-care - artists on site, pending actions, supplies needed, set time changes, gear moved etc."
+    },
+    {
+      "person_id": "elsa_henderson",
+      "section": "Handover",
+      "content": "_(slack #artist-care)_\n\n■ Start: read the latest handover in #artist-care — outstanding items to follow up, gear stored backstage & who it belongs to, artists already on site, any soundcheck/set time changes.\n■ End: post your handover to #artist-care — artists on site, pending actions, supplies needed, set time changes, gear moved etc."
+    },
+    {
+      "person_id": "elsa_henderson",
+      "section": "Pre-set Artist Comms",
+      "content": "■ One hour before soundcheck/set - see if the artist is on site. If not, remind them which shuttle to catch to be at SC/set on time."
+    },
+    {
+      "person_id": "elsa_henderson",
+      "section": "Artist Orientation Checklist",
+      "content": "★ Welcome the artist backstage, offer to help with bags/gear. Label it with tape (artist name) and store it in the backstage office (right of entrance, before the stairs) — log it in the handover.\n★ Offer food or drink.\n★ Orange wristbands for performers only\n★ Explain backstage access: orange wristband only, and guests must be accompanied by the artist.\n★ Introduce them to the team, explaining the Innkeeper and where to make contact (WhatsApp).\n★ WiFi network: campsacajewa /password: rangerron\n★ Artist microsite orientation — we can print it out if they prefer.\n★ Give them a map — highlight their set time and location on the map.\n★ Give them their packet — confirm they have their meal tokens and 8 drink tickets. Confirm any allergies or dietary needs.\n★ If staying in a hotel, give them their key and orient them with the shuttle. If we haven't already dropped snacks and water in their room, give them a bag to take.\n★ If they're staying in a cabin, highlight where it is on the map.\n★ Note their portrait time and location\n★ If rain, explain that we'll notify them (whatsapp and updated microsite)\n★ If they have a personal driver, show them where to contact their driver.\n★ EMT location and Safe Rave testing.\n★ Explain who the safe space monitors are, and that any concerns can go to the stage manager or Innkeeper."
     },
     {
       "person_id": "gina",
@@ -2347,17 +2349,33 @@ window.DEMO_DATA = {
       "phone": "",
       "role": "",
       "section": "Meals",
-      "content": "Check in with the innkeeper for your meals.\n\nYour **green wristband** gets you **50% off coffee** at 109 Montrose — coffee only, not available on other items.",
+      "content": "Check in with The Innkeeper for your meals.\n\nYour green wristband gets you 50% off coffee at 109 Montrose — coffee only, not available on other items.",
       "parking": ""
     },
     {
       "person_id": "gina",
-      "name": "",
-      "phone": "",
-      "role": "",
       "section": "Shifts",
-      "content": "**Thursday June 11:** 10AM–3PM (Innkeeper)\n**Saturday June 13:** 12–5AM\n**Sunday June 14:** 1–6AM",
-      "parking": ""
+      "content": "Thursday June 11: 10AM -3PM(Innkeeper) Saturday June 13: 12–5AM(Innkeeper) Sunday June 14: 1–6AM(Innkeeper)"
+    },
+    {
+      "person_id": "gina",
+      "section": "On Shift Duties",
+      "content": "★ Respond to artist requests via WhatsApp, looping in necessary teams via Slack\n★ Maintain + monitor backstage - refill coffee, snacks etc, check wristbands\n★ When necessary, check in and orient incoming artists\n★ Clean and restock bathroom\n★ Communicate to shuttle drivers via Slack\n★ Assist staff seeking their meal token packets where necessary.\n★ Receive cash drops and meal token drops\n★Review handover at beginning of shift / write handover at the end.\n\nHandover - start & end of shift (slack #artist-care)\n■ Start: read the latest handover in #artist-care -- outstanding items to follow up, gear stored backstage & who it belongs to, artists already on site, any soundcheck/set time changes.\n■ End: post your handover to #artist-care - artists on site, pending actions, supplies needed, set time changes, gear moved etc."
+    },
+    {
+      "person_id": "gina",
+      "section": "Handover",
+      "content": "_(slack #artist-care)_\n\n■ Start: read the latest handover in #artist-care — outstanding items to follow up, gear stored backstage & who it belongs to, artists already on site, any soundcheck/set time changes.\n■ End: post your handover to #artist-care — artists on site, pending actions, supplies needed, set time changes, gear moved etc."
+    },
+    {
+      "person_id": "gina",
+      "section": "Pre-set Artist Comms",
+      "content": "■ One hour before soundcheck/set - see if the artist is on site. If not, remind them which shuttle to catch to be at SC/set on time."
+    },
+    {
+      "person_id": "gina",
+      "section": "Artist Orientation Checklist",
+      "content": "★ Welcome the artist backstage, offer to help with bags/gear. Label it with tape (artist name) and store it in the backstage office (right of entrance, before the stairs) — log it in the handover.\n★ Offer food or drink.\n★ Orange wristbands for performers only\n★ Explain backstage access: orange wristband only, and guests must be accompanied by the artist.\n★ Introduce them to the team, explaining the Innkeeper and where to make contact (WhatsApp).\n★ WiFi network: campsacajewa /password: rangerron\n★ Artist microsite orientation — we can print it out if they prefer.\n★ Give them a map — highlight their set time and location on the map.\n★ Give them their packet — confirm they have their meal tokens and 8 drink tickets. Confirm any allergies or dietary needs.\n★ If staying in a hotel, give them their key and orient them with the shuttle. If we haven't already dropped snacks and water in their room, give them a bag to take.\n★ If they're staying in a cabin, highlight where it is on the map.\n★ Note their portrait time and location\n★ If rain, explain that we'll notify them (whatsapp and updated microsite)\n★ If they have a personal driver, show them where to contact their driver.\n★ EMT location and Safe Rave testing.\n★ Explain who the safe space monitors are, and that any concerns can go to the stage manager or Innkeeper."
     },
     {
       "person_id": "helen_hazelwood",
@@ -2375,17 +2393,33 @@ window.DEMO_DATA = {
       "phone": "",
       "role": "",
       "section": "Meals",
-      "content": "Check in with the innkeeper for your meals.\n\nYour **green wristband** gets you **50% off coffee** at 109 Montrose — coffee only, not available on other items.",
+      "content": "Check in with The Innkeeper for your meals.\n\nYour green wristband gets you 50% off coffee at 109 Montrose — coffee only, not available on other items.",
       "parking": ""
     },
     {
       "person_id": "helen_hazelwood",
-      "name": "",
-      "phone": "",
-      "role": "",
       "section": "Shifts",
-      "content": "**Thursday June 11:** 3–8PM (Innkeeper)\n**Friday June 12:** 2–7PM (Innkeeper)\n**Saturday June 13:** 8PM–1AM (Innkeeper)",
-      "parking": ""
+      "content": "Thursday June 11: 3–8PM (Innkeeper) Friday June 12: 2–7PM (Innkeeper) Saturday June 13: 8PM–1AM (Innkeeper)"
+    },
+    {
+      "person_id": "helen_hazelwood",
+      "section": "On Shift Duties",
+      "content": "★ Respond to artist requests via WhatsApp, looping in necessary teams via Slack\n★ Maintain + monitor backstage - refill coffee, snacks etc, check wristbands\n★ When necessary, check in and orient incoming artists\n★ Clean and restock bathroom\n★ Communicate to shuttle drivers via Slack\n★ Assist staff seeking their meal token packets where necessary.\n★ Receive cash drops and meal token drops\n★Review handover at beginning of shift / write handover at the end.\n\nHandover - start & end of shift (slack #artist-care)\n■ Start: read the latest handover in #artist-care -- outstanding items to follow up, gear stored backstage & who it belongs to, artists already on site, any soundcheck/set time changes.\n■ End: post your handover to #artist-care - artists on site, pending actions, supplies needed, set time changes, gear moved etc."
+    },
+    {
+      "person_id": "helen_hazelwood",
+      "section": "Handover",
+      "content": "_(slack #artist-care)_\n\n■ Start: read the latest handover in #artist-care — outstanding items to follow up, gear stored backstage & who it belongs to, artists already on site, any soundcheck/set time changes.\n■ End: post your handover to #artist-care — artists on site, pending actions, supplies needed, set time changes, gear moved etc."
+    },
+    {
+      "person_id": "helen_hazelwood",
+      "section": "Pre-set Artist Comms",
+      "content": "■ One hour before soundcheck/set - see if the artist is on site. If not, remind them which shuttle to catch to be at SC/set on time."
+    },
+    {
+      "person_id": "helen_hazelwood",
+      "section": "Artist Orientation Checklist",
+      "content": "★ Welcome the artist backstage, offer to help with bags/gear. Label it with tape (artist name) and store it in the backstage office (right of entrance, before the stairs) — log it in the handover.\n★ Offer food or drink.\n★ Orange wristbands for performers only\n★ Explain backstage access: orange wristband only, and guests must be accompanied by the artist.\n★ Introduce them to the team, explaining the Innkeeper and where to make contact (WhatsApp).\n★ WiFi network: campsacajewa /password: rangerron\n★ Artist microsite orientation — we can print it out if they prefer.\n★ Give them a map — highlight their set time and location on the map.\n★ Give them their packet — confirm they have their meal tokens and 8 drink tickets. Confirm any allergies or dietary needs.\n★ If staying in a hotel, give them their key and orient them with the shuttle. If we haven't already dropped snacks and water in their room, give them a bag to take.\n★ If they're staying in a cabin, highlight where it is on the map.\n★ Note their portrait time and location\n★ If rain, explain that we'll notify them (whatsapp and updated microsite)\n★ If they have a personal driver, show them where to contact their driver.\n★ EMT location and Safe Rave testing.\n★ Explain who the safe space monitors are, and that any concerns can go to the stage manager or Innkeeper."
     },
     {
       "person_id": "june_curry",
@@ -2403,17 +2437,18 @@ window.DEMO_DATA = {
       "phone": "",
       "role": "",
       "section": "Meals",
-      "content": "Check in with the innkeeper for your meals.\n\nYour **green wristband** gets you **50% off coffee** at 109 Montrose — coffee only, not available on other items.",
+      "content": "Check in with The Innkeeper for your meals.\n\nYour green wristband gets you 50% off coffee at 109 Montrose — coffee only, not available on other items.",
       "parking": ""
     },
     {
       "person_id": "june_curry",
-      "name": "",
-      "phone": "",
-      "role": "",
       "section": "Shifts",
-      "content": "**Friday June 12:** 2PM–2AM\n**Saturday June 13:** 11AM–10:30PM\n**Sunday June 14:** 9AM–11PM",
-      "parking": ""
+      "content": "Thursday 10am-EOD Friday June 12: 2PM–2AM Saturday June 13: 11AM–10:30PM Sunday June 14: 9AM -11PM"
+    },
+    {
+      "person_id": "june_curry",
+      "section": "On Shift Duties",
+      "content": "Run it.\n\nOrder bagels for Sunday morning"
     },
     {
       "person_id": "lani",
@@ -2431,17 +2466,33 @@ window.DEMO_DATA = {
       "phone": "",
       "role": "",
       "section": "Meals",
-      "content": "Check in with the innkeeper for your meals.\n\nYour **green wristband** gets you **50% off coffee** at 109 Montrose — coffee only, not available on other items.",
+      "content": "Check in with The Innkeeper for your meals.\n\nYour green wristband gets you 50% off coffee at 109 Montrose — coffee only, not available on other items.",
       "parking": ""
     },
     {
       "person_id": "lani",
-      "name": "",
-      "phone": "",
-      "role": "",
       "section": "Shifts",
-      "content": "**Friday June 12:** 5–11PM\n**Saturday June 13:** 11AM–4PM\n**Sunday June 14:** 9AM–bus departure",
-      "parking": ""
+      "content": "Friday June 12: 5–11PM Saturday June 13: 11AM–4PM Sunday June 14: 9AM–bus departure"
+    },
+    {
+      "person_id": "lani",
+      "section": "Primary Duties",
+      "content": "★ Check in and orient incoming artists\n★ Make sure artists get to their sets and are received after their performance\n★ Attend to artist needs across the site\n★ Help facilitate portraits\n★ Support The Innkeeper in maintaining back stage."
+    },
+    {
+      "person_id": "lani",
+      "section": "Basic Shift Schedule",
+      "content": "-Check handover at beginning of shift\n-Review upcoming hours\n-Receive and orient artists / respond to requests from The Innkeeper\n-Confirm that the artist is at the stage 20 minutes before set.\n-At end of shift, write handover note\n\nNote: for late night performers, remind them of dining hours.\n\nHandover - start & end of shift (slack #artist-care)\n■ Start: read the latest handover in #artist-care -- outstanding items to follow up, gear stored backstage & who it belongs to, artists already on site, any soundcheck/set time changes.\n■ End: post your handover to #artist-care - artists on site, pending actions, supplies needed, set time changes, gear moved etc."
+    },
+    {
+      "person_id": "lani",
+      "section": "Handover",
+      "content": "_(slack #artist-care)_\n\n■ Start: read the latest handover in #artist-care — outstanding items to follow up, gear stored backstage & who it belongs to, artists already on site, any soundcheck/set time changes.\n■ End: post your handover to #artist-care — artists on site, pending actions, supplies needed, set time changes, gear moved etc."
+    },
+    {
+      "person_id": "lani",
+      "section": "Artist Orientation Checklist",
+      "content": "★ Welcome the artist backstage, offer to help with bags/gear. Label it with tape (artist name) and store it in the backstage office (right of entrance, before the stairs) — log it in the handover.\n★ Offer food or drink.\n★ Orange wristbands for performers only\n★ Explain backstage access: orange wristband only, and guests must be accompanied by the artist.\n★ Introduce them to the team, explaining the Innkeeper and where to make contact (WhatsApp).\n★ WiFi network: campsacajewa /password: rangerron\n★ Artist microsite orientation — we can print it out if they prefer.\n★ Give them a map — highlight their set time and location on the map.\n★ Give them their packet — confirm they have their meal tokens and 8 drink tickets. Confirm any allergies or dietary needs.\n★ If staying in a hotel, give them their key and orient them with the shuttle. If we haven't already dropped snacks and water in their room, give them a bag to take.\n★ If they're staying in a cabin, highlight where it is on the map.\n★ Note their portrait time and location\n★ If rain, explain that we'll notify them (whatsapp and updated microsite)\n★ If they have a personal driver, show them where to contact their driver.\n★ EMT location and Safe Rave testing.\n★ Explain who the safe space monitors are, and that any concerns can go to the stage manager or Innkeeper."
     },
     {
       "person_id": "laura_perez_harris",
@@ -2459,17 +2510,33 @@ window.DEMO_DATA = {
       "phone": "",
       "role": "",
       "section": "Meals",
-      "content": "Check in with the innkeeper for your meals.\n\nYour **green wristband** gets you **50% off coffee** at 109 Montrose — coffee only, not available on other items.",
+      "content": "Check in with The Innkeeper for your meals.\n\nYour green wristband gets you 50% off coffee at 109 Montrose — coffee only, not available on other items.",
       "parking": ""
     },
     {
       "person_id": "laura_perez_harris",
-      "name": "",
-      "phone": "",
-      "role": "",
       "section": "Shifts",
-      "content": "**Friday June 12:** 11:30AM–4:30PM\n**Saturday June 13:** 1–6PM\n**Sunday June 14:** 3–9AM",
-      "parking": ""
+      "content": "Friday June 12: 11:30AM–4:30PM Saturday June 13: 1–6PM Sunday June 14: 3–9AM"
+    },
+    {
+      "person_id": "laura_perez_harris",
+      "section": "Primary Duties",
+      "content": "★ Check in and orient incoming artists\n★ Make sure artists get to their sets and are received after their performance\n★ Attend to artist needs across the site\n★ Help facilitate portraits\n★ Support The Innkeeper in maintaining back stage."
+    },
+    {
+      "person_id": "laura_perez_harris",
+      "section": "Basic Shift Schedule",
+      "content": "-Check handover at beginning of shift\n-Review upcoming hours\n-Receive and orient artists / respond to requests from The Innkeeper\n-Confirm that the artist is at the stage 20 minutes before set.\n-At end of shift, write handover note\n\nNote: for late night performers, remind them of dining hours.\n\nHandover - start & end of shift (slack #artist-care)\n■ Start: read the latest handover in #artist-care -- outstanding items to follow up, gear stored backstage & who it belongs to, artists already on site, any soundcheck/set time changes.\n■ End: post your handover to #artist-care - artists on site, pending actions, supplies needed, set time changes, gear moved etc."
+    },
+    {
+      "person_id": "laura_perez_harris",
+      "section": "Handover",
+      "content": "_(slack #artist-care)_\n\n■ Start: read the latest handover in #artist-care — outstanding items to follow up, gear stored backstage & who it belongs to, artists already on site, any soundcheck/set time changes.\n■ End: post your handover to #artist-care — artists on site, pending actions, supplies needed, set time changes, gear moved etc."
+    },
+    {
+      "person_id": "laura_perez_harris",
+      "section": "Artist Orientation Checklist",
+      "content": "★ Welcome the artist backstage, offer to help with bags/gear. Label it with tape (artist name) and store it in the backstage office (right of entrance, before the stairs) — log it in the handover.\n★ Offer food or drink.\n★ Orange wristbands for performers only\n★ Explain backstage access: orange wristband only, and guests must be accompanied by the artist.\n★ Introduce them to the team, explaining the Innkeeper and where to make contact (WhatsApp).\n★ WiFi network: campsacajewa /password: rangerron\n★ Artist microsite orientation — we can print it out if they prefer.\n★ Give them a map — highlight their set time and location on the map.\n★ Give them their packet — confirm they have their meal tokens and 8 drink tickets. Confirm any allergies or dietary needs.\n★ If staying in a hotel, give them their key and orient them with the shuttle. If we haven't already dropped snacks and water in their room, give them a bag to take.\n★ If they're staying in a cabin, highlight where it is on the map.\n★ Note their portrait time and location\n★ If rain, explain that we'll notify them (whatsapp and updated microsite)\n★ If they have a personal driver, show them where to contact their driver.\n★ EMT location and Safe Rave testing.\n★ Explain who the safe space monitors are, and that any concerns can go to the stage manager or Innkeeper."
     },
     {
       "person_id": "peregrine",
@@ -2487,17 +2554,33 @@ window.DEMO_DATA = {
       "phone": "",
       "role": "",
       "section": "Meals",
-      "content": "Check in with the innkeeper for your meals.\n\nYour **green wristband** gets you **50% off coffee** at 109 Montrose — coffee only, not available on other items.",
+      "content": "Check in with The Innkeeper for your meals.\n\nYour green wristband gets you 50% off coffee at 109 Montrose — coffee only, not available on other items.",
       "parking": ""
     },
     {
       "person_id": "peregrine",
-      "name": "",
-      "phone": "",
-      "role": "",
       "section": "Shifts",
-      "content": "**Friday June 12:** 7PM–12AM (Innkeeper)\n**Saturday June 13:** 3–8PM (Innkeeper)\n**Sunday June 14:** 11AM–2PM + breakdown (Innkeeper)",
-      "parking": ""
+      "content": "Friday June 12: 7PM–12AM (Innkeeper) Saturday June 13: 3–8PM (Innkeeper) Sunday June 14: 12PM (Breakdown)"
+    },
+    {
+      "person_id": "peregrine",
+      "section": "On Shift Duties",
+      "content": "★ Respond to artist requests via WhatsApp, looping in necessary teams via Slack\n★ Maintain + monitor backstage - refill coffee, snacks etc, check wristbands\n★ When necessary, check in and orient incoming artists\n★ Clean and restock bathroom\n★ Communicate to shuttle drivers via Slack\n★ Assist staff seeking their meal token packets where necessary.\n★ Receive cash drops and meal token drops\n★Review handover at beginning of shift / write handover at the end.\n\nHandover - start & end of shift (slack #artist-care)\n■ Start: read the latest handover in #artist-care -- outstanding items to follow up, gear stored backstage & who it belongs to, artists already on site, any soundcheck/set time changes.\n■ End: post your handover to #artist-care - artists on site, pending actions, supplies needed, set time changes, gear moved etc."
+    },
+    {
+      "person_id": "peregrine",
+      "section": "Handover",
+      "content": "_(slack #artist-care)_\n\n■ Start: read the latest handover in #artist-care — outstanding items to follow up, gear stored backstage & who it belongs to, artists already on site, any soundcheck/set time changes.\n■ End: post your handover to #artist-care — artists on site, pending actions, supplies needed, set time changes, gear moved etc."
+    },
+    {
+      "person_id": "peregrine",
+      "section": "Pre-set Artist Comms",
+      "content": "■ One hour before soundcheck/set - see if the artist is on site. If not, remind them which shuttle to catch to be at SC/set on time."
+    },
+    {
+      "person_id": "peregrine",
+      "section": "Artist Orientation Checklist",
+      "content": "★ Welcome the artist backstage, offer to help with bags/gear. Label it with tape (artist name) and store it in the backstage office (right of entrance, before the stairs) — log it in the handover.\n★ Offer food or drink.\n★ Orange wristbands for performers only\n★ Explain backstage access: orange wristband only, and guests must be accompanied by the artist.\n★ Introduce them to the team, explaining the Innkeeper and where to make contact (WhatsApp).\n★ WiFi network: campsacajewa /password: rangerron\n★ Artist microsite orientation — we can print it out if they prefer.\n★ Give them a map — highlight their set time and location on the map.\n★ Give them their packet — confirm they have their meal tokens and 8 drink tickets. Confirm any allergies or dietary needs.\n★ If staying in a hotel, give them their key and orient them with the shuttle. If we haven't already dropped snacks and water in their room, give them a bag to take.\n★ If they're staying in a cabin, highlight where it is on the map.\n★ Note their portrait time and location\n★ If rain, explain that we'll notify them (whatsapp and updated microsite)\n★ If they have a personal driver, show them where to contact their driver.\n★ EMT location and Safe Rave testing.\n★ Explain who the safe space monitors are, and that any concerns can go to the stage manager or Innkeeper."
     },
     {
       "person_id": "raphaela",
@@ -2515,14 +2598,24 @@ window.DEMO_DATA = {
       "phone": "",
       "role": "",
       "section": "Meals",
-      "content": "Check in with the innkeeper for your meals.\n\nYour **green wristband** gets you **50% off coffee** at 109 Montrose — coffee only, not available on other items.",
+      "content": "Check in with The Innkeeper for your meals.\n\nYour green wristband gets you 50% off coffee at 109 Montrose — coffee only, not available on other items.",
       "parking": ""
+    },
+    {
+      "person_id": "raphaela",
+      "section": "Shifts",
+      "content": "Thursday June 11: 10AM–6:30PM\nFriday June 12: 10AM–2PM\nSaturday June 13: 9AM–11AM"
+    },
+    {
+      "person_id": "raphaela",
+      "section": "On Shift Duties",
+      "content": "Receive artists, support, make sure systems are working"
     }
   ],
   "shuttle_drivers": [
     {
       "section": "Meals",
-      "content": "Check in with the innkeeper for your meals — 1 per shift."
+      "content": "Check in with The Innkeeper for your meals — 1 per shift."
     },
     {
       "section": "Your Role",
@@ -2530,7 +2623,7 @@ window.DEMO_DATA = {
     },
     {
       "section": "Locations",
-      "content": "**Venue:** Camp Sacajawea, 251 White Lake Rd, Sparta NJ 07871\n\n**Hotel:** Econo Lodge, 448 US-206, Newton, NJ 07860"
+      "content": "Venue: Camp Sacajawea, 251 White Lake Rd, Sparta NJ 07871\n\nHotel: Econo Lodge, 448 US-206, Newton, NJ 07860"
     },
     {
       "section": "Team Contacts",
@@ -2538,7 +2631,7 @@ window.DEMO_DATA = {
     },
     {
       "section": "Shuttle Contacts",
-      "content": "Inn Keeper (whatsapp): (646) 464-6590\nArtist Care: Lani (emergency only)\nDay Manager: Mary\nNight Manager: Ronan"
+      "content": "Inn Keeper (whatsapp): (347) 986-7562\nArtist Care: Lani (emergency only)\nDay Manager: Mary\nNight Manager: Ronan"
     },
     {
       "section": "Thursday",
@@ -2558,19 +2651,19 @@ window.DEMO_DATA = {
     },
     {
       "section": "Reminders",
-      "content": "***Please keep receipts for all gas, waters, coffees etc purchased for artists while driving."
+      "content": "Please keep receipts for all gas, waters, coffees etc purchased for artists while driving."
     }
   ],
   "drivers": [
     {
       "person_id": "_shared",
       "section": "Your Role",
-      "content": "You are a direct extension of the Artist Care team. Be warm, professional, and punctual.\n- Keep your phone charged and on at all times during your shift.\n- Gas up the vehicle before your shift. Keep all receipts.\n- Upon artist arrival: drop off at the **Special Access Lot** directly outside of The Inn, help them load into the backstage area, then proceed to the main parking area.\n- Message The Innkeeper (WhatsApp 347 986-7562) upon pickup with your ETA at camp."
+      "content": "You are a direct extension of the Artist Care team. Be warm, professional, and punctual.\n- Keep your phone charged and on at all times during your shift.\n- Gas up the vehicle before your shift. Keep all receipts.\n- Upon artist arrival: drop off at the Special Access Lot directly outside of The Inn, help them load into the backstage area, then proceed to the main parking area.\n- Message The Innkeeper (WhatsApp 347 986-7562) upon pickup with your ETA at camp."
     },
     {
       "person_id": "_shared",
       "section": "Venue & Hotel",
-      "content": "**Camp Sacajawea**\n251 White Lake Rd, Sparta NJ 07871\n\n**Hotel (if staying)**\nEcono Lodge\n448 US-206, Newton, NJ 07860"
+      "content": "Camp Sacajawea\n251 White Lake Rd, Sparta NJ 07871\n\nHotel (if staying)\nEcono Lodge\n448 US-206, Newton, NJ 07860"
     },
     {
       "person_id": "calvin_griffin",
@@ -2590,12 +2683,12 @@ window.DEMO_DATA = {
     {
       "person_id": "calvin_griffin",
       "section": "Itinerary",
-      "content": "**Wednesday:** Text Zirry to coordinate pickup time at the train station for Thursday.\n\n**Thursday:**\n- Pick up zi! at **Netcong train station, Main St. & Rt. 46, Netcong, NJ, 7857**. Message The Innkeeper upon pickup with your ETA at camp.\n- Drop off artist at the Special Access Lot directly outside of The Inn. Help them load into the backstage area and then proceed to the main parking area.\n- Introduce yourself to Kyle Kidd following the Motherboard performance Thursday night to coordinate Friday morning departure.\n\n**Friday:** Drive Motherboard (3 people) back to NYC."
+      "content": "Wednesday:\nText Zirry to coordinate pickup time at the train station for Thursday.\n\nThursday:\n- Pick up zi! at Netcong train station, Main St. & Rt. 46, Netcong, NJ, 7857. Message The Innkeeper upon pickup with your ETA at camp.\n- Drop off artist at the Special Access Lot directly outside of The Inn. Help them load into the backstage area and then proceed to the main parking area.\n- Introduce yourself to Kyle Kidd following the Motherboard performance Thursday night to coordinate Friday morning departure.\n\nFriday:\nDrive Motherboard (3 people) back to NYC."
     },
     {
       "person_id": "calvin_griffin",
       "section": "Reminder",
-      "content": "This is a **volunteer shift**. Your work is an even trade for admission + a parking pass. Thursday welcome dinners must be prepurchased if you choose to enjoy."
+      "content": "This is a volunteer shift. Your work is an even trade for admission + a parking pass. Thursday welcome dinners must be prepurchased if you choose to enjoy."
     },
     {
       "person_id": "francesca",
@@ -2615,17 +2708,17 @@ window.DEMO_DATA = {
     {
       "person_id": "francesca",
       "section": "Artist Info",
-      "content": "**Keiyaa NYC pickup location:** TBC\n**Kianna (gyrofield) departure flight:** United Airlines UA70 EWR 5:55PM"
+      "content": "Keiyaa NYC pickup location: TBC\nKianna (gyrofield) departure flight: United Airlines UA70 EWR 5:55PM"
     },
     {
       "person_id": "francesca",
       "section": "Itinerary",
-      "content": "**Wednesday:** Message Keiyaa and confirm pickup time and location. Important that artist arrives onsite **no later than 11:15am** Thursday.\n\n**Thursday:**\n- 9am: Pickup Keiyaa and 3 band members in NYC, drive to site.\n- Send WhatsApp to Inn Keeper: *\"This is driver Francesca. I have keiyaA with me. ETA at camp is XXpm\"*\n- Drop off artist at the Special Access Lot. Help them load into the backstage area, then proceed to main parking area to receive your wristband and parking pass.\n- Drive them back either Thursday night or Friday am — TBC.\n- Option to pickup another artist in NYC.\n\n**Sunday:** 12pm — Meet Kianna backstage at The Inn. Drive her to EWR for departure."
+      "content": "Wednesday:\nMessage Keiyaa and confirm pickup time and location. Important that artist arrives onsite no later than 11:15am Thursday.\n\nThursday:\n- 9am: Pickup Keiyaa and 3 band members in NYC, drive to site.\n- Send WhatsApp to Inn Keeper: \"This is driver Francesca. I have keiyaA with me. ETA at camp is XXpm\"\n- Drop off artist at the Special Access Lot. Help them load into the backstage area, then proceed to main parking area to receive your wristband and parking pass.\n- Drive them back either Thursday night or Friday am — TBC.\n- Option to pickup another artist in NYC.\n\nSunday:\n12pm — Meet Kianna backstage at The Inn. Drive her to EWR for departure."
     },
     {
       "person_id": "francesca",
       "section": "Payment",
-      "content": "This is a **paid shift**. We pay a flat rate of **$50 for gas and tolls** plus **$25/hour** for driving.\n\nSend your invoice to drippingmusicandarts@gmail.com"
+      "content": "This is a paid shift. We pay a flat rate of $50 for gas and tolls plus $25/hour for driving.\n\nSend your invoice to drippingmusicandarts@gmail.com"
     },
     {
       "person_id": "gabi_sheerer",
@@ -2645,7 +2738,7 @@ window.DEMO_DATA = {
     {
       "person_id": "gabi_sheerer",
       "section": "Itinerary",
-      "content": "**Wednesday:**\n- Pickup gear from two locations:\n  - Nord Keyboard and stand from **Soundhouse AV Rentals**\n  - Bass cabinet with drum hardware from **Trucker's Atlas Ridgewood**\n- Bring bass cab and stands to **Camp Sacajawea**. Setup camping gear before dark. Have dinner with us at camp.\n- Pickup a few more items from camp and bring the keyboard to the Airbnb in NJ. Coordinate items with Daniel.\n\n**Sunday:** 1pm — Pickup the same gear backstage at The Inn. Confirm full gear list. Return to Soundhouse and Trucker's Atlas. Coordinate dropoff time with each."
+      "content": "Wednesday:\n- Pickup gear from two locations:\n- Nord Keyboard and stand from Soundhouse AV Rentals\n- Bass cabinet with drum hardware from Trucker's Atlas Ridgewood\n- Bring bass cab and stands to Camp Sacajawea. Setup camping gear before dark. Have dinner with us at camp.\n- Pickup a few more items from camp and bring the keyboard to the Airbnb in NJ. Coordinate items with Daniel.\n\nSunday:\n1pm — Pickup the same gear backstage at The Inn. Confirm full gear list. Return to Soundhouse and Trucker's Atlas. Coordinate dropoff time with each."
     },
     {
       "person_id": "gabi_sheerer",
@@ -2655,7 +2748,7 @@ window.DEMO_DATA = {
     {
       "person_id": "gabi_sheerer",
       "section": "Reminder",
-      "content": "This is a **volunteer shift**. Your work is an even trade for admission + a parking pass. Thursday welcome dinners must be prepurchased if you choose to enjoy."
+      "content": "This is a volunteer shift. Your work is an even trade for admission + a parking pass. Thursday welcome dinners must be prepurchased if you choose to enjoy."
     },
     {
       "person_id": "gunnar_kauth",
@@ -2675,12 +2768,12 @@ window.DEMO_DATA = {
     {
       "person_id": "gunnar_kauth",
       "section": "Itinerary",
-      "content": "**Thursday:**\n- Pickup microphones and gear from **Crossfire NYC**.\n- By 12pm: Arrive at the Special Access Lot directly outside of The Inn and load gear into the backstage area.\n- Proceed to the main parking area for check-in and parking.\n\n**Sunday:**\n- Pickup the same gear backstage at The Inn. Confirm full gear list.\n- Return gear to Crossfire. Coordinate dropoff time with Crossfire."
+      "content": "Thursday:\n- Pickup microphones and gear from Crossfire NYC.\n- By 12pm: Arrive at the Special Access Lot directly outside of The Inn and load gear into the backstage area.\n- Proceed to the main parking area for check-in and parking.\n\nSunday:\n- Pickup the same gear backstage at The Inn. Confirm full gear list.\n- Return gear to Crossfire. Coordinate dropoff time with Crossfire."
     },
     {
       "person_id": "gunnar_kauth",
       "section": "Reminder",
-      "content": "This is a **volunteer shift**. Your work is an even trade for admission + a parking pass. Thursday welcome dinners must be prepurchased if you choose to enjoy."
+      "content": "This is a volunteer shift. Your work is an even trade for admission + a parking pass. Thursday welcome dinners must be prepurchased if you choose to enjoy."
     },
     {
       "person_id": "mike_sheffield",
@@ -2700,17 +2793,17 @@ window.DEMO_DATA = {
     {
       "person_id": "mike_sheffield",
       "section": "Artist Info",
-      "content": "**Flight arrival:** Air Canada AC7665 — 11:59 AM EWR"
+      "content": "Flight arrival: Air Canada AC7665 — 11:59 AM EWR"
     },
     {
       "person_id": "mike_sheffield",
       "section": "Itinerary",
-      "content": "**Before you go:** Prepare a FujilIIIIIIIIIlta sign and check flight details for status.\n\n**Saturday:**\n- 11:40am: Park at EWR (we will reimburse you) and enter the arrivals area to wait for Yosuke.\n- 12pm: Meet Yosuke inside the airport and bring him to site.\n- Send WhatsApp to Inn Keeper: *\"This is driver Mike. I have Fujita with me. ETA at camp is XXpm\"*\n- Drop off artist at the Special Access Lot directly outside of The Inn. Help them load into the backstage area and then proceed to the main parking area."
+      "content": "Before you go: Prepare a FujilIIIIIIIIIlta sign and check flight details for status.\n\nSaturday:\n- 11:40am: Park at EWR (we will reimburse you) and enter the arrivals area to wait for Yosuke.\n- 12pm: Meet Yosuke inside the airport and bring him to site.\n- Send WhatsApp to Inn Keeper: \"This is driver Mike. I have Fujita with me. ETA at camp is XXpm\"\n- Drop off artist at the Special Access Lot directly outside of The Inn. Help them load into the backstage area and then proceed to the main parking area."
     },
     {
       "person_id": "mike_sheffield",
       "section": "Reminder",
-      "content": "This is a **volunteer shift**. Your work is an even trade for admission + a parking pass. Thursday welcome dinners must be prepurchased if you choose to enjoy."
+      "content": "This is a volunteer shift. Your work is an even trade for admission + a parking pass. Thursday welcome dinners must be prepurchased if you choose to enjoy."
     },
     {
       "person_id": "robin_edgerton",
@@ -2730,17 +2823,17 @@ window.DEMO_DATA = {
     {
       "person_id": "robin_edgerton",
       "section": "Artist Info",
-      "content": "**Mad Professor Flight Arrival:** American Airlines 1832 — 4:40pm EWR"
+      "content": "Mad Professor Flight Arrival: American Airlines 1832 — 4:40pm EWR"
     },
     {
       "person_id": "robin_edgerton",
       "section": "Itinerary",
-      "content": "**Before you go:** Prepare a Mad Professor sign and check flight details for status. Gas up your car before picking up the artist.\n\n**Thursday:**\n- 4:20am: Park at EWR (we will reimburse you) and enter the arrivals area to wait for Neil.\n- 4:40pm: Meet Neil inside the airport and bring him to site.\n- Send WhatsApp to Inn Keeper: *\"This is driver Robin. I have Mad Professor with me. ETA at camp is XXpm\"*\n- Drop off artist at the Special Access Lot directly outside of The Inn. Help them load into the backstage area and then proceed to the main parking area to receive your wristband and parking pass.\n\n**Saturday:** Noon: Take Mad Professor to JFK. He flies on Norse Air Flight Z0702."
+      "content": "Before you go: Prepare a Mad Professor sign and check flight details for status. Gas up your car before picking up the artist.\n\nThursday:\n- 4:20am: Park at EWR (we will reimburse you) and enter the arrivals area to wait for Neil.\n- 4:40pm: Meet Neil inside the airport and bring him to site.\n- Send WhatsApp to Inn Keeper: \"This is driver Robin. I have Mad Professor with me. ETA at camp is XXpm\"\n- Drop off artist at the Special Access Lot directly outside of The Inn. Help them load into the backstage area and then proceed to the main parking area to receive your wristband and parking pass.\n\nSaturday:\nNoon: Take Mad Professor to JFK. He flies on Norse Air Flight Z0702."
     },
     {
       "person_id": "robin_edgerton",
       "section": "Reminder",
-      "content": "This is a **volunteer shift**. Your work is an even trade for admission + a parking pass. Thursday welcome dinners must be prepurchased if you choose to enjoy."
+      "content": "This is a volunteer shift. Your work is an even trade for admission + a parking pass. Thursday welcome dinners must be prepurchased if you choose to enjoy."
     },
     {
       "person_id": "zach_steinman",
@@ -2760,17 +2853,17 @@ window.DEMO_DATA = {
     {
       "person_id": "zach_steinman",
       "section": "Artist Info",
-      "content": "**Omari Arrival Flight:** Alaska 294 — EWR 5:30PM\n**Khari Arrival Flight:** Delta 2527 — EWR 12:00AM\n**Departure Flight:** Alaska 290 — EWR 5:00PM"
+      "content": "Omari Arrival Flight: Alaska 294 — EWR 5:30PM\nKhari Arrival Flight: Delta 2527 — EWR 12:00AM\nDeparture Flight: Alaska 290 — EWR 5:00PM"
     },
     {
       "person_id": "zach_steinman",
       "section": "Itinerary",
-      "content": "**Before you go:** Prepare a Black Decelerant sign and check flight details for status. Gas up your car before picking up the artist. Option to check in and set up camp before pickups if preferred.\n\n**Thursday:**\n- 5:10am: Park at EWR (we will reimburse you) and enter the arrivals area to wait for Omari.\n- 5:30pm: Meet Omari inside the airport and bring him to the site.\n- Send WhatsApp to Inn Keeper: *\"This is driver Zach. I have Omari/Black Decelerant with me. ETA at camp is XXpm\"*\n- Drop off artist at the Special Access Lot directly outside of The Inn. Help them load into the backstage area. Meet the Innkeeper (backstage staff) to receive your wristband and **Special Access Parking pass. Keep your car parked in the Special Access Lot.**\n- 10:45pm: Depart for EWR.\n- 11:45pm: Park at EWR and enter the arrivals area to wait for Khari.\n- 12am: Meet Khari and drive him to the Hotel.\n- Return to camp and park in the **Main parking lot** (not the Special Access Lot).\n\n**Sunday:** 12pm — Meet both Khari and Omari backstage at The Inn and drive them to EWR."
+      "content": "Before you go: Prepare a Black Decelerant sign and check flight details for status. Gas up your car before picking up the artist. Option to check in and set up camp before pickups if preferred.\n\nThursday:\n- 5:10am: Park at EWR (we will reimburse you) and enter the arrivals area to wait for Omari.\n- 5:30pm: Meet Omari inside the airport and bring him to the site.\n- Send WhatsApp to Inn Keeper: \"This is driver Zach. I have Omari/Black Decelerant with me. ETA at camp is XXpm\"\n- Drop off artist at the Special Access Lot directly outside of The Inn. Help them load into the backstage area. Meet the Innkeeper (backstage staff) to receive your wristband and Special Access Parking pass. Keep your car parked in the Special Access Lot.\n- 10:45pm: Depart for EWR.\n- 11:45pm: Park at EWR and enter the arrivals area to wait for Khari.\n- 12am: Meet Khari and drive him to the Hotel.\n- Return to camp and park in the Main parking lot (not the Special Access Lot).\n\nSunday:\n12pm — Meet both Khari and Omari backstage at The Inn and drive them to EWR."
     },
     {
       "person_id": "zach_steinman",
       "section": "Reminder",
-      "content": "This is a **volunteer shift**. Your work is an even trade for admission + a parking pass. Thursday welcome dinners must be prepurchased if you choose to enjoy."
+      "content": "This is a volunteer shift. Your work is an even trade for admission + a parking pass. Thursday welcome dinners must be prepurchased if you choose to enjoy."
     },
     {
       "person_id": "lilly_mulligan",
@@ -2790,12 +2883,12 @@ window.DEMO_DATA = {
     {
       "person_id": "lilly_mulligan",
       "section": "Itinerary",
-      "content": "**Friday:** Make contact with your artists in person at the festival or via WhatsApp to coordinate Saturday departure.\n\n**Saturday:**\n- 4:30pm: Meet Ayanna and Badsista, and Pavel backstage at The Inn. Drive them to NYC.\n- TBC: Bobby Beethoven pickup."
+      "content": "Friday:\nMake contact with your artists in person at the festival or via WhatsApp to coordinate Saturday departure.\n\nSaturday:\n- 4:30pm: Meet Ayanna and Badsista, and Pavel backstage at The Inn. Drive them to NYC.\n- TBC: Bobby Beethoven pickup."
     },
     {
       "person_id": "lilly_mulligan",
       "section": "Payment",
-      "content": "This is a **paid shift**. We pay a flat rate of **$50 for gas and tolls** plus **$25/hour** for driving. We estimate this should take 7–8 hours.\n\nSend your invoice to drippingmusicandarts@gmail.com"
+      "content": "This is a paid shift. We pay a flat rate of $50 for gas and tolls plus $25/hour for driving. We estimate this should take 7–8 hours.\n\nSend your invoice to drippingmusicandarts@gmail.com"
     },
     {
       "person_id": "mooje",
@@ -2815,12 +2908,12 @@ window.DEMO_DATA = {
     {
       "person_id": "mooje",
       "section": "Itinerary",
-      "content": "**Thursday:**\n- Anytime after 10am: Pickup Onigiri rice balls in NYC Chinatown at **Ohayo Bakery**. The order is pre-paid. This will require at least one whole seat of space.\n- Joao pickup — TBC.\n- Send WhatsApp to Inn Keeper: *\"This is driver Mooje. I have Joao with me. ETA at camp is XXpm\"*\n- Drop off artist at the Special Access Lot directly outside of The Inn. Help them load into the backstage area. Bring boxes of Onigiri into the backstage area.\n- Move your car to the main parking area to receive your wristband and parking pass.\n\n**Sunday:** 12pm — Meet Joao backstage at The Inn and drive them to NYC."
+      "content": "Thursday:\n- Anytime after 10am: Pickup Onigiri rice balls in NYC Chinatown at Ohayo Bakery. The order is pre-paid. This will require at least one whole seat of space.\n- Joao pickup — TBC.\n- Send WhatsApp to Inn Keeper: \"This is driver Mooje. I have Joao with me. ETA at camp is XXpm\"\n- Drop off artist at the Special Access Lot directly outside of The Inn. Help them load into the backstage area. Bring boxes of Onigiri into the backstage area.\n- Move your car to the main parking area to receive your wristband and parking pass.\n\nSunday:\n12pm — Meet Joao backstage at The Inn and drive them to NYC."
     },
     {
       "person_id": "mooje",
       "section": "Reminder",
-      "content": "This is a **volunteer shift**. Your work is an even trade for admission + a parking pass. Thursday welcome dinners must be prepurchased if you choose to enjoy."
+      "content": "This is a volunteer shift. Your work is an even trade for admission + a parking pass. Thursday welcome dinners must be prepurchased if you choose to enjoy."
     },
     {
       "person_id": "rachel_hahn",
@@ -2835,12 +2928,12 @@ window.DEMO_DATA = {
     {
       "person_id": "rachel_hahn",
       "section": "Itinerary",
-      "content": "**Wednesday:**\n- Call Daniel to confirm Wednesday night lodging.\n- Meet Steven Warwick in NYC. Drive together to EWR.\n- Meet Katya and Anna (airport wheelchair) at the arrivals curb.\n- Leave Steven with Katya; go retrieve rental car. Take Anna with you to the Hilton hotel.\n- Be in touch with Katya. Coordinate with Katya around getting Anna to the Airbnb for practice.\n- Once settled, come to camp.\n\n**Saturday:**\n- Coordinate with Katya to travel to site with ALL GEAR for **2:30pm soundcheck**.\n- Coordinate return to Airbnb/hotel after **9pm end of set**. This may involve hailing a Lyft for them or potentially driving."
+      "content": "Wednesday:\n- Call Daniel to confirm Wednesday night lodging.\n- Meet Steven Warwick in NYC. Drive together to EWR.\n- Meet Katya and Anna (airport wheelchair) at the arrivals curb.\n- Leave Steven with Katya; go retrieve rental car. Take Anna with you to the Hilton hotel.\n- Be in touch with Katya. Coordinate with Katya around getting Anna to the Airbnb for practice.\n- Once settled, come to camp.\n\nSaturday:\n- Coordinate with Katya to travel to site with ALL GEAR for 2:30pm soundcheck.\n- Coordinate return to Airbnb/hotel after 9pm end of set. This may involve hailing a Lyft for them or potentially driving."
     },
     {
       "person_id": "rachel_hahn",
       "section": "Payment",
-      "content": "**$200 + $50 gas & tolls**"
+      "content": "$200 + $50 gas & tolls"
     },
     {
       "person_id": "willa_jeffers",
@@ -2860,17 +2953,17 @@ window.DEMO_DATA = {
     {
       "person_id": "willa_jeffers",
       "section": "Itinerary",
-      "content": "**Wednesday:** Text Alex (Purple Sound) at (917) 969-0211 to confirm pickup time and place for Thursday morning.\n\n**Thursday:**\n- 9am: Pickup backline from **Purple Sound** at 1040 Metropolitan Ave, Brooklyn NY.\n- Text The Innkeeper (WhatsApp 347 986-7562) with your ETA at camp.\n- Drive gear to the Special Access Lot directly outside of The Inn and load into the backstage area.\n- Proceed to the main parking area for check-in and parking.\n\n**Sunday:**\n- 1pm: Pickup the same gear backstage at The Inn. Confirm full gear lists.\n- Coordinate with Alex for return to Purple Sound."
+      "content": "Wednesday:\nText Alex (Purple Sound) at (917) 969-0211 to confirm pickup time and place for Thursday morning.\n\nThursday:\n- 9am: Pickup backline from Purple Sound at 1040 Metropolitan Ave, Brooklyn NY.\n- Text The Innkeeper (WhatsApp 347 986-7562) with your ETA at camp.\n- Drive gear to the Special Access Lot directly outside of The Inn and load into the backstage area.\n- Proceed to the main parking area for check-in and parking.\n\nSunday:\n- 1pm: Pickup the same gear backstage at The Inn. Confirm full gear lists.\n- Coordinate with Alex for return to Purple Sound."
     },
     {
       "person_id": "willa_jeffers",
       "section": "Gear List",
-      "content": "(4) CDJ 3000s\n(2) Pioneer A10 Mixers\n(3) Xone 96 mixers\n(2) TRB turntable isolation decks\n**Total: 9 flight cases + 2 decks**"
+      "content": "(4) CDJ 3000s\n(2) Pioneer A10 Mixers\n(3) Xone 96 mixers\n(2) TRB turntable isolation decks\nTotal: 9 flight cases + 2 decks"
     },
     {
       "person_id": "willa_jeffers",
       "section": "Reminder",
-      "content": "This is a **volunteer shift**. Your work is an even trade for admission + a parking pass. Thursday welcome dinners must be prepurchased if you choose to enjoy."
+      "content": "This is a volunteer shift. Your work is an even trade for admission + a parking pass. Thursday welcome dinners must be prepurchased if you choose to enjoy."
     },
     {
       "person_id": "henry_kauth",
@@ -2890,7 +2983,7 @@ window.DEMO_DATA = {
     {
       "person_id": "henry_kauth",
       "section": "Itinerary",
-      "content": "**Sunday:**\n- Check in with Daniel & Leo / Nick Coratti at Noon at The Inn.\n- Spend the day resting. There are beds upstairs in The Inn.\n- 8pm (approx): Drive the 15-passenger van with staff back to NYC. Drop people off at mutually agreeable locations.\n- Return the van to CC Rentals in Long Island City, 47-08 30th St C.C, Long Island City, NY 11101.\n- Head home, thanks so much!"
+      "content": "Sunday:\n- Check in with Daniel & Leo / Nick Coratti at Noon at The Inn.\n- Spend the day resting. There are beds upstairs in The Inn.\n- 8pm (approx): Drive the 15-passenger van with staff back to NYC. Drop people off at mutually agreeable locations.\n- Return the van to CC Rentals in Long Island City, 47-08 30th St C.C, Long Island City, NY 11101.\n- Head home, thanks so much!"
     }
   ],
   "vendor_manager": [
@@ -2907,22 +3000,22 @@ window.DEMO_DATA = {
     {
       "person_id": "karen_nicole",
       "section": "Vendor Contacts",
-      "content": "Wadadli Jerk (Brods) · Arrival: Fri 10:30am\n(917) 687-1508\n\nOffbrand Goods (Kyle) · Arrival: Fri TBC\n\nHen House · Arrival: Thu TBC\n\nDila (LJ) · Arrival: Thu 11am\n(206) 434-5704\n\nBe Bep (Phoebe) · Arrival: TBC\n(714) 876-3957\n\nLeo (Director)\n(415) 420-8884"
+      "content": "Wadadli Jerk (Brods) · Arrival: Fri 10:30am\n(917) 687-1508\n\nArchive Chives\n\nHen House · Arrival: Thu TBC\n\nDila (LJ) · Arrival: Thu 11am\n(206) 434-5704\n\nBe Bep (Phoebe) · Arrival: TBC\n(714) 876-3957\n\nLeo (Director)\n(415) 420-8884"
     },
     {
       "person_id": "karen_nicole",
       "section": "Shifts",
-      "content": "**Wednesday:**\n- Make contact with each vendor and confirm their arrival plan.\n- Assist Eli with staff meal preparation (Breakfast/Dinner).\n- Setup Vendor/Kitchen tent with lights, tables, grills, and vendor schedules.\n- Setup refrigerator trailer with shelves.\n\n**Thursday:**\n- Assist Eli with staff meal preparation (Breakfast/Lunch).\n- Receive vendors and orient them to the vendor tent and fridge trailer.\n- Communicate to vendors that they must go to the Innkeeper after their last service to count their tokens.\n\n**Friday:**\n- Receive Wadadli and orient them to their spot at The Lake, as well as their Saturday spot at Open Air.\n- Receive other vendors.\n- Check in with vendors for general needs."
+      "content": "Wednesday:\n- Make contact with each vendor and confirm their arrival plan.\n- Assist Eli with staff meal preparation (Breakfast/Dinner).\n- Setup Vendor/Kitchen tent with lights, tables, grills, and vendor schedules.\n- Setup refrigerator trailer with shelves.\n\nThursday:\n- Assist Eli with staff meal preparation (Breakfast/Lunch).\n- Receive vendors and orient them to the vendor tent and fridge trailer.\n- Communicate to vendors that they must go to the Innkeeper after their last service to count their tokens.\n\nFriday:\n- Receive Wadadli and orient them to their spot at The Lake, as well as their Saturday spot at Open Air.\n- Receive other vendors.\n- Check in with vendors for general needs."
     },
     {
       "person_id": "karen_nicole",
       "section": "Meals",
-      "content": "Check in with The Innkeeper backstage at The Inn upon arrival to collect your **meal tokens**. Meals during setup are obviously covered."
+      "content": "Check in with The Innkeeper backstage at The Inn upon arrival to collect your meal tokens. Meals during setup are obviously covered."
     },
     {
       "person_id": "karen_nicole",
       "section": "Vendor Schedule",
-      "content": "**BREAKFAST** (9am–1pm)\nFri: Dila · Sat: Ramirez · Sun: Dila\n\n**LUNCH** (1pm–6pm)\nFri: Wadadli + Ramirez · Sat: Wadadli + Ramirez\n\n**DINNER** (6pm–10pm)\nThu: Be Bep · Fri: Dila + Henhouse · Sat: Dila + Henhouse\n\n**LATE NIGHT**\nFri: Offbrand Goods · Sat: Offbrand Goods\n\n**COFFEE** (always)\nThu–Sun: 109 Montrose"
+      "content": "BREAKFAST (9am–1pm)\nFri: Dila · Sat: Ramirez · Sun: Dila\n\nLUNCH (1pm–6pm)\nFri: Wadadli + Ramirez · Sat: Wadadli + Ramirez\n\nDINNER (6pm–10pm)\nThu: Be Bep · Fri: Dila + Henhouse · Sat: Dila + Henhouse\n\nLATE NIGHT\nFri: Archive Chives · Sat: Archive Chives\n\nCOFFEE (always)\nThu–Sun: 109 Montrose"
     }
   ],
   "merch": [
@@ -2932,7 +3025,7 @@ window.DEMO_DATA = {
     },
     {
       "section": "Notes",
-      "content": "Please download the **Square app** for iPhone. In the event that the Square reader doesn't work, you can use your phone directly to accept tap payments. Venmo payments go to **@drippingfyi**, QR code attached below."
+      "content": "Please download the Square app for iPhone. In the event that the Square reader doesn't work, you can use your phone directly to accept tap payments. Venmo payments go to @drippingfyi, QR code attached below."
     },
     {
       "section": "Contacts",
@@ -2940,15 +3033,15 @@ window.DEMO_DATA = {
     },
     {
       "section": "Fri Shift",
-      "content": "3:30 – 8:30pm\n- Meet at Dining Tent and setup merch booth.\n- One person retrieve cash envelope from Leo.\n- Obtain Square card reader from bar manager Ed.\n- **Sell merch 4–8pm.**\n- Pack up merch booth. Keep boxes and storage shed tidy.\n- Return Square card reader to bar staff.\n- Prepare cash change wallet for tomorrow's shift with $200.\n- Bring all cash to Leo."
+      "content": "3:30 – 8:30pm\n- Meet at Dining Tent and setup merch booth.\n- One person retrieve cash envelope from Leo.\n- Obtain Square card reader from bar manager Ed.\n- Sell merch 4–8pm.\n- Pack up merch booth. Keep boxes and storage shed tidy.\n- Return Square card reader to bar staff.\n- Prepare cash change wallet for tomorrow's shift with $200.\n- Bring all cash to Leo."
     },
     {
       "section": "Sat Shift",
-      "content": "11:30am – 6:30pm\n- Meet at Dining Tent and setup merch booth.\n- One person retrieve cash envelope from Leo.\n- Obtain Square card reader from bar manager Ed.\n- **Sell merch 12–6pm.**\n- Pack up merch booth. Keep boxes and storage shed tidy.\n- Return Square card reader to bar staff.\n- Prepare cash change wallet for tomorrow's shift with $200.\n- Bring all cash to Leo."
+      "content": "11:30am – 6:30pm\n- Meet at Dining Tent and setup merch booth.\n- One person retrieve cash envelope from Leo.\n- Obtain Square card reader from bar manager Ed.\n- Sell merch 12–6pm.\n- Pack up merch booth. Keep boxes and storage shed tidy.\n- Return Square card reader to bar staff.\n- Prepare cash change wallet for tomorrow's shift with $200.\n- Bring all cash to Leo."
     },
     {
       "section": "Meals",
-      "content": "Check in with The Innkeeper backstage at The Inn upon arrival to collect your **meal tokens**. Meals during setup are obviously covered."
+      "content": "Check in with The Innkeeper backstage at The Inn upon arrival to collect your meal tokens. Meals during setup are obviously covered."
     }
   ],
   "tear_down": [
@@ -2999,6 +3092,67 @@ window.DEMO_DATA = {
     {
       "section": "Site",
       "content": "- Check-in: bring back extension cord (belongs to camp).\n- Water Stations (4 total at The Lake, The Inn, Open Air & The Barn): disassemble, tape legs together, move to The Barn — these live at camp.\n- Trash: hired trash team will handle most of it, but sweep for cigarette filters (especially around Dining Tent, The Inn, The Barn) and Cans/Bottles/Cups.\n- All trash bins (Black + Blue) moved to The Barn for storage.\n- Hammocks: de-install, pack in one bag/box. If wet, dry under Dining Tent first. (Throw in dryer — Lauren responsible.)\n- Bar Signage: collect plastic holders from The Lake, Dining Tent, and Dungeon.\n- Collect corrugated plastic site-signage → deliver to The Barn.\n- Collect \"Toilet\" and \"Shower\" signs near Open Air Stage.\n- Collect pop-up tents — go in a trailer behind James' house. Leave pop-up tents by the garage for Outdoors Geeks FedEx return."
+    }
+  ],
+  "archival_audio": [
+    {
+      "person_id": "_shared",
+      "section": "Schedule",
+      "content": "Thursday: Sol only\nFriday: Sol, Nema, Franky\nSaturday: Sol, Nema, Franky"
+    },
+    {
+      "person_id": "_shared",
+      "section": "Outline",
+      "content": "Record at 48k / 24 bit, including audience mic on third track wherever possible.\n\n- Ensure each stage has a working recorder with a clean SD card\n- Set levels for recording, ideally at soundcheck\n- Record every stage\n- Once the stage wraps, stop the recorder, transfer files to hard drive provided by Dripping using laptops provided by Dripping\n- Make any necessary notes on files"
+    },
+    {
+      "person_id": "_shared",
+      "section": "Times of Recording",
+      "content": "Thursday\n-The Inn: 7:30pm–9pm\n-The Outside Inn: 8:30pm–10pm\n-Open Air: 10pm–12am\n\nFriday\n-Lakeside Amphitheater: 1:30pm–3pm\n-The Lake: 2:30pm–6pm\n-Hammock Grove: 7pm–8:30pm (Bendik Giske only — borrow recorder from The Outside Inn)\n-The Inn: 8pm–5am\n-The Barn: 8:30pm–5am\n-Open Air: 11:30pm–6am\n\nSaturday\n-The Lake: 11:30am–1:30pm\n-Lakeside Amphitheater: 1pm–2:30pm\n-The Barn: 2pm–3:30pm\n-Open Air: 2:30pm–7pm, 11:30pm–5:30am\n-The Inn: 6:30pm–7am\n-The Barn: 9:30pm–6:30am\n-The Outside Inn: 6:30am–11am"
+    },
+    {
+      "person_id": "_shared",
+      "section": "SD Cards",
+      "content": "-1x 256 GB: The Inn\n-1x 256 GB: The Barn\n-1x 64 GB: Open Air\n-1x 64 GB: The Outside Inn\n-1x 64 GB: The Lake\n-1x 32 GB: Lakeside Amphitheater\n-2x 32: Backup"
+    },
+    {
+      "person_id": "sol",
+      "name": "Sol (they/them)",
+      "role": "Audio Archiving",
+      "paid": true,
+      "section": "",
+      "content": ""
+    },
+    {
+      "person_id": "sol",
+      "section": "Meals",
+      "content": "Check in with The Innkeeper backstage at The Inn upon arrival to collect your meal tokens.\n\nWelcome Dinner Token: 1\nRegular Meal Token: 2"
+    },
+    {
+      "person_id": "nema",
+      "name": "Nema",
+      "role": "Audio Archiving",
+      "paid": true,
+      "section": "",
+      "content": ""
+    },
+    {
+      "person_id": "nema",
+      "section": "Meals",
+      "content": "Check in with The Innkeeper backstage at The Inn upon arrival to collect your meal tokens.\n\nWelcome Dinner Token: n/a\nRegular Meal Token: 2"
+    },
+    {
+      "person_id": "franky",
+      "name": "Franky",
+      "role": "Audio Archiving",
+      "paid": true,
+      "section": "",
+      "content": ""
+    },
+    {
+      "person_id": "franky",
+      "section": "Meals",
+      "content": "Check in with The Innkeeper backstage at The Inn upon arrival to collect your meal tokens.\n\nWelcome Dinner Token: n/a\nRegular Meal Token: 2"
     }
   ]
 };
