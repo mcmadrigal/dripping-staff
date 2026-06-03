@@ -164,22 +164,27 @@ function renderContent(text) {
 }
 
 function linkifyPhones(html) {
-  return html.replace(
-    /(\+?\(?\d{1,4}\)?[\s.\-]?\(?\d{1,4}\)?[\s.\-]?\d{1,4}[\s.\-]?\d{2,4}[\s.\-]?\d{0,4})/g,
-    (match) => {
-      const digits = match.replace(/\D/g, '');
-      if (digits.length < 7 || digits.length > 15) return match;
-      const href = digits.length > 10 ? `+${digits}` : `+1${digits}`;
-      // ph-num is a tappable tel link; ph-actions hidden by default, shown only in .ph-row
-      return `<a href="tel:${href}" class="ph-num">${match}</a><span class="ph-actions"><a href="tel:${href}" class="action-btn">Call ↗</a><a href="sms:${href}" class="action-btn">Text ↗</a></span>`;
-    }
-  );
+  // Skip content inside existing <a> tags so we don't inject inside href URLs
+  // (e.g. digits in a rider PDF URL would otherwise break the anchor).
+  const parts = html.split(/(<a\b[^>]*>[\s\S]*?<\/a>)/i);
+  return parts.map((part, i) => {
+    if (i % 2 === 1) return part;
+    return part.replace(
+      /(\+?\(?\d{1,4}\)?[\s.\-]?\(?\d{1,4}\)?[\s.\-]?\d{1,4}[\s.\-]?\d{2,4}[\s.\-]?\d{0,4})/g,
+      (match) => {
+        const digits = match.replace(/\D/g, '');
+        if (digits.length < 7 || digits.length > 15) return match;
+        const href = digits.length > 10 ? `+${digits}` : `+1${digits}`;
+        return `<a href="tel:${href}" class="ph-num">${match}</a><span class="ph-actions"><a href="tel:${href}" class="action-btn">Call ↗</a><a href="sms:${href}" class="action-btn">Text ↗</a></span>`;
+      }
+    );
+  }).join('');
 }
 
 function linkifyAddresses(html) {
   const pattern = /(\d{1,5}\s+(?:[\w\s]+\s+)?(?:Rd|Road|St|Street|Ave|Avenue|Blvd|Dr|Drive|Ln|Lane|Way|Ct|Court|Pl|Place|US-\d+)[,.\s]+[\w\s]+,?\s*(?:NJ|NY|PA|CT|MA)\s+\d{5})/gi;
   return html.replace(pattern, (m) => {
-    const url = `https://maps.apple.com/?q=${encodeURIComponent(m)}`;
+    const url = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(m)}`;
     return `${m}<span style="display:flex;justify-content:flex-end;margin-top:8px;"><a href="${url}" target="_blank" rel="noopener" class="action-btn">Maps ↗</a></span>`;
   });
 }
@@ -187,7 +192,8 @@ function linkifyAddresses(html) {
 function parseDashTimeLine(line) {
   if (!line.startsWith('-')) return null;
   const stripped = line.slice(1).trim();
-  const timeMatch = stripped.match(/^(noon|(?:\d{1,2}(?::\d{2})?\s*(?:am|pm)?)(?:\s*\([^)]+\))?)\s*:?\s*/i);
+  // Match a single time or a range like "Noon–4pm", "10:30am–2:30pm" so range stays in time column.
+  const timeMatch = stripped.match(/^((?:noon|\d{1,2}(?::\d{2})?\s*(?:am|pm)?)(?:\s*[–-]\s*(?:noon|\d{1,2}(?::\d{2})?\s*(?:am|pm)?))?(?:\s*\([^)]+\))?)\s*:?\s*/i);
   if (!timeMatch) return null;
   const time = timeMatch[1].trim();
   const rest = stripped.slice(timeMatch[0].length).trim();
@@ -244,7 +250,11 @@ function renderScheduleContent(text) {
       return `<div class="sched-warning">${linkifyPhones(esc(content))}</div>`;
     }
 
-    // Bold-wrapped headings (e.g. **Saturday:**, **Friday:**) — short phrase only
+    // Day headings (e.g. Saturday:, Friday:, Monday-Wed:) — plain or bolded
+    if (/^(?:\*\*)?(?:Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday|Mon|Tue|Wed|Thu|Fri|Sat|Sun)(?:[-–](?:Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday|Mon|Tue|Wed|Thu|Fri|Sat|Sun))?:?(?:\*\*)?\s*$/i.test(trimmed)) {
+      return `<div class="sched-label">${esc(trimmed.replace(/\*\*/g, '').replace(/:$/, ''))}</div>`;
+    }
+    // Other bold-wrapped headings (e.g. **Saturday:**, **Friday:**) — short phrase only
     if (/^\*\*[^*]{1,40}\*\*:?\s*$/.test(trimmed)) {
       return `<div class="sched-label">${esc(trimmed.replace(/\*\*/g, '').replace(/:$/, ''))}</div>`;
     }

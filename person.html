@@ -13,7 +13,7 @@
   <div id="hdr"></div>
   <div class="shell" id="app"></div>
   <script src="demo-data.js?v=35"></script>
-  <script src="app.js?v=33"></script>
+  <script src="app.js?v=34"></script>
   <script>
     const app = document.getElementById('app');
     const teamId = getParam('team');
@@ -92,7 +92,12 @@
           if (rainMode) {
             if (isScheduleSection(row.section)) continue;
             if (row.section === 'Rain Plan') {
-              h += renderSection('Schedule', row.content);
+              const cleaned = (row.content || '')
+                .replace(/\s*\(same[^)]*\)\s*/gi, ' ')
+                .replace(/\n\s*---\s*\n\s*\*\*Original Schedule \(for reference\):\*\*\s*\n+/g, '\n\n')
+                .replace(/[ \t]+\n/g, '\n')
+                .replace(/\n{3,}/g, '\n\n');
+              h += renderSection('Schedule', cleaned);
               continue;
             }
           }
