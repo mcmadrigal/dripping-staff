@@ -311,6 +311,10 @@ function renderContactCard(c) {
   if (digits) {
     btns += `<a href="tel:${href}" class="action-btn">Call ↗</a>`;
     btns += `<a href="sms:${href}" class="action-btn">Text ↗</a>`;
+    if (isWA) {
+      const waNum = digits.length > 10 ? digits : `1${digits}`;
+      btns += `<a href="https://wa.me/${waNum}" target="_blank" rel="noopener" class="action-btn">WhatsApp ↗</a>`;
+    }
   }
 
   const desc = esc(c.description || '');
