@@ -120,6 +120,13 @@ function renderContent(text) {
   let html = esc(text);
   html = html.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
   html = html.replace(/\*([^*]+)\*/g, '<em>$1</em>');
+  // Auto-bold "Day [Month Date]:" line prefixes (e.g. "Thursday June 11:",
+  // "Saturday Shift 1:", "Mon-Wed:") — so we don't need **markdown** in the
+  // data to get bold day labels on shifts and other day-prefixed lines.
+  html = html.replace(
+    /^((?:Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday|Mon|Tue|Wed|Thu|Fri|Sat|Sun)\b[^:\n]{0,40}:)/gim,
+    '<strong>$1</strong>'
+  );
   html = html.replace(/\[([^\]]+)\]\((https?:\/\/[^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener" class="action-btn" style="display:inline-flex;padding:4px 10px;font-size:11px;min-height:0;margin-left:4px">$1 ↗</a>');
   html = linkifyPhones(html);
   html = linkifyAddresses(html);
