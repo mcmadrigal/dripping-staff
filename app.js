@@ -1,4 +1,5 @@
 const CONFIG = { sheetId: '', cacheTTL: 5 * 60 * 1000 };
+const LAST_UPDATED = 'Jun 3, 2026 · 9:00 PM ET';
 
 let LIVE_DATA = null;
 let _loadPromise = null;
@@ -407,8 +408,17 @@ function renderContactList(content) {
     ? content.split(/\n\n+/).filter(e => e.trim())
     : content.split('\n').filter(e => e.trim());
 
+  // "Label: [Address](URL)" → location card with the explicit URL.
+  const MD_LOC_RE = /^([^:\n]+?):\s*\[([^\]]+)\]\((https?:\/\/[^)]+)\)\s*$/;
+
   return entries.map(entry => {
-    const lines = entry.trim().split('\n').filter(l => l.trim());
+    const trimmed = entry.trim();
+    const locMatch = trimmed.match(MD_LOC_RE);
+    if (locMatch) {
+      const [, label, address, url] = locMatch;
+      return renderLocationCard('', label.trim(), address.trim(), url.trim());
+    }
+    const lines = trimmed.split('\n').filter(l => l.trim());
     let name = lines[0] || '';
     let phoneStr = lines[1] ? lines[1].trim() : '';
 
@@ -435,15 +445,24 @@ function renderContactList(content) {
 
 // ── Sections ────────────────────────────────────────────────────────
 
-function renderLocationCard(eyebrow, name, address) {
-  const url = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(address)}`;
+function stripMdEmphasis(s) {
+  if (!s) return s;
+  return String(s).replace(/\*\*/g, '').replace(/(^|[^*])\*([^*]+)\*/g, '$1$2');
+}
+
+function renderLocationCard(eyebrow, name, address, explicitUrl) {
+  const cleanEyebrow = stripMdEmphasis(eyebrow);
+  const cleanName = stripMdEmphasis(name);
+  const cleanAddress = stripMdEmphasis(address);
+  const url = explicitUrl
+    || `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(cleanAddress || cleanName)}`;
   return `
     <div class="contact-card">
       <div class="contact-card-inner">
         <div class="card-text">
-          ${eyebrow ? `<div class="card-label">${esc(eyebrow)}</div>` : ''}
-          <div class="card-title">${esc(name)}</div>
-          <div class="card-detail">${esc(address)}</div>
+          ${cleanEyebrow ? `<div class="card-label">${esc(cleanEyebrow)}</div>` : ''}
+          <div class="card-title">${esc(cleanName)}</div>
+          ${cleanAddress ? `<div class="card-detail">${esc(cleanAddress)}</div>` : ''}
         </div>
         <div class="action-btns"><a href="${url}" target="_blank" rel="noopener" class="action-btn">Maps ↗</a></div>
       </div>

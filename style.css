@@ -251,6 +251,19 @@ strong { font-weight: 600; }
   color: var(--text-2);
 }
 
+.title-area .last-updated {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 4px 10px;
+  border: 1px solid var(--card-border);
+  border-radius: 999px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.5px;
+  color: var(--text-2);
+  background: var(--card);
+}
+
 /* ── Section header (icon + t-label) ─────────────── */
 
 .section-head {

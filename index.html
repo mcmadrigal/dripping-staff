@@ -7,13 +7,13 @@
   <meta name="theme-color" content="#ece7df" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#1a1714" media="(prefers-color-scheme: dark)">
   <title>Dripping — Staff</title>
-  <link rel="stylesheet" href="style.css?v=29">
+  <link rel="stylesheet" href="style.css?v=30">
 </head>
 <body>
   <div id="hdr"></div>
   <div class="shell" id="app"></div>
   <script src="demo-data.js?v=35"></script>
-  <script src="app.js?v=39"></script>
+  <script src="app.js?v=40"></script>
   <script>
     const app = document.getElementById('app');
     document.getElementById('hdr').innerHTML = renderHeader();
@@ -37,6 +37,7 @@
         h += `<div class="title-area">
           <h1>All Staff</h1>
           <div class="subtitle">${esc(cfg.dates || '')} · ${esc(cfg.venue_name || '')}</div>
+          <div class="last-updated">Last updated · ${esc(LAST_UPDATED)}</div>
         </div>`;
 
         h += renderContactsBar(contacts);
