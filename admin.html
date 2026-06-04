@@ -957,6 +957,22 @@ body {
     <!-- Tab: Config & Contacts -->
     <div class="tab-panel active" id="panel-config">
       <div class="form-section">
+        <div class="form-section-title">Rain Mode</div>
+        <div class="field" style="display:flex;align-items:center;gap:14px;padding:6px 0">
+          <label class="toggle-field" style="margin:0;cursor:pointer;display:flex;align-items:center;gap:10px">
+            <span class="toggle-switch">
+              <input type="checkbox" id="rain-mode-toggle">
+              <span class="toggle-track"></span>
+            </span>
+            <span class="toggle-label">Rain mode ON</span>
+          </label>
+          <div style="color:var(--text-2);font-size:13px;line-height:1.4">
+            When ON, the published site shows Rain Plan in place of Schedule on every page.<br>
+            When OFF, both Schedule and Rain Plan are shown side-by-side.
+          </div>
+        </div>
+      </div>
+      <div class="form-section">
         <div class="form-section-title">Festival Config</div>
         <div class="field-grid" id="config-fields"></div>
       </div>
@@ -1151,6 +1167,7 @@ function renderConfig() {
   container.innerHTML = '';
   const cfg = state['_config'] || [];
   cfg.forEach((item, idx) => {
+    if (item.key === 'rain_mode') return; // rendered separately as toggle above
     const div = document.createElement('div');
     div.className = 'field';
     div.innerHTML = `
@@ -1163,6 +1180,23 @@ function renderConfig() {
     });
     container.appendChild(div);
   });
+
+  // Wire rain-mode toggle
+  const rainToggle = document.getElementById('rain-mode-toggle');
+  if (rainToggle) {
+    let rainIdx = (state['_config'] || []).findIndex(r => r.key === 'rain_mode');
+    if (rainIdx < 0) {
+      state['_config'] = state['_config'] || [];
+      state['_config'].push({ key: 'rain_mode', value: 'false' });
+      rainIdx = state['_config'].length - 1;
+    }
+    const current = String(state['_config'][rainIdx].value).toLowerCase() === 'true';
+    rainToggle.checked = current;
+    rainToggle.onchange = e => {
+      state['_config'][rainIdx].value = e.target.checked ? 'true' : 'false';
+      scheduleAutoSave();
+    };
+  }
 }
 
 // ── Contacts ──────────────────────────────────────────────────────────────

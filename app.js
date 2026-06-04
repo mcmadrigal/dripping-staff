@@ -128,6 +128,11 @@ function renderContent(text) {
   let pendingItems = [];
   let pendingHeader = null;
 
+  const DAY_HDR_RE = /^(Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday)\b[:.\s]*$/i;
+  const isDayHeader = (h) => DAY_HDR_RE.test(h.replace(/<[^>]+>/g, '').trim());
+  const bareHeaderHTML = (h) =>
+    isDayHeader(h) ? `<div class="rider-group-header">${h}</div>` : `<p>${h}</p>`;
+
   const flush = () => {
     if (pendingItems.length) {
       const ul = `<ul>${pendingItems.join('')}</ul>`;
@@ -137,7 +142,7 @@ function renderContent(text) {
         blocks.push(ul);
       }
     } else if (pendingHeader) {
-      blocks.push(`<p>${pendingHeader}</p>`);
+      blocks.push(bareHeaderHTML(pendingHeader));
     }
     pendingHeader = null;
     pendingItems = [];
@@ -155,7 +160,7 @@ function renderContent(text) {
       // Non-bullet line. If we were collecting items, this is a new block — flush.
       // If we have a header from a previous line with no items yet, push it as a standalone para.
       if (pendingItems.length) flush();
-      if (pendingHeader) blocks.push(`<p>${pendingHeader}</p>`);
+      if (pendingHeader) blocks.push(bareHeaderHTML(pendingHeader));
       pendingHeader = trimmed;
     }
   }
@@ -175,7 +180,8 @@ function linkifyPhones(html) {
         const digits = match.replace(/\D/g, '');
         if (digits.length < 7 || digits.length > 15) return match;
         const href = digits.length > 10 ? `+${digits}` : `+1${digits}`;
-        return `<a href="tel:${href}" class="ph-num">${match}</a><span class="ph-actions"><a href="tel:${href}" class="action-btn">Call ↗</a><a href="sms:${href}" class="action-btn">Text ↗</a></span>`;
+        const display = formatPhoneDisplay(match);
+        return `<a href="tel:${href}" class="ph-num">${display}</a><span class="ph-actions"><a href="tel:${href}" class="action-btn">Call ↗</a><a href="sms:${href}" class="action-btn">Text ↗</a></span>`;
       }
     );
   }).join('');
@@ -185,7 +191,7 @@ function linkifyAddresses(html) {
   const pattern = /(\d{1,5}\s+(?:[\w\s]+\s+)?(?:Rd|Road|St|Street|Ave|Avenue|Blvd|Dr|Drive|Ln|Lane|Way|Ct|Court|Pl|Place|US-\d+)[,.\s]+[\w\s]+,?\s*(?:NJ|NY|PA|CT|MA)\s+\d{5})/gi;
   return html.replace(pattern, (m) => {
     const url = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(m)}`;
-    return `${m}<span style="display:flex;justify-content:flex-end;margin-top:8px;"><a href="${url}" target="_blank" rel="noopener" class="action-btn">Maps ↗</a></span>`;
+    return `${m} <a href="${url}" target="_blank" rel="noopener" class="action-btn" style="display:inline-flex;padding:4px 10px;font-size:11px;min-height:0;margin-left:4px">Maps ↗</a>`;
   });
 }
 
@@ -212,10 +218,20 @@ function renderScheduleContent(text) {
   if (/\|/.test(text) || /→/.test(text)) {
     const html = esc(text);
     const lines = html.split('\n').filter(l => l.trim());
+    // Normalize "Name HH-HH | role" → "Name | HH-HH role" so hours always
+    // live in the detail column regardless of how the data was entered.
+    const TRAILING_TIME_RE = /\s+(\d{1,2}(?::\d{2})?\s*(?:am|pm)?\s*[–\-]\s*\d{1,2}(?::\d{2})?\s*(?:am|pm))\s*$/i;
+    const normalizePipeRow = (left, right) => {
+      const m = left.match(TRAILING_TIME_RE);
+      if (!m) return [left.trim(), right.trim()];
+      const name = left.replace(TRAILING_TIME_RE, '').trim();
+      return [name, `${m[1].trim()} ${right.trim()}`.replace(/\s+/g, ' ')];
+    };
     return lines.map(line => {
       const pipeMatch = line.match(/^(.+?)\s*\|\s*(.+)$/);
       if (pipeMatch) {
-        return `<div class="sched-row"><div class="sched-time">${pipeMatch[1].trim()}</div><div class="sched-detail">${linkifyPhones(pipeMatch[2].trim())}</div></div>`;
+        const [name, detail] = normalizePipeRow(pipeMatch[1], pipeMatch[2]);
+        return `<div class="sched-row"><div class="sched-time">${name}</div><div class="sched-detail">${linkifyPhones(detail)}</div></div>`;
       }
       const arrowMatch = line.match(/^(.+?)\s*→\s*(.+)$/);
       if (arrowMatch) {
@@ -281,7 +297,7 @@ function renderContactCard(c) {
   const href = digits.length > 10 ? `+${digits}` : `+1${digits}`;
 
   const label = [role, hours].filter(Boolean).join(' · ');
-  const detail = digits ? `${esc(phone)}${isWA ? ' · WhatsApp preferred' : ''}` : '';
+  const detail = digits ? `${esc(formatPhoneDisplay(phone))}${isWA ? ' · WhatsApp preferred' : ''}` : '';
 
   let btns = '';
   if (digits) {
@@ -366,6 +382,25 @@ function extractPhone(str) {
   return { raw: m[1], href: digits.length > 10 ? `+${digits}` : `+1${digits}` };
 }
 
+// Normalize any US 10-digit phone string to "+1 (XXX) XXX-XXXX".
+// 11-digit numbers starting with "1" are also treated as US.
+// Non-US (e.g. "+44 ...") and unparseable inputs are returned unchanged.
+function formatPhoneDisplay(str) {
+  if (!str) return str;
+  const trimmed = String(str).trim();
+  const hadPlus = trimmed.startsWith('+');
+  const digits = trimmed.replace(/\D/g, '');
+  if (digits.length === 10) {
+    return `+1 (${digits.slice(0,3)}) ${digits.slice(3,6)}-${digits.slice(6)}`;
+  }
+  if (digits.length === 11 && digits.startsWith('1')) {
+    return `+1 (${digits.slice(1,4)}) ${digits.slice(4,7)}-${digits.slice(7)}`;
+  }
+  // Non-US international: keep as the user wrote it, but ensure leading "+".
+  if (hadPlus && digits.length >= 8) return trimmed;
+  return trimmed;
+}
+
 function renderContactList(content) {
   // Split by blank lines if present, otherwise each line is one entry
   const entries = content.includes('\n\n')
@@ -389,23 +424,86 @@ function renderContactList(content) {
     }
 
     const phone = extractPhone(phoneStr);
-    const phoneEl = phoneStr ? `<div class="card-detail">${esc(phoneStr)}</div>` : '';
+    const displayPhone = phone ? formatPhoneDisplay(phoneStr) : phoneStr;
+    const phoneEl = phoneStr ? `<div class="card-detail">${esc(displayPhone)}</div>` : '';
     const btns = phone
       ? `<div class="action-btns"><a href="tel:${phone.href}" class="action-btn">Call ↗</a><a href="sms:${phone.href}" class="action-btn">Text ↗</a></div>`
       : '';
-    return `<div class="contact-card"><div class="contact-card-inner"><div class="card-text"><div class="card-title" style="font-size:15px">${esc(name)}</div>${phoneEl}</div>${btns}</div></div>`;
+    return `<div class="contact-card"><div class="contact-card-inner"><div class="card-text"><div class="card-title">${esc(name)}</div>${phoneEl}</div>${btns}</div></div>`;
   }).join('');
 }
 
 // ── Sections ────────────────────────────────────────────────────────
+
+function renderLocationCard(eyebrow, name, address) {
+  const url = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(address)}`;
+  return `
+    <div class="contact-card">
+      <div class="contact-card-inner">
+        <div class="card-text">
+          ${eyebrow ? `<div class="card-label">${esc(eyebrow)}</div>` : ''}
+          <div class="card-title">${esc(name)}</div>
+          <div class="card-detail">${esc(address)}</div>
+        </div>
+        <div class="action-btns"><a href="${url}" target="_blank" rel="noopener" class="action-btn">Maps ↗</a></div>
+      </div>
+    </div>`;
+}
+
+function renderVenueSection(content) {
+  if (!content) return '';
+  const ADDR_RE = /(\d{1,5}\s+(?:[\w\s]+\s+)?(?:Rd|Road|St|Street|Ave|Avenue|Blvd|Dr|Drive|Ln|Lane|Way|Ct|Court|Pl|Place|US-\d+)[,.\s]+[\w\s]+,?\s*(?:NJ|NY|PA|CT|MA)\s+\d{5})/i;
+  const blocks = content.split(/\n\s*\n/);
+  const cards = [];
+  blocks.forEach((block, idx) => {
+    const lines = block.split('\n').map(l => l.trim()).filter(Boolean);
+    if (!lines.length) return;
+    // Single-line "Eyebrow: Name, Address" format (used in "Locations" sections).
+    if (lines.length === 1) {
+      const line = lines[0];
+      const addrMatch = line.match(ADDR_RE);
+      if (!addrMatch) return;
+      const address = addrMatch[1].trim();
+      let head = line.slice(0, addrMatch.index).replace(/[,;\s]+$/,'').trim();
+      let eyebrow = '';
+      let name = head;
+      const colonIdx = head.indexOf(':');
+      if (colonIdx !== -1) {
+        eyebrow = head.slice(0, colonIdx).trim();
+        name = head.slice(colonIdx + 1).replace(/[,;\s]+$/,'').trim();
+        // Strip trailing comma between name and address.
+        name = name.replace(/,\s*$/, '').trim();
+      } else if (idx === 0) {
+        eyebrow = 'Venue';
+      }
+      // Also strip trailing comma if the address came right after the name with a comma.
+      name = name.replace(/,\s*$/, '');
+      cards.push(renderLocationCard(eyebrow, name, address));
+      return;
+    }
+    // Multi-line format (used in "Venue & Hotel" section).
+    const addrIdx = lines.findIndex(l => ADDR_RE.test(l));
+    if (addrIdx === -1) return;
+    const address = lines[addrIdx];
+    const name = addrIdx > 0 ? lines[addrIdx - 1] : '';
+    const eyebrowParts = lines.slice(0, Math.max(0, addrIdx - 1));
+    const eyebrow = eyebrowParts.length ? eyebrowParts.join(' · ') : (idx === 0 ? 'Venue' : '');
+    cards.push(renderLocationCard(eyebrow, name, address));
+  });
+  if (!cards.length) return '';
+  return `<div class="s s-venue"><div class="contacts-cards open">${cards.join('')}</div></div>`;
+}
 
 function renderSection(title, content) {
   const isAlert = /^[⚠️🚨❗]/.test(title) || /important|alert|warning/i.test(title);
   const isSchedule = /schedule|shift|thursday|friday|saturday|sunday|performances?|portraits?/i.test(title);
   const isRainPlan = /^rain plan$/i.test(title && title.trim());
   const isContactList = /contact/i.test(title);
+  const isVenue = /^(?:venue\s*(?:&|and)\s*hotel|locations?|venues?)$/i.test((title || '').trim());
   const cls = isAlert ? 's s-alert' : 's';
   const rendered = isSchedule ? renderScheduleContent(content) : renderContent(content);
+
+  if (isVenue) return renderVenueSection(content);
 
   if (isContactList) {
     return `<div class="${cls} s-contact-list">${title ? `<div class="s-label">${esc(title)}</div>` : ''}${renderContactList(content)}</div>`;
